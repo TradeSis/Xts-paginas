@@ -23,7 +23,7 @@ $parametro = json_decode($secaoPagina["parametros"],true);
   
            
               <div class="col">
-                <img src="<?php echo URLROOT. $parametro['pastaImg'] . $servico['imgServico'] ?>" class="img-fluid" alt="">
+                <img src="<?php echo URLROOT ?>/img/<?php echo $servico['imgServico'] ?>" class="img-fluid" alt="">
               </div>
 
               <div class="col">

@@ -1,5 +1,7 @@
 <?php
 $parametro = json_decode($secaoPagina["parametros"], true);
+$perfil = json_decode($temas['perfil'],true);
+
 ?>
 
 <footer id="footer" class="footer">
@@ -10,7 +12,7 @@ $parametro = json_decode($secaoPagina["parametros"], true);
 
         <div class="col-lg-4 col-md-4">
           <div class="footer-info">
-            <img src="<?php echo URLROOT . $parametro["pastaImg"] . $perfil["logo"] ?>" alt="" width="300" height="120">
+            <img src="<?php echo URLROOT ?>/img/<?php echo $parametro["logo"] ?>" alt="" width="300" height="120">
 
             <br>
             <br>
@@ -50,7 +52,7 @@ $parametro = json_decode($secaoPagina["parametros"], true);
 
       <div class="d-flex flex-column align-items-center align-items-lg-start">
         <div class="copyright">
-          <?php echo $parametro["textoRedeSociais"] ?>
+          <?php echo $parametro["textoRedesSociais"] ?>
         </div>
 
       </div>

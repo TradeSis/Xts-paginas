@@ -2,7 +2,13 @@
 $parametro = json_decode($secaoPagina["parametros"],true);
 
 ?>
-<section id="contato" class="contact" style="background-color: <?php echo $parametro['corFundo'] ?>">
+<style>
+    .btn{
+        background-color: var(--color-btn-primary);
+        color: var(--color-btn-text);
+    }
+</style>
+<section id="contato" class="contact">
 
     <div class="container p-4" data-aos="fade-up" style="border-radius: 10px; background-color: #FFFFFF">
 
@@ -34,7 +40,7 @@ $parametro = json_decode($secaoPagina["parametros"],true);
 
                         <div class="col-md-12 text-center mt-3">
 
-                            <button class="btn" style="background-color: #16448F; color:#FFFFFF" type="submit"><?php echo $parametro['textoBotao'] ?></button>
+                            <button class="btn" type="submit"><?php echo $parametro['textoBotao'] ?></button>
 
                         </div>
 

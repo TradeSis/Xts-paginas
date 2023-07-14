@@ -20,7 +20,7 @@ $parametro = json_decode($secaoPagina["parametros"],true);
       <?php foreach ($servicos as $servico) { ?>
         <div class="col-lg-3" data-aos="fade-up" data-aos-delay="200">
           <div class="box">
-            <img src="<?php echo URLROOT. $parametro['pastaImg'] . $servico['imgServico'] ?>" class="img-fluid" alt="">
+            <img src="<?php echo URLROOT ?>/img/<?php echo $servico['imgServico'] ?>" class="img-fluid" alt="">
             <h3><?php echo $servico['nomeServico'] ?></h3>
             <p><?php echo $servico['descricaoServico'] ?></p>
             <div class="read-more mt-auto align-self-end">

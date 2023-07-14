@@ -1,6 +1,5 @@
 <?php
 $parametro = json_decode($secaoPagina["parametros"],true);
-
 ?>
 
 <section id="home" class="onfocus mt-4" ><!--  style=" height:70vh" -->
@@ -15,7 +14,7 @@ $parametro = json_decode($secaoPagina["parametros"],true);
             
               </h1>
               
-              <a href="#contato" class="read-more align-self-center mt-4" style="background-color: <?php echo $parametro['corBotao'] ?>;"><span><?php echo $parametro['textoBotao'] ?></span><i class="bi bi-arrow-right"></i></a>
+              <a href="#contato" class="read-more align-self-center mt-4"><span><?php echo $parametro['textoBotao'] ?></span><i class="bi bi-arrow-right"></i></a>
             </div>
           </div>
 

@@ -1,8 +1,6 @@
 <?php
-$perfil = buscaPerfil();
-
 $parametro = json_decode($secaoPagina["parametros"], true);
-$links = $parametro["links"];
+$perfil = json_decode($temas['perfil'],true);
 ?>
 
 
@@ -14,7 +12,7 @@ $links = $parametro["links"];
     }
 
     .footer .footer-content {
-        background-image: url('<?php echo URLROOT . $parametro['pastaImgFundo'] . $parametro['nomeImgFundo'] ?>');
+        background-image: url('<?php echo URLROOT ?>/img/<?php echo $parametro['img'] ?>');
         /* /img/brand/imgFooter.png */
         background-repeat: no-repeat;
         background-size: cover;
@@ -41,10 +39,10 @@ $links = $parametro["links"];
 
                 <div class="col-lg-4 col-md-4 footer-newsletter">
                     <h4><?php echo $parametro['tituloLinks'] ?></h4>
-                    <?php foreach ($links as $link) { ?>
-                        <strong><a href="<?php echo $link['href'] ?>"><?php echo $link['nome'] ?></a></strong><br>
+                        <strong><a href="<?php echo $parametro['href1'] ?>"><?php echo $parametro['nome1'] ?></a></strong><br>
+                        <strong><a href="<?php echo $parametro['href2'] ?>"><?php echo $parametro['nome2'] ?></a></strong><br>
+                        <strong><a href="<?php echo $parametro['href3'] ?>"><?php echo $parametro['nome3'] ?></a></strong><br>
                         <br>
-                    <?php } ?>
 
                 </div>
 

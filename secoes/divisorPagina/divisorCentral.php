@@ -1,5 +1,7 @@
 <?php 
-$perfil = buscaPerfil();
+$temas = buscaTemas($paginaDados['idTema']);
+$perfil = json_decode($temas['perfil'],true);
+//$perfil = buscaPerfil();
 ?>
 <section id="cta" class="cta">
       <div class="containerDivisor container-fluid" data-aos="zoom-out">

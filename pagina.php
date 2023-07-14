@@ -11,14 +11,13 @@ include_once ROOT. "/vendor/vendor.php";
 include_once(ROOT . '/sistema/database/temas.php');
 include_once(ROOT . '/sistema/database/paginas.php');
 include_once(ROOT . '/sistema/database/secaoPagina.php');
-include_once(ROOT . '/sistema/database/perfil.php');
-include_once(ROOT . '/sistema/database/banners.php');
 include_once(ROOT . '/sistema/database/posts.php');
 include_once(ROOT . '/sistema/database/produtos.php');
 include_once(ROOT . '/sistema/database/servicos.php');
-
+include_once(ROOT . '/sistema/database/marcas.php');
+include_once(ROOT . '/sistema/database/receitas.php');
+include_once(ROOT . '/sistema/database/eventos.php');
 $tema = buscatema();
-$perfil = buscaPerfil();
 
 
 ?>
@@ -46,7 +45,7 @@ $slugSingle = null;
 
 if (isset($_GET['parametros'])) {
   $paginas = explode('/', $_GET['parametros']);
-
+ 
 
   $pagina = $paginas[0];
 
@@ -62,7 +61,8 @@ $paginaDados = buscaPagina($pagina);
 if ($paginaDados['arquivoFonte'] !== 'index.php') {
 
   if (isset($paginaDados['arquivoSingle']) && !$slugSingle == null) {
-    include 'paginas/' . $paginaDados['arquivoSingle'];
+    $paginaSlug = buscaPagina($paginaDados['arquivoSingle']);
+    include 'paginas/' . $paginaSlug['arquivoFonte'];
   } else {
     include 'paginas/' . $paginaDados['arquivoFonte'];
   }
@@ -70,7 +70,6 @@ if ($paginaDados['arquivoFonte'] !== 'index.php') {
 }
 
 $secoesPaginas = buscaSecaoPagina($paginaDados['idPagina']);
-
 
 foreach ($secoesPaginas as $secaoPagina) {
     
