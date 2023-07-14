@@ -3,7 +3,7 @@ $marca = buscaMarcasSlug($slugSingle);
 $produtos = buscaProdutos(null, $marca['idMarca']);
 $paginaSlug = buscaPagina($paginaDados['arquivoSingle']);
 $secoesPaginas = buscaSecaoPagina($paginaSlug['idPagina']);
-$recentes = buscaPostsRecentes();
+
 // Secoes antes da pagina
 $ordem = 0;
 foreach ($secoesPaginas as $secaoPagina) {

@@ -1,7 +1,6 @@
 <?php
 
 $secoesPaginas = buscaSecaoPagina($paginaDados['idPagina']);
-$recentes = buscaPostsRecentes();
 // Secoes antes da pagina
 $ordem = 0;
 foreach ($secoesPaginas as $secaoPagina) {

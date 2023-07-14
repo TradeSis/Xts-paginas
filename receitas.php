@@ -1,7 +1,7 @@
 <?php
 
 $secoesPaginas = buscaSecaoPagina($paginaDados['idPagina']);
-$recentes = buscaPostsRecentes();
+
 
 // Secoes antes da pagina
 $ordem = 0;
@@ -16,19 +16,6 @@ foreach ($secoesPaginas as $secaoPagina) {
 
 }
 
-if (isset($_GET['titulo'])) {
-  $titulo = $_GET['titulo'];
-} else {
-  $titulo = null;
-}
-
-if (isset($_GET['categoria'])) {
-  $categoria = $_GET['categoria'];
-} else {
-  $categoria = null;
-}
-$posts = buscaPosts(null, $titulo, $categoria);
-//echo json_encode(URLROOT);
 
 ?>
 <link href="<?php echo URLROOT ?>/paginas/css/<?php echo $paginaDados["css"]; ?>" rel="stylesheet">

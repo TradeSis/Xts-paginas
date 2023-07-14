@@ -1,11 +1,13 @@
 <?php
     include_once(ROOT . '/sistema/database/posts.php');
-    $parametros = json_decode($secaoPagina["parametros"], true);
-    $posts = buscaPostCuriosidades();
+    /* $parametro = json_decode($secaoPagina["parametros"], true); */
+    $posts = buscaPostChocolate();
+    //echo json_encode($posts);
 ?>
 <style>
   p {
     color: #1B4D60;
+    /* var(--color-btn-text) */
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
     font-weight: 500;
@@ -29,9 +31,10 @@
 <section>
   <div class="container-fluid">
   <div class="row titulo" style="margin-top: -50px;">
-      <h2><?php echo $parametros['titulo'] ?></h2>
+      <h2>sobre Chocolate - teste</h2>
     </div>
     <hr>
+
     <div class="card-deck" style="margin-top: 30px;">
     <?php foreach($posts as $post) {  ?>
             <div class="card shadow">
@@ -43,6 +46,7 @@
             </div>
         <?php } ?>
     </div>
+
   </div>
 
 </section>
