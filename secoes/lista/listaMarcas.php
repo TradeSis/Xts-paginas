@@ -3,11 +3,11 @@
 include_once(ROOT . '/sistema/database/marcas.php');
 $parametros = json_decode($secaoPagina["parametros"], true);
 $marcas = buscaMarcasParceiras();
+
 ?>
 <style>
     a {
         color: #1B4D60;
-        /* var(--color-btn-text) */
         font-family: 'Poppins', sans-serif;
         font-size: 16px;
         font-weight: 500;
@@ -32,7 +32,6 @@ $marcas = buscaMarcasParceiras();
         border: none;
     }
     .card-deck .cardPodcast{
-        /* background-color: red; */
         align-items: center;
     }
     .card-deck .cardPodcast img{
@@ -40,6 +39,13 @@ $marcas = buscaMarcasParceiras();
         width: 150px;
         height: 150px;
     }
+
+    [class="1"] {
+    
+    /* border: 2px solid #b7b3b3; */
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+  }
 </style>
 
 
@@ -56,9 +62,9 @@ $marcas = buscaMarcasParceiras();
     <?php foreach ($marcas as $marcas) {  ?>
   <div class="col-sm-2" data-aos="fade-up" data-aos-delay="200">
     <div class="box text-center">
-      <img src="<?php echo URLROOT ?>/img/<?php echo $marcas['imgMarca'] ?>" class="img-fluid" alt="">
+    <a href="marcas/<?php echo $marcas['slug'] ?>"><img class="<?php echo $marcas['catalogo'] ?>" src="<?php echo URLROOT ?>/img/<?php echo $marcas['imgMarca'] ?>" class="img-fluid" alt=""></a>
       
-      <a href="marcas/<?php echo $marcas['slug'] ?>"><p><?php echo $marcas['nomeMarca'] ?></p></a>
+      <a href="marcas/<?php echo $marcas['slug'] ?>"><p class="mt-3"><?php echo $marcas['nomeMarca'] ?></p></a>
       
     </div>
   </div>

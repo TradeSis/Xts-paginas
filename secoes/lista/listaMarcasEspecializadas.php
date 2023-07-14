@@ -40,6 +40,13 @@ $marcas = buscaMarcasEspecializadas();
         width: 150px;
         height: 150px;
     }
+
+    [class="1"] {
+    
+    /* border: 2px solid #b7b3b3; */
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+  }
 </style>
 
 
@@ -56,9 +63,9 @@ $marcas = buscaMarcasEspecializadas();
     <?php foreach ($marcas as $marcas) {  ?>
   <div class="col-sm-2" data-aos="fade-up" data-aos-delay="200">
     <div class="box text-center">
-      <img src="<?php echo URLROOT ?>/img/<?php echo $marcas['imgMarca'] ?>" class="img-fluid" alt="">
+    <a href="marcas/<?php echo $marcas['slug'] ?>"><img class="<?php echo $marcas['catalogo'] ?>" src="<?php echo URLROOT ?>/img/<?php echo $marcas['imgMarca'] ?>" class="img-fluid" alt=""></a>
 
-      <a href="marcas/<?php echo $marcas['slug'] ?>"><p><?php echo $marcas['nomeMarca'] ?></p></a>
+      <a href="marcas/<?php echo $marcas['slug'] ?>"><p class="mt-3"><?php echo $marcas['nomeMarca'] ?></p></a>
     </div>
   </div>
 <?php } ?>
