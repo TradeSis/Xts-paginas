@@ -4,7 +4,6 @@ $evento = buscaEventosSlug($slugSingle);
 $paginaSlug = buscaPagina($paginaDados['arquivoSingle']);
 $secoesPaginas = buscaSecaoPagina($paginaSlug['idPagina']);
 
-$recentes = buscaPostsRecentes();
 // Secoes antes da pagina
 $ordem = 0;
 foreach ($secoesPaginas as $secaoPagina) {

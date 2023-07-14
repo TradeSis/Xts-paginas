@@ -3,12 +3,16 @@
 include_once(ROOT . '/sistema/database/marcas.php');
 $parametros = json_decode($secaoPagina["parametros"], true);
 
+$lojasEspecializadas = null;
+if ($lojasEspecializadas == "null") {
+    $lojasEspecializadas = null;
+}
 if (isset($_GET['estado'])) {
     $estado = $_GET['estado'];
 } else {
     $estado = null;
 }
-$marcas = buscaMarcasParceiras($estado);
+$marcas = buscaMarcasAtiva($estado,$lojasEspecializadas);
 
 
 ?>
