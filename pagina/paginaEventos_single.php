@@ -8,7 +8,7 @@ $secoesPaginas = buscaSecaoPagina($paginaSlug['idPagina']);
 $ordem = 0;
 foreach ($secoesPaginas as $secaoPagina) {
   if ($secaoPagina["coluna"] == "") {
-    include 'secoes/' . $secaoPagina["tipoSecao"] . "/" . $secaoPagina["arquivoFonte"];
+    include 'paginas/secoes/' . $secaoPagina["tipoSecao"] . "/" . $secaoPagina["arquivoFonte"];
     $ordem = $secaoPagina["ordem"];
   }
   if ($secaoPagina["arquivoFonte"] == "pagina") {
@@ -53,7 +53,7 @@ foreach ($secoesPaginas as $secaoPagina) {
         continue;
       }
 
-      include 'secoes/' . $secaoPagina["tipoSecao"] . "/" . $secaoPagina["arquivoFonte"];
+      include 'paginas/secoes/' . $secaoPagina["tipoSecao"] . "/" . $secaoPagina["arquivoFonte"];
     }
   }
   ?>

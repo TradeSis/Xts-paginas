@@ -2,25 +2,10 @@
 
 $secoesPaginas = buscaSecaoPagina($paginaDados['idPagina']);
 
-// Secoes antes da pagina
-$ordem = 0;
-foreach ($secoesPaginas as $secaoPagina) {
-  if ($secaoPagina["coluna"] == "") {
-    include 'secoes/' . $secaoPagina["tipoSecao"] . "/" . $secaoPagina["arquivoFonte"];
-    $ordem = $secaoPagina["ordem"];
-  }
-  if ($secaoPagina["arquivoFonte"] == "pagina") {
-    break;
-  }
-
-}
-
-
 ?>
 <link href="<?php echo URLROOT ?>/paginas/css/<?php echo $paginaDados["css"]; ?>" rel="stylesheet">
 
 <body>
-
 
 
   <main id="main">
@@ -33,12 +18,12 @@ foreach ($secoesPaginas as $secaoPagina) {
 
           <div class="col-lg-9"> <!-- parte 1 -->
 
-            <div class="row">
+            <div class="row p-0">
               <?php
 
               foreach ($secoesPaginas as $secaoPagina) {
                 if ($secaoPagina["coluna"] == 1) {
-                  include 'secoes/' . $secaoPagina["tipoSecao"] . "/" . $secaoPagina["arquivoFonte"];
+                  include 'paginas/secoes/' . $secaoPagina["tipoSecao"] . "/" . $secaoPagina["arquivoFonte"];
                 }
 
                 if ($secaoPagina["ordem"] <= $ordem) {
@@ -60,7 +45,7 @@ foreach ($secoesPaginas as $secaoPagina) {
               <?php
               foreach ($secoesPaginas as $secaoPagina) {
                 if ($secaoPagina["coluna"] == 2) {
-                  include 'secoes/' . $secaoPagina["tipoSecao"] . "/" . $secaoPagina["arquivoFonte"];
+                  include 'paginas/secoes/' . $secaoPagina["tipoSecao"] . "/" . $secaoPagina["arquivoFonte"];
                 }
 
                 if ($secaoPagina["ordem"] <= $ordem) {
@@ -82,34 +67,4 @@ foreach ($secoesPaginas as $secaoPagina) {
     </section>
   </main>
 
-
-  <script>
-    var select = document.getElementById('categoria')
-
-    select.addEventListener('change', function() {
-      /*  console.log(select.value) */
-      window.location = 'blog?categoria=' + select.value;
-    })
-
-    function searchData() {
-      window.location = 'blog';
-    }
-  </script>
 </body>
-
-<?php
-// Secoes depois da pagina
-foreach ($secoesPaginas as $secaoPagina) {
-  if ($secaoPagina["coluna"] == "") {
-    if ($secaoPagina["ordem"] <= $ordem) {
-      continue;
-    }
-
-    if ($secaoPagina["arquivoFonte"] == "pagina") {
-      continue;
-    }
-
-    include 'secoes/' . $secaoPagina["tipoSecao"] . "/" . $secaoPagina["arquivoFonte"];
-  }
-}
-?>

@@ -1,5 +1,5 @@
 <?php
-include_once(ROOT . '/sistema/database/produtos.php');
+include_once(ROOT . '/paginas/database/produtos.php');
 $produtos = buscaCardProdutos();
 //echo json_encode($produtos);
 ?>

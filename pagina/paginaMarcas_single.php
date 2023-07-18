@@ -12,7 +12,7 @@ foreach ($secoesPaginas as $secaoPagina) {
     break;
   }
 
-  include 'secoes/' . $secaoPagina["tipoSecao"] . "/" . $secaoPagina["arquivoFonte"];
+  include 'paginas/secoes/' . $secaoPagina["tipoSecao"] . "/" . $secaoPagina["arquivoFonte"];
   $ordem = $secaoPagina["ordem"];
 }
 
@@ -27,7 +27,6 @@ foreach ($secoesPaginas as $secaoPagina) {
 
   .title {
     margin-top: 100px;
-
   }
 
   img {
@@ -97,7 +96,7 @@ foreach ($secoesPaginas as $secaoPagina) {
 
             </div>
           <?php } else {
-            include 'secoes/lista/listaProdutos_semCatalogo.php';
+            include 'paginas/secoes/lista/listaProdutos_semCatalogo.php';
           }
           ?>
         </div>
@@ -119,6 +118,6 @@ foreach ($secoesPaginas as $secaoPagina) {
       continue;
     }
 
-    include 'secoes/' . $secaoPagina["tipoSecao"] . "/" . $secaoPagina["arquivoFonte"];
+    include 'paginas/secoes/' . $secaoPagina["tipoSecao"] . "/" . $secaoPagina["arquivoFonte"];
   }
   ?>

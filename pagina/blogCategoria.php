@@ -1,5 +1,5 @@
 <?php
-include_once(ROOT . '/sistema/database/posts.php');
+include_once(ROOT . '/paginas/database/posts.php');
 /* $parametro = json_decode($secaoPagina["parametros"], true); */
 
 

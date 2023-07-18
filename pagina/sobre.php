@@ -6,7 +6,7 @@ $secoesPaginas = buscaSecaoPagina($paginaDados['idPagina']);
 $ordem = 0;
 foreach ($secoesPaginas as $secaoPagina) {
   if ($secaoPagina["coluna"] == "") {
-    include 'secoes/' . $secaoPagina["tipoSecao"] . "/" . $secaoPagina["arquivoFonte"];
+    include 'paginas/secoes/' . $secaoPagina["tipoSecao"] . "/" . $secaoPagina["arquivoFonte"];
     $ordem = $secaoPagina["ordem"];
   }
   if ($secaoPagina["arquivoFonte"] == "pagina") {
@@ -33,12 +33,12 @@ foreach ($secoesPaginas as $secaoPagina) {
 
           <div class="col-lg-9"> <!-- parte 1 -->
 
-            <div class="row p-0">
+            <div class="row">
               <?php
 
               foreach ($secoesPaginas as $secaoPagina) {
                 if ($secaoPagina["coluna"] == 1) {
-                  include 'secoes/' . $secaoPagina["tipoSecao"] . "/" . $secaoPagina["arquivoFonte"];
+                  include 'paginas/secoes/' . $secaoPagina["tipoSecao"] . "/" . $secaoPagina["arquivoFonte"];
                 }
 
                 if ($secaoPagina["ordem"] <= $ordem) {
@@ -60,7 +60,7 @@ foreach ($secoesPaginas as $secaoPagina) {
               <?php
               foreach ($secoesPaginas as $secaoPagina) {
                 if ($secaoPagina["coluna"] == 2) {
-                  include 'secoes/' . $secaoPagina["tipoSecao"] . "/" . $secaoPagina["arquivoFonte"];
+                  include 'paginas/secoes/' . $secaoPagina["tipoSecao"] . "/" . $secaoPagina["arquivoFonte"];
                 }
 
                 if ($secaoPagina["ordem"] <= $ordem) {
@@ -109,7 +109,7 @@ foreach ($secoesPaginas as $secaoPagina) {
       continue;
     }
 
-    include 'secoes/' . $secaoPagina["tipoSecao"] . "/" . $secaoPagina["arquivoFonte"];
+    include 'paginas/secoes/' . $secaoPagina["tipoSecao"] . "/" . $secaoPagina["arquivoFonte"];
   }
 }
 ?>

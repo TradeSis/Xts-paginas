@@ -1,5 +1,5 @@
 <?php
-include_once(ROOT . '/sistema/database/autor.php');
+include_once(ROOT . '/paginas/database/autor.php');
 $autores = buscaAutorCard();
 ?>
 

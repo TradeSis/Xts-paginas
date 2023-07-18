@@ -10,7 +10,7 @@ foreach ($secoesPaginas as $secaoPagina){
       break;
     }
 
-    include 'secoes/' . $secaoPagina["tipoSecao"] . "/" . $secaoPagina["arquivoFonte"];
+    include 'paginas/secoes/' . $secaoPagina["tipoSecao"] . "/" . $secaoPagina["arquivoFonte"];
     $ordem = $secaoPagina["ordem"];
 
 }
@@ -104,6 +104,6 @@ foreach ($secoesPaginas as $secaoPagina){
       continue;
     }
 
-    include 'secoes/' . $secaoPagina["tipoSecao"] . "/" . $secaoPagina["arquivoFonte"];
+    include 'paginas/secoes/' . $secaoPagina["tipoSecao"] . "/" . $secaoPagina["arquivoFonte"];
   }
 ?>

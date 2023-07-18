@@ -84,6 +84,26 @@ if ($metodo == "GET") {
       include 'posts_categoria.php';
       break;
 
+    case "marcas";
+      include 'marcas.php';
+      break;
+
+    case "marcas_slug";
+      include 'marcas_slug.php';
+      break;
+
+    case "produtos";
+      include 'produtos.php';
+      break;
+
+    case "produtos_listaSemCatalogo";
+      include 'produtos_listaSemCatalogo.php';
+      break;
+
+    case "produtos_card";
+      include 'produtos_card.php';
+      break;
+
     default:
       $jsonSaida = json_decode(json_encode(
         array(
@@ -114,25 +134,29 @@ if ($metodo == "PUT") {
       include 'temas_inserir.php';
       break;
 
-      case "posts":
-        include 'posts_inserir.php';
-        break;
-  
-      case "autor":
-        include 'autor_inserir.php';
-        break;
-  
-      case "categorias":
-        include 'categorias_inserir.php';
-        break;
-  
-      case "receitas":
-        include 'receitas_inserir.php';
-        break;
-  
-      case "eventos":
-        include 'eventos_inserir.php';
-        break;
+    case "posts":
+      include 'posts_inserir.php';
+      break;
+
+    case "autor":
+      include 'autor_inserir.php';
+      break;
+
+    case "categorias":
+      include 'categorias_inserir.php';
+      break;
+
+    case "receitas":
+      include 'receitas_inserir.php';
+      break;
+
+    case "eventos":
+      include 'eventos_inserir.php';
+      break;
+
+    case "marcas":
+      include 'marcas_inserir.php';
+      break;
 
     default:
       $jsonSaida = json_decode(json_encode(
@@ -166,25 +190,29 @@ if ($metodo == "POST") {
       include 'temas_alterar.php';
       break;
 
-      case "autor":
-        include 'autor_alterar.php';
-        break;
-  
-      case "categorias":
-        include 'categorias_alterar.php';
-        break;
-  
-      case "receitas":
-        include 'receitas_alterar.php';
-        break;
-  
-      case "eventos":
-        include 'eventos_alterar.php';
-        break;
-  
-      case "posts":
-        include 'posts_alterar.php';
-        break;
+    case "autor":
+      include 'autor_alterar.php';
+      break;
+
+    case "categorias":
+      include 'categorias_alterar.php';
+      break;
+
+    case "receitas":
+      include 'receitas_alterar.php';
+      break;
+
+    case "eventos":
+      include 'eventos_alterar.php';
+      break;
+
+    case "posts":
+      include 'posts_alterar.php';
+      break;
+
+    case "marcas":
+      include 'marcas_alterar.php';
+      break;
 
 
     default:
@@ -217,26 +245,30 @@ if ($metodo == "DELETE") {
       include 'temas_excluir.php';
       break;
 
-      case "posts":
-        include 'posts_excluir.php';
-        break;
-  
-      case "autor":
-        include 'autor_excluir.php';
-        break;
-  
-      case "categorias":
-        include 'categorias_excluir.php';
-        break;
-  
-      case "receitas":
-        include 'receitas_excluir.php';
-        break;
-  
-      case "eventos":
-        include 'eventos_excluir.php';
-        break;
-  
+    case "posts":
+      include 'posts_excluir.php';
+      break;
+
+    case "autor":
+      include 'autor_excluir.php';
+      break;
+
+    case "categorias":
+      include 'categorias_excluir.php';
+      break;
+
+    case "receitas":
+      include 'receitas_excluir.php';
+      break;
+
+    case "eventos":
+      include 'eventos_excluir.php';
+      break;
+
+    case "marcas":
+      include 'marcas_excluir.php';
+      break;
+
 
     default:
       $jsonSaida = json_decode(json_encode(

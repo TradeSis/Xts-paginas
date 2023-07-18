@@ -1,5 +1,5 @@
 <?php
-include_once ('../conexao.php');
+include_once __DIR__ . "/../conexao.php";
 
 function buscaTemas($idTema = null)
 {
@@ -201,5 +201,5 @@ if (isset($_GET['operacao'])) {
 	}
 
 
-	header('Location: ../perfil/temas.php');
+	header('Location: ../paginas/configuracao/temas.php');
 }
