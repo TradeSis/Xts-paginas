@@ -1,6 +1,5 @@
 <?php
-include_once __DIR__."/../../config.php";
-include_once (ROOT.'/paginas/conexao.php');
+include_once ('../conexao.php');
 
 function buscaEventosSlug($slug)
 {
