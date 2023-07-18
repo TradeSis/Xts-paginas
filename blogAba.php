@@ -26,15 +26,12 @@ foreach ($secoesPaginas as $secaoPagina) {
         cursor: pointer;
         position: relative;
         z-index: 5;
-        /* background-color: lightgray; */
          color: #1B4D60;
     }
 
     #tabs .whiteborder {
-       /*  border: 1px solid #707070; */
         border-bottom: 3px solid lightblue;
         border-radius: 3px 3px 0 0;
-       /*  background-color: lightblue; */
          color: #1B4D60;
     }
 

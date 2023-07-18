@@ -8,15 +8,15 @@ include_once ROOT. "/vendor/vendor.php";
 
 <?php
 
-include_once(ROOT . '/sistema/database/temas.php');
-include_once(ROOT . '/sistema/database/paginas.php');
-include_once(ROOT . '/sistema/database/secaoPagina.php');
-include_once(ROOT . '/sistema/database/posts.php');
-include_once(ROOT . '/sistema/database/produtos.php');
-include_once(ROOT . '/sistema/database/servicos.php');
-include_once(ROOT . '/sistema/database/marcas.php');
-include_once(ROOT . '/sistema/database/receitas.php');
-include_once(ROOT . '/sistema/database/eventos.php');
+include_once(ROOT . '/paginas/database/temas.php');
+include_once(ROOT . '/paginas/database/paginas.php');
+include_once(ROOT . '/paginas/database/secaoPagina.php');
+include_once(ROOT . '/paginas/database/posts.php');
+include_once(ROOT . '/cadastros/database/produtos.php'); // cadastros
+include_once(ROOT . '/cadastros/database/servicos.php'); // cadastros
+include_once(ROOT . '/cadastros/database/marcas.php');  // cadastros
+include_once(ROOT . '/paginas/database/receitas.php');
+include_once(ROOT . '/paginas/database/eventos.php');
 $tema = buscatema();
 
 
