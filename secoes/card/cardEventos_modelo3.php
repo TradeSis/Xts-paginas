@@ -1,5 +1,5 @@
 <?php
-include_once(ROOT . '/sistema/database/eventos.php');
+include_once(ROOT . '/paginas/database/eventos.php');
 $parametros = json_decode($secaoPagina["parametros"], true);
 $tipoEvento = $parametros['tipoEvento'];
 $qtdEvento = $parametros['qtdEvento'];

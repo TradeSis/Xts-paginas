@@ -1,10 +1,8 @@
 <?php
-include_once(ROOT . '/sistema/database/marcas.php');
+include_once(ROOT . '/paginas/database/marcas.php');
+include_once(ROOT . '/paginas/database/posts.php');
 $parametros = json_decode($secaoPagina["parametros"], true);
 $marcas = buscaMarcas();
-
-
-include_once(ROOT . '/sistema/database/posts.php');
 $noticias = buscaPosts();
 ?>
 <style>
