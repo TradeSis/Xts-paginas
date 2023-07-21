@@ -1,8 +1,6 @@
 <?php
 
-include_once('../head.php');
-include_once('../database/secao.php');
-//echo json_encode($_GET['tipoSecao']);
+include_once(__DIR__ . '/../database/secao.php');
 $secoes = buscaTipoSecao($_GET['tipoSecao']);
 
 

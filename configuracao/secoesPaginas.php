@@ -1,7 +1,6 @@
 <?php
-include_once('../head.php');
-include_once('../database/secaoPagina.php');
 
+include_once(__DIR__ . '/../database/secaoPagina.php');
 $secoesPaginas = buscaSecaoPaginas();
 
 

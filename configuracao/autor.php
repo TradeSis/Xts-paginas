@@ -1,8 +1,7 @@
 <?php
-/* include_once('../head.php');
-include_once('../database/autor.php');
 
-$autores = buscaAutor(); */
+include_once(__DIR__ . '/../database/autor.php');
+$autores = buscaAutor();
 ?>
 
 <body class="bg-transparent">
@@ -15,7 +14,7 @@ $autores = buscaAutor(); */
                     </div>
 
                 <div class="col-sm-4" style="text-align:right">
-                        <a href="autor_inserir.php" role="button" class="btn btn-primary">Adicionar</a>
+                        <a href="configuracao/autor_inserir.php" role="button" class="btn btn-primary">Adicionar</a>
                     </div>
           
             </div>

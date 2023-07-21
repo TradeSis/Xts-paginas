@@ -1,8 +1,7 @@
 <?php
-/* include_once(__DIR__ . '/../head.php');
 include_once(__DIR__ . '/../database/posts.php');
 
-$posts = buscaPosts(); */
+$posts = buscaPosts(); 
 ?>
 
 <body class="bg-transparent">
