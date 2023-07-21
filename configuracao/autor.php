@@ -1,8 +1,8 @@
 <?php
-include_once('../head.php');
+/* include_once('../head.php');
 include_once('../database/autor.php');
 
-$autores = buscaAutor();
+$autores = buscaAutor(); */
 ?>
 
 <body class="bg-transparent">

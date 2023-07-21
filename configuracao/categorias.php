@@ -1,8 +1,8 @@
 <?php
-include_once('../head.php');
+/* include_once('../head.php');
 include_once('../database/categorias.php');
 
-$categorias = buscaCategorias();
+$categorias = buscaCategorias(); */
 ?>
 
 <body class="bg-transparent">
