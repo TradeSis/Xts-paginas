@@ -37,7 +37,7 @@ $configuracao = 1; // configurações poderia ficaria no lugar menuHeader
 
                 <?php if ($configuracao == 1) { ?>
                     <li class="nav-item">
-                        <a class="nav-link" id="ConfiguracaoPaginas-tab" data-toggle="tab" href="#ConfiguracaoPaginas" role="tab" aria-controls="ConfiguracaoPaginas" aria-selected="true" style="color:black" data-toggle="tooltip" data-placement="top" title="Configurações"><i class="bi bi-gear" style="font-size: 18px;"></i></a>
+                        <a class="nav-link" id="configuracao-tab" data-toggle="tab" href="#configuracao" role="tab" aria-controls="configuracao" aria-selected="true" style="color:black" data-toggle="tooltip" data-placement="top" title="Configurações"><i class="bi bi-gear" style="font-size: 18px;"></i></a>
                     </li>
                 <?php } ?>
             </ul>
@@ -47,14 +47,15 @@ $configuracao = 1; // configurações poderia ficaria no lugar menuHeader
             <div class="tab-content" id="myTabContent">
                 <?php foreach ($menusAtalho as $menuAtalho) { ?>
 
-                    <div class="tab-pane fade" id="<?php echo $menuAtalho['progrNome'] ?>" role="tabpanel" aria-labelledby="<?php echo $menuAtalho['progrNome'] ?>-tab">
+                    <div class="tab-pane fade" id="<?php echo $menuAtalho['progrNome'] ?>"  role="tabpanel" aria-labelledby="<?php echo $menuAtalho['progrNome'] ?>-tab">
+                   
                         <?php include $menuAtalho['progrLink'] ?>
                     </div>
                 <?php } ?>
 
                 <?php if ($configuracao == 1) { ?>
-                    <div class="tab-pane fade" id="ConfiguracaoPaginas" role="tabpanel" aria-labelledby="ConfiguracaoPaginas-tab">
-                        <?php include 'ConfiguracaoPaginas.php' ?>
+                    <div class="tab-pane fade" id="configuracao" role="tabpanel" aria-labelledby="configuracao-tab">
+                        <?php include 'configuracao.php' ?>
                     </div>
                 <?php } ?>
             </div>
