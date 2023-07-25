@@ -27,7 +27,7 @@ $eventos = buscaEventos();
                         <th>Data</th>
                         <th>Local</th>
                         <th>Tipo</th>
-                        <th>Ação</th>
+                        <th colspan="2">Ação</th>
 
                     </tr>
                 </thead>
@@ -41,8 +41,10 @@ $eventos = buscaEventos();
                         <td><?php echo date('d/m/Y', strtotime($evento['dataEvento']))?></td>
                         <td><?php echo $evento['localEvento'] ?></td>
                         <td><?php echo $evento['tipoEvento'] ?></td>
-                        <td>
+                        <td style="padding-right: 3px">
                             <a class="btn btn-primary btn-sm" href="eventos_alterar.php?idEvento=<?php echo $evento['idEvento'] ?>" role="button"><i class="bi bi-pencil-square"></i></a>
+                        </td>
+                        <td style="padding-left: 3px">
                             <a class="btn btn-danger btn-sm" href="eventos_excluir.php?idEvento=<?php echo $evento['idEvento'] ?>" role="button"><i class="bi bi-trash3"></i></a>
                         </td>
                     </tr>

@@ -103,7 +103,7 @@ $nivelUsuario   =   4;
 if ($src!=="") {
     //echo URLROOT ."/paginas/". $src;
 ?>
-    <div class="diviFrame" style="overflow:hidden;">
+    <div class="diviFrame" style="overflow:hidden; height: 85vh">
         <iframe class="iFrame container-fluid " id="iFrameTab" src="<?php echo URLROOT ?>/paginas/<?php echo $src ?>"></iframe>
     </div>
 <?php
