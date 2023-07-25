@@ -66,7 +66,7 @@ $receita = buscaReceitas($idReceita);
         </div>
 
         <div style="text-align:right; margin-right:-20px; margin-top:20px">
-            <button type="submit" class="btn btn-sm btn-success">Cadastrar</button>
+            <button type="submit" class="btn btn-sm btn-success">Salvar</button>
         </div>
         </form>
     </div>

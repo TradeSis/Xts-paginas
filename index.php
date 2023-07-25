@@ -12,12 +12,17 @@ if (!empty($montamenu['menuAtalho'])) {
 if (!empty($montamenu['menuHeader'])) {
     $menuHeader = $montamenu['menuHeader'][0];
 }
-//echo json_encode($menusAtalho);
-$configuracao = 1; // configurações poderia ficaria no lugar menuHeader
+
+$configuracao = 1;
+
+$nivelUsuario   =   4;
+
+
+
 ?>
 
 <style>
-    .nav-link.active.show {
+    .nav-link.active {
         border-bottom: 3px solid #2E59D9;
         border-radius: 3px 3px 0 0;
         color: #1B4D60;
@@ -28,41 +33,83 @@ $configuracao = 1; // configurações poderia ficaria no lugar menuHeader
 <div class="container-fluid mt-1">
     <div class="row">
         <div class="col-md-12 d-flex justify-content-center">
-            <ul class="nav nav-pills" id="myTab" role="tablist">
-                <?php foreach ($menusAtalho as $menuAtalho) { ?>
-                    <li class="nav-item">
-                        <a class="nav-link" id="<?php echo $menuAtalho['progrNome'] ?>-tab" data-toggle="tab" href="#<?php echo $menuAtalho['progrNome'] ?>" role="tab" aria-controls="<?php echo $menuAtalho['progrNome'] ?>" aria-selected="true" style="color:black"><?php echo $menuAtalho['progrNome'] ?></a>
-                    </li>
-                <?php } ?>
+            <ul class="nav a" id="myTabs">
 
-                <?php if ($configuracao == 1) { ?>
-                    <li class="nav-item">
-                        <a class="nav-link" id="configuracao-tab" data-toggle="tab" href="#configuracao" role="tab" aria-controls="configuracao" aria-selected="true" style="color:black" data-toggle="tooltip" data-placement="top" title="Configurações"><i class="bi bi-gear" style="font-size: 18px;"></i></a>
-                    </li>
-                <?php } ?>
+
+                <?php
+                    $tab = '';
+
+                    if (isset($_GET['tab'])) {$tab = $_GET['tab'];}
+               
+                ?>    
+
+
+            <?php if ($nivelUsuario>=3) { ?>
+                <li class="nav-item ">
+                    <a class="nav-link <?php if ($tab=="posts") {echo " active ";} ?>" 
+                        href="?tab=posts" 
+                        role="tab"                        
+                        style="color:black">Posts</a>
+                </li>
+            <?php } if ($nivelUsuario>=3) { ?>
+                <li class="nav-item ">
+                    <a class="nav-link <?php if ($tab=="receitas") {echo " active ";} ?>" 
+                        href="?tab=receitas" 
+                        role="tab"                        
+                        style="color:black">Receitas</a>
+                </li>
+            <?php } if ($nivelUsuario>=3) { ?>
+                <li class="nav-item ">
+                    <a class="nav-link <?php if ($tab=="eventos") {echo " active ";} ?>" 
+                        href="?tab=eventos" 
+                        role="tab"                        
+                        style="color:black">Eventos</a>
+                </li>
+            <?php } if ($nivelUsuario>=4) { ?>
+                <li class="nav-item ">
+                    <a class="nav-link <?php if ($tab=="configuracao") {echo " active ";} ?>" 
+                        href="?tab=configuracao" 
+                        role="tab"                        
+                        data-toggle="tooltip" data-placement="top" title="Configurações"                   
+                        style="color:black"><i class="bi bi-gear" style="font-size: 18px;"></i></a>
+                </li>
+            <?php } ?>
+
+                           
             </ul>
-        </div>
 
-        <div class="col-md-12 mt-3">
-            <div class="tab-content" id="myTabContent">
-                <?php foreach ($menusAtalho as $menuAtalho) { ?>
 
-                    <div class="tab-pane fade" id="<?php echo $menuAtalho['progrNome'] ?>"  role="tabpanel" aria-labelledby="<?php echo $menuAtalho['progrNome'] ?>-tab">
-                   
-                        <?php include $menuAtalho['progrLink'] ?>
-                    </div>
-                <?php } ?>
-
-                <?php if ($configuracao == 1) { ?>
-                    <div class="tab-pane fade" id="configuracao" role="tabpanel" aria-labelledby="configuracao-tab">
-                        <?php include 'configuracao.php' ?>
-                    </div>
-                <?php } ?>
-            </div>
         </div>
 
     </div>
 
-
-
 </div>
+
+<?php
+    $src="";
+
+    if ($tab=="posts") {$src="blog/posts.php";}
+    if ($tab=="receitas") {$src="blog/receitas.php";}
+    if ($tab=="eventos") {$src="blog/eventos.php";}
+    if ($tab=="configuracao") {
+            $src="configuracao/";
+            if (isset($_GET['stab'])) {
+                $src = $src . "?stab=".$_GET['stab'];
+            }
+
+            
+    }
+    
+if ($src!=="") {
+    //echo URLROOT ."/paginas/". $src;
+?>
+    <div class="diviFrame" style="overflow:hidden;">
+        <iframe class="iFrame container-fluid " id="iFrameTab" src="<?php echo URLROOT ?>/paginas/<?php echo $src ?>"></iframe>
+    </div>
+<?php
+}
+?>
+
+</body>
+
+</html>

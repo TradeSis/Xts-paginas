@@ -90,8 +90,8 @@ if (isset($_GET['operacao'])) {
 		$fotoAutorNome = $_FILES['fotoAutor']['name'];
 		$bannerAutor = $_FILES['bannerAutor'];
 		$bannerAutorNome = $_FILES['bannerAutor']['name'];
-		echo json_encode($fotoAutorNome);
-		echo json_encode($bannerAutorNome);
+		/* echo json_encode($fotoAutorNome);
+		echo json_encode($bannerAutorNome); */
 		//return;
 
 
@@ -168,8 +168,8 @@ if (isset($_GET['operacao'])) {
 				
 			);
 			
-		echo json_encode($apiEntrada);
-		return; 
+		/* echo json_encode($apiEntrada);
+		return;  */
 		$autor = chamaAPI(null, '/paginas/autor', json_encode($apiEntrada), 'POST');
 		}
 
@@ -211,7 +211,8 @@ if (isset($_GET['operacao'])) {
 	}
 
 
-	header('Location: ../cadastros/autor.php');	
+	//header('Location: ../cadastros/autor.php');	
+	header('Location: ../configuracao?stab=autor');
 	
 }
 

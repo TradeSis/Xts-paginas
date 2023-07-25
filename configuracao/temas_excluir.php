@@ -14,7 +14,7 @@ $tema = buscaTemas($_GET['idTema']);
                 <h3 class="col">Tema</h3>
             </div>
             <div class="col-sm-4" style="text-align:right">
-                <a href="temas.php" role="button" class="btn btn-primary btn-sm">Voltar</a>
+                <a href="../configuracao/?tab=configuracao&stab=temas" role="button" class="btn btn-primary btn-sm">Voltar</a>
             </div>
         </div>
 

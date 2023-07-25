@@ -183,7 +183,7 @@ if (isset($_GET['operacao'])) {
 	}
 
 
-	header('Location: ../paginas/marcas.php');	
+	header('Location: ../blog/marcas.php');	
 	
 }
 

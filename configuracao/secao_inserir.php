@@ -13,7 +13,7 @@ include_once('../head.php');
                 <h3 class="col">Seções</h3>
             </div>
             <div class="col-sm-4" style="text-align:right">
-                <a href="secao.php" role="button" class="btn btn-primary btn-sm">Voltar</a>
+                <a href="../configuracao/?tab=configuracao&stab=secao" role="button" class="btn btn-primary btn-sm">Voltar</a>
             </div>
         </div>
 

@@ -19,7 +19,7 @@ $autor = buscaAutor($idAutor);
             </div>
 
             <div class="col-sm-4" style="text-align:right">
-                <a href="autor.php" role="button" class="btn btn-primary btn-sm">Voltar</a>
+                <a href="../configuracao/?tab=configuracao&stab=autor" role="button" class="btn btn-primary btn-sm">Voltar</a>
             </div>
 
         </div>

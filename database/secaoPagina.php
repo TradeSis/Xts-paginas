@@ -1001,5 +1001,6 @@ if (isset($_GET['operacao'])) {
 
 
 
-	header("Location: ../perfil/paginas.php");
+	//header("Location: ../perfil/paginas.php");
+	header('Location: ../configuracao?stab=paginas');
 }

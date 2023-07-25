@@ -174,7 +174,7 @@ if (isset($_GET['operacao'])) {
 	}
 
 
-	header('Location: ../cadastros/eventos.php');	
+	header('Location: ../blog/eventos.php');	
 	
 }
 

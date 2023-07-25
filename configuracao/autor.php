@@ -14,7 +14,7 @@ $autores = buscaAutor();
                     </div>
 
                 <div class="col-sm-4" style="text-align:right">
-                        <a href="configuracao/autor_inserir.php" role="button" class="btn btn-primary">Adicionar</a>
+                        <a href="autor_inserir.php" role="button" class="btn btn-primary">Adicionar</a>
                     </div>
           
             </div>
