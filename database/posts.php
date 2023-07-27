@@ -147,8 +147,8 @@ if (isset($_GET['operacao'])) {
 	}
 
 
-	header('Location: ../cadastros/posts.php');	
-	
+	header('Location: ../blog/posts.php');	
+
 }
 
 ?>

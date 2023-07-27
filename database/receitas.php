@@ -119,7 +119,7 @@ if (isset($_GET['operacao'])) {
 	}
 
 
-	header('Location: ../cadastros/receitas.php');	
+	header('Location: ../blog/receitas.php');	
 	
 }
 

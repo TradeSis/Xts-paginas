@@ -51,8 +51,8 @@ if (isset($_GET['operacao'])) {
 	}
 
 
-	header('Location: ../cadastros/categorias.php');	
 	
+	header('Location: ../configuracao?stab=categorias');
 }
 
 ?>

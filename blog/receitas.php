@@ -1,7 +1,7 @@
 <?php
-include_once('../head.php');
-include_once('../database/receitas.php');
-$receitas = buscaReceitas();
+include_once(__DIR__ . '/../head.php');
+include_once(__DIR__ . '/../database/receitas.php');
+$receitas = buscaReceitas(); 
 ?>
 
 <body class="bg-transparent">

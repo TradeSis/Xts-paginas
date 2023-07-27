@@ -72,9 +72,8 @@ if (isset($_GET['operacao'])) {
 		$secao = chamaAPI(null, '/paginas/secoes', json_encode($apiEntrada), 'DELETE');
 	}
 
-
-	header('Location: ../perfil/secao.php');	
 	
+	header('Location: ../configuracao?stab=secao');
 }
 
 ?>

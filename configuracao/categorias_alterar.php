@@ -15,7 +15,7 @@ $categoria = buscaCategorias($idCategoria);
                 <h3 class="col">Editar Categoria</h3>
             </div>
             <div class="col-sm-4" style="text-align:right">
-                <a href="categorias.php" role="button" class="btn btn-primary btn-sm">Voltar</a>
+                <a href="../configuracao/?tab=configuracao&stab=categorias" role="button" class="btn btn-primary btn-sm">Voltar</a>
             </div>
         </div>
         <div class="container" style="margin-top: 10px">

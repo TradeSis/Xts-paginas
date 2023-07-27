@@ -186,8 +186,8 @@ if (isset($_GET['operacao'])) {
 			'menu' => $_POST['menu'],
 			'perfil' => $_POST['perfil'],
 		);
-		echo json_encode($apiEntrada);
-		return;
+		/* echo json_encode($apiEntrada);
+		return; */
 		$tema = chamaAPI(null, '/paginas/temas', json_encode($apiEntrada), 'POST');
 	}
 
@@ -201,5 +201,6 @@ if (isset($_GET['operacao'])) {
 	}
 
 
-	header('Location: ../paginas/configuracao/temas.php');
+	//header('Location: ../paginas/configuracao/temas.php');
+	header('Location: ../configuracao?stab=temas');
 }

@@ -21,7 +21,7 @@ $secoesPaginas = buscaSecaoPagina($idPagina);
             </div>
 
             <div class="col-sm-4" style="text-align:right">
-                <a href="paginas.php" role="button" class="btn btn-primary btn-sm">Voltar</a>
+                <a href="../configuracao/?tab=configuracao&stab=paginas" role="button" class="btn btn-primary btn-sm">Voltar</a>
             </div>
 
         </div>

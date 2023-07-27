@@ -1,8 +1,7 @@
 <?php
 
-include_once('../head.php');
-include_once('../database/secao.php');
-
+include_once(__DIR__ . '/../database/secao.php');
+include_once(__DIR__ . '/../head.php');
 $secoes = buscaSecao();
 /* echo json_encode($secoes); */
 

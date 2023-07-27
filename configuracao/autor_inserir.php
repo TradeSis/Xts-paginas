@@ -12,7 +12,7 @@ include_once('../head.php');
                 <h3 class="col">Adicionar Autor</h3>
             </div>
             <div class="col-sm-4" style="text-align:right">
-                <a href="autor.php" role="button" class="btn btn-primary btn-sm">Voltar</a>
+                <a href="../configuracao/?tab=configuracao&stab=autor" role="button" class="btn btn-primary btn-sm">Voltar</a>
             </div>
         </div>
         <div class="container" style="margin-top: 10px">
