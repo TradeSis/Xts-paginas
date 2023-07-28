@@ -68,7 +68,7 @@ $perfil = json_decode($temas['perfil'],true);
     <?php 
           foreach($menus as $menu){
         ?>
-          <li class="nav-item mr-4"><a href="<?php echo $menu['href']?>" class="nav-link"><?php echo $menu['menu']?></a></li>
+          <li class="nav-item mr-4"><a href="<?php echo URLROOT . $menu['href']?>" class="nav-link"><?php echo $menu['menu']?></a></li>
         <?php } ?>
 
       </ul>
