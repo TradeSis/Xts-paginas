@@ -9,8 +9,6 @@ $configuracao = 1;
 
 $nivelMenu   =   $nivelMenuUsuario['nivelMenu'];
 
-
-
 ?>
 
 <style>
