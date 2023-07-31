@@ -20,8 +20,14 @@ function buscaEventos($idEvento=null)
 	
 	$eventos = array();
 	
+	$idCliente = null;
+	if (isset($_SESSION['idCliente'])) {
+    	$idCliente = $_SESSION['idCliente'];
+	}
+
 	$apiEntrada = array(
 		'idEvento' => $idEvento,
+		'idCliente' => $idCliente,
 	);
 
 	$eventos = chamaAPI(null, '/paginas/eventos', json_encode($apiEntrada), 'GET');

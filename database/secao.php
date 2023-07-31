@@ -5,10 +5,15 @@ function buscaSecao($idSecao=null)
 {
 	
 	$secao = array();
-	//echo json_encode($secao);
-	//return;
+	
+	$idCliente = null;
+	if (isset($_SESSION['idCliente'])) {
+    	$idCliente = $_SESSION['idCliente'];
+	}
+
 	$apiEntrada = array(
 		'idSecao' => $idSecao,
+		'idCliente' => $idCliente,
 	);
 	/* echo "-ENTRADA->".json_encode($apiEntrada)."\n";
 	return; */

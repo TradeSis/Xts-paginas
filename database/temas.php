@@ -5,8 +5,14 @@ function buscaTemas($idTema = null)
 {
 	$temas = array();
 
+	$idCliente = null;
+	if (isset($_SESSION['idCliente'])) {
+    	$idCliente = $_SESSION['idCliente'];
+	}
+
 	$apiEntrada = array(
 		'idTema' => $idTema,
+		'idCliente' => $idCliente,
 	);
 
 	$temas = chamaAPI(null, '/paginas/temas', json_encode($apiEntrada), 'GET');

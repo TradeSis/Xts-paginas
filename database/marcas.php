@@ -19,6 +19,11 @@ function buscaMarcas($idMarca=null)
 	
 	$autor = array();
 	
+	$idCliente = null;
+	if (isset($_SESSION['idCliente'])) {
+    	$idCliente = $_SESSION['idCliente'];
+	}
+	
 	$apiEntrada = array(
 		'idMarca' => $idMarca
 	);

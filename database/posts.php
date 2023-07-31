@@ -19,8 +19,14 @@ function buscaPosts($idPost=null)
 	
 	$post = array();
 	
+	$idCliente = null;
+	if (isset($_SESSION['idCliente'])) {
+    	$idCliente = $_SESSION['idCliente'];
+	}
+
 	$apiEntrada = array(
-		'idPost' => $idPost
+		'idPost' => $idPost,
+		'idCliente' => $idCliente,
 	);
 	
 	$post = chamaAPI(null, '/paginas/posts', json_encode($apiEntrada), 'GET');

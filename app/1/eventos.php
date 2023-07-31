@@ -1,6 +1,12 @@
 <?php
 //echo "-ENTRADA->".json_encode($jsonEntrada)."\n";
-$conexao = conectaMysql();
+$idCliente = null;
+if (isset($jsonEntrada["idCliente"])) {
+    $idCliente = $jsonEntrada["idCliente"];
+}
+
+$conexao = conectaMysql($idCliente);
+
 $eventos = array();
 
 $sql = "SELECT * FROM eventos  ";

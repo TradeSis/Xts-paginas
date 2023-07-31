@@ -8,8 +8,14 @@ function buscaAutor($idAutor=null)
 	
 	$autor = array();
 	
+	$idCliente = null;
+	if (isset($_SESSION['idCliente'])) {
+    	$idCliente = $_SESSION['idCliente'];
+	}
+	
 	$apiEntrada = array(
 		'idAutor' => $idAutor,
+		'idCliente' => $idCliente,
 	);
 
 	$autor = chamaAPI(null, '/paginas/autor', json_encode($apiEntrada), 'GET');

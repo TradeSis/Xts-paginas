@@ -7,8 +7,14 @@ function buscaCategorias($idCategoria=null)
 	
 	$categorias = array();
 	
+	$idCliente = null;
+	if (isset($_SESSION['idCliente'])) {
+    	$idCliente = $_SESSION['idCliente'];
+	}
+
 	$apiEntrada = array(
 		'idCategoria' => $idCategoria,
+		'idCliente' => $idCliente,
 	);
 
 	$categorias = chamaAPI(null, '/paginas/categorias', json_encode($apiEntrada), 'GET');

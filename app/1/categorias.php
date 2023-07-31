@@ -2,7 +2,12 @@
 //echo "-ENTRADA->".json_encode($jsonEntrada)."\n";
 
 
-$conexao = conectaMysql();
+$idCliente = null;
+if (isset($jsonEntrada["idCliente"])) {
+    $idCliente = $jsonEntrada["idCliente"];
+}
+
+$conexao = conectaMysql($idCliente);
 $categoria = array();
 
 $sql = "SELECT * FROM categoria ";

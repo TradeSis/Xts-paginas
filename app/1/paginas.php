@@ -1,8 +1,12 @@
 <?php
 //echo "-ENTRADA->".json_encode($jsonEntrada)."\n";
 
+$idCliente = null;
+if (isset($jsonEntrada["idCliente"])) {
+    $idCliente = $jsonEntrada["idCliente"];
+}
 
-$conexao = conectaMysql();
+$conexao = conectaMysql($idCliente);
 $paginas = array();
 
 $sql = "SELECT paginas.*, temas.* FROM paginas  

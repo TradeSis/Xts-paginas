@@ -19,8 +19,15 @@ function buscaReceitas($idReceita=null)
 	
 	$receitas = array();
 	
+	$idCliente = null;
+	if (isset($_SESSION['idCliente'])) {
+    	$idCliente = $_SESSION['idCliente'];
+	}
+
 	$apiEntrada = array(
 		'idReceita' => $idReceita,
+		'idCliente' => $idCliente,
+		'idCliente' => $idCliente,
 	);
 
 	$receitas = chamaAPI(null, '/paginas/receitas', json_encode($apiEntrada), 'GET');

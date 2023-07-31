@@ -17,9 +17,16 @@ function buscaPagina($slug)
 function buscaPaginas($idPagina = null, $idTema = null)
 {
 	$pagina = array();
+
+	$idCliente = null;
+	if (isset($_SESSION['idCliente'])) {
+    	$idCliente = $_SESSION['idCliente'];
+	}
+
 	$apiEntrada = array(
 		'idPagina' => $idPagina,
 		'idTema' => $idTema,
+		'idCliente' => $idCliente,
 	);
 	$pagina = chamaAPI(null, '/paginas/paginas', json_encode($apiEntrada), 'GET');
 
