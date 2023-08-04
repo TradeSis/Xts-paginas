@@ -1,5 +1,5 @@
 <?php
-include_once(ROOT . '/sistema/database/posts.php');
+include_once(ROOT . '/paginas/database/posts.php');
 $parametros = json_decode($secaoPagina["parametros"], true);
 $noticias = buscaPosts();
 ?>

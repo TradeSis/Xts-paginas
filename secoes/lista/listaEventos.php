@@ -1,7 +1,7 @@
 <?php
-include_once(ROOT . '/sistema/database/eventos.php');
+include_once(ROOT . '/paginas/database/eventos.php');
 $parametros = json_decode($secaoPagina["parametros"], true);
-$eventos = buscaProximosEventos();
+$eventos = buscaEventos();
 ?>
 <style>
     a {

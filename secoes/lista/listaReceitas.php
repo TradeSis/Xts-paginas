@@ -1,5 +1,5 @@
 <?php
-    include_once(ROOT . '/sistema/database/receitas.php');
+    include_once(ROOT . '/paginas/database/receitas.php');
     $parametro = json_decode($secaoPagina["parametros"], true);
     $receitas = buscaReceitas();
 ?>

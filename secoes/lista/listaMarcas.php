@@ -1,6 +1,6 @@
 <?php
 
-include_once(ROOT . '/sistema/database/marcas.php');
+include_once(ROOT . '/paginas/database/marcas.php');
 $parametros = json_decode($secaoPagina["parametros"], true);
 
 $lojasEspecializadas = $parametros["lojasEspecializadas"];
