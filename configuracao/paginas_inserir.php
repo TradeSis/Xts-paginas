@@ -32,6 +32,7 @@ $temas = buscaTemas();
                         <div class="form-group">
                             <label class='control-label' for='inputNormal' style="margin-top: -20px;">Titulo</label>
                             <input type="text" name="tituloPagina" class="form-control" required autocomplete="off">
+                            <input type="text" class="form-control" name="idEmpresa" value="<?php echo $_SESSION['idEmpresa'] ?>" style="display: none">
                         </div>
                     </div>
 

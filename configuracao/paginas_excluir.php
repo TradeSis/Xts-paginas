@@ -30,6 +30,7 @@ $pagina = buscaPaginas($_GET['idPagina']);
                                 <label class='control-label' for='inputNormal' style="margin-top: -40px;">Slug</label>
                                 <input type="text" name="slug" class="form-control" value="<?php echo $pagina ['slug'] ?>" >
                                 <input type="text" class="form-control" name="idPagina" value="<?php echo $pagina ['idPagina'] ?>" style="display: none">
+                                <input type="text" class="form-control" name="idEmpresa" value="<?php echo $_SESSION['idEmpresa'] ?>" style="display: none">
                             </div>
                         </div> 
                     </div>

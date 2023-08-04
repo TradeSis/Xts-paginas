@@ -1,12 +1,12 @@
 <?php
 //echo "-ENTRADA->".json_encode($jsonEntrada)."\n";
 
-$idCliente = null;
-if (isset($jsonEntrada["idCliente"])) {
-    $idCliente = $jsonEntrada["idCliente"];
+$idEmpresa = null;
+if (isset($jsonEntrada["idEmpresa"])) {
+    $idEmpresa = $jsonEntrada["idEmpresa"];
 }
 
-$conexao = conectaMysql($idCliente);
+$conexao = conectaMysql($idEmpresa);
 $autor = array();
 
 $sql = "SELECT * FROM autor ";

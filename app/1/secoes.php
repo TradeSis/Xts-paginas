@@ -2,12 +2,9 @@
 //echo "-ENTRADA->".json_encode($jsonEntrada)."\n";
 
 
-$idCliente = null;
-if (isset($jsonEntrada["idCliente"])) {
-    $idCliente = $jsonEntrada["idCliente"];
-}
+$idEmpresa = null;
 
-$conexao = conectaMysql($idCliente);
+$conexao = conectaMysql($idEmpresa);
 $secoes = array();
 
 $sql = "SELECT * FROM secoes ";

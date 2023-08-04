@@ -16,7 +16,6 @@ include_once(ROOT . '/paginas/database/receitas.php');
 include_once(ROOT . '/paginas/database/eventos.php');
 $tema = buscatema();
 
-
 ?>
 <body>
 
@@ -42,7 +41,6 @@ if (isset($_GET['parametros'])) {
 }
 
 $paginaDados = buscaPagina($pagina);
-
 
 if ($paginaDados['arquivoFonte'] !== 'index.php') {
 

@@ -27,6 +27,7 @@ $categorias = buscaCategorias();
                         <div class="form-group">
                             <label class='control-label' for='inputNormal' style="margin-top: -20px;">Slug*</label>
                             <input type="text" name="slug" class="form-control" required autocomplete="off">
+                            <input type="text" class="form-control" name="idEmpresa" value="<?php echo $_SESSION['idEmpresa'] ?>" style="display: none">
                         </div>
                     </div>
                     <div class="col-sm-9" style="margin-top: 10px">
@@ -41,7 +42,7 @@ $categorias = buscaCategorias();
                     <div class="col-sm-3" style="margin-top: 10px">
                         <div class="form-group">
                             <label class='control-label' for='inputNormal' style="margin-top: -43px;">Descrição do Evento</label>
-                            <textarea name="descricaoEvento" id="" cols="135" rows="10"></textarea>
+                            <textarea name="descricaoEvento" id="" cols="135" rows="5"></textarea>
                         </div>
                     </div>
                 </div>

@@ -1,8 +1,8 @@
 <?php
 //echo "-ENTRADA->".json_encode($jsonEntrada)."\n";
 
-
-$conexao = conectaMysql();
+$idEmpresa = $jsonEntrada["idEmpresa"];
+$conexao = conectaMysql($idEmpresa);
 $secoespagina = array();
 
 $sql = "SELECT secoespagina.*, secoes.*, paginas.*, secoes.arquivoFonte AS arquivoFonte2 FROM secoespagina

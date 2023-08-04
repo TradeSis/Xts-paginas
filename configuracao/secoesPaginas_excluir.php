@@ -28,6 +28,7 @@ $secaoPagina = buscaSecaoPaginas($_GET['idSecaoPagina']);
                             <label class='control-label' for='inputNormal' style="margin-top: -40px;">Seção</label>
                             <input type="text" name="tituloSecao" class="form-control" value="<?php echo $secaoPagina['tituloSecao'] ?>">
                             <input type="text" class="form-control" name="idSecaoPagina" value="<?php echo $secaoPagina['idSecaoPagina'] ?>" style="display: none">
+                            <input type="text" class="form-control" name="idEmpresa" value="<?php echo $_SESSION['idEmpresa'] ?>" style="display: none">
                         </div>
                     </div>
                 </div>

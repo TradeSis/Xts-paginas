@@ -44,6 +44,7 @@ $categorias = buscaCategorias();
                         <div class="form-group">
                             <label class='control-label' for='inputNormal' style="margin-top: -20px;">Slug</label>
                             <input type="titulo" name="slug" class="form-control" value="<?php echo $post['slug'] ?>" disabled>
+                            <input type="text" class="form-control" name="idEmpresa" value="<?php echo $_SESSION['idEmpresa'] ?>" style="display: none">
                         </div>
                     </div>
                     <div class="col-sm-9" style="margin-top: 10px">

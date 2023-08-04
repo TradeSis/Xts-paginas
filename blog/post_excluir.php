@@ -32,6 +32,7 @@ $post = buscaPosts($_GET['idPost']);
                                 <input type="text" name="titulo" class="form-control" value="<?php echo $post['titulo'] ?>" disabled>
                                 <input type="text" class="form-control" name="idPost" value="<?php echo $post['idPost'] ?>" style="display: none">
                                 <input type="text" class="form-control" name="imgDestaque" value="<?php echo $post['imgDestaque'] ?>" style="display: none">
+                                <input type="text" class="form-control" name="idEmpresa" value="<?php echo $_SESSION['idEmpresa'] ?>" style="display: none">
                             </div>
                         </div>
                     </div>

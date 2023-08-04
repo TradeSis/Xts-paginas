@@ -19,13 +19,14 @@ function buscaMarcas($idMarca=null)
 	
 	$autor = array();
 	
-	$idCliente = null;
-	if (isset($_SESSION['idCliente'])) {
-    	$idCliente = $_SESSION['idCliente'];
+	$idEmpresa = null;
+	if (isset($_SESSION['idEmpresa'])) {
+    	$idEmpresa = $_SESSION['idEmpresa'];
 	}
 	
 	$apiEntrada = array(
-		'idMarca' => $idMarca
+		'idMarca' => $idMarca,
+		'idEmpresa' => $idEmpresa
 	);
 
 	$autor = chamaAPI(null, '/paginas/marcas', json_encode($apiEntrada), 'GET');

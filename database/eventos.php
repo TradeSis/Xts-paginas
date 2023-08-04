@@ -7,8 +7,14 @@ function buscaEventosSlug($slug)
 	
 	$eventos = array();
 	
+	$idEmpresa = null;
+	if (isset($_SESSION['idEmpresa'])) {
+    	$idEmpresa = $_SESSION['idEmpresa'];
+	}
+	
 	$apiEntrada = array(
 		'slug' => $slug,
+		'idEmpresa' => $idEmpresa,
 	);
 
 	$eventos = chamaAPI(null, '/paginas/eventos_slug', json_encode($apiEntrada), 'GET');
@@ -20,14 +26,14 @@ function buscaEventos($idEvento=null)
 	
 	$eventos = array();
 	
-	$idCliente = null;
-	if (isset($_SESSION['idCliente'])) {
-    	$idCliente = $_SESSION['idCliente'];
+	$idEmpresa = null;
+	if (isset($_SESSION['idEmpresa'])) {
+    	$idEmpresa = $_SESSION['idEmpresa'];
 	}
 
 	$apiEntrada = array(
 		'idEvento' => $idEvento,
-		'idCliente' => $idCliente,
+		'idEmpresa' => $idEmpresa,
 	);
 
 	$eventos = chamaAPI(null, '/paginas/eventos', json_encode($apiEntrada), 'GET');
@@ -40,6 +46,7 @@ function buscaTipoEvento($tipoEvento,$qtdEvento)
 	$eventos = array();
 	
 	$apiEntrada = array(
+		
 		'tipoEvento' => $tipoEvento,
 		'qtdEvento' => $qtdEvento,
 	);
@@ -91,6 +98,7 @@ if (isset($_GET['operacao'])) {
 
 
 		$apiEntrada = array(
+			'idEmpresa' =>  $_POST['idEmpresa'],
 			'slug' => $_POST['slug'],
 			'nomeEvento' => $_POST['nomeEvento'],
 			'descricaoEvento' => $_POST['descricaoEvento'],
@@ -148,6 +156,7 @@ if (isset($_GET['operacao'])) {
 		}
 
 		$apiEntrada = array(
+			'idEmpresa' =>  $_POST['idEmpresa'],
 			'idEvento' => $_POST['idEvento'],
 			'nomeEvento' => $_POST['nomeEvento'],
 			'descricaoEvento' => $_POST['descricaoEvento'],
@@ -173,6 +182,7 @@ if (isset($_GET['operacao'])) {
 	if ($operacao=="excluir") {
 
 		$apiEntrada = array(
+			'idEmpresa' =>  $_POST['idEmpresa'],
 			'idEvento' => $_POST['idEvento'],
 		);
 

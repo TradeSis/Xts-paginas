@@ -2,12 +2,12 @@
 //echo "-ENTRADA->".json_encode($jsonEntrada)."\n";
 
 //ajustar a api para pegar a categoria por parametro;
-$idCliente = null;
-if (isset($jsonEntrada["idCliente"])) {
-    $idCliente = $jsonEntrada["idCliente"];
+$idEmpresa = null;
+if (isset($jsonEntrada["idEmpresa"])) {
+    $idEmpresa = $jsonEntrada["idEmpresa"];
 }
 
-$conexao = conectaMysql($idCliente);
+$conexao = conectaMysql($idEmpresa);
 $posts = array();
 
 $sql = "SELECT posts.*, autor.*, categoria.* FROM posts 
