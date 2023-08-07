@@ -4,20 +4,27 @@ include_once __DIR__ . "/../conexao.php";
 function buscaMarcasSlug($slug)
 {
 	
-	$autor = array();
+	$marcas = array();
 	
+	$idEmpresa = null;
+	if (isset($_SESSION['idEmpresa'])) {
+    	$idEmpresa = $_SESSION['idEmpresa'];
+	}
+
 	$apiEntrada = array(
 		'slug' => $slug,
+		'idEmpresa' => $idEmpresa
 	);
 
-	$autor = chamaAPI(null, '/paginas/marcas_slug', json_encode($apiEntrada), 'GET');
-	return $autor;
+	$marcas = chamaAPI(null,  URLROOT.'/cadastros/marcas', json_encode($apiEntrada), 'GET');
+
+	return $marcas;
 }
 
 function buscaMarcas($idMarca=null)
 {
 	
-	$autor = array();
+	$marcas = array();
 	
 	$idEmpresa = null;
 	if (isset($_SESSION['idEmpresa'])) {
@@ -29,14 +36,15 @@ function buscaMarcas($idMarca=null)
 		'idEmpresa' => $idEmpresa
 	);
 
-	$autor = chamaAPI(null, '/paginas/marcas', json_encode($apiEntrada), 'GET');
-	return $autor;
+	$marcas = chamaAPI(null, URLROOT.'/cadastros/marcas', json_encode($apiEntrada), 'GET');
+
+	return $marcas;
 }
 
 function buscaMarcasAtiva($estado=null, $lojasEspecializadas=null)
 {
 	
-	$autor = array();
+	$marcas = array();
 
 	$idEmpresa = null;
 	if (isset($_SESSION['idEmpresa'])) {
@@ -49,8 +57,8 @@ function buscaMarcasAtiva($estado=null, $lojasEspecializadas=null)
 		'idEmpresa' => $idEmpresa
 	);
 
-	$autor = chamaAPI(null, '/paginas/marcas', json_encode($apiEntrada), 'GET');
-	return $autor;
+	$marcas = chamaAPI(null, URLROOT.'/cadastros/marcas', json_encode($apiEntrada), 'GET');
+	return $marcas;
 }
 
 

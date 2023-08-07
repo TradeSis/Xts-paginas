@@ -1,7 +1,11 @@
 <?php
 //echo "-ENTRADA->".json_encode($jsonEntrada)."\n";
 
-$idEmpresa = $jsonEntrada["idEmpresa"];
+$idEmpresa = null;
+if (isset($jsonEntrada["idEmpresa"])) {
+    $idEmpresa = $jsonEntrada["idEmpresa"];
+}
+
 $conexao = conectaMysql($idEmpresa);
 $secoespagina = array();
 
@@ -11,6 +15,7 @@ INNER JOIN secoes on secoes.idSecao = secoespagina.idSecao ";
 $sql = $sql . " where secoespagina.idPagina = " . $jsonEntrada["idPagina"];
 $sql = $sql ." order by secoespagina.ordem ";
 
+//echo $sql;
 $rows = 0;
 $buscar = mysqli_query($conexao, $sql);
 while ($row = mysqli_fetch_array($buscar, MYSQLI_ASSOC)) {
