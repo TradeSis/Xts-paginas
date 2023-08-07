@@ -28,7 +28,6 @@ $categoria = buscaCategorias($idCategoria);
                             <label class='control-label' for='inputNormal' style="margin-top: -20px;">Nome da Categoria</label>
                             <input type="text" name="nomeCategoria" class="form-control" value="<?php echo $categoria['nomeCategoria']?>">
                             <input type="text" class="form-control" name="idCategoria" value="<?php echo $categoria['idCategoria']?>" style="display: none">
-                            <input type="text" class="form-control" name="idEmpresa" value="<?php echo $_SESSION['idEmpresa'] ?>" style="display: none">
                         </div>
                     </div>
                 </div>

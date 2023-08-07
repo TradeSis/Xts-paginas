@@ -82,7 +82,7 @@ if (isset($_GET['operacao'])) {
 		}
 
 		$apiEntrada = array(
-			'idEmpresa' =>  $_POST['idEmpresa'],
+			'idEmpresa' =>  $_SESSION['idEmpresa'],
 			'nomeAutor' => $_POST['nomeAutor'],
             'fotoAutor' => $novoNomeFoto,
             'bannerAutor' => $novoNomeBanner,
@@ -130,7 +130,7 @@ if (isset($_GET['operacao'])) {
 				}
 
 				$apiEntrada = array(
-					'idEmpresa' =>  $_POST['idEmpresa'],
+					'idEmpresa' =>  $_SESSION['idEmpresa'],
 					'idAutor' => $_POST['idAutor'],
 					'nomeAutor' => $_POST['nomeAutor'],
 					'fotoAutor' => $novoNomeFoto,
@@ -149,7 +149,7 @@ if (isset($_GET['operacao'])) {
 		
 			}else{
 				$apiEntrada = array(
-					'idEmpresa' =>  $_POST['idEmpresa'],
+					'idEmpresa' =>  $_SESSION['idEmpresa'],
 					'idAutor' => $_POST['idAutor'],
 					'nomeAutor' => $_POST['nomeAutor'],
 					'bannerAutor' => $novoNomeBanner,
@@ -168,7 +168,7 @@ if (isset($_GET['operacao'])) {
 			
 				}else{
 					$apiEntrada = array(
-						'idEmpresa' =>  $_POST['idEmpresa'],
+						'idEmpresa' =>  $_SESSION['idEmpresa'],
 						'idAutor' => $_POST['idAutor'],
 						'nomeAutor' => $_POST['nomeAutor'],
 						'fotoAutor' => $novoNomeFoto,
@@ -178,7 +178,7 @@ if (isset($_GET['operacao'])) {
 				}
 		}else{
 			$apiEntrada = array(
-				'idEmpresa' =>  $_POST['idEmpresa'],
+				'idEmpresa' =>  $_SESSION['idEmpresa'],
 				'idAutor' => $_POST['idAutor'],
 				'nomeAutor' => $_POST['nomeAutor'],
 				'sobreMimAutor' => $_POST['sobreMimAutor'],
@@ -197,7 +197,7 @@ if (isset($_GET['operacao'])) {
 	if ($operacao=="excluir") {
 
 		$apiEntrada = array(
-			'idEmpresa' =>  $_POST['idEmpresa'],
+			'idEmpresa' =>  $_SESSION['idEmpresa'],
 			'idAutor' => $_POST['idAutor'],
 		);
 

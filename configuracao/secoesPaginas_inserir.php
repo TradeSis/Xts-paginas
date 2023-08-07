@@ -37,7 +37,6 @@ $paginas = buscaPaginas($_GET["idPagina"]);
                                 <label class="labelForm">Pagina</label>
                                 <input type="text" class="form-control" name="tituloPagina" value="<?php echo $paginas['tituloPagina'] ?>" readonly>
                                 <input type="text" class="form-control" name="idPagina" value="<?php echo $paginas['idPagina'] ?>" hidden>
-                                <input type="text" class="form-control" name="idEmpresa" value="<?php echo $_SESSION['idEmpresa'] ?>" style="display: none">
                             </div>
                         </div>
 

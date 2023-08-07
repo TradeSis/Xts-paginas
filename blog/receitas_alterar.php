@@ -28,7 +28,6 @@ $receita = buscaReceitas($idReceita);
                             <label class='control-label' for='inputNormal' style="margin-top: -20px;">Receita*</label>
                             <input type="text" name="nomeReceita" class="form-control" value="<?php echo $receita['nomeReceita'] ?>">
                             <input type="text" class="form-control" name="idReceita" value="<?php echo $receita['idReceita'] ?>" style="display: none">
-                            <input type="text" class="form-control" name="idEmpresa" value="<?php echo $_SESSION['idEmpresa'] ?>" style="display: none">
                         </div>
                     </div>
                 </div>

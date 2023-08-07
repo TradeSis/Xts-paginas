@@ -28,7 +28,7 @@ if (isset($_GET['operacao'])) {
     if ($operacao=="inserir") {
 
 		$apiEntrada = array(
-			'idEmpresa' =>  $_POST['idEmpresa'],
+			'idEmpresa' =>  $_SESSION['idEmpresa'],
 			'nomeCategoria' => $_POST['nomeCategoria'],	
 		);
 		$categorias = chamaAPI(null, '/paginas/categorias', json_encode($apiEntrada), 'PUT');
@@ -40,7 +40,7 @@ if (isset($_GET['operacao'])) {
     if ($operacao=="alterar") {
 
 		$apiEntrada = array(
-			'idEmpresa' =>  $_POST['idEmpresa'],
+			'idEmpresa' =>  $_SESSION['idEmpresa'],
 			'idCategoria' => $_POST['idCategoria'],
 			'nomeCategoria' => $_POST['nomeCategoria'],
 			
@@ -52,7 +52,7 @@ if (isset($_GET['operacao'])) {
 	if ($operacao=="excluir") {
 
 		$apiEntrada = array(
-			'idEmpresa' =>  $_POST['idEmpresa'],
+			'idEmpresa' =>  $_SESSION['idEmpresa'],
 			'idCategoria' => $_POST['idCategoria'],
 		);
 

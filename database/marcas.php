@@ -37,9 +37,16 @@ function buscaMarcasAtiva($estado=null, $lojasEspecializadas=null)
 {
 	
 	$autor = array();
+
+	$idEmpresa = null;
+	if (isset($_SESSION['idEmpresa'])) {
+    	$idEmpresa = $_SESSION['idEmpresa'];
+	}
+	
 	$apiEntrada = array(
 		'estado' => $estado,
 		'lojasEspecializadas' => $lojasEspecializadas,
+		'idEmpresa' => $idEmpresa
 	);
 
 	$autor = chamaAPI(null, '/paginas/marcas', json_encode($apiEntrada), 'GET');
@@ -88,6 +95,7 @@ if (isset($_GET['operacao'])) {
 		}
 
 		$apiEntrada = array(
+			'idEmpresa' =>  $_SESSION['idEmpresa'],
 			'slug' => $_POST['slug'],
 			'nomeMarca' => $_POST['nomeMarca'],
             'imgMarca' => $novoNomeImg,
@@ -124,6 +132,7 @@ if (isset($_GET['operacao'])) {
 		
 			}
 			$apiEntrada = array(
+				'idEmpresa' =>  $_SESSION['idEmpresa'],
 				'idMarca' => $_POST['idMarca'],
 				'nomeMarca' => $_POST['nomeMarca'],
 				'imgMarca' => $novoNomeImg,
@@ -139,6 +148,7 @@ if (isset($_GET['operacao'])) {
 	
 		}else{
 			$apiEntrada = array(
+				'idEmpresa' =>  $_SESSION['idEmpresa'],
 				'idMarca' => $_POST['idMarca'],
 				'nomeMarca' => $_POST['nomeMarca'],
 				'descricaoMarca' => $_POST['descricaoMarca'],
@@ -162,6 +172,7 @@ if (isset($_GET['operacao'])) {
 	if ($operacao=="excluir") {
 
 		$apiEntrada = array(
+			'idEmpresa' =>  $_SESSION['idEmpresa'],
 			'idMarca' => $_POST['idMarca'],
 		);
 

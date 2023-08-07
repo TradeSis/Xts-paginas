@@ -22,7 +22,6 @@ include_once('../head.php');
                         <div class="form-group">
                             <label class='control-label' for='inputNormal' style="margin-top: -40px;">Nome</label>
                             <input type="text" name="nomeTema" class="form-control">
-                            <input type="text" class="form-control" name="idEmpresa" value="<?php echo $_SESSION['idEmpresa'] ?>" style="display: none">
                         </div>
                     </div>
 

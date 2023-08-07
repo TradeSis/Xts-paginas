@@ -61,7 +61,7 @@ if (isset($_GET['operacao'])) {
 		}
 
 		$apiEntrada = array(
-			'idEmpresa' =>  $_POST['idEmpresa'],
+			'idEmpresa' =>  $_SESSION['idEmpresa'],
 			'slug' => $_POST['slug'],
 			'nomeReceita' => $_POST['nomeReceita'],
 			'conteudoReceita' => $_POST['conteudoReceita'],
@@ -89,7 +89,7 @@ if (isset($_GET['operacao'])) {
 		
 			}
 			$apiEntrada = array(
-				'idEmpresa' =>  $_POST['idEmpresa'],
+				'idEmpresa' =>  $_SESSION['idEmpresa'],
 				'idReceita' => $_POST['idReceita'],
 				'nomeReceita' => $_POST['nomeReceita'],
 				'conteudoReceita' => $_POST['conteudoReceita'],
@@ -99,7 +99,7 @@ if (isset($_GET['operacao'])) {
 	
 		}else{
 			$apiEntrada = array(
-				'idEmpresa' =>  $_POST['idEmpresa'],
+				'idEmpresa' =>  $_SESSION['idEmpresa'],
 				'idReceita' => $_POST['idReceita'],
 				'nomeReceita' => $_POST['nomeReceita'],
 				'conteudoReceita' => $_POST['conteudoReceita'],
@@ -117,7 +117,7 @@ if (isset($_GET['operacao'])) {
 	if ($operacao=="excluir") {
 
 		$apiEntrada = array(
-			'idEmpresa' =>  $_POST['idEmpresa'],
+			'idEmpresa' =>  $_SESSION['idEmpresa'],
 			'idReceita' => $_POST['idReceita'],
 		);
 

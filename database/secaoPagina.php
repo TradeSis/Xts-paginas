@@ -47,7 +47,7 @@ if (isset($_GET['operacao'])) {
 	if ($operacao == "inserir") {
 
 		$apiEntrada = array(
-			'idEmpresa' =>  $_POST['idEmpresa'],
+			'idEmpresa' =>  $_SESSION['idEmpresa'],
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],
 			'ordem' => $_POST['ordem'],
@@ -75,7 +75,7 @@ if (isset($_GET['operacao'])) {
 
 		$parametros = array_map('htmlentities', $parametros1);
 		$apiEntrada = array(
-			'idEmpresa' =>  $_POST['idEmpresa'],
+			'idEmpresa' =>  $_SESSION['idEmpresa'],
 			'idSecaoPagina' => $_POST['idSecaoPagina'],
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],
@@ -88,7 +88,7 @@ if (isset($_GET['operacao'])) {
 
 	if ($operacao == "excluir") {
 		$apiEntrada = array(
-			'idEmpresa' =>  $_POST['idEmpresa'],
+			'idEmpresa' =>  $_SESSION['idEmpresa'],
 			'idSecaoPagina' => $_POST['idSecaoPagina'],
 		);
 
@@ -150,7 +150,7 @@ if (isset($_GET['operacao'])) {
 
 		$parametros = array_map('htmlentities', $parametros1);
 		$apiEntrada = array(
-			'idEmpresa' =>  $_POST['idEmpresa'],
+			'idEmpresa' =>  $_SESSION['idEmpresa'],
 			'idSecaoPagina' => $_POST['idSecaoPagina'],
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],
@@ -255,7 +255,7 @@ if (isset($_GET['operacao'])) {
 		$parametros = array_map('htmlentities', $parametros1);
 
 		$apiEntrada = array(
-			'idEmpresa' =>  $_POST['idEmpresa'],
+			'idEmpresa' =>  $_SESSION['idEmpresa'],
 			'idSecaoPagina' => $_POST['idSecaoPagina'],
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],
@@ -275,7 +275,7 @@ if (isset($_GET['operacao'])) {
 		);
 		$parametros = array_map('htmlentities', $parametros1);
 		$apiEntrada = array(
-			'idEmpresa' =>  $_POST['idEmpresa'],
+			'idEmpresa' =>  $_SESSION['idEmpresa'],
 			'idSecaoPagina' => $_POST['idSecaoPagina'],
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],
@@ -295,7 +295,7 @@ if (isset($_GET['operacao'])) {
 		);
 		$parametros = array_map('htmlentities', $parametros1);
 		$apiEntrada = array(
-			'idEmpresa' =>  $_POST['idEmpresa'],
+			'idEmpresa' =>  $_SESSION['idEmpresa'],
 			'idSecaoPagina' => $_POST['idSecaoPagina'],
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],
@@ -315,7 +315,7 @@ if (isset($_GET['operacao'])) {
 		);
 		$parametros = array_map('htmlentities', $parametros1);
 		$apiEntrada = array(
-			'idEmpresa' =>  $_POST['idEmpresa'],
+			'idEmpresa' =>  $_SESSION['idEmpresa'],
 			'idSecaoPagina' => $_POST['idSecaoPagina'],
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],
@@ -334,7 +334,7 @@ if (isset($_GET['operacao'])) {
 		);
 		$parametros = array_map('htmlentities', $parametros1);
 		$apiEntrada = array(
-			'idEmpresa' =>  $_POST['idEmpresa'],
+			'idEmpresa' =>  $_SESSION['idEmpresa'],
 			'idSecaoPagina' => $_POST['idSecaoPagina'],
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],
@@ -353,7 +353,7 @@ if (isset($_GET['operacao'])) {
 		);
 		$parametros = array_map('htmlentities', $parametros1);
 		$apiEntrada = array(
-			'idEmpresa' =>  $_POST['idEmpresa'],
+			'idEmpresa' =>  $_SESSION['idEmpresa'],
 			'idSecaoPagina' => $_POST['idSecaoPagina'],
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],
@@ -375,7 +375,7 @@ if (isset($_GET['operacao'])) {
 		);
 		$parametros = array_map('htmlentities', $parametros1);
 		$apiEntrada = array(
-			'idEmpresa' =>  $_POST['idEmpresa'],
+			'idEmpresa' =>  $_SESSION['idEmpresa'],
 			'idSecaoPagina' => $_POST['idSecaoPagina'],
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],
@@ -420,7 +420,7 @@ if (isset($_GET['operacao'])) {
 		);
 		$parametros = array_map('htmlentities', $parametros1);
 		$apiEntrada = array(
-			'idEmpresa' =>  $_POST['idEmpresa'],
+			'idEmpresa' =>  $_SESSION['idEmpresa'],
 			'idSecaoPagina' => $_POST['idSecaoPagina'],
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],
@@ -460,7 +460,7 @@ if (isset($_GET['operacao'])) {
 		);
 		$parametros = array_map('htmlentities', $parametros1);
 		$apiEntrada = array(
-			'idEmpresa' =>  $_POST['idEmpresa'],
+			'idEmpresa' =>  $_SESSION['idEmpresa'],
 			'idSecaoPagina' => $_POST['idSecaoPagina'],
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],
@@ -478,7 +478,7 @@ if (isset($_GET['operacao'])) {
 		);
 		$parametros = array_map('htmlentities', $parametros1);
 		$apiEntrada = array(
-			'idEmpresa' =>  $_POST['idEmpresa'],
+			'idEmpresa' =>  $_SESSION['idEmpresa'],
 			'idSecaoPagina' => $_POST['idSecaoPagina'],
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],
@@ -501,7 +501,7 @@ if (isset($_GET['operacao'])) {
 		);
 		$parametros = array_map('htmlentities', $parametros1);
 		$apiEntrada = array(
-			'idEmpresa' =>  $_POST['idEmpresa'],
+			'idEmpresa' =>  $_SESSION['idEmpresa'],
 			'idSecaoPagina' => $_POST['idSecaoPagina'],
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],
@@ -521,7 +521,7 @@ if (isset($_GET['operacao'])) {
 		);
 		$parametros = array_map('htmlentities', $parametros1);
 		$apiEntrada = array(
-			'idEmpresa' =>  $_POST['idEmpresa'],
+			'idEmpresa' =>  $_SESSION['idEmpresa'],
 			'idSecaoPagina' => $_POST['idSecaoPagina'],
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],
@@ -541,7 +541,7 @@ if (isset($_GET['operacao'])) {
 		);
 		$parametros = array_map('htmlentities', $parametros1);
 		$apiEntrada = array(
-			'idEmpresa' =>  $_POST['idEmpresa'],
+			'idEmpresa' =>  $_SESSION['idEmpresa'],
 			'idSecaoPagina' => $_POST['idSecaoPagina'],
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],
@@ -561,7 +561,7 @@ if (isset($_GET['operacao'])) {
 		);
 		$parametros = array_map('htmlentities', $parametros1);
 		$apiEntrada = array(
-			'idEmpresa' =>  $_POST['idEmpresa'],
+			'idEmpresa' =>  $_SESSION['idEmpresa'],
 			'idSecaoPagina' => $_POST['idSecaoPagina'],
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],
@@ -596,7 +596,7 @@ if (isset($_GET['operacao'])) {
 		);
 		$parametros = array_map('htmlentities', $parametros1);
 		$apiEntrada = array(
-			'idEmpresa' =>  $_POST['idEmpresa'],
+			'idEmpresa' =>  $_SESSION['idEmpresa'],
 			'idSecaoPagina' => $_POST['idSecaoPagina'],
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],
@@ -629,7 +629,7 @@ if (isset($_GET['operacao'])) {
 		);
 		$parametros = array_map('htmlentities', $parametros1);
 		$apiEntrada = array(
-			'idEmpresa' =>  $_POST['idEmpresa'],
+			'idEmpresa' =>  $_SESSION['idEmpresa'],
 			'idSecaoPagina' => $_POST['idSecaoPagina'],
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],
@@ -679,7 +679,7 @@ if (isset($_GET['operacao'])) {
 		);
 		$parametros = array_map('htmlentities', $parametros1);
 		$apiEntrada = array(
-			'idEmpresa' =>  $_POST['idEmpresa'],
+			'idEmpresa' =>  $_SESSION['idEmpresa'],
 			'idSecaoPagina' => $_POST['idSecaoPagina'],
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],
@@ -700,7 +700,7 @@ if (isset($_GET['operacao'])) {
 		);
 		$parametros = array_map('htmlentities', $parametros1);
 		$apiEntrada = array(
-			'idEmpresa' =>  $_POST['idEmpresa'],
+			'idEmpresa' =>  $_SESSION['idEmpresa'],
 			'idSecaoPagina' => $_POST['idSecaoPagina'],
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],
@@ -721,7 +721,7 @@ if (isset($_GET['operacao'])) {
 		);
 		$parametros = array_map('htmlentities', $parametros1);
 		$apiEntrada = array(
-			'idEmpresa' =>  $_POST['idEmpresa'],
+			'idEmpresa' =>  $_SESSION['idEmpresa'],
 			'idSecaoPagina' => $_POST['idSecaoPagina'],
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],
@@ -755,7 +755,7 @@ if (isset($_GET['operacao'])) {
 			'logo' => $novoNomeLogo,
 		);
 		$apiEntrada = array(
-			'idEmpresa' =>  $_POST['idEmpresa'],
+			'idEmpresa' =>  $_SESSION['idEmpresa'],
 			'idSecaoPagina' => $_POST['idSecaoPagina'],
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],
@@ -769,7 +769,7 @@ if (isset($_GET['operacao'])) {
 	// listaPosts_modelo1
 	if ($operacao == "listaPosts_modelo1") {
 		$apiEntrada = array(
-			'idEmpresa' =>  $_POST['idEmpresa'],
+			'idEmpresa' =>  $_SESSION['idEmpresa'],
 			'idSecaoPagina' => $_POST['idSecaoPagina'],
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],
@@ -783,7 +783,7 @@ if (isset($_GET['operacao'])) {
 	// sliderProdutos
 	if ($operacao == "sliderProdutos") {
 		$apiEntrada = array(
-			'idEmpresa' =>  $_POST['idEmpresa'],
+			'idEmpresa' =>  $_SESSION['idEmpresa'],
 			'idSecaoPagina' => $_POST['idSecaoPagina'],
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],
@@ -797,7 +797,7 @@ if (isset($_GET['operacao'])) {
 	// siderBar_modelo1 
 	if ($operacao == "siderBar_modelo1") {
 		$apiEntrada = array(
-			'idEmpresa' =>  $_POST['idEmpresa'],
+			'idEmpresa' =>  $_SESSION['idEmpresa'],
 			'idSecaoPagina' => $_POST['idSecaoPagina'],
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],
@@ -817,7 +817,7 @@ if (isset($_GET['operacao'])) {
 		);
 		$parametros = array_map('htmlentities', $parametros1);
 		$apiEntrada = array(
-			'idEmpresa' =>  $_POST['idEmpresa'],
+			'idEmpresa' =>  $_SESSION['idEmpresa'],
 			'idSecaoPagina' => $_POST['idSecaoPagina'],
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],
@@ -849,7 +849,7 @@ if (isset($_GET['operacao'])) {
 			'logo' => $novoNomeLogo,
 		);
 		$apiEntrada = array(
-			'idEmpresa' =>  $_POST['idEmpresa'],
+			'idEmpresa' =>  $_SESSION['idEmpresa'],
 			'idSecaoPagina' => $_POST['idSecaoPagina'],
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],
@@ -868,7 +868,7 @@ if (isset($_GET['operacao'])) {
 		);
 		$parametros = array_map('htmlentities', $parametros1);
 		$apiEntrada = array(
-			'idEmpresa' =>  $_POST['idEmpresa'],
+			'idEmpresa' =>  $_SESSION['idEmpresa'],
 			'idSecaoPagina' => $_POST['idSecaoPagina'],
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],
@@ -884,7 +884,7 @@ if (isset($_GET['operacao'])) {
 
 		$parametros = '';
 		$apiEntrada = array(
-			'idEmpresa' =>  $_POST['idEmpresa'],
+			'idEmpresa' =>  $_SESSION['idEmpresa'],
 			'idSecaoPagina' => $_POST['idSecaoPagina'],
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],
@@ -902,7 +902,7 @@ if (isset($_GET['operacao'])) {
 		);
 		$parametros = array_map('htmlentities', $parametros1);
 		$apiEntrada = array(
-			'idEmpresa' =>  $_POST['idEmpresa'],
+			'idEmpresa' =>  $_SESSION['idEmpresa'],
 			'idSecaoPagina' => $_POST['idSecaoPagina'],
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],
@@ -924,7 +924,7 @@ if (isset($_GET['operacao'])) {
 		);
 		$parametros = array_map('htmlentities', $parametros1);
 		$apiEntrada = array(
-			'idEmpresa' =>  $_POST['idEmpresa'],
+			'idEmpresa' =>  $_SESSION['idEmpresa'],
 			'idSecaoPagina' => $_POST['idSecaoPagina'],
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],
@@ -943,7 +943,7 @@ if (isset($_GET['operacao'])) {
 		);
 		$parametros = array_map('htmlentities', $parametros1);
 		$apiEntrada = array(
-			'idEmpresa' =>  $_POST['idEmpresa'],
+			'idEmpresa' =>  $_SESSION['idEmpresa'],
 			'idSecaoPagina' => $_POST['idSecaoPagina'],
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],
@@ -962,7 +962,7 @@ if (isset($_GET['operacao'])) {
 		);
 		$parametros = array_map('htmlentities', $parametros1);
 		$apiEntrada = array(
-			'idEmpresa' =>  $_POST['idEmpresa'],
+			'idEmpresa' =>  $_SESSION['idEmpresa'],
 			'idSecaoPagina' => $_POST['idSecaoPagina'],
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],
@@ -980,7 +980,7 @@ if (isset($_GET['operacao'])) {
 
 		$parametros = '';
 		$apiEntrada = array(
-			'idEmpresa' =>  $_POST['idEmpresa'],
+			'idEmpresa' =>  $_SESSION['idEmpresa'],
 			'idSecaoPagina' => $_POST['idSecaoPagina'],
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],
@@ -1001,7 +1001,7 @@ if (isset($_GET['operacao'])) {
 		);
 		$parametros = array_map('htmlentities', $parametros1);
 		$apiEntrada = array(
-			'idEmpresa' =>  $_POST['idEmpresa'],
+			'idEmpresa' =>  $_SESSION['idEmpresa'],
 			'idSecaoPagina' => $_POST['idSecaoPagina'],
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],
@@ -1017,7 +1017,7 @@ if (isset($_GET['operacao'])) {
 
 		$parametros = '';
 		$apiEntrada = array(
-			'idEmpresa' =>  $_POST['idEmpresa'],
+			'idEmpresa' =>  $_SESSION['idEmpresa'],
 			'idSecaoPagina' => $_POST['idSecaoPagina'],
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],
@@ -1037,7 +1037,7 @@ if (isset($_GET['operacao'])) {
 		);
 		$parametros = array_map('htmlentities', $parametros1);
 		$apiEntrada = array(
-			'idEmpresa' =>  $_POST['idEmpresa'],
+			'idEmpresa' =>  $_SESSION['idEmpresa'],
 			'idSecaoPagina' => $_POST['idSecaoPagina'],
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],

@@ -47,7 +47,7 @@ if (isset($_GET['operacao'])) {
 	if ($operacao == "inserir") {
 
 		$apiEntrada = array(
-			'idEmpresa' =>  $_POST['idEmpresa'],
+			'idEmpresa' =>  $_SESSION['idEmpresa'],
 			'slug' => $_POST['slug'],
 			'tituloPagina' => $_POST['tituloPagina'],
 			'arquivoFonte' => $_POST['arquivoFonte'],
@@ -60,7 +60,7 @@ if (isset($_GET['operacao'])) {
 	if ($operacao == "alterar") {
 
 		$apiEntrada = array(
-			'idEmpresa' =>  $_POST['idEmpresa'],
+			'idEmpresa' =>  $_SESSION['idEmpresa'],
 			'idPagina' => $_POST['idPagina'],
 			'tituloPagina' => $_POST['tituloPagina'],
 			'arquivoFonte' => $_POST['arquivoFonte'],
@@ -72,7 +72,7 @@ if (isset($_GET['operacao'])) {
 
 	if ($operacao == "excluir") {
 		$apiEntrada = array(
-			'idEmpresa' =>  $_POST['idEmpresa'],
+			'idEmpresa' =>  $_SESSION['idEmpresa'],
 			'idPagina' => $_POST['idPagina']
 		);
 

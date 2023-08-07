@@ -76,7 +76,7 @@ if (isset($_GET['operacao'])) {
 		}
 
 		$apiEntrada = array(
-			'idEmpresa' => $_POST['idEmpresa'],
+			'idEmpresa' =>  $_SESSION['idEmpresa'],
 			'nomeProduto' => $_POST['nomeProduto'],
 			'imgProduto' => $novoNomeImg,
 			'idMarca' => $_POST['idMarca'],
@@ -111,7 +111,7 @@ if (isset($_GET['operacao'])) {
 	
 
 		$apiEntrada = array(
-			'idEmpresa' => $_POST['idEmpresa'],
+			'idEmpresa' =>  $_SESSION['idEmpresa'],
 			'idProduto' => $_POST['idProduto'],
 			'nomeProduto' => $_POST['nomeProduto'],
 			//'imgProduto' => $novoNomeImg,
@@ -134,7 +134,7 @@ if (isset($_GET['operacao'])) {
 	if ($operacao == "excluir") {
 
 		$apiEntrada = array(
-			'idEmpresa' => $_POST['idEmpresa'],
+			'idEmpresa' =>  $_SESSION['idEmpresa'],
 			'idProduto' => $_POST['idProduto'],
 		);
 		if (!empty($_POST['imgProduto'])) {
