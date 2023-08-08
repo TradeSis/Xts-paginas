@@ -18,7 +18,7 @@ function buscaProdutos($idProduto = null, $idMarca = null)
 		'idMarca' => $idMarca,
 	);
 
-	$produtos = chamaAPI(null, '/paginas/produtos', json_encode($apiEntrada), 'GET');
+	$produtos = chamaAPI(null, URLROOT.'/cadastros/produtos', json_encode($apiEntrada), 'GET');
 	return $produtos;
 }
 
@@ -37,7 +37,7 @@ function buscaCardProdutos($idProduto = null)
 		'idEmpresa' => $idEmpresa,
 	);
 
-	$produtos = chamaAPI(null, '/paginas/produtos_card', json_encode($apiEntrada), 'GET');
+	$produtos = chamaAPI(null, URLROOT.'/cadastros/produtos_card', json_encode($apiEntrada), 'GET');
 	return $produtos;
 }
 
@@ -87,7 +87,7 @@ if (isset($_GET['operacao'])) {
 
 		);
 
-		$produtos = chamaAPI(null, '/paginas/produtos', json_encode($apiEntrada), 'PUT');
+		$produtos = chamaAPI(null, URLROOT.'/cadastros/produtos', json_encode($apiEntrada), 'PUT');
 	}
 
 	$operacao = $_GET['operacao'];
@@ -125,7 +125,7 @@ if (isset($_GET['operacao'])) {
 
 		/* echo json_encode($apiEntrada);
 		return; */
-		$produtos = chamaAPI(null, '/paginas/produtos', json_encode($apiEntrada), 'POST');
+		$produtos = chamaAPI(null, URLROOT.'/cadastros/produtos', json_encode($apiEntrada), 'POST');
 	}
 
 
@@ -146,7 +146,7 @@ if (isset($_GET['operacao'])) {
 			}
 		}
 
-		$produtos = chamaAPI(null, '/paginas/produtos', json_encode($apiEntrada), 'DELETE');
+		$produtos = chamaAPI(null, URLROOT.'/cadastros/produtos', json_encode($apiEntrada), 'DELETE');
 	}
 
 

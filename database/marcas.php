@@ -119,7 +119,7 @@ if (isset($_GET['operacao'])) {
 		);/* 
 		echo json_encode($apiEntrada);
 		return; */
-		$marca = chamaAPI(null, '/paginas/marcas', json_encode($apiEntrada), 'PUT');
+		$marca = chamaAPI(null, URLROOT.'/cadastros/marcas', json_encode($apiEntrada), 'PUT');
 		
 	}
 
@@ -170,7 +170,7 @@ if (isset($_GET['operacao'])) {
 			);
 		}
 
-		$marca = chamaAPI(null, '/paginas/marcas', json_encode($apiEntrada), 'POST');
+		$marca = chamaAPI(null, URLROOT.'/cadastros/marcas', json_encode($apiEntrada), 'POST');
 		
 	}
 
@@ -204,7 +204,7 @@ if (isset($_GET['operacao'])) {
 
 		}
 
-		$marca = chamaAPI(null, '/paginas/marcas', json_encode($apiEntrada), 'DELETE');
+		$marca = chamaAPI(null, URLROOT.'/cadastros/marcas', json_encode($apiEntrada), 'DELETE');
 	}
 
 
