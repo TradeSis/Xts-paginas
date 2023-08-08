@@ -1,8 +1,8 @@
 <?php
 //echo "-ENTRADA->".json_encode($jsonEntrada)."\n";
 
-
-$conexao = conectaMysql();
+$idEmpresa = null;
+$conexao = conectaMysql($idEmpresa);
 if (isset($jsonEntrada['idSecao'])) {
 
     $idSecao = $jsonEntrada['idSecao'];

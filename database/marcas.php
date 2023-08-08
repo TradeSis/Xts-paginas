@@ -4,40 +4,61 @@ include_once __DIR__ . "/../conexao.php";
 function buscaMarcasSlug($slug)
 {
 	
-	$autor = array();
+	$marcas = array();
 	
+	$idEmpresa = null;
+	if (isset($_SESSION['idEmpresa'])) {
+    	$idEmpresa = $_SESSION['idEmpresa'];
+	}
+
 	$apiEntrada = array(
 		'slug' => $slug,
+		'idEmpresa' => $idEmpresa
 	);
 
-	$autor = chamaAPI(null, '/paginas/marcas_slug', json_encode($apiEntrada), 'GET');
-	return $autor;
+	$marcas = chamaAPI(null,  URLROOT.'/cadastros/marcas', json_encode($apiEntrada), 'GET');
+
+	return $marcas;
 }
 
 function buscaMarcas($idMarca=null)
 {
 	
-	$autor = array();
+	$marcas = array();
+	
+	$idEmpresa = null;
+	if (isset($_SESSION['idEmpresa'])) {
+    	$idEmpresa = $_SESSION['idEmpresa'];
+	}
 	
 	$apiEntrada = array(
-		'idMarca' => $idMarca
+		'idMarca' => $idMarca,
+		'idEmpresa' => $idEmpresa
 	);
 
-	$autor = chamaAPI(null, '/paginas/marcas', json_encode($apiEntrada), 'GET');
-	return $autor;
+	$marcas = chamaAPI(null, URLROOT.'/cadastros/marcas', json_encode($apiEntrada), 'GET');
+
+	return $marcas;
 }
 
 function buscaMarcasAtiva($estado=null, $lojasEspecializadas=null)
 {
 	
-	$autor = array();
+	$marcas = array();
+
+	$idEmpresa = null;
+	if (isset($_SESSION['idEmpresa'])) {
+    	$idEmpresa = $_SESSION['idEmpresa'];
+	}
+	
 	$apiEntrada = array(
 		'estado' => $estado,
 		'lojasEspecializadas' => $lojasEspecializadas,
+		'idEmpresa' => $idEmpresa
 	);
 
-	$autor = chamaAPI(null, '/paginas/marcas', json_encode($apiEntrada), 'GET');
-	return $autor;
+	$marcas = chamaAPI(null, URLROOT.'/cadastros/marcas', json_encode($apiEntrada), 'GET');
+	return $marcas;
 }
 
 
@@ -82,6 +103,7 @@ if (isset($_GET['operacao'])) {
 		}
 
 		$apiEntrada = array(
+			'idEmpresa' =>  $_SESSION['idEmpresa'],
 			'slug' => $_POST['slug'],
 			'nomeMarca' => $_POST['nomeMarca'],
             'imgMarca' => $novoNomeImg,
@@ -97,7 +119,7 @@ if (isset($_GET['operacao'])) {
 		);/* 
 		echo json_encode($apiEntrada);
 		return; */
-		$marca = chamaAPI(null, '/paginas/marcas', json_encode($apiEntrada), 'PUT');
+		$marca = chamaAPI(null, URLROOT.'/cadastros/marcas', json_encode($apiEntrada), 'PUT');
 		
 	}
 
@@ -118,6 +140,7 @@ if (isset($_GET['operacao'])) {
 		
 			}
 			$apiEntrada = array(
+				'idEmpresa' =>  $_SESSION['idEmpresa'],
 				'idMarca' => $_POST['idMarca'],
 				'nomeMarca' => $_POST['nomeMarca'],
 				'imgMarca' => $novoNomeImg,
@@ -133,6 +156,7 @@ if (isset($_GET['operacao'])) {
 	
 		}else{
 			$apiEntrada = array(
+				'idEmpresa' =>  $_SESSION['idEmpresa'],
 				'idMarca' => $_POST['idMarca'],
 				'nomeMarca' => $_POST['nomeMarca'],
 				'descricaoMarca' => $_POST['descricaoMarca'],
@@ -146,7 +170,7 @@ if (isset($_GET['operacao'])) {
 			);
 		}
 
-		$marca = chamaAPI(null, '/paginas/marcas', json_encode($apiEntrada), 'POST');
+		$marca = chamaAPI(null, URLROOT.'/cadastros/marcas', json_encode($apiEntrada), 'POST');
 		
 	}
 
@@ -156,6 +180,7 @@ if (isset($_GET['operacao'])) {
 	if ($operacao=="excluir") {
 
 		$apiEntrada = array(
+			'idEmpresa' =>  $_SESSION['idEmpresa'],
 			'idMarca' => $_POST['idMarca'],
 		);
 
@@ -179,7 +204,7 @@ if (isset($_GET['operacao'])) {
 
 		}
 
-		$marca = chamaAPI(null, '/paginas/marcas', json_encode($apiEntrada), 'DELETE');
+		$marca = chamaAPI(null, URLROOT.'/cadastros/marcas', json_encode($apiEntrada), 'DELETE');
 	}
 
 

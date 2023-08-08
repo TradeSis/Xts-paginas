@@ -16,7 +16,6 @@ include_once(ROOT . '/paginas/database/receitas.php');
 include_once(ROOT . '/paginas/database/eventos.php');
 $tema = buscatema();
 
-
 ?>
 <body>
 
@@ -42,8 +41,6 @@ if (isset($_GET['parametros'])) {
 }
 
 $paginaDados = buscaPagina($pagina);
-
-
 if ($paginaDados['arquivoFonte'] !== 'index.php') {
 
   if (isset($paginaDados['arquivoSingle']) && !$slugSingle == null) {
@@ -56,6 +53,7 @@ if ($paginaDados['arquivoFonte'] !== 'index.php') {
 }
 
 $secoesPaginas = buscaSecaoPagina($paginaDados['idPagina']);
+
 foreach ($secoesPaginas as $secaoPagina) {
     
     include 'paginas/secoes/' . $secaoPagina["tipoSecao"] . "/" . $secaoPagina["arquivoFonte"];

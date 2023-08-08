@@ -7,8 +7,14 @@ function buscaCategorias($idCategoria=null)
 	
 	$categorias = array();
 	
+	$idEmpresa = null;
+	if (isset($_SESSION['idEmpresa'])) {
+    	$idEmpresa = $_SESSION['idEmpresa'];
+	}
+
 	$apiEntrada = array(
 		'idCategoria' => $idCategoria,
+		'idEmpresa' => $idEmpresa,
 	);
 
 	$categorias = chamaAPI(null, '/paginas/categorias', json_encode($apiEntrada), 'GET');
@@ -22,6 +28,7 @@ if (isset($_GET['operacao'])) {
     if ($operacao=="inserir") {
 
 		$apiEntrada = array(
+			'idEmpresa' =>  $_SESSION['idEmpresa'],
 			'nomeCategoria' => $_POST['nomeCategoria'],	
 		);
 		$categorias = chamaAPI(null, '/paginas/categorias', json_encode($apiEntrada), 'PUT');
@@ -33,6 +40,7 @@ if (isset($_GET['operacao'])) {
     if ($operacao=="alterar") {
 
 		$apiEntrada = array(
+			'idEmpresa' =>  $_SESSION['idEmpresa'],
 			'idCategoria' => $_POST['idCategoria'],
 			'nomeCategoria' => $_POST['nomeCategoria'],
 			
@@ -44,6 +52,7 @@ if (isset($_GET['operacao'])) {
 	if ($operacao=="excluir") {
 
 		$apiEntrada = array(
+			'idEmpresa' =>  $_SESSION['idEmpresa'],
 			'idCategoria' => $_POST['idCategoria'],
 		);
 

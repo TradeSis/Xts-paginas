@@ -6,8 +6,15 @@ function buscaPagina($slug)
 {
 
 	$pagina = array();
+
+	$idEmpresa = null;
+	if (isset($_SESSION['idEmpresa'])) {
+    	$idEmpresa = $_SESSION['idEmpresa'];
+	}
+
 	$apiEntrada = array(
 		'slug' => $slug,
+		'idEmpresa' => $idEmpresa,
 	);
 	$pagina = chamaAPI(null, '/paginas/paginas_slug', json_encode($apiEntrada), 'GET');
 
@@ -17,9 +24,16 @@ function buscaPagina($slug)
 function buscaPaginas($idPagina = null, $idTema = null)
 {
 	$pagina = array();
+
+	$idEmpresa = null;
+	if (isset($_SESSION['idEmpresa'])) {
+    	$idEmpresa = $_SESSION['idEmpresa'];
+	}
+
 	$apiEntrada = array(
 		'idPagina' => $idPagina,
 		'idTema' => $idTema,
+		'idEmpresa' => $idEmpresa,
 	);
 	$pagina = chamaAPI(null, '/paginas/paginas', json_encode($apiEntrada), 'GET');
 
@@ -33,6 +47,7 @@ if (isset($_GET['operacao'])) {
 	if ($operacao == "inserir") {
 
 		$apiEntrada = array(
+			'idEmpresa' =>  $_SESSION['idEmpresa'],
 			'slug' => $_POST['slug'],
 			'tituloPagina' => $_POST['tituloPagina'],
 			'arquivoFonte' => $_POST['arquivoFonte'],
@@ -45,6 +60,7 @@ if (isset($_GET['operacao'])) {
 	if ($operacao == "alterar") {
 
 		$apiEntrada = array(
+			'idEmpresa' =>  $_SESSION['idEmpresa'],
 			'idPagina' => $_POST['idPagina'],
 			'tituloPagina' => $_POST['tituloPagina'],
 			'arquivoFonte' => $_POST['arquivoFonte'],
@@ -56,6 +72,7 @@ if (isset($_GET['operacao'])) {
 
 	if ($operacao == "excluir") {
 		$apiEntrada = array(
+			'idEmpresa' =>  $_SESSION['idEmpresa'],
 			'idPagina' => $_POST['idPagina']
 		);
 

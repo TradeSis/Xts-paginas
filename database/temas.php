@@ -5,8 +5,14 @@ function buscaTemas($idTema = null)
 {
 	$temas = array();
 
+	$idEmpresa = null;
+	if (isset($_SESSION['idEmpresa'])) {
+		$idEmpresa = $_SESSION['idEmpresa'];
+	}
+
 	$apiEntrada = array(
 		'idTema' => $idTema,
+		'idEmpresa' => $idEmpresa,
 	);
 
 	$temas = chamaAPI(null, '/paginas/temas', json_encode($apiEntrada), 'GET');
@@ -17,7 +23,13 @@ function buscaTema()
 {
 
 	$tema = array();
-	$conexao = conectaMysql();
+
+	$idEmpresa = null;
+	if (isset($_SESSION['idEmpresa'])) {
+		$idEmpresa = $_SESSION['idEmpresa'];
+	}
+
+	$conexao = conectaMysql(1);
 
 	$sql = "SELECT * FROM temas WHERE ativo = 1 LIMIT 1";
 
@@ -72,6 +84,7 @@ if (isset($_GET['operacao'])) {
 		);
 
 		$apiEntrada = array(
+			'idEmpresa' =>  $_SESSION['idEmpresa'], 
 			'idTema' => $_POST['idTema'],
 			'nomeTema' => $_POST['nomeTema'],
 			'css' => $_POST['css'],
@@ -82,7 +95,7 @@ if (isset($_GET['operacao'])) {
 		$tema = chamaAPI(null, '/paginas/temas', json_encode($apiEntrada), 'POST');
 	}
 
-	
+
 	if ($operacao == "padrao2") {
 		$imgPerfil = $_FILES['imgPerfil'];
 		if ($imgPerfil !== null) {
@@ -113,6 +126,7 @@ if (isset($_GET['operacao'])) {
 		);
 
 		$apiEntrada = array(
+			'idEmpresa' =>  $_SESSION['idEmpresa'], 
 			'idTema' => $_POST['idTema'],
 			'nomeTema' => $_POST['nomeTema'],
 			'css' => $_POST['css'],
@@ -123,7 +137,7 @@ if (isset($_GET['operacao'])) {
 		$tema = chamaAPI(null, '/paginas/temas', json_encode($apiEntrada), 'POST');
 	}
 
-	
+
 	if ($operacao == "padrao3") {
 		$imgPerfil = $_FILES['imgPerfil'];
 		if ($imgPerfil !== null) {
@@ -154,6 +168,7 @@ if (isset($_GET['operacao'])) {
 		);
 
 		$apiEntrada = array(
+			'idEmpresa' =>  $_SESSION['idEmpresa'], 
 			'idTema' => $_POST['idTema'],
 			'nomeTema' => $_POST['nomeTema'],
 			'css' => $_POST['css'],
@@ -167,6 +182,7 @@ if (isset($_GET['operacao'])) {
 	if ($operacao == "inserir") {
 
 		$apiEntrada = array(
+			'idEmpresa' =>  $_SESSION['idEmpresa'], 
 			'nomeTema' => $_POST['nomeTema'],
 			'css' => $_POST['css'],
 			'ativo' => $_POST['ativo'],
@@ -179,6 +195,7 @@ if (isset($_GET['operacao'])) {
 
 	if ($operacao == "alterar") {
 		$apiEntrada = array(
+			'idEmpresa' =>  $_SESSION['idEmpresa'], 
 			'idTema' => $_POST['idTema'],
 			'nomeTema' => $_POST['nomeTema'],
 			'css' => $_POST['css'],
@@ -195,6 +212,7 @@ if (isset($_GET['operacao'])) {
 
 	if ($operacao == "excluir") {
 		$apiEntrada = array(
+			'idEmpresa' =>  $_SESSION['idEmpresa'], 
 			'idTema' => $_POST['idTema'],
 		);
 		$tema = chamaAPI(null, '/paginas/temas', json_encode($apiEntrada), 'DELETE');

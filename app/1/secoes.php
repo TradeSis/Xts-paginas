@@ -2,7 +2,9 @@
 //echo "-ENTRADA->".json_encode($jsonEntrada)."\n";
 
 
-$conexao = conectaMysql();
+$idEmpresa = null;
+
+$conexao = conectaMysql($idEmpresa);
 $secoes = array();
 
 $sql = "SELECT * FROM secoes ";

@@ -32,7 +32,6 @@ $temporaria = explode('.', $arquivoFonte);
                             <label class="labelForm">Pagina</label>
                             <input type="text" name="slug" class="form-control" value="<?php echo $secoesPagina['tituloPagina'] ?>" disabled>
                             <input type="text" class="form-control" name="idPagina" value="<?php echo $secoesPagina['idPagina'] ?>" style="display: none">
-
                         </div>
                     </div>
 

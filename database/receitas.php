@@ -6,11 +6,17 @@ function buscaReceitasSlug($slug)
 	
 	$post = array();
 
+	$idEmpresa = null;
+	if (isset($_SESSION['idEmpresa'])) {
+    	$idEmpresa = $_SESSION['idEmpresa'];
+	}
+	
 	$apiEntrada = array(
 		'slug' => $slug,
+		'idEmpresa' => $idEmpresa,
 	);
 	$post = chamaAPI(null, '/paginas/receitas_slug', json_encode($apiEntrada), 'GET');
-	//echo json_encode($post);
+
 	return $post;
 }
 
@@ -19,8 +25,14 @@ function buscaReceitas($idReceita=null)
 	
 	$receitas = array();
 	
+	$idEmpresa = null;
+	if (isset($_SESSION['idEmpresa'])) {
+    	$idEmpresa = $_SESSION['idEmpresa'];
+	}
+
 	$apiEntrada = array(
 		'idReceita' => $idReceita,
+		'idEmpresa' => $idEmpresa,
 	);
 
 	$receitas = chamaAPI(null, '/paginas/receitas', json_encode($apiEntrada), 'GET');
@@ -49,6 +61,7 @@ if (isset($_GET['operacao'])) {
 		}
 
 		$apiEntrada = array(
+			'idEmpresa' =>  $_SESSION['idEmpresa'],
 			'slug' => $_POST['slug'],
 			'nomeReceita' => $_POST['nomeReceita'],
 			'conteudoReceita' => $_POST['conteudoReceita'],
@@ -76,6 +89,7 @@ if (isset($_GET['operacao'])) {
 		
 			}
 			$apiEntrada = array(
+				'idEmpresa' =>  $_SESSION['idEmpresa'],
 				'idReceita' => $_POST['idReceita'],
 				'nomeReceita' => $_POST['nomeReceita'],
 				'conteudoReceita' => $_POST['conteudoReceita'],
@@ -85,6 +99,7 @@ if (isset($_GET['operacao'])) {
 	
 		}else{
 			$apiEntrada = array(
+				'idEmpresa' =>  $_SESSION['idEmpresa'],
 				'idReceita' => $_POST['idReceita'],
 				'nomeReceita' => $_POST['nomeReceita'],
 				'conteudoReceita' => $_POST['conteudoReceita'],
@@ -102,6 +117,7 @@ if (isset($_GET['operacao'])) {
 	if ($operacao=="excluir") {
 
 		$apiEntrada = array(
+			'idEmpresa' =>  $_SESSION['idEmpresa'],
 			'idReceita' => $_POST['idReceita'],
 		);
 

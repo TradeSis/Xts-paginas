@@ -104,6 +104,7 @@ if ($metodo == "GET") {
       include 'produtos_card.php';
       break;
 
+
     default:
       $jsonSaida = json_decode(json_encode(
         array(
