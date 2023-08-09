@@ -6,7 +6,7 @@ if (isset($jsonEntrada["idEmpresa"])) {
     $idEmpresa = $jsonEntrada["idEmpresa"];
 }
 
-$conexao = conectaMysql(1);
+$conexao = conectaMysql($idEmpresa);
 $secoespagina = array();
 
 $sql = "SELECT secoespagina.*, secoes.*, paginas.*, secoes.arquivoFonte AS arquivoFonte2 FROM secoespagina

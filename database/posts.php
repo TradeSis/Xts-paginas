@@ -6,15 +6,8 @@ function buscaPostSlug($slug)
 	
 	$post = array();
 
-	$idEmpresa = null;
-	/*
-	if (isset($_SESSION['idEmpresa'])) {
-    	$idEmpresa = $_SESSION['idEmpresa'];
-	}*/
-
 	$apiEntrada = array(
 		'slug' => $slug,
-		'idEmpresa' => $idEmpresa,
 	);
 	$post = chamaAPI(null, '/paginas/posts_slug', json_encode($apiEntrada), 'GET');
 	//echo json_encode($post);
@@ -25,15 +18,9 @@ function buscaPosts($idPost=null)
 {
 	
 	$post = array();
-	
-	$idEmpresa = null;
-	if (isset($_SESSION['idEmpresa'])) {
-    	$idEmpresa = $_SESSION['idEmpresa'];
-	}
 
 	$apiEntrada = array(
 		'idPost' => $idPost,
-		'idEmpresa' => $idEmpresa,
 	);
 	
 	$post = chamaAPI(null, '/paginas/posts', json_encode($apiEntrada), 'GET');
@@ -46,15 +33,9 @@ function buscaPostsCategoria($idCategoria=null,$qtdPosts=null)
 	
 	$post = array();
 	
-	$idEmpresa = null;
-	if (isset($_SESSION['idEmpresa'])) {
-    	$idEmpresa = $_SESSION['idEmpresa'];
-	}
-	
 	$apiEntrada = array(
 		'idCategoria' => $idCategoria,
 		'qtdPosts' => $qtdPosts,
-		'idEmpresa' => $idEmpresa,
 	);
 	
 	$post = chamaAPI(null, '/paginas/posts', json_encode($apiEntrada), 'GET');
@@ -89,7 +70,7 @@ if (isset($_GET['operacao'])) {
 		}
 		
 		$apiEntrada = array(
-			'idEmpresa' =>  $_SESSION['idEmpresa'],
+			
             'slug' => $_POST['slug'],
 		    'titulo' => $_POST['titulo'],
 		    'imgDestaque' => $novoNomeFoto,
@@ -118,7 +99,7 @@ if (isset($_GET['operacao'])) {
 		
 			}
 			$apiEntrada = array(
-			'idEmpresa' =>  $_SESSION['idEmpresa'],
+			
 			'idPost' => $_POST['idPost'],
 		    'slug' => $_POST['slug'],
 		    'titulo' => $_POST['titulo'],
@@ -132,7 +113,7 @@ if (isset($_GET['operacao'])) {
 	
 		}else{
 			$apiEntrada = array(
-				'idEmpresa' =>  $_SESSION['idEmpresa'],
+				
 				'idPost' => $_POST['idPost'],
 				'slug' => $_POST['slug'],
 				'titulo' => $_POST['titulo'],
@@ -151,7 +132,7 @@ if (isset($_GET['operacao'])) {
 	
 	if ($operacao=="excluir") {
 		$apiEntrada = array(
-			'idEmpresa' =>  $_SESSION['idEmpresa'],
+			
 			'idPost' => $_POST['idPost'],
 		);
 

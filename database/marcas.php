@@ -5,15 +5,9 @@ function buscaMarcasSlug($slug)
 {
 	
 	$marcas = array();
-	
-	$idEmpresa = null;
-	if (isset($_SESSION['idEmpresa'])) {
-    	$idEmpresa = $_SESSION['idEmpresa'];
-	}
 
 	$apiEntrada = array(
 		'slug' => $slug,
-		'idEmpresa' => $idEmpresa
 	);
 
 	$marcas = chamaAPI(null,  URLROOT.'/cadastros/marcas', json_encode($apiEntrada), 'GET');
@@ -25,15 +19,9 @@ function buscaMarcas($idMarca=null)
 {
 	
 	$marcas = array();
-	
-	$idEmpresa = null;
-	if (isset($_SESSION['idEmpresa'])) {
-    	$idEmpresa = $_SESSION['idEmpresa'];
-	}
-	
+
 	$apiEntrada = array(
 		'idMarca' => $idMarca,
-		'idEmpresa' => $idEmpresa
 	);
 
 	$marcas = chamaAPI(null, URLROOT.'/cadastros/marcas', json_encode($apiEntrada), 'GET');
@@ -46,15 +34,9 @@ function buscaMarcasAtiva($estado=null, $lojasEspecializadas=null)
 	
 	$marcas = array();
 
-	$idEmpresa = null;
-	if (isset($_SESSION['idEmpresa'])) {
-    	$idEmpresa = $_SESSION['idEmpresa'];
-	}
-	
 	$apiEntrada = array(
 		'estado' => $estado,
 		'lojasEspecializadas' => $lojasEspecializadas,
-		'idEmpresa' => $idEmpresa
 	);
 
 	$marcas = chamaAPI(null, URLROOT.'/cadastros/marcas', json_encode($apiEntrada), 'GET');
@@ -103,7 +85,7 @@ if (isset($_GET['operacao'])) {
 		}
 
 		$apiEntrada = array(
-			'idEmpresa' =>  $_SESSION['idEmpresa'],
+			
 			'slug' => $_POST['slug'],
 			'nomeMarca' => $_POST['nomeMarca'],
             'imgMarca' => $novoNomeImg,
@@ -140,7 +122,7 @@ if (isset($_GET['operacao'])) {
 		
 			}
 			$apiEntrada = array(
-				'idEmpresa' =>  $_SESSION['idEmpresa'],
+				
 				'idMarca' => $_POST['idMarca'],
 				'nomeMarca' => $_POST['nomeMarca'],
 				'imgMarca' => $novoNomeImg,
@@ -156,7 +138,7 @@ if (isset($_GET['operacao'])) {
 	
 		}else{
 			$apiEntrada = array(
-				'idEmpresa' =>  $_SESSION['idEmpresa'],
+				
 				'idMarca' => $_POST['idMarca'],
 				'nomeMarca' => $_POST['nomeMarca'],
 				'descricaoMarca' => $_POST['descricaoMarca'],
@@ -180,7 +162,7 @@ if (isset($_GET['operacao'])) {
 	if ($operacao=="excluir") {
 
 		$apiEntrada = array(
-			'idEmpresa' =>  $_SESSION['idEmpresa'],
+			
 			'idMarca' => $_POST['idMarca'],
 		);
 

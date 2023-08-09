@@ -6,15 +6,8 @@ function buscaSecaoPagina($idPagina)
 
 	$secoesPagina = array();
 
-	$idEmpresa = null;
-	/*
-	if (isset($_SESSION['idEmpresa'])) {
-    	$idEmpresa = $_SESSION['idEmpresa'];
-	}*/
-
 	$apiEntrada = array(
 		'idPagina' => $idPagina,
-		'idEmpresa' => $idEmpresa,
 	);
 	$secoesPagina = chamaAPI(null, '/paginas/secoesPagina_individual', json_encode($apiEntrada), 'GET');
 	return $secoesPagina;
@@ -25,15 +18,9 @@ function buscaSecaoPaginas($idSecaoPagina = null, $idPagina = null)
 
 	$secoesPagina = array();
 
-	$idEmpresa = null;
-	if (isset($_SESSION['idEmpresa'])) {
-    	$idEmpresa = $_SESSION['idEmpresa'];
-	}
-
 	$apiEntrada = array(
 		'idSecaoPagina' => $idSecaoPagina,
 		'idPagina' => $idPagina,
-		'idEmpresa' => $idEmpresa,
 	);
 
 	$secoesPagina = chamaAPI(null, '/paginas/secoesPagina', json_encode($apiEntrada), 'GET');
@@ -48,7 +35,7 @@ if (isset($_GET['operacao'])) {
 	if ($operacao == "inserir") {
 
 		$apiEntrada = array(
-			'idEmpresa' =>  $_SESSION['idEmpresa'],
+			
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],
 			'ordem' => $_POST['ordem'],
@@ -76,7 +63,7 @@ if (isset($_GET['operacao'])) {
 
 		$parametros = array_map('htmlentities', $parametros1);
 		$apiEntrada = array(
-			'idEmpresa' =>  $_SESSION['idEmpresa'],
+			
 			'idSecaoPagina' => $_POST['idSecaoPagina'],
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],
@@ -89,7 +76,7 @@ if (isset($_GET['operacao'])) {
 
 	if ($operacao == "excluir") {
 		$apiEntrada = array(
-			'idEmpresa' =>  $_SESSION['idEmpresa'],
+			
 			'idSecaoPagina' => $_POST['idSecaoPagina'],
 		);
 
