@@ -7,9 +7,10 @@ function buscaReceitasSlug($slug)
 	$post = array();
 
 	$idEmpresa = null;
+	/*
 	if (isset($_SESSION['idEmpresa'])) {
     	$idEmpresa = $_SESSION['idEmpresa'];
-	}
+	}*/
 	
 	$apiEntrada = array(
 		'slug' => $slug,

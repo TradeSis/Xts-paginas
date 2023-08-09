@@ -7,9 +7,10 @@ function buscaSecaoPagina($idPagina)
 	$secoesPagina = array();
 
 	$idEmpresa = null;
+	/*
 	if (isset($_SESSION['idEmpresa'])) {
     	$idEmpresa = $_SESSION['idEmpresa'];
-	}
+	}*/
 
 	$apiEntrada = array(
 		'idPagina' => $idPagina,

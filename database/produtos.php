@@ -8,9 +8,10 @@ function buscaProdutos($idProduto = null, $idMarca = null)
 	$produtos = array();
 
 	$idEmpresa = null;
+	/*
 	if (isset($_SESSION['idEmpresa'])) {
 		$idEmpresa = $_SESSION['idEmpresa'];
-	}
+	}*/
 
 	$apiEntrada = array(
 		'idEmpresa' => $idEmpresa,

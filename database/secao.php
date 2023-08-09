@@ -7,9 +7,10 @@ function buscaSecao($idSecao=null)
 	$secao = array();
 	
 	$idEmpresa = null;
+	/*
 	if (isset($_SESSION['idEmpresa'])) {
     	$idEmpresa = $_SESSION['idEmpresa'];
-	}
+	}*/
 
 	$apiEntrada = array(
 		'idSecao' => $idSecao,
