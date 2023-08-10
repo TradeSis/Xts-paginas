@@ -1,27 +1,13 @@
 <?php
-
 include_once __DIR__ . "/../config.php";
-
-if (!isset($_SESSION['idEmpresa'])) {
-    echo "<script>top.window.location = '" . URLROOT . "/sistema/login.php'</script>";
-    return;
-}
-
 include_once ROOT . "/sistema/painel.php";
 include_once ROOT . "/sistema/database/loginAplicativo.php";
-$nivelMenuLogin = null;
 
-if ($_SESSION["idEmpresa"]==1) { // Proteção
-    $nivelMenuLogin =  buscaLoginAplicativo($_SESSION['idLogin'],'Paginas'); //Sistema
-}
-$configuracao = 1; 
+$nivelMenuLogin =  buscaLoginAplicativo($_SESSION['idLogin'],'Paginas');
 
-if($nivelMenuLogin == null){
-    return;
-}else{
-    $nivelMenu   =  $nivelMenuLogin['nivelMenu'];
-}
+$configuracao = 1;
 
+$nivelMenu   =   $nivelMenuLogin['nivelMenu'];
 
 ?>
 
