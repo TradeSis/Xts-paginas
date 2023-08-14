@@ -11,14 +11,6 @@ $nivelMenu   =   $nivelMenuLogin['nivelMenu'];
 
 ?>
 
-<style>
-    .nav-link.active {
-        border-bottom: 3px solid #2E59D9;
-        border-radius: 3px 3px 0 0;
-        color: #1B4D60;
-        background-color: transparent;
-    }
-</style>
 
 <div class="container-fluid mt-1">
     <div class="row">
@@ -35,33 +27,33 @@ $nivelMenu   =   $nivelMenuLogin['nivelMenu'];
 
 
             <?php if ($nivelMenu>=3) { ?>
-                <li class="nav-item ">
-                    <a class="nav-link <?php if ($tab=="posts") {echo " active ";} ?>" 
+                <li class="nav-item mr-1 ">
+                    <a class="nav-link1 nav-link <?php if ($tab=="posts") {echo " active ";} ?>" 
                         href="?tab=posts" 
                         role="tab"                        
-                        style="color:black">Posts</a>
+                        >Posts</a>
                 </li>
             <?php } if ($nivelMenu>=3) { ?>
-                <li class="nav-item ">
-                    <a class="nav-link <?php if ($tab=="receitas") {echo " active ";} ?>" 
+                <li class="nav-item mr-1 ">
+                    <a class="nav-link1 nav-link <?php if ($tab=="receitas") {echo " active ";} ?>" 
                         href="?tab=receitas" 
                         role="tab"                        
-                        style="color:black">Receitas</a>
+                        >Receitas</a>
                 </li>
             <?php } if ($nivelMenu>=3) { ?>
-                <li class="nav-item ">
-                    <a class="nav-link <?php if ($tab=="eventos") {echo " active ";} ?>" 
+                <li class="nav-item mr-1 ">
+                    <a class="nav-link1 nav-link <?php if ($tab=="eventos") {echo " active ";} ?>" 
                         href="?tab=eventos" 
                         role="tab"                        
-                        style="color:black">Eventos</a>
+                        >Eventos</a>
                 </li>
             <?php } if ($nivelMenu>=4) { ?>
-                <li class="nav-item ">
-                    <a class="nav-link <?php if ($tab=="configuracao") {echo " active ";} ?>" 
+                <li class="nav-item mr-1 ">
+                    <a class="nav-link1 nav-link <?php if ($tab=="configuracao") {echo " active ";} ?>" 
                         href="?tab=configuracao" 
                         role="tab"                        
                         data-toggle="tooltip" data-placement="top" title="Configurações"                   
-                        style="color:black"><i class="bi bi-gear" style="font-size: 18px;"></i></a>
+                        ><i class="bi bi-gear"></i></a>
                 </li>
             <?php } ?>
 
