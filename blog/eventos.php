@@ -9,18 +9,18 @@ $eventos = buscaEventos();
         
             <div class="row mt-4">
                 <div class="col-sm-8">
-                        <h4 class="tituloTabela">Eventos</h4>
+                        <h2 class="tituloTabela">Eventos</h2>
                         
                     </div>
 
                 <div class="col-sm-4" style="text-align:right">
-                        <a href="eventos_inserir.php" role="button" class="btn btn-primary">Adicionar</a>
+                        <a href="eventos_inserir.php" role="button" class="btn btn-success"><i class="bi bi-plus-square"></i>&nbsp Novo</a>
                     </div>
           
             </div>
-        <div class="card shadow mt-2">
+        <div class="card mt-2 text-center">
             <table class="table">
-                <thead>
+                <thead class="cabecalhoTabela">
                     <tr>
                         <th>Foto</th>
                         <th>Titulo</th>
@@ -41,10 +41,9 @@ $eventos = buscaEventos();
                         <td><?php echo date('d/m/Y', strtotime($evento['dataEvento']))?></td>
                         <td><?php echo $evento['localEvento'] ?></td>
                         <td><?php echo $evento['tipoEvento'] ?></td>
-                        <td style="padding-right: 3px">
-                            <a class="btn btn-primary btn-sm" href="eventos_alterar.php?idEvento=<?php echo $evento['idEvento'] ?>" role="button"><i class="bi bi-pencil-square"></i></a>
-                        </td>
-                        <td style="padding-left: 3px">
+                        <td>
+                            <a class="btn btn-warning btn-sm" href="eventos_alterar.php?idEvento=<?php echo $evento['idEvento'] ?>" role="button"><i class="bi bi-pencil-square"></i></a>
+                        
                             <a class="btn btn-danger btn-sm" href="eventos_excluir.php?idEvento=<?php echo $evento['idEvento'] ?>" role="button"><i class="bi bi-trash3"></i></a>
                         </td>
                     </tr>

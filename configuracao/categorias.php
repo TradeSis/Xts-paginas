@@ -6,22 +6,22 @@ $categorias = buscaCategorias();
 ?>
 
 <body class="bg-transparent">
-    <div class="container text-center" style="margin-top:30px"> 
+    <div class="container" style="margin-top:30px"> 
         
             <div class="row mt-4">
                 <div class="col-sm-8">
-                        <h4 class="tituloTabela">Categorias</h4>
+                        <h2 class="tituloTabela">Categorias</h2>
                         
                     </div>
 
                 <div class="col-sm-4" style="text-align:right">
-                        <a href="categorias_inserir.php" role="button" class="btn btn-primary">Adicionar</a>
+                        <a href="categorias_inserir.php" role="button" class="btn btn-success"><i class="bi bi-plus-square"></i>&nbsp Novo</a>
                     </div>
           
             </div>
-        <div class="card shadow mt-2">
+        <div class="card mt-2 text-center">
             <table class="table">
-                <thead>
+                <thead class="cabecalhoTabela">
                     <tr>
                         <th>Nome</th>
                         <th>Ação</th>
@@ -35,8 +35,8 @@ $categorias = buscaCategorias();
                     <tr>
                         <td><?php echo $categoria['nomeCategoria'] ?></td>
                         <td>
-                            <a class="btn btn-primary btn-sm" href="categorias_alterar.php?idCategoria=<?php echo $categoria['idCategoria'] ?>" role="button">Editar</a>
-                            <a class="btn btn-danger btn-sm" href="categorias_excluir.php?idCategoria=<?php echo $categoria['idCategoria'] ?>" role="button">Excluir</a>
+                            <a class="btn btn-warning btn-sm" href="categorias_alterar.php?idCategoria=<?php echo $categoria['idCategoria'] ?>" role="button"><i class="bi bi-pencil-square"></i></a>
+                            <a class="btn btn-danger btn-sm" href="categorias_excluir.php?idCategoria=<?php echo $categoria['idCategoria'] ?>" role="button"><i class="bi bi-trash3"></i></a>
                         </td>
                     </tr>
                 <?php } ?>

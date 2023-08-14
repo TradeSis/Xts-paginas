@@ -9,18 +9,18 @@ $receitas = buscaReceitas();
         
             <div class="row mt-4">
                 <div class="col-sm-8">
-                        <h4 class="tituloTabela">Receitas</h4>
+                        <h2 class="tituloTabela">Receitas</h2>
                         
                     </div>
 
                 <div class="col-sm-4" style="text-align:right">
-                        <a href="receitas_inserir.php" role="button" class="btn btn-primary">Adicionar</a>
+                        <a href="receitas_inserir.php" role="button" class="btn btn-success"><i class="bi bi-plus-square"></i>&nbsp Novo</a>
                     </div>
           
             </div>
-        <div class="card shadow mt-2">
+        <div class="card mt-2 text-center">
             <table class="table">
-                <thead>
+                <thead class="cabecalhoTabela">
                     <tr>
                         <th>Foto</th>
                         <th>Titulo</th>
@@ -39,7 +39,7 @@ $receitas = buscaReceitas();
                         <td><?php echo $noticia['autorReceita'] ?></td>
                         <td>
                             <a class="btn btn-info btn-sm" href="#" role="button"><i class="bi bi-eye"></i></a>
-                            <a class="btn btn-primary btn-sm" href="receitas_alterar.php?idReceita=<?php echo $noticia['idReceita'] ?>" role="button"><i class="bi bi-pencil-square"></i></a>
+                            <a class="btn btn-warning btn-sm" href="receitas_alterar.php?idReceita=<?php echo $noticia['idReceita'] ?>" role="button"><i class="bi bi-pencil-square"></i></a>
                             <a class="btn btn-danger btn-sm" href="receitas_excluir.php?idReceita=<?php echo $noticia['idReceita'] ?>" role="button"><i class="bi bi-trash3"></i></a>
                         </td>
                     </tr>

@@ -8,27 +8,20 @@ $secoes = buscaTipoSecao($_GET['tipoSecao']);
 ?>
 
 <body class="bg-transparent">
-    <div class="container text-center" style="margin-top:30px"> 
+    <div class="container" style="margin-top:30px"> 
         
             <div class="row mt-4">
                 <div class="col-sm-8">
-                        <h4 class="tituloTabela"><?php echo $_GET['tipoSecao'] ?></h4>
-                        
-                    </div>
-
-                <!-- <div class="col-sm-4" style="text-align:right">
-                        <a href="secao_inserir.php" role="button" class="btn btn-primary">Adicionar</a>
-                    </div> -->
-          
+                    <h2 class="tituloTabela"><?php echo $_GET['tipoSecao'] ?></h2>
+                </div>
             </div>
-        <div class="card shadow mt-2">
+        <div class="card mt-2 text-center">
             <table class="table">
                 <thead>
                     <tr>
 
                         <th>Titulo</th>
                         <th>Arquivo Fonte</th>
-
                         <th>Ação</th>
 
                     </tr>
@@ -42,8 +35,8 @@ $secoes = buscaTipoSecao($_GET['tipoSecao']);
                         <td><?php echo $secao['arquivoFonte'] ?></td>
                         
                         <td>
-                            <a class="btn btn-primary btn-sm" href="secao_alterar.php?idSecao=<?php echo $secao['idSecao'] ?>" role="button">Editar</a>
-                            <a class="btn btn-danger btn-sm" href="secao_excluir.php?idSecao=<?php echo $secao['idSecao'] ?>" role="button">Excluir</a>
+                            <a class="btn btn-warning btn-sm" href="secao_alterar.php?idSecao=<?php echo $secao['idSecao'] ?>" role="button"><i class="bi bi-pencil-square"></i></a>
+                            <a class="btn btn-danger btn-sm" href="secao_excluir.php?idSecao=<?php echo $secao['idSecao'] ?>" role="button"><i class="bi bi-trash3"></i></a>
                         </td>
                     </tr>
                 <?php } ?>

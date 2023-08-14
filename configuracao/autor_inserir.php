@@ -5,65 +5,63 @@ include_once('../head.php');
 
 <body class="bg-transparent">
 
-    <div class="container" style="margin-top:10px">
+    <div class="container p-4" style="margin-top:10px">
 
-        <div class="row mt-4">
+        <div class="row">
             <div class="col-sm-8">
-                <h3 class="col">Adicionar Autor</h3>
+                <h2 class="tituloTabela">Adicionar Autor</h2>
             </div>
             <div class="col-sm-4" style="text-align:right">
-                <a href="../configuracao/?tab=configuracao&stab=autor" role="button" class="btn btn-primary btn-sm">Voltar</a>
+                <a href="../configuracao/?tab=configuracao&stab=autor" role="button" class="btn btn-primary"><i class="bi bi-arrow-left-square"></i></i>&#32;Voltar</a>
             </div>
         </div>
-        <div class="container" style="margin-top: 10px">
 
-            <form action="../database/autor.php?operacao=inserir" method="post" enctype="multipart/form-data">
+        <form class="mb-4" action="../database/autor.php?operacao=inserir" method="post" enctype="multipart/form-data">
 
-                <div class="row">
-                    <div class="col-sm-12" style="margin-top: 10px">
-                        <div class="form-group">
-                            <label class='control-label' for='inputNormal' style="margin-top: -20px;">Nome</label>
-                            <input type="text" name="nomeAutor" class="form-control" required autocomplete="off">
-                        </div>
+            <div class="row">
+                <div class="col-sm-12" style="margin-top: 10px">
+                    <div class="form-group">
+                        <label class='control-label' for='inputNormal' style="margin-top: -20px;">Nome</label>
+                        <input type="text" name="nomeAutor" class="form-control" required autocomplete="off">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6" style="margin-top: 50px">
+                    <div class="col-sm-6" style="margin-top: -20px">
+                        <label>Foto</label>
+                        <label class="picture" for="foto" tabIndex="0">
+                            <span class="picture__image"></span>
+                        </label>
+                        <input type="file" name="fotoAutor" id="foto">
                     </div>
                 </div>
 
-                <div class="row">
-                    <div class="col-sm-6" style="margin-top: 50px">
-                        <div class="col-sm-6" style="margin-top: -20px">
-                            <label>Foto</label>
-                            <label class="picture" for="foto" tabIndex="0">
-                                <span class="picture__image"></span>
-                            </label>
-                            <input type="file" name="fotoAutor" id="foto">
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6" style="margin-top: 50px">
-                        <div class="col-sm-6" style="margin-top: -20px">
-                            <label>Banner</label>
-                            <label class="picture" for="banner" tabIndex="0">
-                                <span class="picture__image2"></span>
-                            </label>
-                            <input type="file" name="bannerAutor" id="banner">
-                        </div>
+                <div class="col-sm-6" style="margin-top: 50px">
+                    <div class="col-sm-6" style="margin-top: -20px">
+                        <label>Banner</label>
+                        <label class="picture" for="banner" tabIndex="0">
+                            <span class="picture__image2"></span>
+                        </label>
+                        <input type="file" name="bannerAutor" id="banner">
                     </div>
                 </div>
+            </div>
 
-                <div class="row">
-                    <div class="col-sm-3" style="margin-top: 10px">
-                        <div class="form-group">
-                            <label class='control-label' for='inputNormal' style="margin-top: -43px;">Sobre Mim</label>
-                            <textarea name="sobreMimAutor" id="" cols="135" rows="10"></textarea>
-                        </div>
+            <div class="row">
+                <div class="col-sm-3" style="margin-top: 10px">
+                    <div class="form-group">
+                        <label class='control-label' for='inputNormal' style="margin-top: -43px;">Sobre Mim</label>
+                        <textarea name="sobreMimAutor" id="" cols="120" rows="10"></textarea>
                     </div>
                 </div>
+            </div>
 
-                <div style="text-align:right; margin-right:-20px; margin-top:20px">
-                    <button type="submit" class="btn btn-sm btn-success">Cadastrar</button>
-                </div>
-            </form>
-        </div>
+            <div style="text-align:right;margin-top:20px">
+                <button type="submit" class="btn  btn-success"><i class="bi bi-sd-card-fill"></i>&#32;Cadastrar</button>
+            </div>
+        </form>
 
     </div>
 

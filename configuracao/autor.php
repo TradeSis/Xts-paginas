@@ -5,22 +5,22 @@ $autores = buscaAutor();
 ?>
 
 <body class="bg-transparent">
-    <div class="container text-center" style="margin-top:30px"> 
+    <div class="container" style="margin-top:30px"> 
         
             <div class="row mt-4">
                 <div class="col-sm-8">
-                        <h4 class="tituloTabela">Autor</h4>
+                        <h2 class="tituloTabela">Autor</h2>
                         
                     </div>
 
                 <div class="col-sm-4" style="text-align:right">
-                        <a href="autor_inserir.php" role="button" class="btn btn-primary">Adicionar</a>
+                        <a href="autor_inserir.php" role="button" class="btn btn-success"><i class="bi bi-plus-square"></i>&nbsp Novo</a>
                     </div>
           
             </div>
-        <div class="card shadow mt-2">
+        <div class="card mt-2 text-center">
             <table class="table">
-                <thead>
+                <thead class="cabecalhoTabela">
                     <tr>
                         <th>Foto</th>
                         <th>Nome</th>
@@ -36,7 +36,7 @@ $autores = buscaAutor();
                         <td><?php echo $autor['nomeAutor'] ?></td>
                         <td>
                             <a class="btn btn-info btn-sm" href="#" role="button"><i class="bi bi-eye"></i></a>
-                            <a class="btn btn-primary btn-sm" href="autor_alterar.php?idAutor=<?php echo $autor['idAutor'] ?>" role="button"><i class="bi bi-pencil-square"></i></a>
+                            <a class="btn btn-warning btn-sm" href="autor_alterar.php?idAutor=<?php echo $autor['idAutor'] ?>" role="button"><i class="bi bi-pencil-square"></i></a>
                             <a class="btn btn-danger btn-sm" href="autor_excluir.php?idAutor=<?php echo $autor['idAutor'] ?>" role="button"><i class="bi bi-trash3"></i></a>
                         </td>
                     </tr>
