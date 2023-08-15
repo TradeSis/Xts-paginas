@@ -23,33 +23,35 @@ $temas = buscaTemas();
 
         </div>
         <div class="card mt-2 text-center">
-            <table class="table">
-                <thead class="cabecalhoTabela">
-                    <tr>
-                        <th>Tema</th>
-                        <th>Css</th>
-                        <th>Ativo</th>
-                        <th>Ação</th>
+            <div class="table scrollbar-tabela">
+                <table class="table">
+                    <thead class="cabecalhoTabela">
+                        <tr>
+                            <th>Tema</th>
+                            <th>Css</th>
+                            <th>Ativo</th>
+                            <th>Ação</th>
 
-                    </tr>
-                </thead>
+                        </tr>
+                    </thead>
 
-                <?php
-                foreach ($temas as $tema) {
-                ?>
-                    <tr>
+                    <?php
+                    foreach ($temas as $tema) {
+                    ?>
+                        <tr>
 
-                        <td><?php echo $tema['nomeTema'] ?></td>
-                        <td><?php echo $tema['css'] ?></td>
-                        <td><?php echo $tema['ativo'] ?></td>
-                        <td>
-                            <a class="btn btn-warning btn-sm" href="temas_alterar.php?idTema=<?php echo $tema['idTema'] ?>" role="button"><i class="bi bi-pencil-square"></i></a>
-                            <a class="btn btn-danger btn-sm" href="temas_excluir.php?idTema=<?php echo $tema['idTema'] ?>" role="button"><i class="bi bi-trash3"></i></a>
-                        </td>
-                    </tr>
-                <?php } ?>
+                            <td><?php echo $tema['nomeTema'] ?></td>
+                            <td><?php echo $tema['css'] ?></td>
+                            <td><?php echo $tema['ativo'] ?></td>
+                            <td>
+                                <a class="btn btn-warning btn-sm" href="temas_alterar.php?idTema=<?php echo $tema['idTema'] ?>" role="button"><i class="bi bi-pencil-square"></i></a>
+                                <a class="btn btn-danger btn-sm" href="temas_excluir.php?idTema=<?php echo $tema['idTema'] ?>" role="button"><i class="bi bi-trash3"></i></a>
+                            </td>
+                        </tr>
+                    <?php } ?>
 
-            </table>
+                </table>
+            </div>
         </div>
     </div>
 
