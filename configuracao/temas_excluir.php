@@ -7,7 +7,7 @@ $tema = buscaTemas($_GET['idTema']);
 
 <body class="bg-transparent">
 
-    <div class="container p-4" style="margin-top:10px">
+    <div class="container formContainer">
 
         <div class="row">
             <div class="col-sm-8">
@@ -18,7 +18,7 @@ $tema = buscaTemas($_GET['idTema']);
             </div>
         </div>
 
-            <form class="mb-4" action="../database/temas.php?operacao=excluir" method="post">
+            <form action="../database/temas.php?operacao=excluir" method="post">
                 <div class="row">
                     <div class="col-sm-12" style="margin-top: 10px">
                         <div class="form-group">

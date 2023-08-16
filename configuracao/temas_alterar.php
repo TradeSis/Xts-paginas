@@ -11,7 +11,7 @@ $temporaria = explode('.', $programaForm);
 
 <body class="bg-transparent">
 
-    <div class="container p-4" style="margin-top:10px">
+    <div class="container formContainer">
 
         <div class="row">
             <div class="col-sm-8">
@@ -22,7 +22,7 @@ $temporaria = explode('.', $programaForm);
             </div>
         </div>
 
-            <form class="mb-4" action="../database/temas.php?operacao=<?php echo $temporaria[0] ?>" method="post" enctype="multipart/form-data">
+            <form action="../database/temas.php?operacao=<?php echo $temporaria[0] ?>" method="post" enctype="multipart/form-data">
                 <div class="row">
                     <div class="col-sm-6" style="margin-top: 10px">
                         <div class="form-group">

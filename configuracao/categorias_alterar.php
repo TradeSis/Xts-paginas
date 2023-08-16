@@ -8,7 +8,7 @@ $categoria = buscaCategorias($idCategoria);
 
 <body class="bg-transparent">
 
-    <div class="container p-4" style="margin-top:10px">
+    <div class="container formContainer">
 
         <div class="row">
             <div class="col-sm-8">
@@ -19,7 +19,7 @@ $categoria = buscaCategorias($idCategoria);
             </div>
         </div>
 
-        <form class="mb-4" action="../database/categorias.php?operacao=alterar" method="post" enctype="multipart/form-data">
+        <form action="../database/categorias.php?operacao=alterar" method="post" enctype="multipart/form-data">
 
             <div class="row">
                 <div class="col-sm-12" style="margin-top: 10px">

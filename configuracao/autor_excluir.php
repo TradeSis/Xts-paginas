@@ -10,7 +10,7 @@ $autor = buscaAutor($idAutor);
 
 <body class="bg-transparent">
 
-    <div class="container p-4" style="margin-top:20px">
+    <div class="container formContainer">
 
         <div class="row">
             <div class="col-sm-8">
@@ -22,7 +22,7 @@ $autor = buscaAutor($idAutor);
 
         </div>
 
-        <form class="mb-4" action="../database/autor.php?operacao=excluir" method="post">
+        <form action="../database/autor.php?operacao=excluir" method="post">
 
             <div class="row">
                 <div class="col-sm-12" style="margin-top: 10px">

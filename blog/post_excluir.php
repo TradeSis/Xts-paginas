@@ -11,7 +11,7 @@ $post = buscaPosts($_GET['idPost']);
 
 <body class="bg-transparent">
 
-    <div class="container p-4" style="margin-top:10px">
+    <div class="container formContainer">
 
         <div class="row">
             <div class="col-sm-8">
@@ -22,7 +22,7 @@ $post = buscaPosts($_GET['idPost']);
             </div>
         </div>
 
-        <form class="mb-4" action="../database/posts.php?operacao=excluir" method="post" enctype="multipart/form-data">
+        <form action="../database/posts.php?operacao=excluir" method="post" enctype="multipart/form-data">
 
             <div class="row">
                 <div class="col-sm-12" style="margin-top: 10px">

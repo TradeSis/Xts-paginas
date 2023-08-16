@@ -12,7 +12,7 @@ $secoesPaginas = buscaSecaoPagina($idPagina);
 
 <body class="bg-transparent">
 
-    <div class="container p-4" style="margin-top:20px">
+    <div class="container formContainer">
 
         <div class="row">
             <div class="col-sm-8">
@@ -23,7 +23,7 @@ $secoesPaginas = buscaSecaoPagina($idPagina);
             </div>
         </div>
 
-            <form class="mb-4" action="../database/paginas.php?operacao=alterar" method="post">
+            <form action="../database/paginas.php?operacao=alterar" method="post">
 
                 <div class="row">
                     <div class="col-sm-3" style="margin-top: 10px">
