@@ -23,7 +23,7 @@ $categorias = buscaCategorias();
             </div>
         </div>
 
-            <form action="../database/posts.php?operacao=alterar" method="post" enctype="multipart/form-data">
+            <form class="mb-4" action="../database/posts.php?operacao=alterar" method="post" enctype="multipart/form-data">
 
 
                 <div class="row">

@@ -16,7 +16,7 @@ include_once('../head.php');
             </div>
         </div>
 
-        <form action="../database/receitas.php?operacao=inserir" method="post" enctype="multipart/form-data">
+        <form class="mb-4" action="../database/receitas.php?operacao=inserir" method="post" enctype="multipart/form-data">
 
             <div class="row">
                 <div class="col-sm-3" style="margin-top: 10px">
