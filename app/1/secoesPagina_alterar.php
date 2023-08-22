@@ -17,6 +17,8 @@ if (isset($jsonEntrada['idSecaoPagina'])) {
     $listas = $jsonEntrada['listas'];
     
     $sql = "UPDATE `secoespagina` SET `idPagina`='$idPagina', `idSecao`='$idSecao',`ordem`='$ordem',`coluna`='$coluna',`parametros`='$parametros',`listas`='$listas' WHERE idSecaoPagina = $idSecaoPagina";
+
+    /* echo $sql; */
     if ($atualizar = mysqli_query($conexao, $sql)) {
         $jsonSaida = array(
             "status" => 200,
