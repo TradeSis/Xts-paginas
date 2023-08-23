@@ -13,7 +13,7 @@ $perfil = json_decode($tema['perfil'], true);
     <div class="row" style="margin-top: 30px;">
         <div class="col-sm-6">
             <label class='control-label' for='inputNormal' style="margin-top: -20px;">Menu</label>
-            <textarea name="menu" id="" cols="130" rows="5"><?php echo $tema['menu'] ?></textarea>
+            <textarea name="menu" id="" cols="120" rows="5"><?php echo $tema['menu'] ?></textarea>
         </div>
     </div>
     <br>

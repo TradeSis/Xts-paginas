@@ -6,7 +6,7 @@ function buscaTemas($idTema = null)
 	$temas = array();
 
 	$apiEntrada = array(
-		'idTema' => $idTema,
+		'idTema' => $idTema
 	);
 
 	$temas = chamaAPI(null, '/paginas/temas', json_encode($apiEntrada), 'GET');
@@ -17,6 +17,7 @@ function buscaTema()
 {
 
 	$tema = array();
+
 	$conexao = conectaMysql();
 
 	$sql = "SELECT * FROM temas WHERE ativo = 1 LIMIT 1";
@@ -82,7 +83,7 @@ if (isset($_GET['operacao'])) {
 		$tema = chamaAPI(null, '/paginas/temas', json_encode($apiEntrada), 'POST');
 	}
 
-	
+
 	if ($operacao == "padrao2") {
 		$imgPerfil = $_FILES['imgPerfil'];
 		if ($imgPerfil !== null) {
@@ -123,7 +124,7 @@ if (isset($_GET['operacao'])) {
 		$tema = chamaAPI(null, '/paginas/temas', json_encode($apiEntrada), 'POST');
 	}
 
-	
+
 	if ($operacao == "padrao3") {
 		$imgPerfil = $_FILES['imgPerfil'];
 		if ($imgPerfil !== null) {

@@ -1,8 +1,11 @@
 <?php
 //echo "-ENTRADA->".json_encode($jsonEntrada)."\n";
 
-
-$conexao = conectaMysql();
+$idEmpresa = null;
+	if (isset($jsonEntrada["idEmpresa"])) {
+    	$idEmpresa = $jsonEntrada["idEmpresa"];
+	}
+$conexao = conectaMysql($idEmpresa);
 if (isset($jsonEntrada['idSecaoPagina'])) {
 
 	$idSecaoPagina = $jsonEntrada['idSecaoPagina'];
@@ -14,6 +17,8 @@ if (isset($jsonEntrada['idSecaoPagina'])) {
     $listas = $jsonEntrada['listas'];
     
     $sql = "UPDATE `secoespagina` SET `idPagina`='$idPagina', `idSecao`='$idSecao',`ordem`='$ordem',`coluna`='$coluna',`parametros`='$parametros',`listas`='$listas' WHERE idSecaoPagina = $idSecaoPagina";
+
+    /* echo $sql; */
     if ($atualizar = mysqli_query($conexao, $sql)) {
         $jsonSaida = array(
             "status" => 200,

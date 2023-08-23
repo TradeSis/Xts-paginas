@@ -20,7 +20,7 @@ function buscaSecaoPaginas($idSecaoPagina = null, $idPagina = null)
 
 	$apiEntrada = array(
 		'idSecaoPagina' => $idSecaoPagina,
-		'idPagina' => $idPagina
+		'idPagina' => $idPagina,
 	);
 
 	$secoesPagina = chamaAPI(null, '/paginas/secoesPagina', json_encode($apiEntrada), 'GET');
@@ -35,7 +35,7 @@ if (isset($_GET['operacao'])) {
 	if ($operacao == "inserir") {
 
 		$apiEntrada = array(
-
+			
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],
 			'ordem' => $_POST['ordem'],
@@ -63,7 +63,7 @@ if (isset($_GET['operacao'])) {
 
 		$parametros = array_map('htmlentities', $parametros1);
 		$apiEntrada = array(
-
+			
 			'idSecaoPagina' => $_POST['idSecaoPagina'],
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],
@@ -76,6 +76,7 @@ if (isset($_GET['operacao'])) {
 
 	if ($operacao == "excluir") {
 		$apiEntrada = array(
+			
 			'idSecaoPagina' => $_POST['idSecaoPagina'],
 		);
 
@@ -137,6 +138,7 @@ if (isset($_GET['operacao'])) {
 
 		$parametros = array_map('htmlentities', $parametros1);
 		$apiEntrada = array(
+		
 			'idSecaoPagina' => $_POST['idSecaoPagina'],
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],
@@ -241,6 +243,7 @@ if (isset($_GET['operacao'])) {
 		$parametros = array_map('htmlentities', $parametros1);
 
 		$apiEntrada = array(
+		
 			'idSecaoPagina' => $_POST['idSecaoPagina'],
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],
@@ -260,6 +263,7 @@ if (isset($_GET['operacao'])) {
 		);
 		$parametros = array_map('htmlentities', $parametros1);
 		$apiEntrada = array(
+		
 			'idSecaoPagina' => $_POST['idSecaoPagina'],
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],
@@ -279,6 +283,7 @@ if (isset($_GET['operacao'])) {
 		);
 		$parametros = array_map('htmlentities', $parametros1);
 		$apiEntrada = array(
+		
 			'idSecaoPagina' => $_POST['idSecaoPagina'],
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],
@@ -298,6 +303,7 @@ if (isset($_GET['operacao'])) {
 		);
 		$parametros = array_map('htmlentities', $parametros1);
 		$apiEntrada = array(
+		
 			'idSecaoPagina' => $_POST['idSecaoPagina'],
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],
@@ -322,8 +328,9 @@ if (isset($_GET['operacao'])) {
 			'ordem' => $_POST['ordem'],
 			'coluna' => $_POST['coluna'],
 			'parametros' => json_encode($parametros),
+			'listas' => $_POST['listas'],
 		);
-
+		
 		$secoesPagina = chamaAPI(null, '/paginas/secoesPagina', json_encode($apiEntrada), 'POST');
 	}
 
@@ -334,6 +341,7 @@ if (isset($_GET['operacao'])) {
 		);
 		$parametros = array_map('htmlentities', $parametros1);
 		$apiEntrada = array(
+		
 			'idSecaoPagina' => $_POST['idSecaoPagina'],
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],
@@ -355,6 +363,7 @@ if (isset($_GET['operacao'])) {
 		);
 		$parametros = array_map('htmlentities', $parametros1);
 		$apiEntrada = array(
+		
 			'idSecaoPagina' => $_POST['idSecaoPagina'],
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],
@@ -399,6 +408,7 @@ if (isset($_GET['operacao'])) {
 		);
 		$parametros = array_map('htmlentities', $parametros1);
 		$apiEntrada = array(
+		
 			'idSecaoPagina' => $_POST['idSecaoPagina'],
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],
@@ -438,6 +448,7 @@ if (isset($_GET['operacao'])) {
 		);
 		$parametros = array_map('htmlentities', $parametros1);
 		$apiEntrada = array(
+		
 			'idSecaoPagina' => $_POST['idSecaoPagina'],
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],
@@ -455,6 +466,7 @@ if (isset($_GET['operacao'])) {
 		);
 		$parametros = array_map('htmlentities', $parametros1);
 		$apiEntrada = array(
+		
 			'idSecaoPagina' => $_POST['idSecaoPagina'],
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],
@@ -477,6 +489,7 @@ if (isset($_GET['operacao'])) {
 		);
 		$parametros = array_map('htmlentities', $parametros1);
 		$apiEntrada = array(
+		
 			'idSecaoPagina' => $_POST['idSecaoPagina'],
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],
@@ -496,6 +509,7 @@ if (isset($_GET['operacao'])) {
 		);
 		$parametros = array_map('htmlentities', $parametros1);
 		$apiEntrada = array(
+		
 			'idSecaoPagina' => $_POST['idSecaoPagina'],
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],
@@ -515,6 +529,7 @@ if (isset($_GET['operacao'])) {
 		);
 		$parametros = array_map('htmlentities', $parametros1);
 		$apiEntrada = array(
+		
 			'idSecaoPagina' => $_POST['idSecaoPagina'],
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],
@@ -534,6 +549,7 @@ if (isset($_GET['operacao'])) {
 		);
 		$parametros = array_map('htmlentities', $parametros1);
 		$apiEntrada = array(
+		
 			'idSecaoPagina' => $_POST['idSecaoPagina'],
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],
@@ -568,6 +584,7 @@ if (isset($_GET['operacao'])) {
 		);
 		$parametros = array_map('htmlentities', $parametros1);
 		$apiEntrada = array(
+		
 			'idSecaoPagina' => $_POST['idSecaoPagina'],
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],
@@ -600,6 +617,7 @@ if (isset($_GET['operacao'])) {
 		);
 		$parametros = array_map('htmlentities', $parametros1);
 		$apiEntrada = array(
+		
 			'idSecaoPagina' => $_POST['idSecaoPagina'],
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],
@@ -649,6 +667,7 @@ if (isset($_GET['operacao'])) {
 		);
 		$parametros = array_map('htmlentities', $parametros1);
 		$apiEntrada = array(
+		
 			'idSecaoPagina' => $_POST['idSecaoPagina'],
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],
@@ -669,6 +688,7 @@ if (isset($_GET['operacao'])) {
 		);
 		$parametros = array_map('htmlentities', $parametros1);
 		$apiEntrada = array(
+		
 			'idSecaoPagina' => $_POST['idSecaoPagina'],
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],
@@ -689,6 +709,7 @@ if (isset($_GET['operacao'])) {
 		);
 		$parametros = array_map('htmlentities', $parametros1);
 		$apiEntrada = array(
+		
 			'idSecaoPagina' => $_POST['idSecaoPagina'],
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],
@@ -722,6 +743,7 @@ if (isset($_GET['operacao'])) {
 			'logo' => $novoNomeLogo,
 		);
 		$apiEntrada = array(
+		
 			'idSecaoPagina' => $_POST['idSecaoPagina'],
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],
@@ -729,12 +751,14 @@ if (isset($_GET['operacao'])) {
 			'coluna' => $_POST['coluna'],
 			'parametros' => json_encode($parametros1),
 		);
+
 		$secoesPagina = chamaAPI(null, '/paginas/secoesPagina', json_encode($apiEntrada), 'POST');
 	}
 
 	// listaPosts_modelo1
 	if ($operacao == "listaPosts_modelo1") {
 		$apiEntrada = array(
+		
 			'idSecaoPagina' => $_POST['idSecaoPagina'],
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],
@@ -748,6 +772,7 @@ if (isset($_GET['operacao'])) {
 	// sliderProdutos
 	if ($operacao == "sliderProdutos") {
 		$apiEntrada = array(
+		
 			'idSecaoPagina' => $_POST['idSecaoPagina'],
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],
@@ -761,6 +786,7 @@ if (isset($_GET['operacao'])) {
 	// siderBar_modelo1 
 	if ($operacao == "siderBar_modelo1") {
 		$apiEntrada = array(
+		
 			'idSecaoPagina' => $_POST['idSecaoPagina'],
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],
@@ -780,6 +806,7 @@ if (isset($_GET['operacao'])) {
 		);
 		$parametros = array_map('htmlentities', $parametros1);
 		$apiEntrada = array(
+		
 			'idSecaoPagina' => $_POST['idSecaoPagina'],
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],
@@ -811,6 +838,7 @@ if (isset($_GET['operacao'])) {
 			'logo' => $novoNomeLogo,
 		);
 		$apiEntrada = array(
+		
 			'idSecaoPagina' => $_POST['idSecaoPagina'],
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],
@@ -829,6 +857,7 @@ if (isset($_GET['operacao'])) {
 		);
 		$parametros = array_map('htmlentities', $parametros1);
 		$apiEntrada = array(
+		
 			'idSecaoPagina' => $_POST['idSecaoPagina'],
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],
@@ -844,6 +873,7 @@ if (isset($_GET['operacao'])) {
 
 		$parametros = '';
 		$apiEntrada = array(
+		
 			'idSecaoPagina' => $_POST['idSecaoPagina'],
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],
@@ -861,6 +891,7 @@ if (isset($_GET['operacao'])) {
 		);
 		$parametros = array_map('htmlentities', $parametros1);
 		$apiEntrada = array(
+		
 			'idSecaoPagina' => $_POST['idSecaoPagina'],
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],
@@ -882,6 +913,7 @@ if (isset($_GET['operacao'])) {
 		);
 		$parametros = array_map('htmlentities', $parametros1);
 		$apiEntrada = array(
+		
 			'idSecaoPagina' => $_POST['idSecaoPagina'],
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],
@@ -900,6 +932,7 @@ if (isset($_GET['operacao'])) {
 		);
 		$parametros = array_map('htmlentities', $parametros1);
 		$apiEntrada = array(
+		
 			'idSecaoPagina' => $_POST['idSecaoPagina'],
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],
@@ -918,6 +951,7 @@ if (isset($_GET['operacao'])) {
 		);
 		$parametros = array_map('htmlentities', $parametros1);
 		$apiEntrada = array(
+		
 			'idSecaoPagina' => $_POST['idSecaoPagina'],
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],
@@ -935,6 +969,7 @@ if (isset($_GET['operacao'])) {
 
 		$parametros = '';
 		$apiEntrada = array(
+		
 			'idSecaoPagina' => $_POST['idSecaoPagina'],
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],
@@ -955,6 +990,7 @@ if (isset($_GET['operacao'])) {
 		);
 		$parametros = array_map('htmlentities', $parametros1);
 		$apiEntrada = array(
+		
 			'idSecaoPagina' => $_POST['idSecaoPagina'],
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],
@@ -970,6 +1006,7 @@ if (isset($_GET['operacao'])) {
 
 		$parametros = '';
 		$apiEntrada = array(
+		
 			'idSecaoPagina' => $_POST['idSecaoPagina'],
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],
@@ -989,6 +1026,7 @@ if (isset($_GET['operacao'])) {
 		);
 		$parametros = array_map('htmlentities', $parametros1);
 		$apiEntrada = array(
+		
 			'idSecaoPagina' => $_POST['idSecaoPagina'],
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],

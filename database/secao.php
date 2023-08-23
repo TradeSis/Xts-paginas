@@ -5,10 +5,16 @@ function buscaSecao($idSecao=null)
 {
 	
 	$secao = array();
-	//echo json_encode($secao);
-	//return;
+	
+	$idEmpresa = null;
+	/*
+	if (isset($_SESSION['idEmpresa'])) {
+    	$idEmpresa = $_SESSION['idEmpresa'];
+	}*/
+
 	$apiEntrada = array(
 		'idSecao' => $idSecao,
+		'idEmpresa' => $idEmpresa,
 	);
 	/* echo "-ENTRADA->".json_encode($apiEntrada)."\n";
 	return; */

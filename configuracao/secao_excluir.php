@@ -11,34 +11,33 @@ $secao = buscaSecao($_GET['idSecao']);
 
 <body class="bg-transparent">
 
-    <div class="container" style="margin-top:10px">
+    <div class="container p-4" style="margin-top:10px">
 
-        <div class="row mt-4">
+        <div class="row">
             <div class="col-sm-8">
-                <h3 class="col">Excluir Seção</h3>
+                <h2 class="tituloTabela">Excluir Seção</h2>
             </div>
             <div class="col-sm-4" style="text-align:right">
-                <a href="../configuracao/?tab=configuracao&stab=secao" role="button" class="btn btn-primary btn-sm">Voltar</a>
+                <a href="../configuracao/?tab=configuracao&stab=secao" role="button" class="btn btn-primary"><i class="bi bi-arrow-left-square"></i></i>&#32;Voltar</a>
             </div>
         </div>
 
-        <div class="container" style="margin-top: 10px">
-            <form action="../database/secao.php?operacao=excluir" method="post">
-                <div class="row">
-                    <div class="col-sm-6" style="margin-top: 10px">
-                        <div class="form-group">
-                            <label class='control-label' for='inputNormal' style="margin-top: -40px;">Titulo</label>
-                            <input type="text" name="tituloSecao" class="form-control" value="<?php echo $secao['tituloSecao'] ?>">
-                            <input type="text" class="form-control" name="idSecao" value="<?php echo $secao['idSecao'] ?>" style="display: none">
-                        </div>
+        <form class="mb-4" action="../database/secao.php?operacao=excluir" method="post">
+            <div class="row">
+                <div class="col-sm-12" style="margin-top: 10px">
+                    <div class="form-group">
+                        <label class='control-label' for='inputNormal' style="margin-top: -40px;">Titulo</label>
+                        <input type="text" name="tituloSecao" class="form-control" value="<?php echo $secao['tituloSecao'] ?>">
+                        <input type="text" class="form-control" name="idSecao" value="<?php echo $secao['idSecao'] ?>" style="display: none">
                     </div>
                 </div>
+            </div>
 
-                <div style="text-align:right; margin-right:-20px">
-                    <button type="submit" class="btn btn-sm btn-danger">Excluir</button>
-                </div>
-            </form>
-        </div>
+            <div style="text-align:right; margin-top:20px">
+                <button type="submit" id="botao" class="btn btn-sm btn-danger"><i class="bi bi-x-octagon"></i>&#32;Excluir</button>
+            </div>
+        </form>
+
     </div>
 
 
