@@ -58,7 +58,7 @@ $perfil = json_decode($temas['perfil'],true);
 <nav class="navbar navbar-expand-lg navbar-light " style="background-color: #E2EBEB;">
   <div class="container">
 
-  <a class="navbar-brand" href="<?php echo URLROOT?>"><img class="logo" src="<?php echo URLROOT ?>/img/<?php echo $parametro['logo']?>" alt="" ></a>
+  <a class="navbar-brand" href="../<?php echo URLROOT?>"><img class="logo" src="<?php echo URLROOT ?>/img/<?php echo $parametro['logo']?>" alt="" ></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -68,7 +68,7 @@ $perfil = json_decode($temas['perfil'],true);
     <?php 
           foreach($menus as $menu){
         ?>
-          <li class="nav-item mr-4"><a href="<?php echo $menu['href']?>" class="nav-link"><?php echo $menu['menu']?></a></li>
+          <li class="nav-item mr-4"><a href="<?php echo URLROOT . $menu['href']?>" class="nav-link"><?php echo $menu['menu']?></a></li>
         <?php } ?>
 
       </ul>

@@ -6,7 +6,7 @@ function buscaCategorias($idCategoria=null)
 {
 	
 	$categorias = array();
-	
+
 	$apiEntrada = array(
 		'idCategoria' => $idCategoria,
 	);
@@ -22,6 +22,7 @@ if (isset($_GET['operacao'])) {
     if ($operacao=="inserir") {
 
 		$apiEntrada = array(
+			
 			'nomeCategoria' => $_POST['nomeCategoria'],	
 		);
 		$categorias = chamaAPI(null, '/paginas/categorias', json_encode($apiEntrada), 'PUT');
@@ -33,6 +34,7 @@ if (isset($_GET['operacao'])) {
     if ($operacao=="alterar") {
 
 		$apiEntrada = array(
+			
 			'idCategoria' => $_POST['idCategoria'],
 			'nomeCategoria' => $_POST['nomeCategoria'],
 			
@@ -44,6 +46,7 @@ if (isset($_GET['operacao'])) {
 	if ($operacao=="excluir") {
 
 		$apiEntrada = array(
+			
 			'idCategoria' => $_POST['idCategoria'],
 		);
 

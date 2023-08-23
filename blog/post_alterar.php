@@ -12,19 +12,18 @@ $categorias = buscaCategorias();
 
 <body class="bg-transparent">
 
-    <div class="container" style="margin-top:10px">
+    <div class="container formContainer">
 
-        <div class="row mt-4">
+        <div class="row">
             <div class="col-sm-8">
-                <h3 class="col">Editar Post</h3>
+                <h2 class="tituloTabela">Editar Post</h2>
             </div>
             <div class="col-sm-4" style="text-align:right">
-                <a href="posts.php" role="button" class="btn btn-primary btn-sm">Voltar</a>
+                <a href="posts.php" role="button" class="btn btn-primary"><i class="bi bi-arrow-left-square"></i></i>&#32;Voltar</a>
             </div>
         </div>
-        <div class="container" style="margin-top: 10px">
 
-            <form action="../database/posts.php?operacao=alterar" method="post" enctype="multipart/form-data">
+            <form class="mb-4" action="../database/posts.php?operacao=alterar" method="post" enctype="multipart/form-data">
 
 
                 <div class="row">
@@ -117,18 +116,15 @@ $categorias = buscaCategorias();
                     <div class="col-sm-12" style="margin-top: 10px">
                         <div class="form-group">
                         <label class='control-label' for='inputNormal' style="margin-top: -43px;">Conteudo</label>
-                            <textarea name="txtConteudo" cols="135" rows="7" id="txtConteudo"><?php echo $post['txtConteudo'] ?></textarea>
+                            <textarea name="txtConteudo" cols="120" rows="7" id="txtConteudo"><?php echo $post['txtConteudo'] ?></textarea>
                         </div>
                     </div>
                 </div>
 
-
-
-                <div style="text-align:right; margin-right:-20px; margin-top:20px">
-                    <button type="submit" class="btn btn-sm btn-success">Salvar</button>
+                <div style="text-align:right; margin-top:20px">
+                    <button type="submit" class="btn  btn-success"><i class="bi bi-sd-card-fill"></i>&#32;Salvar</button>
                 </div>
             </form>
-        </div>
 
     </div>
 

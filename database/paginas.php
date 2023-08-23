@@ -6,6 +6,7 @@ function buscaPagina($slug)
 {
 
 	$pagina = array();
+	
 	$apiEntrada = array(
 		'slug' => $slug,
 	);
@@ -17,6 +18,7 @@ function buscaPagina($slug)
 function buscaPaginas($idPagina = null, $idTema = null)
 {
 	$pagina = array();
+
 	$apiEntrada = array(
 		'idPagina' => $idPagina,
 		'idTema' => $idTema,
@@ -33,6 +35,7 @@ if (isset($_GET['operacao'])) {
 	if ($operacao == "inserir") {
 
 		$apiEntrada = array(
+			
 			'slug' => $_POST['slug'],
 			'tituloPagina' => $_POST['tituloPagina'],
 			'arquivoFonte' => $_POST['arquivoFonte'],
@@ -45,6 +48,7 @@ if (isset($_GET['operacao'])) {
 	if ($operacao == "alterar") {
 
 		$apiEntrada = array(
+			
 			'idPagina' => $_POST['idPagina'],
 			'tituloPagina' => $_POST['tituloPagina'],
 			'arquivoFonte' => $_POST['arquivoFonte'],
@@ -56,6 +60,7 @@ if (isset($_GET['operacao'])) {
 
 	if ($operacao == "excluir") {
 		$apiEntrada = array(
+			
 			'idPagina' => $_POST['idPagina']
 		);
 

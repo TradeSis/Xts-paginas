@@ -12,20 +12,16 @@ $secoesPaginas = buscaSecaoPagina($idPagina);
 
 <body class="bg-transparent">
 
-    <div class="container" style="margin-top:20px">
+    <div class="container formContainer">
 
-        <div class="row mt-4">
-
+        <div class="row">
             <div class="col-sm-8">
-                <h4 class="tituloTabela">Paginas</h4>
+                <h2 class="tituloTabela">Paginas</h2>
             </div>
-
             <div class="col-sm-4" style="text-align:right">
-                <a href="../configuracao/?tab=configuracao&stab=paginas" role="button" class="btn btn-primary btn-sm">Voltar</a>
+                <a href="../configuracao/?tab=configuracao&stab=paginas" role="button" class="btn btn-primary"><i class="bi bi-arrow-left-square"></i></i>&#32;Voltar</a>
             </div>
-
         </div>
-        <div class="container" style="margin-top: 10px">
 
             <form action="../database/paginas.php?operacao=alterar" method="post">
 
@@ -59,10 +55,8 @@ $secoesPaginas = buscaSecaoPagina($idPagina);
                     </div>
                 </div>
 
-                <div style="text-align:right; margin-right:-10px">
-                    <button type="submit" class="btn btn-sm btn-success">Salvar</button>
-                </div>
-                <div class="card-footer bg-transparent" style=" margin-top: 40px">
+                <div style="text-align:right; margin-top:20px">
+                    <button type="submit" class="btn  btn-success"><i class="bi bi-sd-card-fill"></i>&#32;Salvar</button>
                 </div>
             </form>
 
@@ -86,22 +80,17 @@ $secoesPaginas = buscaSecaoPagina($idPagina);
                             <td><?php echo $secoesPagina['tituloSecao'] ?></td>
                             <td><?php echo $secoesPagina['ordem'] ?></td>
                             <td>
-                                <a class="btn btn-primary btn-sm" href="secoesPaginas_alterar.php?idSecaoPagina=<?php echo $secoesPagina['idSecaoPagina'] ?>" role="button">Editar</a>
-                                <a class="btn btn-warning btn-sm" href="secoesPaginas_excluir.php?idSecaoPagina=<?php echo $secoesPagina['idSecaoPagina'] ?>" role="button">Remover</a>
+                                <a class="btn btn-warning btn-sm" href="secoesPaginas_alterar.php?idSecaoPagina=<?php echo $secoesPagina['idSecaoPagina'] ?>" role="button"><i class="bi bi-pencil-square"></i></a>
+                                <a class="btn btn-danger btn-sm" href="secoesPaginas_excluir.php?idSecaoPagina=<?php echo $secoesPagina['idSecaoPagina'] ?>" role="button"><i class="bi bi-trash3"></i></a>
                             </td>
                         </tr>
                     <?php } ?>
 
                 </table>
                 <div class="py-3 px-3" style="text-align:right">
-                    <a href="secoesPaginas_inserir.php?idPagina=<?php echo $idPagina ?>" role="button" class="btn btn-primary">Adicionar</a>
+                    <a href="secoesPaginas_inserir.php?idPagina=<?php echo $idPagina ?>" role="button" class="btn btn-success"><i class="bi bi-plus-square"></i>&nbsp Novo</a>
                 </div>
             </div>
-
-
-
-
-        </div>
 
     </div>
 
