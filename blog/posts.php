@@ -19,6 +19,7 @@ $posts = buscaPosts();
             </div>
 
         </div>
+
         <div class="card mt-2 text-center">
             <div class="table scrollbar-tabela">
                 <table class="table">
@@ -38,7 +39,7 @@ $posts = buscaPosts();
                     ?>
                         <tr>
 
-                            <td><img src="<?php echo URLROOT ?>/img/<?php echo $post['imgDestaque'] ?>" width="60px" height="60px" alt=""></td>
+                            <td><img src="<?php echo $post['imgDestaque'] ?>" width="60px" height="60px" alt=""></td>
                             <td><?php echo $post['titulo'] ?></td>
                             <td><?php echo $post['nomeAutor'] ?></td>
                             <td><?php echo $post['nomeCategoria'] ?></td>

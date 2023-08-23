@@ -31,7 +31,7 @@ $categorias = buscaCategorias();
                         <div class="col-sm-6" style="margin-top: -20px">
                             <label>Imagem</label>
                             <label class="picture" for="foto" tabIndex="0">
-                            <img src="<?php echo URLROOT ?>/img/<?php echo $post["imgDestaque"] ?>" width="100%" height="100%" alt="">
+                            <img src="<?php echo $post["imgDestaque"] ?>" width="100%" height="100%" alt="">
                             </label>
                             <input type="file" name="imgDestaque" id="foto">
                         </div>

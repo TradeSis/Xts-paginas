@@ -33,7 +33,7 @@ $autores = buscaAutor();
                     foreach ($autores as $autor) {
                     ?>
                         <tr>
-                            <td><img src="<?php echo URLROOT ?>/img/<?php echo $autor['fotoAutor'] ?>" width="60px" height="60px" alt=""></td>
+                            <td><img src="<?php echo $autor['fotoAutor'] ?>" width="60px" height="60px" alt=""></td>
                             <td><?php echo $autor['nomeAutor'] ?></td>
                             <td>
                                 <a class="btn btn-info btn-sm" href="#" role="button"><i class="bi bi-eye"></i></a>
