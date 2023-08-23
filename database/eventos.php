@@ -57,7 +57,7 @@ if (isset($_GET['operacao'])) {
 			if($ext == true) {
 				$pasta = ROOT . "/img/";
 				$novoNomeImg = $_POST['nomeEvento']. "_" .$capaEvento["name"];
-				
+				$pathCapa = 'http://' . $_SERVER["HTTP_HOST"] .'/img/' . $novoNomeImg;
 				move_uploaded_file($capaEvento['tmp_name'], $pasta.$novoNomeImg);
 		
 			}else{
@@ -74,7 +74,7 @@ if (isset($_GET['operacao'])) {
 			if($ext == true) {
 				$pasta = ROOT . "/img/";
 				$novoNomeBanner = $_POST['nomeEvento']. "_" .$bannerEvento["name"];
-				
+				$pathBanner = 'http://' . $_SERVER["HTTP_HOST"] .'/img/' . $novoNomeBanner;
 				move_uploaded_file($bannerEvento['tmp_name'], $pasta.$novoNomeBanner);
 		
 			}else{
@@ -91,11 +91,11 @@ if (isset($_GET['operacao'])) {
 			'dataEvento' => $_POST['dataEvento'],
 			'cidadeEvento' => $_POST['cidadeEvento'],
 			'localEvento' => $_POST['localEvento'],
-			'capaEvento' => $novoNomeImg,
+			'capaEvento' => $pathCapa,
 			'esconderEvento' => $_POST['esconderEvento'],
 			'tipoEvento' => $_POST['tipoEvento'],
 			'linkEvento' => $_POST['linkEvento'],
-			'bannerEvento' => $novoNomeBanner,
+			'bannerEvento' => $pathBanner,
 		);
 		/* echo json_encode($apiEntrada);
 		return; */
@@ -115,7 +115,7 @@ if (isset($_GET['operacao'])) {
 			if($ext == true) {
 				$pasta = ROOT . "/img/";
 				$novoNomeImg = $_POST['nomeEvento']. "_" .$capaEvento["name"];
-				
+				$pathCapa = 'http://' . $_SERVER["HTTP_HOST"] .'/img/' . $novoNomeImg;
 				move_uploaded_file($capaEvento['tmp_name'], $pasta.$novoNomeImg);
 		
 			}else{
@@ -132,7 +132,7 @@ if (isset($_GET['operacao'])) {
 			if($ext == true) {
 				$pasta = ROOT . "/img/";
 				$novoNomeBanner = $_POST['nomeEvento']. "_" .$bannerEvento["name"];
-				
+				$pathBanner = 'http://' . $_SERVER["HTTP_HOST"] .'/img/' . $novoNomeBanner;
 				move_uploaded_file($bannerEvento['tmp_name'], $pasta.$novoNomeBanner);
 		
 			}else{
@@ -148,20 +148,17 @@ if (isset($_GET['operacao'])) {
 			'dataEvento' => $_POST['dataEvento'],
 			'cidadeEvento' => $_POST['cidadeEvento'],
 			'localEvento' => $_POST['localEvento'],
-			'capaEvento' => $novoNomeImg,
+			'capaEvento' => $pathCapa,
 			'esconderEvento' => $_POST['esconderEvento'],
 			'tipoEvento' => $_POST['tipoEvento'],
 			'linkEvento' => $_POST['linkEvento'],
-			'bannerEvento' => $novoNomeBanner,
+			'bannerEvento' => $pathBanner,
 			
 		);
-		/* echo json_encode($apiEntrada);
-		return; */
+
 		$eventos = chamaAPI(null, '/paginas/eventos', json_encode($apiEntrada), 'POST');
 		
 	}
-
-	
 
 	
 	if ($operacao=="excluir") {

@@ -40,7 +40,7 @@ $autor = buscaAutor($idAutor);
                         <div class="col-sm-6" style="margin-top: -20px">
                             <label>Foto</label>
                             <label class="picture" for="foto" tabIndex="0">
-                                <img src="<?php echo URLROOT ?>/img/<?php echo $autor["fotoAutor"] ?>" width="100%" height="100%" alt="">  
+                                <img src="<?php echo $autor["fotoAutor"] ?>" width="100%" height="100%" alt="">  
                             </label>
                             <input type="file" name="fotoAutor" id="foto">
                         </div>
@@ -50,7 +50,7 @@ $autor = buscaAutor($idAutor);
                         <div class="col-sm-6" style="margin-top: -20px">
                             <label>Banner</label>
                             <label class="picture" for="banner" tabIndex="0">
-                            <img src="<?php echo URLROOT ?>/img/<?php echo $autor["bannerAutor"] ?>" width="100%" height="100%" alt="">
+                            <img src="<?php echo $autor["bannerAutor"] ?>" width="100%" height="100%" alt="">
                             </label>
                             <input type="file" name="bannerAutor" id="banner" value="<?php echo $autor['bannerAutor'] ?>">
                         </div>

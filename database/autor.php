@@ -43,7 +43,7 @@ if (isset($_GET['operacao'])) {
 			if($ext == true) {
 				$pasta = ROOT . "/img/";
 				$novoNomeFoto = $_POST['nomeAutor']. "_" .$fotoAutor["name"];
-				
+				$pathFoto = 'http://' . $_SERVER["HTTP_HOST"] .'/img/' . $novoNomeFoto;
 				move_uploaded_file($fotoAutor['tmp_name'], $pasta.$novoNomeFoto);
 		
 			}else{
@@ -60,7 +60,7 @@ if (isset($_GET['operacao'])) {
 			if($ext == true) {
 				$pasta = ROOT . "/img/";
 				$novoNomeBanner = $_POST['nomeAutor']. "_" .$bannerAutor["name"];
-				
+				$pathBanner = 'http://' . $_SERVER["HTTP_HOST"] .'/img/' . $novoNomeBanner;
 				move_uploaded_file($bannerAutor['tmp_name'], $pasta.$novoNomeBanner);
 		
 			}else{
@@ -70,114 +70,61 @@ if (isset($_GET['operacao'])) {
 		}
 
 		$apiEntrada = array(
-			
 			'nomeAutor' => $_POST['nomeAutor'],
-            'fotoAutor' => $novoNomeFoto,
-            'bannerAutor' => $novoNomeBanner,
+            'fotoAutor' => $pathFoto,
+            'bannerAutor' => $pathBanner,
 			'sobreMimAutor' => $_POST['sobreMimAutor'],
 			
 		);
-		/* echo json_encode($apiEntrada);
-		return; */
+	
 		$autor = chamaAPI(null, '/paginas/autor', json_encode($apiEntrada), 'PUT');
 		
 	}
 
 	if ($operacao=="alterar") {
 
-		//echo json_encode($_FILES);
-		//return;
 		$fotoAutor = $_FILES['fotoAutor'];
-		$fotoAutorNome = $_FILES['fotoAutor']['name'];
-		$bannerAutor = $_FILES['bannerAutor'];
-		$bannerAutorNome = $_FILES['bannerAutor']['name'];
-		/* echo json_encode($fotoAutorNome);
-		echo json_encode($bannerAutorNome); */
-		//return;
-
-
-		if ($fotoAutorNome != '' && $bannerAutorNome != '') {
-			preg_match("/\.(png|jpg|jpeg|svg){1}$/i", $fotoAutor["name"],$ext);
-		
-				if($ext == true) {
-					$pasta = ROOT . "/img/";
-					$novoNomeFoto = $_POST['nomeAutor']. "_" .$fotoAutor["name"];
-					
-					move_uploaded_file($fotoAutor['tmp_name'], $pasta.$novoNomeFoto);
 			
-				}
-
-				preg_match("/\.(png|jpg|jpeg|svg){1}$/i", $bannerAutor["name"],$ext);
-		
-				if($ext == true) {
-					$pasta = ROOT . "/img/";
-					$novoNomeBanner = $_POST['nomeAutor']. "_" .$bannerAutor["name"];
-					
-					move_uploaded_file($bannerAutor['tmp_name'], $pasta.$novoNomeBanner);
-			
-				}
-
-				$apiEntrada = array(
-					
-					'idAutor' => $_POST['idAutor'],
-					'nomeAutor' => $_POST['nomeAutor'],
-					'fotoAutor' => $novoNomeFoto,
-					'bannerAutor' => $novoNomeBanner,
-					'sobreMimAutor' => $_POST['sobreMimAutor'],
-					
-				);
-		}elseif($fotoAutorNome != ''){
+		if($fotoAutor !== null) {
 			preg_match("/\.(png|jpg|jpeg|svg){1}$/i", $fotoAutor["name"],$ext);
 		
 			if($ext == true) {
 				$pasta = ROOT . "/img/";
 				$novoNomeFoto = $_POST['nomeAutor']. "_" .$fotoAutor["name"];
-				
+				$pathFoto = 'http://' . $_SERVER["HTTP_HOST"] .'/img/' . $novoNomeFoto;
 				move_uploaded_file($fotoAutor['tmp_name'], $pasta.$novoNomeFoto);
 		
 			}else{
-				$apiEntrada = array(
-					
-					'idAutor' => $_POST['idAutor'],
-					'nomeAutor' => $_POST['nomeAutor'],
-					'bannerAutor' => $novoNomeBanner,
-					'sobreMimAutor' => $_POST['sobreMimAutor'],
-					
-				);
+				$novoNomeFoto = "Sem_imagem";
 			}
-		}elseif ($bannerAutorNome != '') {
-			preg_match("/\.(png|jpg|jpeg|svg){1}$/i", $bannerAutor["name"],$ext);
-		
-				if($ext == true) {
-					$pasta = ROOT . "/img/";
-					$novoNomeBanner = $_POST['nomeAutor']. "_" .$bannerAutor["name"];
-					
-					move_uploaded_file($bannerAutor['tmp_name'], $pasta.$novoNomeBanner);
-			
-				}else{
-					$apiEntrada = array(
-						
-						'idAutor' => $_POST['idAutor'],
-						'nomeAutor' => $_POST['nomeAutor'],
-						'fotoAutor' => $novoNomeFoto,
-						'sobreMimAutor' => $_POST['sobreMimAutor'],
-						
-					);
-				}
-		}else{
-			$apiEntrada = array(
-				
-				'idAutor' => $_POST['idAutor'],
-				'nomeAutor' => $_POST['nomeAutor'],
-				'sobreMimAutor' => $_POST['sobreMimAutor'],
-				
-			);
-			
-		/* echo json_encode($apiEntrada);
-		return;  */
-		$autor = chamaAPI(null, '/paginas/autor', json_encode($apiEntrada), 'POST');
+	
 		}
 
+		$bannerAutor = $_FILES['bannerAutor'];
+
+		if($bannerAutor !== null) {
+			preg_match("/\.(png|jpg|jpeg|svg){1}$/i", $bannerAutor["name"],$ext);
+		
+			if($ext == true) {
+				$pasta = ROOT . "/img/";
+				$novoNomeBanner = $_POST['nomeEvento']. "_" .$bannerAutor["name"];
+				$pathBanner = 'http://' . $_SERVER["HTTP_HOST"] .'/img/' . $novoNomeBanner;
+				move_uploaded_file($bannerAutor['tmp_name'], $pasta.$novoNomeBanner);
+		
+			}else{
+				$novoNomeBanner = "Sem_imagem";
+			}
+	
+		}
+
+		$apiEntrada = array(
+			'idAutor' => $_POST['idAutor'],
+			'nomeAutor' => $_POST['nomeAutor'],
+            'fotoAutor' => $pathFoto,
+            'bannerAutor' => $pathBanner,
+			'sobreMimAutor' => $_POST['sobreMimAutor'],
+		);
+		$autor = chamaAPI(null, '/paginas/autor', json_encode($apiEntrada), 'POST');
 		
 	}
 

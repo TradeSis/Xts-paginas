@@ -35,7 +35,7 @@ $receitas = buscaReceitas();
                     foreach ($receitas as $noticia) {
                     ?>
                         <tr>
-                            <td><img src="<?php echo URLROOT ?>/img/<?php echo $noticia['imgReceita'] ?>" width="60px" height="60px" alt=""></td>
+                            <td><img src="<?php echo $noticia['imgReceita'] ?>" width="60px" height="60px" alt=""></td>
                             <td><?php echo $noticia['nomeReceita'] ?></td>
                             <td><?php echo $noticia['autorReceita'] ?></td>
                             <td>
