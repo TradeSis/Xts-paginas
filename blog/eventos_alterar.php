@@ -70,7 +70,7 @@ $categorias = buscaCategorias();
                             <div class="col-sm-6" style="margin-top: -20px">
                                 <label class='control-label' for='inputNormal' style="margin-top: -50px;">Capa Evento</label>
                                 <label class="picture" for="foto" tabIndex="0">
-                                    <img src="<?php echo URLROOT ?>/img/<?php echo $evento["capaEvento"] ?>" width="100%" height="100%" alt="">
+                                    <img src="<?php echo $evento["capaEvento"] ?>" width="100%" height="100%" alt="">
                                 </label>
                                 <input type="file" name="capaEvento" id="foto">
                             </div>
@@ -80,7 +80,7 @@ $categorias = buscaCategorias();
                             <div class="col-sm-6" style="margin-top: -20px">
                                 <label class='control-label' for='inputNormal' style="margin-top: -50px;">Banner Evento</label>
                                 <label class="picture" for="banner" tabIndex="0">
-                                    <img src="<?php echo URLROOT ?>/img/<?php echo $evento["bannerEvento"] ?>" width="100%" height="100%" alt="">
+                                    <img src="<?php echo $evento["bannerEvento"] ?>" width="100%" height="100%" alt="">
                                 </label>
                                 <input type="file" name="bannerEvento" id="banner">
                             </div>

@@ -19,7 +19,18 @@ if (isset($jsonEntrada['idEvento'])) {
     $linkEvento = $jsonEntrada['linkEvento'];
     $bannerEvento = $jsonEntrada['bannerEvento'];
 
-    $sql = "UPDATE  eventos  SET nomeEvento ='$nomeEvento', descricaoEvento ='$descricaoEvento', dataEvento ='$dataEvento', cidadeEvento ='$cidadeEvento', localEvento ='$localEvento', capaEvento ='$capaEvento', esconderEvento ='$esconderEvento', tipoEvento ='$tipoEvento', linkEvento ='$linkEvento', bannerEvento ='$bannerEvento' WHERE idEvento = $idEvento ";
+    if(($capaEvento == '') && ($bannerEvento == '')){
+        $sql = "UPDATE  eventos  SET nomeEvento ='$nomeEvento', descricaoEvento ='$descricaoEvento', dataEvento ='$dataEvento', cidadeEvento ='$cidadeEvento', localEvento ='$localEvento', esconderEvento ='$esconderEvento', tipoEvento ='$tipoEvento', linkEvento ='$linkEvento' WHERE idEvento = $idEvento ";
+    }
+    elseif($capaEvento == ''){
+        $sql = "UPDATE  eventos  SET nomeEvento ='$nomeEvento', descricaoEvento ='$descricaoEvento', dataEvento ='$dataEvento', cidadeEvento ='$cidadeEvento', localEvento ='$localEvento', esconderEvento ='$esconderEvento', tipoEvento ='$tipoEvento', linkEvento ='$linkEvento', bannerEvento ='$bannerEvento' WHERE idEvento = $idEvento ";
+    }
+    elseif($bannerEvento == ''){
+        $sql = "UPDATE  eventos  SET nomeEvento ='$nomeEvento', descricaoEvento ='$descricaoEvento', dataEvento ='$dataEvento', cidadeEvento ='$cidadeEvento', localEvento ='$localEvento', capaEvento ='$capaEvento', esconderEvento ='$esconderEvento', tipoEvento ='$tipoEvento', linkEvento ='$linkEvento' WHERE idEvento = $idEvento ";
+    }else{
+        $sql = "UPDATE  eventos  SET nomeEvento ='$nomeEvento', descricaoEvento ='$descricaoEvento', dataEvento ='$dataEvento', cidadeEvento ='$cidadeEvento', localEvento ='$localEvento', capaEvento ='$capaEvento', esconderEvento ='$esconderEvento', tipoEvento ='$tipoEvento', linkEvento ='$linkEvento', bannerEvento ='$bannerEvento' WHERE idEvento = $idEvento ";
+    }
+    
 
     if ($atualizar = mysqli_query($conexao, $sql)) {
         $jsonSaida = array(

@@ -54,7 +54,7 @@ $receita = buscaReceitas($idReceita);
                     <div class="col-sm-6" style="margin-top: -20px">
                         <label class='control-label' for='inputNormal' style="margin-top: -50px;">Imagem</label>
                         <label class="picture" for="foto" tabIndex="0">
-                            <img src="<?php echo URLROOT ?>/img/<?php echo $receita["imgReceita"] ?>" width="100%" height="100%" alt="">
+                            <img src="<?php echo $receita["imgReceita"] ?>" width="100%" height="100%" alt="">
                         </label>
                         <input type="file" name="imgReceita" id="foto">
                     </div>
