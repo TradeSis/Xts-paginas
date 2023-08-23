@@ -24,15 +24,15 @@ $temas = buscaTemas();
 ?>
 
 <body class="bg-transparent">
-    <div class="container " style="margin-top:30px">
+    <div class="container mt-2">
 
-        <div class="row mt-4">
+        <div class="row">
             <div class="col-sm-8">
-                <h4 class="tituloTabela">Paginas</h4>
+                <h2 class="tituloTabela">Paginas</h2>
             </div>
 
             <div class="col-sm-4" style="text-align:right">
-                <a href="paginas_inserir.php" role="button" class="btn btn-primary">Adicionar</a>
+                <a href="paginas_inserir.php" role="button" class="btn btn-success"><i class="bi bi-plus-square"></i>&nbsp Novo</a>
             </div>
         </div>
         <div class="row">
@@ -56,37 +56,39 @@ $temas = buscaTemas();
         </div>
 
 
-        <div class="card shadow mt-2 text-center">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Slug</th>
-                        <th>Titulo</th>
-                        <th>Arquivo Fonte</th>
-                        <th>ID Tema</th>
-                        <th>Nome Tema</th>
-                        <th>Ação</th>
+        <div class="card text-center" style="margin-top: -20px;">
+            <div class="table scrollbar-tabela">
+                <table class="table">
+                    <thead class="cabecalhoTabela">
+                        <tr>
+                            <th>Slug</th>
+                            <th>Titulo</th>
+                            <th>Arquivo Fonte</th>
+                            <th>ID Tema</th>
+                            <th>Nome Tema</th>
+                            <th>Ação</th>
 
-                    </tr>
-                </thead>
+                        </tr>
+                    </thead>
 
-                <?php
-                foreach ($paginas as $pagina) {
-                ?>
-                    <tr>
-                        <td><?php echo $pagina['slug'] ?></td>
-                        <td><?php echo $pagina['tituloPagina'] ?></td>
-                        <td><?php echo $pagina['arquivoFonte'] ?></td>
-                        <td><?php echo $pagina['idTema'] ?></td>
-                        <td><?php echo $pagina['nomeTema'] ?></td>
-                        <td>
-                            <a class="btn btn-primary btn-sm" href="paginas_alterar.php?idPagina=<?php echo $pagina['idPagina'] ?>" role="button">Editar</a>
-                            <a class="btn btn-danger btn-sm" href="paginas_excluir.php?idPagina=<?php echo $pagina['idPagina'] ?>" role="button">Excluir</a>
-                        </td>
-                    </tr>
-                <?php } ?>
+                    <?php
+                    foreach ($paginas as $pagina) {
+                    ?>
+                        <tr>
+                            <td><?php echo $pagina['slug'] ?></td>
+                            <td><?php echo $pagina['tituloPagina'] ?></td>
+                            <td><?php echo $pagina['arquivoFonte'] ?></td>
+                            <td><?php echo $pagina['idTema'] ?></td>
+                            <td><?php echo $pagina['nomeTema'] ?></td>
+                            <td>
+                                <a class="btn btn-warning btn-sm" href="paginas_alterar.php?idPagina=<?php echo $pagina['idPagina'] ?>" role="button"><i class="bi bi-pencil-square"></i></a>
+                                <a class="btn btn-danger btn-sm" href="paginas_excluir.php?idPagina=<?php echo $pagina['idPagina'] ?>" role="button"><i class="bi bi-trash3"></i></a>
+                            </td>
+                        </tr>
+                    <?php } ?>
 
-            </table>
+                </table>
+            </div>
         </div>
     </div>
 

@@ -6,7 +6,7 @@ function buscaEventosSlug($slug)
 {
 	
 	$eventos = array();
-	
+
 	$apiEntrada = array(
 		'slug' => $slug,
 	);
@@ -19,7 +19,7 @@ function buscaEventos($idEvento=null)
 {
 	
 	$eventos = array();
-	
+
 	$apiEntrada = array(
 		'idEvento' => $idEvento,
 	);

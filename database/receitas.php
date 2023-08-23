@@ -5,12 +5,12 @@ function buscaReceitasSlug($slug)
 {
 	
 	$post = array();
-
+	
 	$apiEntrada = array(
 		'slug' => $slug,
 	);
 	$post = chamaAPI(null, '/paginas/receitas_slug', json_encode($apiEntrada), 'GET');
-	//echo json_encode($post);
+
 	return $post;
 }
 
@@ -18,7 +18,7 @@ function buscaReceitas($idReceita=null)
 {
 	
 	$receitas = array();
-	
+
 	$apiEntrada = array(
 		'idReceita' => $idReceita,
 	);
@@ -76,6 +76,7 @@ if (isset($_GET['operacao'])) {
 		
 			}
 			$apiEntrada = array(
+
 				'idReceita' => $_POST['idReceita'],
 				'nomeReceita' => $_POST['nomeReceita'],
 				'conteudoReceita' => $_POST['conteudoReceita'],
@@ -85,6 +86,7 @@ if (isset($_GET['operacao'])) {
 	
 		}else{
 			$apiEntrada = array(
+
 				'idReceita' => $_POST['idReceita'],
 				'nomeReceita' => $_POST['nomeReceita'],
 				'conteudoReceita' => $_POST['conteudoReceita'],

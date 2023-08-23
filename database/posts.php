@@ -18,9 +18,9 @@ function buscaPosts($idPost=null)
 {
 	
 	$post = array();
-	
+
 	$apiEntrada = array(
-		'idPost' => $idPost
+		'idPost' => $idPost,
 	);
 	
 	$post = chamaAPI(null, '/paginas/posts', json_encode($apiEntrada), 'GET');
@@ -70,7 +70,7 @@ if (isset($_GET['operacao'])) {
 		}
 		
 		$apiEntrada = array(
-
+			
             'slug' => $_POST['slug'],
 		    'titulo' => $_POST['titulo'],
 		    'imgDestaque' => $novoNomeFoto,
@@ -99,6 +99,7 @@ if (isset($_GET['operacao'])) {
 		
 			}
 			$apiEntrada = array(
+			
 			'idPost' => $_POST['idPost'],
 		    'slug' => $_POST['slug'],
 		    'titulo' => $_POST['titulo'],
@@ -112,6 +113,7 @@ if (isset($_GET['operacao'])) {
 	
 		}else{
 			$apiEntrada = array(
+				
 				'idPost' => $_POST['idPost'],
 				'slug' => $_POST['slug'],
 				'titulo' => $_POST['titulo'],
@@ -130,6 +132,7 @@ if (isset($_GET['operacao'])) {
 	
 	if ($operacao=="excluir") {
 		$apiEntrada = array(
+			
 			'idPost' => $_POST['idPost'],
 		);
 

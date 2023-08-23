@@ -20,7 +20,7 @@ function buscaAutorCard($idAutor=null)
 {
 	
 	$autor = array();
-	
+
 	$apiEntrada = array(
 		'idAutor' => $idAutor,
 	);
@@ -70,6 +70,7 @@ if (isset($_GET['operacao'])) {
 		}
 
 		$apiEntrada = array(
+			
 			'nomeAutor' => $_POST['nomeAutor'],
             'fotoAutor' => $novoNomeFoto,
             'bannerAutor' => $novoNomeBanner,
@@ -117,6 +118,7 @@ if (isset($_GET['operacao'])) {
 				}
 
 				$apiEntrada = array(
+					
 					'idAutor' => $_POST['idAutor'],
 					'nomeAutor' => $_POST['nomeAutor'],
 					'fotoAutor' => $novoNomeFoto,
@@ -135,6 +137,7 @@ if (isset($_GET['operacao'])) {
 		
 			}else{
 				$apiEntrada = array(
+					
 					'idAutor' => $_POST['idAutor'],
 					'nomeAutor' => $_POST['nomeAutor'],
 					'bannerAutor' => $novoNomeBanner,
@@ -153,6 +156,7 @@ if (isset($_GET['operacao'])) {
 			
 				}else{
 					$apiEntrada = array(
+						
 						'idAutor' => $_POST['idAutor'],
 						'nomeAutor' => $_POST['nomeAutor'],
 						'fotoAutor' => $novoNomeFoto,
@@ -162,6 +166,7 @@ if (isset($_GET['operacao'])) {
 				}
 		}else{
 			$apiEntrada = array(
+				
 				'idAutor' => $_POST['idAutor'],
 				'nomeAutor' => $_POST['nomeAutor'],
 				'sobreMimAutor' => $_POST['sobreMimAutor'],
@@ -174,16 +179,13 @@ if (isset($_GET['operacao'])) {
 		}
 
 		
-		
-		
-
-		
 	}
 
 	
 	if ($operacao=="excluir") {
 
 		$apiEntrada = array(
+			
 			'idAutor' => $_POST['idAutor'],
 		);
 

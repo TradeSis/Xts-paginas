@@ -17,14 +17,13 @@ $secoes = buscaSecao();
         
             <div class="row mt-4">
                 <div class="col-sm-8">
-                        <h4 class="tituloTabela">Seções</h4>
-                        
-                    </div>
+                    <h2 class="tituloTabela">Seções</h2>
+                </div>
 
-                <div class="col-sm-4" style="text-align:right">
-                        <a href="secao_inserir.php" role="button" class="btn btn-primary">Adicionar</a>
-                    </div>
-          
+            <div class="col-sm-4" style="text-align:right">
+                <a href="secao_inserir.php" role="button" class="btn btn-success"><i class="bi bi-plus-square"></i>&nbsp Novo</a>
+            </div>
+
             </div>
 <!--=== Conteudo ===-->
             <ul class="nav nav-tabs" id="iframeMenu">
