@@ -59,10 +59,11 @@ if (isset($_GET['operacao'])) {
 		
 			if($ext == true) {
 				$pasta = ROOT . "/img/";
-				$novoNomeFoto = $_POST['slug']. "_" .$imgDestaque["name"];
 				
+				$novoNomeFoto = $_POST['titulo']. "_" .$imgDestaque["name"];
+				$path = 'http://' . $_SERVER["HTTP_HOST"] .'/img/' . $novoNomeFoto;
 				move_uploaded_file($imgDestaque['tmp_name'], $pasta.$novoNomeFoto);
-		
+				
 			}else{
 				$novoNomeFoto = "Sem_imagem";
 			}
@@ -73,7 +74,7 @@ if (isset($_GET['operacao'])) {
 			
             'slug' => $_POST['slug'],
 		    'titulo' => $_POST['titulo'],
-		    'imgDestaque' => $novoNomeFoto,
+		    'imgDestaque' => $path,
 		    'idAutor' => $_POST['idAutor'],
 		    'data' => $_POST['data'],
 		    'comentarios' => $_POST['comentarios'],
@@ -86,45 +87,35 @@ if (isset($_GET['operacao'])) {
 	}
 
 	if ($operacao=="alterar") {
-
+	
 		$imgDestaque = $_FILES['imgDestaque'];
 		if($imgDestaque !== null) {
 			preg_match("/\.(png|jpg|jpeg|svg){1}$/i", $imgDestaque["name"],$ext);
 		
 			if($ext == true) {
 				$pasta = ROOT . "/img/";
-				$novoNomeImg = $_POST['slug']. "_" .$imgDestaque["name"];
-				
+				$novoNomeImg = $_POST['titulo']. "_" .$imgDestaque["name"];
+				$path = 'http://' . $_SERVER["HTTP_HOST"] .'/img/' . $novoNomeImg;
 				move_uploaded_file($imgDestaque['tmp_name'], $pasta.$novoNomeImg);
 		
+			}else{
+				$path = "null";
 			}
-			$apiEntrada = array(
+	
+		}
+
+		$apiEntrada = array(
 			
 			'idPost' => $_POST['idPost'],
 		    'slug' => $_POST['slug'],
 		    'titulo' => $_POST['titulo'],
-		    'imgDestaque' => $novoNomeImg,
+		    'imgDestaque' => $path,
 		    'idAutor' => $_POST['idAutor'],
 		    'data' => $_POST['data'],
 		    'comentarios' => $_POST['comentarios'],
 		    'idCategoria' => $_POST['idCategoria'],
 		    'txtConteudo' => $_POST['txtConteudo'],
 			);
-	
-		}else{
-			$apiEntrada = array(
-				
-				'idPost' => $_POST['idPost'],
-				'slug' => $_POST['slug'],
-				'titulo' => $_POST['titulo'],
-				'idAutor' => $_POST['idAutor'],
-				'data' => $_POST['data'],
-				'comentarios' => $_POST['comentarios'],
-				'idCategoria' => $_POST['idCategoria'],
-				'txtConteudo' => $_POST['txtConteudo'],
-			);
-		}
-
 		$receitas = chamaAPI(null, '/paginas/posts', json_encode($apiEntrada), 'POST');
 		
 	}

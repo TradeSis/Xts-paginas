@@ -1,124 +1,92 @@
 <?php
 //echo "-ENTRADA->".json_encode($jsonEntrada)."\n";
+
+//LOG
+$LOG_CAMINHO = defineCaminhoLog();
+if (isset($LOG_CAMINHO)) {
+    $LOG_NIVEL = defineNivelLog();
+    $identificacao = date("dmYHis") . "-PID" . getmypid() . "-" . "autor_alterar";
+    if (isset($LOG_NIVEL)) {
+        if ($LOG_NIVEL >= 1) {
+            $arquivo = fopen(defineCaminhoLog() . "paginas_" . date("dmY") . ".log", "a");
+        }
+    }
+}
+if (isset($LOG_NIVEL)) {
+    if ($LOG_NIVEL == 1) {
+        fwrite($arquivo, $identificacao . "\n");
+    }
+    if ($LOG_NIVEL >= 2) {
+        fwrite($arquivo, $identificacao . "-ENTRADA->" . json_encode($jsonEntrada) . "\n");
+    }
+}
+//LOG
+
 $idEmpresa = null;
-	if (isset($jsonEntrada["idEmpresa"])) {
-    	$idEmpresa = $jsonEntrada["idEmpresa"];
-	}
+if (isset($jsonEntrada["idEmpresa"])) {
+    $idEmpresa = $jsonEntrada["idEmpresa"];
+}
 $conexao = conectaMysql($idEmpresa);
-if (isset($jsonEntrada['idAutor']) && isset($jsonEntrada['fotoAutor']) && ($jsonEntrada['bannerAutor'])) {
+if (isset($jsonEntrada['idAutor'])) {
 
     $idAutor = $jsonEntrada['idAutor'];
     $nomeAutor = $jsonEntrada['nomeAutor'];
     $fotoAutor = $jsonEntrada['fotoAutor'];
     $bannerAutor = $jsonEntrada['bannerAutor'];
     $sobreMimAutor = $jsonEntrada['sobreMimAutor'];
-    
-    $sql = "UPDATE autor SET nomeAutor='$nomeAutor', fotoAutor ='$fotoAutor', bannerAutor ='$bannerAutor', sobreMimAutor ='$sobreMimAutor' WHERE idAutor = $idAutor";
-    if ($atualizar = mysqli_query($conexao, $sql)) {
-        $jsonSaida = array(
-            "status" => 200,
-            "retorno" => "ok"
-        );
-    } else {
-        $jsonSaida = array(
-            "status" => 500,
-            "retorno" => "erro no mysql"
-        );
-    }
-} 
-    if (isset($jsonEntrada['idAutor']) && isset($jsonEntrada['fotoAutor'])) {
-        $idAutor = $jsonEntrada['idAutor'];
-        $nomeAutor = $jsonEntrada['nomeAutor'];
-        $fotoAutor = $jsonEntrada['fotoAutor'];
-        $sobreMimAutor = $jsonEntrada['sobreMimAutor'];
-        
-        $sql = "UPDATE autor SET nomeAutor='$nomeAutor', fotoAutor ='$fotoAutor', sobreMimAutor ='$sobreMimAutor' WHERE idAutor = $idAutor";
-        if ($atualizar = mysqli_query($conexao, $sql)) {
-            $jsonSaida = array(
-                "status" => 200,
-                "retorno" => "ok"
-            );
-        } else {
-            $jsonSaida = array(
-                "status" => 500,
-                "retorno" => "erro no mysql"
-            );
-        }
-    }
 
-    if (isset($jsonEntrada['idAutor']) && ($jsonEntrada['bannerAutor'])) {
-
-        $idAutor = $jsonEntrada['idAutor'];
-        $nomeAutor = $jsonEntrada['nomeAutor'];
-        $bannerAutor = $jsonEntrada['bannerAutor'];
-        $sobreMimAutor = $jsonEntrada['sobreMimAutor'];
-        
+    if (($fotoAutor == 'null') && ($bannerAutor == 'null')) {
+        $sql = "UPDATE autor SET nomeAutor='$nomeAutor', sobreMimAutor ='$sobreMimAutor' WHERE idAutor = $idAutor";
+    } elseif ($fotoAutor == 'null') {
         $sql = "UPDATE autor SET nomeAutor='$nomeAutor', bannerAutor ='$bannerAutor', sobreMimAutor ='$sobreMimAutor' WHERE idAutor = $idAutor";
-        if ($atualizar = mysqli_query($conexao, $sql)) {
-            $jsonSaida = array(
-                "status" => 200,
-                "retorno" => "ok"
-            );
-        } else {
-            $jsonSaida = array(
-                "status" => 500,
-                "retorno" => "erro no mysql"
-            );
+    } elseif ($bannerAutor == 'null') {
+        $sql = "UPDATE autor SET nomeAutor='$nomeAutor', fotoAutor ='$fotoAutor', sobreMimAutor ='$sobreMimAutor' WHERE idAutor = $idAutor";
+    } else {
+        $sql = "UPDATE autor SET nomeAutor='$nomeAutor', fotoAutor ='$fotoAutor', bannerAutor ='$bannerAutor', sobreMimAutor ='$sobreMimAutor' WHERE idAutor = $idAutor";
+    }
+
+    //LOG
+    if (isset($LOG_NIVEL)) {
+        if ($LOG_NIVEL >= 3) {
+            fwrite($arquivo, $identificacao . "-SQL->" . $sql . "\n");
         }
-    } 
+    }
+    //LOG
 
-if (isset($jsonEntrada['idAutor'])) {
+    //TRY-CATCH
+    try {
 
-    $idAutor = $jsonEntrada['idAutor'];
-    $nomeAutor = $jsonEntrada['nomeAutor'];
-    $fotoAutor = $jsonEntrada['fotoAutor'];
-    $bannerAutor = $jsonEntrada['bannerAutor'];
-    $sobreMimAutor = $jsonEntrada['sobreMimAutor'];
-    
-    $sql = "UPDATE autor SET nomeAutor='$nomeAutor', fotoAutor ='$fotoAutor', bannerAutor ='$bannerAutor', sobreMimAutor ='$sobreMimAutor' WHERE idAutor = $idAutor";
-    if ($atualizar = mysqli_query($conexao, $sql)) {
+        $atualizar = mysqli_query($conexao, $sql);
+        if (!$atualizar)
+            throw new Exception(mysqli_error($conexao));
+
         $jsonSaida = array(
             "status" => 200,
             "retorno" => "ok"
         );
-    } else {
+    } catch (Exception $e) {
         $jsonSaida = array(
             "status" => 500,
-            "retorno" => "erro no mysql"
+            "retorno" => $e->getMessage()
         );
+        if ($LOG_NIVEL >= 1) {
+            fwrite($arquivo, $identificacao . "-ERRO->" . $e->getMessage() . "\n");
+        }
+    } finally {
+        // ACAO EM CASO DE ERRO (CATCH), que mesmo assim precise
     }
+    //TRY-CATCH
 } else {
     $jsonSaida = array(
         "status" => 400,
         "retorno" => "Faltaram parametros"
     );
-
 }
 
-if (isset($jsonEntrada['idAutor'])) {
-
-    $idAutor = $jsonEntrada['idAutor'];
-    $nomeAutor = $jsonEntrada['nomeAutor'];
-    $sobreMimAutor = $jsonEntrada['sobreMimAutor'];
-    
-    $sql = "UPDATE autor SET nomeAutor='$nomeAutor', sobreMimAutor ='$sobreMimAutor' WHERE idAutor = $idAutor";
-    if ($atualizar = mysqli_query($conexao, $sql)) {
-        $jsonSaida = array(
-            "status" => 200,
-            "retorno" => "ok"
-        );
-    } else {
-        $jsonSaida = array(
-            "status" => 500,
-            "retorno" => "erro no mysql"
-        );
+//LOG
+if (isset($LOG_NIVEL)) {
+    if ($LOG_NIVEL >= 2) {
+        fwrite($arquivo, $identificacao . "-SAIDA->" . json_encode($jsonSaida) . "\n\n");
     }
-} else {
-    $jsonSaida = array(
-        "status" => 400,
-        "retorno" => "Faltaram parametros"
-    );
-
 }
-
-?>
+//LOG

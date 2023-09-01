@@ -3,9 +3,9 @@ include_once __DIR__ . "/../conexao.php";
 
 function buscaReceitasSlug($slug)
 {
-	
+
 	$post = array();
-	
+
 	$apiEntrada = array(
 		'slug' => $slug,
 	);
@@ -14,9 +14,9 @@ function buscaReceitasSlug($slug)
 	return $post;
 }
 
-function buscaReceitas($idReceita=null)
+function buscaReceitas($idReceita = null)
 {
-	
+
 	$receitas = array();
 
 	$apiEntrada = array(
@@ -31,19 +31,18 @@ if (isset($_GET['operacao'])) {
 
 	$operacao = $_GET['operacao'];
 
-    if ($operacao=="inserir") {
+	if ($operacao == "inserir") {
 
 		$imgReceita = $_FILES['imgReceita'];
-		if($imgReceita !== null) {
-			preg_match("/\.(png|jpg|jpeg|svg){1}$/i", $imgReceita["name"],$ext);
-		
-			if($ext == true) {
+		if ($imgReceita !== null) {
+			preg_match("/\.(png|jpg|jpeg|svg){1}$/i", $imgReceita["name"], $ext);
+
+			if ($ext == true) {
 				$pasta = ROOT . "/img/";
-				$novoNomeImg = $_POST['nomeReceita']. "_" .$imgReceita["name"];
-				
-				move_uploaded_file($imgReceita['tmp_name'], $pasta.$novoNomeImg);
-		
-			}else{
+				$novoNomeImg = $_POST['nomeReceita'] . "_" . $imgReceita["name"];
+				$path = 'http://' . $_SERVER["HTTP_HOST"] . '/img/' . $novoNomeImg;
+				move_uploaded_file($imgReceita['tmp_name'], $pasta . $novoNomeImg);
+			} else {
 				$novoNomeImg = "Sem_imagem";
 			}
 		}
@@ -53,76 +52,64 @@ if (isset($_GET['operacao'])) {
 			'nomeReceita' => $_POST['nomeReceita'],
 			'conteudoReceita' => $_POST['conteudoReceita'],
 			'autorReceita' => $_POST['autorReceita'],
-			'imgReceita' => $novoNomeImg,
-			
+			'imgReceita' => $path,
+
 		);
 		$receitas = chamaAPI(null, '/paginas/receitas', json_encode($apiEntrada), 'PUT');
-		
 	}
 
 	$operacao = $_GET['operacao'];
 
-    if ($operacao=="alterar") {
+	if ($operacao == "alterar") {
 
 		$imgReceita = $_FILES['imgReceita'];
-		if($imgReceita !== null) {
-			preg_match("/\.(png|jpg|jpeg|svg){1}$/i", $imgReceita["name"],$ext);
-		
-			if($ext == true) {
+		if ($imgReceita !== null) {
+			preg_match("/\.(png|jpg|jpeg|svg){1}$/i", $imgReceita["name"], $ext);
+
+			if ($ext == true) {
 				$pasta = ROOT . "/img/";
-				$novoNomeImg = $_POST['nomeReceita']. "_" .$imgReceita["name"];
-				
-				move_uploaded_file($imgReceita['tmp_name'], $pasta.$novoNomeImg);
-		
+				$novoNomeImg = $_POST['nomeReceita'] . "_" . $imgReceita["name"];
+				$path = 'http://' . $_SERVER["HTTP_HOST"] . '/img/' . $novoNomeImg;
+				move_uploaded_file($imgReceita['tmp_name'], $pasta . $novoNomeImg);
+			} else {
+				$path = "null";
 			}
-			$apiEntrada = array(
-
-				'idReceita' => $_POST['idReceita'],
-				'nomeReceita' => $_POST['nomeReceita'],
-				'conteudoReceita' => $_POST['conteudoReceita'],
-				'autorReceita' => $_POST['autorReceita'],
-				'imgReceita' => $novoNomeImg,
-			);
-	
-		}else{
-			$apiEntrada = array(
-
-				'idReceita' => $_POST['idReceita'],
-				'nomeReceita' => $_POST['nomeReceita'],
-				'conteudoReceita' => $_POST['conteudoReceita'],
-				'autorReceita' => $_POST['autorReceita'],
-			);
 		}
+		$apiEntrada = array(
+
+			'idReceita' => $_POST['idReceita'],
+			'nomeReceita' => $_POST['nomeReceita'],
+			'conteudoReceita' => $_POST['conteudoReceita'],
+			'autorReceita' => $_POST['autorReceita'],
+			'imgReceita' => $path,
+		);
+
+
 
 		$receitas = chamaAPI(null, '/paginas/receitas', json_encode($apiEntrada), 'POST');
-		
 	}
 
-	
 
-	
-	if ($operacao=="excluir") {
+
+
+	if ($operacao == "excluir") {
 
 		$apiEntrada = array(
 			'idReceita' => $_POST['idReceita'],
 		);
 
-		if(!empty($_POST['imgReceita'])){
+		if (!empty($_POST['imgReceita'])) {
 			$pasta = ROOT . "/img/";
 			$imagem = $pasta . $_POST['imgReceita'];
-			
-			if(file_exists($imagem)){
+
+			if (file_exists($imagem)) {
 				unlink($imagem);
 			}
-
 		}
 
 		$receitas = chamaAPI(null, '/paginas/receitas', json_encode($apiEntrada), 'DELETE');
 	}
 
 
-	header('Location: ../blog/receitas.php');	
-	
+	header('Location: ../blog/receitas.php');
 }
-
-?>

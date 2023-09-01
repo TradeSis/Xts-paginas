@@ -1,8 +1,30 @@
 <?php
 //echo "-ENTRADA->".json_encode($jsonEntrada)."\n";
+
+//LOG
+$LOG_CAMINHO = defineCaminhoLog();
+if (isset($LOG_CAMINHO)) {
+  $LOG_NIVEL = defineNivelLog();
+  $identificacao = date("dmYHis") . "-PID" . getmypid() . "-" . "paginas_slug";
+  if (isset($LOG_NIVEL)) {
+    if ($LOG_NIVEL >= 1) {
+      $arquivo = fopen(defineCaminhoLog() . "paginas_" . date("dmY") . ".log", "a");
+    }
+  }
+}
+if (isset($LOG_NIVEL)) {
+  if ($LOG_NIVEL == 1) {
+    fwrite($arquivo, $identificacao . "\n");
+  }
+  if ($LOG_NIVEL >= 2) {
+    fwrite($arquivo, $identificacao . "-ENTRADA->" . json_encode($jsonEntrada) . "\n");
+  }
+}
+//LOG
+
 $idEmpresa = null;
 if (isset($jsonEntrada["idEmpresa"])) {
-    $idEmpresa = $jsonEntrada["idEmpresa"];
+  $idEmpresa = $jsonEntrada["idEmpresa"];
 }
 
 $conexao = conectaMysql($idEmpresa);
@@ -21,7 +43,7 @@ $buscar = mysqli_query($conexao, $sql);
 $tema = mysqli_fetch_array($buscar, MYSQLI_ASSOC);
 
 // depois verifica se tem este slug no tema ativo
-$sql = "SELECT * FROM paginas where paginas.slug = " . "'". $jsonEntrada["slug"] . "'";
+$sql = "SELECT * FROM paginas where paginas.slug = " . "'" . $jsonEntrada["slug"] . "'";
 $sql = $sql . " and paginas.idTema = " .  $tema["idTema"]  . ";";
 $rows = 0;
 $buscar = mysqli_query($conexao, $sql);
@@ -30,33 +52,39 @@ while ($row = mysqli_fetch_array($buscar, MYSQLI_ASSOC)) {
   $rows = $rows + 1;
 }
 
-if ($row==0) { // se nao tiver a pagina no tema ativo, pega a pagina no tema 0
+if ($row == 0) { // se nao tiver a pagina no tema ativo, pega a pagina no tema 0
 
-  $sql = "SELECT * FROM paginas where paginas.slug = " . "'". $jsonEntrada["slug"] . "'";
+  $sql = "SELECT * FROM paginas where paginas.slug = " . "'" . $jsonEntrada["slug"] . "'";
   $sql = $sql . " and paginas.idTema = 0;";
-  
-  
+
+  //LOG
+  if (isset($LOG_NIVEL)) {
+    if ($LOG_NIVEL >= 3) {
+      fwrite($arquivo, $identificacao . "-SQL->" . $sql . "\n");
+    }
+  }
+  //LOG
+
   $rows = 0;
   $buscar = mysqli_query($conexao, $sql);
   while ($row = mysqli_fetch_array($buscar, MYSQLI_ASSOC)) {
     array_push($paginas, $row);
     $rows = $rows + 1;
   }
-  
 }
 $paginas = $paginas[0];
 
 // Monta a saida como estava anteriormente
 $pagina = [
-        "idPagina" => $paginas["idPagina"],
-        "idTema" => $paginas["idTema"],
-        "slug" => $paginas["slug"],
-        "tituloPagina" => $paginas["tituloPagina"],
-        "arquivoFonte" => $paginas["arquivoFonte"],
-        "arquivoSingle" => $paginas["arquivoSingle"],
-        "nomeTema" => $tema["nomeTema"],
-        "css" => $tema["css"],
-        "ativo" => $tema["ativo"]
+  "idPagina" => $paginas["idPagina"],
+  "idTema" => $paginas["idTema"],
+  "slug" => $paginas["slug"],
+  "tituloPagina" => $paginas["tituloPagina"],
+  "arquivoFonte" => $paginas["arquivoFonte"],
+  "arquivoSingle" => $paginas["arquivoSingle"],
+  "nomeTema" => $tema["nomeTema"],
+  "css" => $tema["css"],
+  "ativo" => $tema["ativo"]
 ];
 
 $jsonSaida = $pagina;
@@ -64,5 +92,10 @@ $jsonSaida = $pagina;
 //echo "-SAIDA->".json_encode($jsonSaida)."\n";
 
 
-
-?>
+//LOG
+if (isset($LOG_NIVEL)) {
+  if ($LOG_NIVEL >= 2) {
+    fwrite($arquivo, $identificacao . "-SAIDA->" . json_encode($jsonSaida) . "\n\n");
+  }
+}
+//LOG

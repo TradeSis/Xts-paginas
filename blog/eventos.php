@@ -37,7 +37,7 @@ $eventos = buscaEventos();
                     foreach ($eventos as $evento) {
                     ?>
                         <tr>
-                            <td><img src="<?php echo URLROOT ?>/img/<?php echo $evento['capaEvento'] ?>" width="60px" height="60px" alt=""></td>
+                            <td><img src="<?php echo $evento['capaEvento'] ?>" width="60px" height="60px" alt=""></td>
                             <td><?php echo $evento['nomeEvento'] ?></td>
                             <td><?php echo date('d/m/Y', strtotime($evento['dataEvento'])) ?></td>
                             <td><?php echo $evento['localEvento'] ?></td>
