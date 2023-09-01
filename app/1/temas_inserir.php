@@ -34,13 +34,14 @@ if (isset($jsonEntrada['nomeTema'])) {
     $ativo = $jsonEntrada['ativo'];
     $menu = $jsonEntrada['menu'];
     $perfil = $jsonEntrada['perfil'];
+    $programaForm = 'null';
 
     if ($ativo == '1') {
         $sql = "UPDATE `temas` SET `ativo`='0'";
         $atualizar = mysqli_query($conexao, $sql);
     }
 
-    $sql = "INSERT INTO `temas`(`nomeTema`, `css`, `ativo`, `menu`, `perfil`) VALUES ('$nomeTema','$css','$ativo','$menu','$perfil')";
+    $sql = "INSERT INTO `temas`(`nomeTema`, `css`, `ativo`, `menu`, `perfil`, `programaForm`) VALUES ('$nomeTema','$css','$ativo','$menu','$perfil','$programaForm')";
 
     //LOG
     if (isset($LOG_NIVEL)) {
