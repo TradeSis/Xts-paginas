@@ -119,7 +119,7 @@ if (isset($_GET['operacao'])) {
 				move_uploaded_file($capaEvento['tmp_name'], $pasta.$novoNomeImg);
 		
 			}else{
-				$novoNomeImg = "Sem_imagem";
+				$pathCapa = "null";
 			}
 	
 		}
@@ -136,7 +136,7 @@ if (isset($_GET['operacao'])) {
 				move_uploaded_file($bannerEvento['tmp_name'], $pasta.$novoNomeBanner);
 		
 			}else{
-				$novoNomeBanner = "Sem_imagem";
+				$pathBanner = "null";
 			}
 	
 		}
