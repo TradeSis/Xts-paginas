@@ -36,10 +36,11 @@ if (isset($jsonEntrada['slug'])) {
     $data = $jsonEntrada['data'];
     $txtConteudo = $jsonEntrada['txtConteudo'];
     $idCategoria = $jsonEntrada['idCategoria'];
+    $idCategoria = $jsonEntrada['idCategoria'];
+    $comentarios = 'null'; //sem uso no momento
+    $textoIntro = 'null'; //sem uso no momento
 
-
-
-    $sql = "INSERT INTO `posts`(`slug`, `titulo`, `imgDestaque`, `idAutor`, `data`, `txtConteudo`, `idCategoria`) VALUES ('$slug','$titulo', '$imgDestaque' ,'$idAutor','$data','$txtConteudo','$idCategoria')";
+    $sql = "INSERT INTO `posts`(`slug`, `titulo`, `imgDestaque`, `idAutor`, `data`, `txtConteudo`, `idCategoria`, `comentarios`, `textoIntro`) VALUES ('$slug','$titulo', '$imgDestaque' ,'$idAutor','$data','$txtConteudo','$idCategoria','$comentarios','$textoIntro')";
 
     //LOG
     if (isset($LOG_NIVEL)) {

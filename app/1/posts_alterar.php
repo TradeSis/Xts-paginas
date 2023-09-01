@@ -35,11 +35,13 @@ if (isset($jsonEntrada['idPost'])) {
     $idAutor = $jsonEntrada['idAutor'];
     $txtConteudo = $jsonEntrada['txtConteudo'];
     $idCategoria = $jsonEntrada['idCategoria'];
+    $comentarios = 'null'; //sem uso no momento
+    $textoIntro = 'null'; //sem uso no momento
 
     if ($imgDestaque == 'null') {
-        $sql = "UPDATE posts SET  titulo ='$titulo', idAutor ='$idAutor', txtConteudo ='$txtConteudo', idCategoria ='$idCategoria' WHERE idPost = $idPost";
+        $sql = "UPDATE posts SET  titulo ='$titulo', idAutor ='$idAutor', txtConteudo ='$txtConteudo', idCategoria ='$idCategoria', comentarios ='$comentarios', textoIntro ='$textoIntro' WHERE idPost = $idPost";
     } else {
-        $sql = "UPDATE posts SET imgDestaque='$imgDestaque', titulo ='$titulo', idAutor ='$idAutor', txtConteudo ='$txtConteudo', idCategoria ='$idCategoria' WHERE idPost = $idPost";
+        $sql = "UPDATE posts SET imgDestaque='$imgDestaque', titulo ='$titulo', idAutor ='$idAutor', txtConteudo ='$txtConteudo', idCategoria ='$idCategoria', comentarios ='$comentarios', textoIntro ='$textoIntro' WHERE idPost = $idPost";
     }
 
     //LOG
