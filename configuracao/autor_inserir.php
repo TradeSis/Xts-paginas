@@ -50,12 +50,11 @@ include_once('../head.php');
             </div>
 
             <div class="row">
-                <div class="col-sm-3" style="margin-top: 10px">
-                    <div class="form-group">
-                        <label class='control-label' for='inputNormal' style="margin-top: -43px;">Sobre Mim</label>
-                        <textarea name="sobreMimAutor" id="" cols="120" rows="10"></textarea>
-                    </div>
+                <div class="col">
+                    <span class="tituloEditor">Sobre Mim</span>
                 </div>
+                <div class="quill-textarea"></div>
+                <textarea style="display: none" id="detail" name="sobreMimAutor"></textarea>
             </div>
 
             <div style="text-align:right;margin-top:20px">
@@ -65,6 +64,7 @@ include_once('../head.php');
 
     </div>
 
+    <script src="<?php echo URLROOT ?>/sistema/js/quilljs.js"></script>
     <script>
         //Carregar a FOTO na tela
         const inputFile = document.querySelector("#foto");

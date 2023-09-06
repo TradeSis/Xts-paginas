@@ -7,7 +7,7 @@ $receita = buscaReceitas($idReceita);
 
 
 <body class="bg-transparent">
-
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
     <div class="container formContainer">
 
         <div class="row">
@@ -32,15 +32,11 @@ $receita = buscaReceitas($idReceita);
             </div>
 
             <div class="row">
-                <!--  <div class="col-sm-3" style="margin-top: 10px">
-                        <div class="form-group">
-                            <label class='control-label' for='inputNormal' style="margin-top: -43px;">Conteudo</label>
-                            <textarea name="conteudoReceita" id="" cols="135" rows="10"><?php echo $receita['conteudoReceita'] ?></textarea>
-                        </div>
-                    </div> -->
-                <textarea name="conteudoReceita">
-                    <?php echo $receita['conteudoReceita'] ?>
-  </textarea>
+                <div class="col">
+                    <span class="tituloEditor">Descrição da Receita</span>
+                </div>
+                <div class="quill-textarea"><?php echo $receita['conteudoReceita'] ?></div>
+                <textarea style="display: none" id="detail" name="conteudoReceita"><?php echo $receita['conteudoReceita'] ?></textarea>
             </div>
 
             <div class="row">
@@ -68,19 +64,8 @@ $receita = buscaReceitas($idReceita);
     </div>
 
     </div>
-    <script src="https://cdn.tiny.cloud/1/n1fodpdv330yan6bcequ4fsjzhnu6b0cmdf7a8t92j39u02i/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
-    <script>
-        tinymce.init({
-            selector: 'textarea',
-            toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags  | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
-            toolbar_mode: 'floating',
-            tinycomments_mode: 'embedded',
-            tinycomments_author: 'Author name',
-            menubar: false,
-            entity_encoding: 'raw',
+    <script src="<?php echo URLROOT ?>/sistema/js/quilljs.js"></script>
 
-        });
-    </script>
     <script>
         //Carregar a FOTO na tela
         const inputFile = document.querySelector("#foto");
