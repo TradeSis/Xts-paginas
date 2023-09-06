@@ -95,7 +95,7 @@ if (isset($_GET['operacao'])) {
 				move_uploaded_file($fotoAutor['tmp_name'], $pasta.$novoNomeFoto);
 		
 			}else{
-				$novoNomeFoto = "Sem_imagem";
+				$pathFoto = "null";
 			}
 	
 		}
@@ -112,7 +112,7 @@ if (isset($_GET['operacao'])) {
 				move_uploaded_file($bannerAutor['tmp_name'], $pasta.$novoNomeBanner);
 		
 			}else{
-				$novoNomeBanner = "Sem_imagem";
+				$pathBanner = "null";
 			}
 	
 		}

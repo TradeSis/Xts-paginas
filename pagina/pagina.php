@@ -21,7 +21,7 @@ $tema = buscatema();
 
 <link href="<?php echo URLROOT ?>/paginas/css/main.css" rel="stylesheet"> <!--Estilo da pg principal -->
 <script src="<?php echo URLROOT ?>/paginas/js/main.js"></script>
-
+<link href="<?php echo URLROOT ?>/paginas/css/paginaError.css" rel="stylesheet">
 
 <?php
 
@@ -41,6 +41,19 @@ if (isset($_GET['parametros'])) {
 }
 
 $paginaDados = buscaPagina($pagina);
+if($paginaDados == null){
+  echo "
+  <div id='notfound'>
+		<div class='notfound'>
+			<div class='notfound-404'>
+				<h3>Oops! PÁGINA NÃO ENCONTRADA</h3>
+				<h1><span>4</span><span>0</span><span>4</span></h1>
+			</div>
+		</div>
+	</div>
+";
+  die();
+}
 if ($paginaDados['arquivoFonte'] !== 'index.php') {
 
   if (isset($paginaDados['arquivoSingle']) && !$slugSingle == null) {

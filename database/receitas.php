@@ -72,7 +72,7 @@ if (isset($_GET['operacao'])) {
 				$path = 'http://' . $_SERVER["HTTP_HOST"] . '/img/' . $novoNomeImg;
 				move_uploaded_file($imgReceita['tmp_name'], $pasta . $novoNomeImg);
 			} else {
-				$novoNomeBanner = "Sem_imagem";
+				$path = "null";
 			}
 		}
 		$apiEntrada = array(

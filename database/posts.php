@@ -99,7 +99,7 @@ if (isset($_GET['operacao'])) {
 				move_uploaded_file($imgDestaque['tmp_name'], $pasta.$novoNomeImg);
 		
 			}else{
-				$novoNomeBanner = "Sem_imagem";
+				$path = "null";
 			}
 	
 		}
