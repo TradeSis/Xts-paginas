@@ -8,13 +8,13 @@ $perfil = json_decode($tema['perfil'], true);
 ?>
 
 <div class="container" style="margin-top: 10px">
-    <h5>Menu</h5>
-    <hr>
-    <div class="row" style="margin-top: 30px;">
-        <div class="col-sm-6">
-            <label class='control-label' for='inputNormal' style="margin-top: -20px;">Menu</label>
-            <textarea name="menu" id="" cols="120" rows="5"><?php echo $tema['menu'] ?></textarea>
+
+    <div class="container-fluid p-0">
+        <div class="col">
+            <span class="tituloEditor">Menu</span>
         </div>
+        <div class="quill-textarea"><?php echo $tema['menu'] ?></div>
+        <textarea style="display: none" id="detail" name="menu"><?php echo $tema['menu'] ?></textarea>
     </div>
     <br>
     <h5>Perfil</h5>
@@ -94,7 +94,7 @@ $perfil = json_decode($tema['perfil'], true);
 
 </div>
 
-
+<script src="<?php echo URLROOT ?>/sistema/js/quilljs.js"></script>
 <script>
     //Carregar a imagem na tela
     const inputFile = document.querySelector("#imgPerfil");

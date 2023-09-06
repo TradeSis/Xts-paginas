@@ -94,7 +94,7 @@ $categorias = buscaCategorias();
 
             </div>
 
-            <div class="row">
+            <div class="container-fluid p-0">
                 <div class="col">
                     <span class="tituloEditor">Descrição do Post</span>
                 </div>

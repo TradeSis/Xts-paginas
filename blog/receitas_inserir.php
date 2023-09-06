@@ -33,9 +33,9 @@ include_once('../head.php');
                 </div>
             </div>
 
-            <div class="row">
+            <div class="container-fluid p-0">
                 <div class="col">
-                    <span class="tituloEditor">Descrição da Receita</span>
+                    <span class="tituloEditor">Descrição</span>
                 </div>
                 <div class="quill-textarea"></div>
                 <textarea style="display: none;" id="detail" name="conteudoReceita"></textarea>

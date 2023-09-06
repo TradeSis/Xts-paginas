@@ -49,7 +49,7 @@ include_once('../head.php');
                 </div>
             </div>
 
-            <div class="row">
+            <div class="container-fluid p-0">
                 <div class="col">
                     <span class="tituloEditor">Sobre Mim</span>
                 </div>

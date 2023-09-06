@@ -31,9 +31,9 @@ $receita = buscaReceitas($idReceita);
                 </div>
             </div>
 
-            <div class="row">
+            <div class="container-fluid p-0">
                 <div class="col">
-                    <span class="tituloEditor">Descrição da Receita</span>
+                    <span class="tituloEditor">Descrição</span>
                 </div>
                 <div class="quill-textarea"><?php echo $receita['conteudoReceita'] ?></div>
                 <textarea style="display: none" id="detail" name="conteudoReceita"><?php echo $receita['conteudoReceita'] ?></textarea>
