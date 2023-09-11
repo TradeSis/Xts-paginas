@@ -6,11 +6,6 @@ $autores = buscaAutor();
 $categorias = buscaCategorias();
 ?>
 
-<style>
-    .ck-editor__editable_inline {
-        min-height: 400px;
-    }
-</style>
 
 <body class="bg-transparent">
 
@@ -92,33 +87,16 @@ $categorias = buscaCategorias();
                         <input type="date" name="data" class="form-control" required autocomplete="off">
                     </div>
                 </div>
-
-                <!--     <div class="col-sm-3" style="margin-top: 10px">
-                        <div class="form-group">
-                            <label class='control-label' for='inputNormal' style="margin-top: -20px;">Comentarios</label>
-                            <input type="text" name="comentarios" class="form-control" autocomplete="off">
-                        </div>
-                    </div> -->
             </div>
 
-
-            <!-- <div class="row">
-                    <div class="col-sm-12" style="margin-top: 10px">
-                        <div class="form-group">
-                            <label>Introdução</label>
-                            <textarea name="textoIntro" cols="130" rows="5" required></textarea>
-                        </div>
-                    </div>
-                </div> -->
-
-            <div class="row">
-                <div class="col-sm-12" style="margin-top: 10px">
-                    <div class="form-group">
-                        <label class='control-label' for='inputNormal' style="margin-top: -43px;">Conteudo</label>
-                        <textarea name="txtConteudo" cols="120" rows="7" id="txtConteudo"></textarea>
-                    </div>
+            <div class="container-fluid p-0">
+                <div class="col">
+                    <span class="tituloEditor">Descrição do Post</span>
                 </div>
+                <div class="quill-textarea"></div>
+                <textarea style="display: none;" id="detail" name="txtConteudo"></textarea>
             </div>
+
 
             <div style="text-align:right;margin-top:20px">
                 <button type="submit" class="btn  btn-success"><i class="bi bi-sd-card-fill"></i>&#32;Cadastrar</button>
@@ -128,7 +106,7 @@ $categorias = buscaCategorias();
     </div>
 
 
-    <script src="vendor/ckeditor/ckeditor.js"></script>
+    <script src="<?php echo URLROOT ?>/sistema/js/quilljs.js"></script>
     <script>
         //Carregar a imagem na tela
         const inputFile = document.querySelector("#foto");

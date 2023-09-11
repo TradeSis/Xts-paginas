@@ -55,6 +55,8 @@ if (isset($_GET['operacao'])) {
 			'imgReceita' => $path,
 
 		);
+		/* echo json_encode($apiEntrada);
+		return; */
 		$receitas = chamaAPI(null, '/paginas/receitas', json_encode($apiEntrada), 'PUT');
 	}
 

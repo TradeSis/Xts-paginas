@@ -23,57 +23,57 @@ $autor = buscaAutor($idAutor);
 
         </div>
 
-            <form action="../database/autor.php?operacao=alterar" method="post" enctype="multipart/form-data">
+        <form action="../database/autor.php?operacao=alterar" method="post" enctype="multipart/form-data">
 
-                <div class="row">
-                    <div class="col-sm-12" style="margin-top: 10px">
-                        <div class="form-group">
-                            <label class="labelForm">Nome</label>
-                            <input type="text" name="nomeAutor" class="form-control" value="<?php echo $autor['nomeAutor'] ?>">
-                            <input type="text" class="form-control" name="idAutor" value="<?php echo $autor['idAutor'] ?>" style="display: none">
-                        </div>
+            <div class="row">
+                <div class="col-sm-12" style="margin-top: 10px">
+                    <div class="form-group">
+                        <label class="labelForm">Nome</label>
+                        <input type="text" name="nomeAutor" class="form-control" value="<?php echo $autor['nomeAutor'] ?>">
+                        <input type="text" class="form-control" name="idAutor" value="<?php echo $autor['idAutor'] ?>" style="display: none">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6" style="margin-top: 50px">
+                    <div class="col-sm-6" style="margin-top: -20px">
+                        <label>Foto</label>
+                        <label class="picture" for="foto" tabIndex="0">
+                            <img src="<?php echo $autor["fotoAutor"] ?>" width="100%" height="100%" alt="">
+                        </label>
+                        <input type="file" name="fotoAutor" id="foto">
                     </div>
                 </div>
 
-                <div class="row">
-                    <div class="col-sm-6" style="margin-top: 50px">
-                        <div class="col-sm-6" style="margin-top: -20px">
-                            <label>Foto</label>
-                            <label class="picture" for="foto" tabIndex="0">
-                                <img src="<?php echo $autor["fotoAutor"] ?>" width="100%" height="100%" alt="">  
-                            </label>
-                            <input type="file" name="fotoAutor" id="foto">
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6" style="margin-top: 50px">
-                        <div class="col-sm-6" style="margin-top: -20px">
-                            <label>Banner</label>
-                            <label class="picture" for="banner" tabIndex="0">
+                <div class="col-sm-6" style="margin-top: 50px">
+                    <div class="col-sm-6" style="margin-top: -20px">
+                        <label>Banner</label>
+                        <label class="picture" for="banner" tabIndex="0">
                             <img src="<?php echo $autor["bannerAutor"] ?>" width="100%" height="100%" alt="">
-                            </label>
-                            <input type="file" name="bannerAutor" id="banner" value="<?php echo $autor['bannerAutor'] ?>">
-                        </div>
+                        </label>
+                        <input type="file" name="bannerAutor" id="banner" value="<?php echo $autor['bannerAutor'] ?>">
                     </div>
                 </div>
+            </div>
 
-                <div class="row">
-                    <div class="col-sm-3" style="margin-top: 10px">
-                        <div class="form-group">
-                            <label class='control-label' for='inputNormal' style="margin-top: -43px;">Sobre Mim</label>
-                            <textarea name="sobreMimAutor" id="" cols="120" rows="10"><?php echo $autor['sobreMimAutor'] ?></textarea>
-                        </div>
-                    </div>
+            <div class="container-fluid p-0">
+                <div class="col">
+                    <span class="tituloEditor">Sobre Mim</span>
                 </div>
+                <div class="quill-textarea"><?php echo $autor['sobreMimAutor'] ?></div>
+                <textarea style="display: none" id="detail" name="sobreMimAutor"><?php echo $autor['sobreMimAutor'] ?></textarea>
+            </div>
 
-                <div style="text-align:right; margin-top:20px">
-                    <button type="submit" class="btn  btn-success"><i class="bi bi-sd-card-fill"></i>&#32;Salvar</button>
-                </div>
-            </form>
+            <div style="text-align:right; margin-top:20px">
+                <button type="submit" class="btn  btn-success"><i class="bi bi-sd-card-fill"></i>&#32;Salvar</button>
+            </div>
+        </form>
 
 
     </div>
-
+    
+    <script src="<?php echo URLROOT ?>/sistema/js/quilljs.js"></script>
 </body>
 
 </html>
