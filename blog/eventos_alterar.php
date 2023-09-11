@@ -21,117 +21,117 @@ $categorias = buscaCategorias();
             </div>
         </div>
 
-            <form class="mb-4" action="../database/eventos.php?operacao=alterar" method="post" enctype="multipart/form-data">
+        <form class="mb-4" action="../database/eventos.php?operacao=alterar" method="post" enctype="multipart/form-data">
 
+            <div class="row">
+                <div class="col-sm-12" style="margin-top: 10px">
+                    <div class="form-group">
+                        <label class='control-label' for='inputNormal' style="margin-top: -20px;">Nome do Evento*</label>
+                        <input type="text" name="nomeEvento" class="form-control" value="<?php echo $evento['nomeEvento'] ?>">
+                        <input type="text" class="form-control" name="idEvento" value="<?php echo $evento['idEvento'] ?>" style="display: none">
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid p-0">
+                <div class="col">
+                    <span class="tituloEditor">Descrição do Evento</span>
+                </div>
+                <div class="quill-textarea"><?php echo $evento['descricaoEvento'] ?></div>
+                <textarea style="display: none" id="detail" name="descricaoEvento"><?php echo $evento['descricaoEvento'] ?></textarea>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4" style="margin-top: 10px">
+                    <div class="form-group">
+                        <label class='control-label' for='inputNormal' style="margin-top: -20px;">Data do Evento</label>
+                        <input type="date" name="dataEvento" class="form-control" value="<?php echo $evento['dataEvento'] ?>">
+
+                    </div>
+                </div>
+                <div class="col-sm-4" style="margin-top: 10px">
+                    <div class="form-group">
+                        <label class='control-label' for='inputNormal' style="margin-top: -20px;">Cidade</label>
+                        <input type="text" name="cidadeEvento" class="form-control" value="<?php echo $evento['cidadeEvento'] ?>">
+                    </div>
+                </div>
+                <div class="col-sm-4" style="margin-top: 10px">
+                    <div class="form-group">
+                        <label class='control-label' for='inputNormal' style="margin-top: -20px;">Local</label>
+                        <input type="text" name="localEvento" class="form-control" value="<?php echo $evento['localEvento'] ?>">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
                 <div class="row">
-                    <div class="col-sm-12" style="margin-top: 10px">
-                        <div class="form-group">
-                            <label class='control-label' for='inputNormal' style="margin-top: -20px;">Nome do Evento*</label>
-                            <input type="text" name="nomeEvento" class="form-control" value="<?php echo $evento['nomeEvento'] ?>">
-                            <input type="text" class="form-control" name="idEvento" value="<?php echo $evento['idEvento'] ?>" style="display: none">
+                    <div class="col-sm-6" style="margin-top: 50px">
+                        <div class="col-sm-6" style="margin-top: -20px">
+                            <label class='control-label' for='inputNormal' style="margin-top: -50px;">Capa Evento</label>
+                            <label class="picture" for="foto" tabIndex="0">
+                                <img src="<?php echo $evento["capaEvento"] ?>" width="100%" height="100%" alt="">
+                            </label>
+                            <input type="file" name="capaEvento" id="foto">
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6" style="margin-top: 50px">
+                        <div class="col-sm-6" style="margin-top: -20px">
+                            <label class='control-label' for='inputNormal' style="margin-top: -50px;">Banner Evento</label>
+                            <label class="picture" for="banner" tabIndex="0">
+                                <img src="<?php echo $evento["bannerEvento"] ?>" width="100%" height="100%" alt="">
+                            </label>
+                            <input type="file" name="bannerEvento" id="banner">
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="row">
-                    <div class="col-sm-3" style="margin-top: 10px">
-                        <div class="form-group">
-                            <label class='control-label' for='inputNormal' style="margin-top: -43px;">Descrição do Evento</label>
-                            <textarea name="descricaoEvento" id="" cols="120" rows="10"><?php echo $evento['descricaoEvento'] ?></textarea>
-                        </div>
+            <div class="row">
+                <div class="col-sm-4 ml-4" style="margin-top: 40px">
+                    <div class="select-form-group">
+                        <label class='control-label' for='inputNormal' style="margin-top: -45px;">Esconder</label>
+                        <label for="esconderEvento">esconder</label>
+                        <input type="range" id="esconderEvento" name="esconderEvento" min="0" max="1" value="<?php echo $evento['esconderEvento'] ?>" style="width: 15%;">
+                        <label for="esconderEvento">aparecer</label>
                     </div>
                 </div>
 
-                <div class="row">
-                    <div class="col-sm-4" style="margin-top: 10px">
-                        <div class="form-group">
-                            <label class='control-label' for='inputNormal' style="margin-top: -20px;">Data do Evento</label>
-                            <input type="date" name="dataEvento" class="form-control" value="<?php echo $evento['dataEvento'] ?>">
-                            
-                        </div>
-                    </div>
-                    <div class="col-sm-4" style="margin-top: 10px">
-                        <div class="form-group">
-                            <label class='control-label' for='inputNormal' style="margin-top: -20px;">Cidade</label>
-                            <input type="text" name="cidadeEvento" class="form-control" value="<?php echo $evento['cidadeEvento'] ?>">
-                        </div>
-                    </div>
-                    <div class="col-sm-4" style="margin-top: 10px">
-                        <div class="form-group">
-                            <label class='control-label' for='inputNormal' style="margin-top: -20px;">Local</label>
-                            <input type="text" name="localEvento" class="form-control" value="<?php echo $evento['localEvento'] ?>">
-                        </div>
+                <div class="col-sm-6" style="margin-top: 10px">
+                    <div class="select-form-group">
+
+                        <label class="labelForm">Tipo Evento*</label>
+                        <select class="select form-control" name="tipoEvento">
+                            <option value="<?php echo $evento['tipoEvento'] ?>"><?php echo $evento['tipoEvento'] ?></option>
+                            <option value="evento">Evento</option>
+                            <option value="visitacao">Visitação</option>
+                            <option value="cursos">Cursos</option>
+                            <option value="podcast">Podcast</option>
+                        </select>
+
                     </div>
                 </div>
+            </div>
 
-                <div class="row">
-                    <div class="row">
-                        <div class="col-sm-6" style="margin-top: 50px">
-                            <div class="col-sm-6" style="margin-top: -20px">
-                                <label class='control-label' for='inputNormal' style="margin-top: -50px;">Capa Evento</label>
-                                <label class="picture" for="foto" tabIndex="0">
-                                    <img src="<?php echo $evento["capaEvento"] ?>" width="100%" height="100%" alt="">
-                                </label>
-                                <input type="file" name="capaEvento" id="foto">
-                            </div>
-                        </div>
-
-                        <div class="col-sm-6" style="margin-top: 50px">
-                            <div class="col-sm-6" style="margin-top: -20px">
-                                <label class='control-label' for='inputNormal' style="margin-top: -50px;">Banner Evento</label>
-                                <label class="picture" for="banner" tabIndex="0">
-                                    <img src="<?php echo $evento["bannerEvento"] ?>" width="100%" height="100%" alt="">
-                                </label>
-                                <input type="file" name="bannerEvento" id="banner">
-                            </div>
-                        </div>
+            <div class="row">
+                <div class="col-sm-12" style="margin-top: 10px">
+                    <div class="form-group">
+                        <label class='control-label' for='inputNormal' style="margin-top: -20px;">link do Evento</label>
+                        <input type="text" name="linkEvento" class="form-control" value="<?php echo $evento['linkEvento'] ?>">
                     </div>
                 </div>
-
-                <div class="row">
-                    <div class="col-sm-4 ml-4" style="margin-top: 40px">
-                        <div class="select-form-group">
-                            <label class='control-label' for='inputNormal' style="margin-top: -45px;">Esconder</label>
-                            <label for="esconderEvento">esconder</label>
-                            <input type="range" id="esconderEvento" name="esconderEvento" min="0" max="1" value="<?php echo $evento['esconderEvento'] ?>" style="width: 15%;">
-                            <label for="esconderEvento">aparecer</label>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6" style="margin-top: 10px">
-                        <div class="select-form-group">
-
-                            <label class="labelForm">Tipo Evento*</label>
-                            <select class="select form-control" name="tipoEvento">
-                                    <option value="<?php echo $evento['tipoEvento'] ?>"><?php echo $evento['tipoEvento'] ?></option>
-                                    <option value="evento">Evento</option>
-                                    <option value="visitacao">Visitação</option>
-                                    <option value="cursos">Cursos</option>
-                                    <option value="podcast">Podcast</option>
-                            </select>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-sm-12" style="margin-top: 10px">
-                        <div class="form-group">
-                            <label class='control-label' for='inputNormal' style="margin-top: -20px;">link do Evento</label>
-                            <input type="text" name="linkEvento" class="form-control" value="<?php echo $evento['linkEvento'] ?>">
-                        </div>
-                    </div>
-                </div>
+            </div>
 
 
-        <div style="text-align:right; margin-top:20px">
-                    <button type="submit" class="btn  btn-success"><i class="bi bi-sd-card-fill"></i>&#32;Salvar</button>
-                </div>
+            <div style="text-align:right; margin-top:20px">
+                <button type="submit" class="btn  btn-success"><i class="bi bi-sd-card-fill"></i>&#32;Salvar</button>
+            </div>
         </form>
     </div>
 
     </div>
 
+    <script src="<?php echo URLROOT ?>/sistema/js/quilljs.js"></script>
     <script>
         //Carregar a FOTO na tela
         const inputFile = document.querySelector("#foto");

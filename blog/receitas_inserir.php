@@ -33,18 +33,14 @@ include_once('../head.php');
                 </div>
             </div>
 
-            <div class="row">
-                <!--  <div class="col-sm-3" style="margin-top: 10px">
-                        <div class="form-group">
-                            <label class='control-label' for='inputNormal' style="margin-top: -43px;">Conteudo</label>
-                            <textarea name="conteudoReceita" id="" cols="135" rows="10"></textarea>
-                        </div>
-                    </div> -->
-
-                <textarea name="conteudoReceita">
-     Welcome to TinyMCE!
-  </textarea>
+            <div class="container-fluid p-0">
+                <div class="col">
+                    <span class="tituloEditor">Descrição</span>
+                </div>
+                <div class="quill-textarea"></div>
+                <textarea style="display: none;" id="detail" name="conteudoReceita"></textarea>
             </div>
+
 
             <div class="row">
                 <div class="col-sm-6" style="margin-top: 10px">
@@ -73,19 +69,7 @@ include_once('../head.php');
 
     </div>
 
-    <script src="https://cdn.tiny.cloud/1/n1fodpdv330yan6bcequ4fsjzhnu6b0cmdf7a8t92j39u02i/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
-    <script>
-        tinymce.init({
-            selector: 'textarea',
-            toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags  | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
-            toolbar_mode: 'floating',
-            tinycomments_mode: 'embedded',
-            tinycomments_author: 'Author name',
-            menubar: false,
-            entity_encoding: 'raw',
-
-        });
-    </script>
+    <script src="<?php echo URLROOT ?>/sistema/js/quilljs.js"></script>
     <script>
         //Carregar a FOTO na tela
         const inputFile = document.querySelector("#foto");
