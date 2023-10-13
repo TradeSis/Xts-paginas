@@ -1,53 +1,73 @@
 <?php
-
-include_once('../head.php');
+//Lucas 13102023 padrao novo
+include_once('../header.php');
 include_once('../database/paginas.php');
 include_once('../database/secaoPagina.php');
-
 
 $idPagina = $_GET['idPagina'];
 $pagina = buscaPaginas($idPagina);
 $secoesPaginas = buscaSecaoPagina($idPagina);
 ?>
+<!doctype html>
+<html lang="pt-BR">
 
-<body class="bg-transparent">
+<head>
 
-    <div class="container formContainer">
+    <?php include_once ROOT . "/vendor/head_css.php"; ?>
 
+</head>
+
+<body>
+
+    <div class="container-fluid">
+
+    <div class="row">
+            <BR> <!-- MENSAGENS/ALERTAS -->
+        </div>
         <div class="row">
-            <div class="col-sm-8">
+            <BR> <!-- BOTOES AUXILIARES -->
+        </div>
+        <div class="row"> <!-- LINHA SUPERIOR A TABLE -->
+            <div class="col-3">
+                <!-- TITULO -->
                 <h2 class="tituloTabela">Paginas</h2>
             </div>
-            <div class="col-sm-4" style="text-align:right">
-                <a href="../configuracao/?tab=configuracao&stab=paginas" role="button" class="btn btn-primary"><i class="bi bi-arrow-left-square"></i></i>&#32;Voltar</a>
+            <div class="col-7">
+                <!-- FILTROS -->
+            </div>
+
+            <div class="col-2 text-end">
+                <a href="../configuracao/?tab=configuracao&stab=paginas" role="button" class="btn btn-primary"><i
+                        class="bi bi-arrow-left-square"></i></i>&#32;Voltar</a>
             </div>
         </div>
+
 
             <form action="../database/paginas.php?operacao=alterar" method="post">
 
                 <div class="row">
-                    <div class="col-sm-3" style="margin-top: 10px">
+                    <div class="col-sm-3">
                         <div class="form-group">
                             <label class="labelForm">Slug</label>
                             <input type="text" name="slug" class="form-control" value="<?php echo $pagina['slug'] ?>" disabled>
-                            <input type="text" class="form-control" name="idPagina" value="<?php echo $pagina['idPagina'] ?>" style="display: none">
+                            <input type="hidden" class="form-control" name="idPagina" value="<?php echo $pagina['idPagina'] ?>">
                         </div>
                     </div>
-                    <div class="col-sm-3" style="margin-top: 10px">
+                    <div class="col-sm-3">
                         <div class="form-group">
                             <label class="labelForm">Titulo</label>
                             <input type="text" name="tituloPagina" class="form-control" value="<?php echo $pagina['tituloPagina'] ?>">
                         </div>
                     </div>
 
-                    <div class="col-sm-3" style="margin-top: 10px">
+                    <div class="col-sm-3">
                         <div class="form-group">
                             <label class="labelForm">Arquivo Fonte</label>
                             <input type="text" name="arquivoFonte" class="form-control" value="<?php echo $pagina['arquivoFonte'] ?>">
                         </div>
                     </div>
 
-                    <div class="col-sm-3" style="margin-top: 10px">
+                    <div class="col-sm-3">
                         <div class="form-group">
                             <label class="labelForm">Arquivo Single</label>
                             <input type="text" name="arquivoSingle" class="form-control" value="<?php echo $pagina['arquivoSingle'] ?>">
@@ -55,14 +75,14 @@ $secoesPaginas = buscaSecaoPagina($idPagina);
                     </div>
                 </div>
 
-                <div style="text-align:right; margin-top:20px">
+                <div class="text-end mt-4">
                     <button type="submit" class="btn  btn-success"><i class="bi bi-sd-card-fill"></i>&#32;Salvar</button>
                 </div>
             </form>
 
-            <div class="card shadow mt-2">
-                <table class="table text-center">
-                    <thead>
+            <div class="table mt-2 ts-divTabela">
+                <table class="table table-hover table-sm align-middle">
+                    <thead class="ts-headertabelafixo">
                         <tr>
                             <th>Pagina</th>
                             <th>Secão</th>
@@ -87,14 +107,18 @@ $secoesPaginas = buscaSecaoPagina($idPagina);
                     <?php } ?>
 
                 </table>
-                <div class="py-3 px-3" style="text-align:right">
+                <div class="text-end mt-4">
                     <a href="secoesPaginas_inserir.php?idPagina=<?php echo $idPagina ?>" role="button" class="btn btn-success"><i class="bi bi-plus-square"></i>&nbsp Novo</a>
                 </div>
             </div>
 
     </div>
 
+  <!-- LOCAL PARA COLOCAR OS JS -->
 
+  <?php include_once ROOT . "/vendor/footer_js.php"; ?>
+
+<!-- LOCAL PARA COLOCAR OS JS -FIM -->
 
 </body>
 

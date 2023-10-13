@@ -1,36 +1,57 @@
 <?php
-include_once('../head.php');
+//Lucas 11102023 padrao novo
+include_once('../header.php');
 include_once('../database/categorias.php');
 
 $categorias = buscaCategorias();
 ?>
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+
+    <?php include_once ROOT . "/vendor/head_css.php"; ?>
+
+</head>
 
 
-<body class="bg-transparent">
+<body>
 
-    <div class="container formContainer">
+    <div class="container-fluid">
 
+    <div class="row">
+            <BR> <!-- MENSAGENS/ALERTAS -->
+        </div>
         <div class="row">
-            <div class="col-sm-8">
+            <BR> <!-- BOTOES AUXILIARES -->
+        </div>
+        <div class="row"> <!-- LINHA SUPERIOR A TABLE -->
+            <div class="col-3">
+                <!-- TITULO -->
                 <h2 class="tituloTabela">Adicionar Evento</h2>
             </div>
-            <div class="col-sm-4" style="text-align:right">
-                <a href="eventos.php" role="button" class="btn btn-primary"><i class="bi bi-arrow-left-square"></i></i>&#32;Voltar</a>
+            <div class="col-7">
+                <!-- FILTROS -->
+            </div>
+
+            <div class="col-2 text-end">
+                <a href="eventos.php" role="button" class="btn btn-primary"><i
+                        class="bi bi-arrow-left-square"></i></i>&#32;Voltar</a>
             </div>
         </div>
 
         <form class="mb-4" action="../database/eventos.php?operacao=inserir" method="post" enctype="multipart/form-data">
 
             <div class="row">
-                <div class="col-sm-3" style="margin-top: 10px">
+                <div class="col-sm-3">
                     <div class="form-group">
-                        <label class='control-label' for='inputNormal' style="margin-top: -20px;">Slug*</label>
+                        <label class='control-label' for='inputNormal'>Slug*</label>
                         <input type="text" name="slug" class="form-control" required autocomplete="off">
                     </div>
                 </div>
-                <div class="col-sm-9" style="margin-top: 10px">
+                <div class="col-sm-9">
                     <div class="form-group">
-                        <label class='control-label' for='inputNormal' style="margin-top: -20px;">Nome do Evento*</label>
+                        <label class='control-label' for='inputNormal'>Nome do Evento*</label>
                         <input type="text" name="nomeEvento" class="form-control" required autocomplete="off">
                     </div>
                 </div>
@@ -44,22 +65,22 @@ $categorias = buscaCategorias();
                 <textarea style="display: none" id="detail" name="descricaoEvento"></textarea>
             </div>
 
-            <div class="row">
-                <div class="col-sm-4" style="margin-top: 10px">
+            <div class="row mt-3">
+                <div class="col-sm-4">
                     <div class="form-group">
                         <label class='control-label' for='inputNormal' style="margin-top: -40px;">Data do Evento</label>
                         <input type="date" name="dataEvento" class="form-control" autocomplete="off">
                     </div>
                 </div>
-                <div class="col-sm-4" style="margin-top: 10px">
+                <div class="col-sm-4">
                     <div class="form-group">
-                        <label class='control-label' for='inputNormal' style="margin-top: -20px;">Cidade</label>
+                        <label class='control-label' for='inputNormal'>Cidade</label>
                         <input type="text" name="cidadeEvento" class="form-control" autocomplete="off">
                     </div>
                 </div>
-                <div class="col-sm-4" style="margin-top: 10px">
+                <div class="col-sm-4">
                     <div class="form-group">
-                        <label class='control-label' for='inputNormal' style="margin-top: -20px;">Local</label>
+                        <label class='control-label' for='inputNormal'>Local</label>
                         <input type="text" name="localEvento" class="form-control" autocomplete="off">
                     </div>
                 </div>
@@ -117,19 +138,23 @@ $categorias = buscaCategorias();
             <div class="row">
                 <div class="col-sm-12" style="margin-top: 10px">
                     <div class="form-group">
-                        <label class='control-label' for='inputNormal' style="margin-top: -20px;">link do Evento</label>
+                        <label class='control-label' for='inputNormal'>link do Evento</label>
                         <input type="text" name="linkEvento" class="form-control" autocomplete="off">
                     </div>
                 </div>
             </div>
 
-            <div style="text-align:right;margin-top:20px">
+            <div class="text-end mt-4">
                 <button type="submit" class="btn  btn-success"><i class="bi bi-sd-card-fill"></i>&#32;Cadastrar</button>
             </div>
         </form>
     </div>
 
     </div>
+
+     <!-- LOCAL PARA COLOCAR OS JS -->
+
+     <?php include_once ROOT. "/vendor/footer_js.php";?>
 
     <script src="<?php echo URLROOT ?>/sistema/js/quilljs.js"></script>
     <script>
@@ -193,6 +218,8 @@ $categorias = buscaCategorias();
             }
         });
     </script>
+
+<!-- LOCAL PARA COLOCAR OS JS -FIM -->
 
 </body>
 

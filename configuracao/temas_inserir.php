@@ -1,36 +1,57 @@
 <?php
-include_once('../head.php');
+//Lucas 13102023 padrao novo
+include_once('../header.php');
 ?>
+<!doctype html>
+<html lang="pt-BR">
 
-<body class="bg-transparent">
+<head>
 
-    <div class="container formContainer">
+    <?php include_once ROOT . "/vendor/head_css.php"; ?>
+
+</head>
+
+<body>
+
+    <div class="container-fluid">
 
         <div class="row">
-            <div class="col-sm-8">
+            <BR> <!-- MENSAGENS/ALERTAS -->
+        </div>
+        <div class="row">
+            <BR> <!-- BOTOES AUXILIARES -->
+        </div>
+        <div class="row"> <!-- LINHA SUPERIOR A TABLE -->
+            <div class="col-3">
+                <!-- TITULO -->
                 <h2 class="tituloTabela">Tema</h2>
             </div>
-            <div class="col-sm-4" style="text-align:right">
+            <div class="col-7">
+                <!-- FILTROS -->
+            </div>
+
+            <div class="col-2 text-end">
                 <a href="../configuracao/?tab=configuracao&stab=temas" role="button" class="btn btn-primary"><i class="bi bi-arrow-left-square"></i></i>&#32;Voltar</a>
             </div>
         </div>
 
+
         <form action="../database/temas.php?operacao=inserir" method="post">
             <div class="row">
-                <div class="col-sm-6" style="margin-top: 10px">
+                <div class="col-sm-6">
                     <div class="form-group">
-                        <label class='control-label' for='inputNormal' style="margin-top: -40px;">Nome</label>
+                        <label class='control-label' for='inputNormal'>Nome</label>
                         <input type="text" name="nomeTema" class="form-control">
                     </div>
                 </div>
 
-                <div class="col-sm-3" style="margin-top: 10px">
+                <div class="col-sm-3">
                     <div class="form-group">
-                        <label class='control-label' for='inputNormal' style="margin-top: -40px;">Arquivo Css</label>
+                        <label class='control-label' for='inputNormal'>Arquivo Css</label>
                         <input type="text" name="css" class="form-control">
                     </div>
                 </div>
-                <div class="col-sm-3" style="margin-top: 10px">
+                <div class="col-sm-3">
                     <div class="select-form-group">
 
                         <label class="labelForm">Tipo</label>
@@ -52,14 +73,21 @@ include_once('../head.php');
                 <textarea style="display: none" id="detail" name="menu"></textarea>
             </div>
 
-            <div style="text-align:right;margin-top:20px">
+            <div class="text-end mt-4">
                 <button type="submit" class="btn  btn-success"><i class="bi bi-sd-card-fill"></i>&#32;Cadastrar</button>
             </div>
         </form>
 
     </div>
 
+    <!-- LOCAL PARA COLOCAR OS JS -->
+
+    <?php include_once ROOT . "/vendor/footer_js.php"; ?>
+
     <script src="<?php echo URLROOT ?>/sistema/js/quilljs.js"></script>
+
+    <!-- LOCAL PARA COLOCAR OS JS -FIM -->
+
 </body>
 
 </html>

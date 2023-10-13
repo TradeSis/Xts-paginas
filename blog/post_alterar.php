@@ -1,5 +1,6 @@
 <?php
-include_once('../head.php');
+//Lucas 11102023 padrao novo
+include_once('../header.php');
 include_once('../database/autor.php');
 include_once('../database/categorias.php');
 include_once('../database/posts.php');
@@ -8,23 +9,40 @@ $post = buscaPosts($idPost);
 $autores = buscaAutor();
 $categorias = buscaCategorias();
 ?>
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    
+    <?php include_once ROOT. "/vendor/head_css.php";?>
 
+</head>
 
-<body class="bg-transparent">
+<body>
 
-    <div class="container formContainer">
-
+    <div class="container-fluid">
+    <div class="row">
+            <BR> <!-- MENSAGENS/ALERTAS -->
+        </div>
         <div class="row">
-            <div class="col-sm-8">
+            <BR> <!-- BOTOES AUXILIARES -->
+        </div>
+        <div class="row"> <!-- LINHA SUPERIOR A TABLE -->
+            <div class="col-3">
+                <!-- TITULO -->
                 <h2 class="tituloTabela">Editar Post</h2>
             </div>
-            <div class="col-sm-4" style="text-align:right">
-                <a href="posts.php" role="button" class="btn btn-primary"><i class="bi bi-arrow-left-square"></i></i>&#32;Voltar</a>
+            <div class="col-7">
+                <!-- FILTROS -->
+            </div>
+
+            <div class="col-2 text-end">
+                <a href="posts.php" role="button" class="btn btn-primary"><i
+                        class="bi bi-arrow-left-square"></i></i>&#32;Voltar</a>
             </div>
         </div>
 
-        <form class="mb-4" action="../database/posts.php?operacao=alterar" method="post" enctype="multipart/form-data">
 
+        <form action="../database/posts.php?operacao=alterar" method="post" enctype="multipart/form-data">
 
             <div class="row">
                 <div class="col-sm-3" style="margin-top: 50px">
@@ -38,25 +56,25 @@ $categorias = buscaCategorias();
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col-sm-3" style="margin-top: 10px">
+            <div class="row mt-3">
+                <div class="col-sm-3">
                     <div class="form-group">
-                        <label class='control-label' for='inputNormal' style="margin-top: -20px;">Slug</label>
-                        <input type="titulo" name="slug" class="form-control" value="<?php echo $post['slug'] ?>" disabled>
+                        <label class='control-label' for='inputNormal'>Slug</label>
+                        <input type="text" name="slug" class="form-control" value="<?php echo $post['slug'] ?>" disabled>
                     </div>
                 </div>
-                <div class="col-sm-9" style="margin-top: 10px">
+                <div class="col-sm-9">
                     <div class="form-group">
-                        <label class='control-label' for='inputNormal' style="margin-top: -20px;">Titulo</label>
-                        <input type="titulo" name="titulo" class="form-control" value="<?php echo $post['titulo'] ?>">
-                        <input type="text" class="form-control" name="idPost" value="<?php echo $post['idPost'] ?>" style="display: none">
+                        <label class='control-label' for='inputNormal'>Titulo</label>
+                        <input type="text" name="titulo" class="form-control" value="<?php echo $post['titulo'] ?>">
+                        <input type="hidden" class="form-control" name="idPost" value="<?php echo $post['idPost'] ?>">
                     </div>
                 </div>
 
             </div>
 
-            <div class="row">
-                <div class="col-sm-3" style="margin-top: 10px">
+            <div class="row mt-3">
+                <div class="col-sm-3">
                     <div class="select-form-group">
 
                         <label class="labelForm">Categorias*</label>
@@ -72,7 +90,7 @@ $categorias = buscaCategorias();
                     </div>
                 </div>
 
-                <div class="col-sm-3" style="margin-top: 10px">
+                <div class="col-sm-3">
                     <div class="select-form-group">
 
                         <label class="labelForm">Colunista/Autor*</label>
@@ -87,7 +105,7 @@ $categorias = buscaCategorias();
 
                     </div>
                 </div>
-                <div class="col-md-3" style="margin-top: 11px;">
+                <div class="col-md-3" style="margin-top: 5px;">
                     <label class="labelForm">Data</label>
                     <input type="text" class="data select form-control" name="data" value="<?php echo date('d/m/Y H:i', strtotime($post['data'])) ?>" disabled>
                 </div>
@@ -102,13 +120,16 @@ $categorias = buscaCategorias();
                 <textarea style="display: none" id="detail" name="txtConteudo"><?php echo $post['txtConteudo'] ?></textarea>
             </div>
 
-            <div style="text-align:right; margin-top:20px">
+            <div class="text-end mt-4">
                 <button type="submit" class="btn  btn-success"><i class="bi bi-sd-card-fill"></i>&#32;Salvar</button>
             </div>
         </form>
 
     </div>
 
+<!-- LOCAL PARA COLOCAR OS JS -->
+
+<?php include_once ROOT. "/vendor/footer_js.php";?>
 
     <script src="<?php echo URLROOT ?>/sistema/js/quilljs.js"></script>
     <script>
@@ -143,7 +164,7 @@ $categorias = buscaCategorias();
         });
     </script>
 
-
+<!-- LOCAL PARA COLOCAR OS JS -FIM -->
 
 </body>
 

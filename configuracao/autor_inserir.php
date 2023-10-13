@@ -1,27 +1,48 @@
 <?php
-include_once('../head.php');
+//Lucas 13102023 novo padrao
+include_once('../header.php');
 ?>
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+
+    <?php include_once ROOT . "/vendor/head_css.php"; ?>
+
+</head>
 
 
-<body class="bg-transparent">
+<body>
 
-    <div class="container formContainer">
+    <div class="container-fluid">
 
+    <div class="row">
+            <BR> <!-- MENSAGENS/ALERTAS -->
+        </div>
         <div class="row">
-            <div class="col-sm-8">
+            <BR> <!-- BOTOES AUXILIARES -->
+        </div>
+        <div class="row"> <!-- LINHA SUPERIOR A TABLE -->
+            <div class="col-3">
+                <!-- TITULO -->
                 <h2 class="tituloTabela">Adicionar Autor</h2>
             </div>
-            <div class="col-sm-4" style="text-align:right">
-                <a href="../configuracao/?tab=configuracao&stab=autor" role="button" class="btn btn-primary"><i class="bi bi-arrow-left-square"></i></i>&#32;Voltar</a>
+            <div class="col-7">
+                <!-- FILTROS -->
+            </div>
+
+            <div class="col-2 text-end">
+                <a href="../configuracao/?tab=configuracao&stab=autor" role="button" class="btn btn-primary"><i
+                        class="bi bi-arrow-left-square"></i></i>&#32;Voltar</a>
             </div>
         </div>
 
         <form action="../database/autor.php?operacao=inserir" method="post" enctype="multipart/form-data">
 
             <div class="row">
-                <div class="col-sm-12" style="margin-top: 10px">
+                <div class="col-sm-12">
                     <div class="form-group">
-                        <label class='control-label' for='inputNormal' style="margin-top: -20px;">Nome</label>
+                        <label class='control-label' for='inputNormal'>Nome</label>
                         <input type="text" name="nomeAutor" class="form-control" required autocomplete="off">
                     </div>
                 </div>
@@ -57,12 +78,16 @@ include_once('../head.php');
                 <textarea style="display: none" id="detail" name="sobreMimAutor"></textarea>
             </div>
 
-            <div style="text-align:right;margin-top:20px">
+            <div class="text-end mt-4">
                 <button type="submit" class="btn  btn-success"><i class="bi bi-sd-card-fill"></i>&#32;Cadastrar</button>
             </div>
         </form>
 
     </div>
+
+<!-- LOCAL PARA COLOCAR OS JS -->
+
+<?php include_once ROOT. "/vendor/footer_js.php";?>
 
     <script src="<?php echo URLROOT ?>/sistema/js/quilljs.js"></script>
     <script>
@@ -126,6 +151,8 @@ include_once('../head.php');
             }
         });
     </script>
+
+<!-- LOCAL PARA COLOCAR OS JS -FIM -->
 
 </body>
 
