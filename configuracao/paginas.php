@@ -37,7 +37,7 @@ $temas = buscaTemas();
         <div class="row align-items-center"> <!-- LINHA SUPERIOR A TABLE -->
             <div class="col-2 text-start">
                 <!-- TITULO -->
-                <h2 class="tituloTabela">Paginas</h2>
+                <h2 class="ts-tituloPrincipal">Paginas</h2>
             </div>
             <div class="col-2 pt-4">
                 <div class="select-form-group pt-1">

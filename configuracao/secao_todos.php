@@ -26,7 +26,7 @@ $secoes = buscaSecao();
         <div class="row align-items-center"> <!-- LINHA SUPERIOR A TABLE -->
             <div class="col-3 text-start">
                 <!-- TITULO -->
-                <h2 class="tituloTabela">Todas</h2>
+                <h2 class="ts-tituloPrincipal">Todas</h2>
             </div>
 
         </div>

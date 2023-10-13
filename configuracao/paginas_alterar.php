@@ -30,7 +30,7 @@ $secoesPaginas = buscaSecaoPagina($idPagina);
         <div class="row"> <!-- LINHA SUPERIOR A TABLE -->
             <div class="col-3">
                 <!-- TITULO -->
-                <h2 class="tituloTabela">Paginas</h2>
+                <h2 class="ts-tituloPrincipal">Paginas</h2>
             </div>
             <div class="col-7">
                 <!-- FILTROS -->

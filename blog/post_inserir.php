@@ -27,7 +27,7 @@ $categorias = buscaCategorias();
         <div class="row"> <!-- LINHA SUPERIOR A TABLE -->
             <div class="col-3">
                 <!-- TITULO -->
-                <h2 class="tituloTabela">Adicionar Post</h2>
+                <h2 class="ts-tituloPrincipal">Adicionar Post</h2>
             </div>
             <div class="col-7">
                 <!-- FILTROS -->

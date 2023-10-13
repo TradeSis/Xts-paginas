@@ -27,7 +27,7 @@ $categoria = buscaCategorias($idCategoria);
         <div class="row"> <!-- LINHA SUPERIOR A TABLE -->
             <div class="col-3">
                 <!-- TITULO -->
-                <h2 class="tituloTabela">Excluir Categoria</h2>
+                <h2 class="ts-tituloPrincipal">Excluir Categoria</h2>
             </div>
             <div class="col-7">
                 <!-- FILTROS -->

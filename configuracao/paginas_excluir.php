@@ -28,7 +28,7 @@ $pagina = buscaPaginas($_GET['idPagina']);
         <div class="row"> <!-- LINHA SUPERIOR A TABLE -->
             <div class="col-3">
                 <!-- TITULO -->
-                <h2 class="tituloTabela">Paginas Excluir</h2>
+                <h2 class="ts-tituloPrincipal">Paginas Excluir</h2>
             </div>
             <div class="col-7">
                 <!-- FILTROS -->

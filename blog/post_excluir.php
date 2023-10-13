@@ -27,7 +27,7 @@ $post = buscaPosts($_GET['idPost']);
         <div class="row"> <!-- LINHA SUPERIOR A TABLE -->
             <div class="col-3">
                 <!-- TITULO -->
-                <h2 class="tituloTabela">Excluir Posto</h2>
+                <h2 class="ts-tituloPrincipal">Excluir Posto</h2>
             </div>
             <div class="col-7">
                 <!-- FILTROS -->

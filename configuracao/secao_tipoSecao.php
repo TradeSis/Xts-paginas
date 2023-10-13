@@ -27,7 +27,7 @@ $secoes = buscaTipoSecao($_GET['tipoSecao']);
         <div class="row align-items-center"> <!-- LINHA SUPERIOR A TABLE -->
             <div class="col-3 text-start">
                 <!-- TITULO -->
-                <h2 class="tituloTabela"><?php echo $_GET['tipoSecao'] ?></h2>
+                <h2 class="ts-tituloPrincipal"><?php echo $_GET['tipoSecao'] ?></h2>
             </div>
 
         </div>
