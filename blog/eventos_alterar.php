@@ -1,34 +1,53 @@
 <?php
-include_once('../head.php');
+//Lucas 11102023 padrao novo
+include_once('../header.php');
 include_once('../database/categorias.php');
 include_once('../database/eventos.php');
 $idEvento = $_GET['idEvento'];
 $evento = buscaEventos($idEvento);
 $categorias = buscaCategorias();
 ?>
+<!doctype html>
+<html lang="pt-BR">
 
+<head>
 
-<body class="bg-transparent">
+    <?php include_once ROOT . "/vendor/head_css.php"; ?>
 
-    <div class="container formContainer">
+</head>
 
+<body>
+
+    <div class="container-fluid">
+    <div class="row">
+            <BR> <!-- MENSAGENS/ALERTAS -->
+        </div>
         <div class="row">
-            <div class="col-sm-8">
-                <h2 class="tituloTabela">Adicionar Evento</h2>
+            <BR> <!-- BOTOES AUXILIARES -->
+        </div>
+        <div class="row"> <!-- LINHA SUPERIOR A TABLE -->
+            <div class="col-3">
+                <!-- TITULO -->
+                <h2 class="ts-tituloPrincipal">Adicionar Evento</h2>
             </div>
-            <div class="col-sm-4" style="text-align:right">
-                <a href="eventos.php" role="button" class="btn btn-primary"><i class="bi bi-arrow-left-square"></i></i>&#32;Voltar</a>
+            <div class="col-7">
+                <!-- FILTROS -->
+            </div>
+
+            <div class="col-2 text-end">
+                <a href="eventos.php" role="button" class="btn btn-primary"><i
+                        class="bi bi-arrow-left-square"></i></i>&#32;Voltar</a>
             </div>
         </div>
 
         <form class="mb-4" action="../database/eventos.php?operacao=alterar" method="post" enctype="multipart/form-data">
 
             <div class="row">
-                <div class="col-sm-12" style="margin-top: 10px">
+                <div class="col-sm-12">
                     <div class="form-group">
-                        <label class='control-label' for='inputNormal' style="margin-top: -20px;">Nome do Evento*</label>
+                        <label class='control-label' for='inputNormal'>Nome do Evento*</label>
                         <input type="text" name="nomeEvento" class="form-control" value="<?php echo $evento['nomeEvento'] ?>">
-                        <input type="text" class="form-control" name="idEvento" value="<?php echo $evento['idEvento'] ?>" style="display: none">
+                        <input type="hidden" class="form-control" name="idEvento" value="<?php echo $evento['idEvento'] ?>">
                     </div>
                 </div>
             </div>
@@ -41,23 +60,23 @@ $categorias = buscaCategorias();
                 <textarea style="display: none" id="detail" name="descricaoEvento"><?php echo $evento['descricaoEvento'] ?></textarea>
             </div>
 
-            <div class="row">
-                <div class="col-sm-4" style="margin-top: 10px">
+            <div class="row mt-3">
+                <div class="col-sm-4">
                     <div class="form-group">
-                        <label class='control-label' for='inputNormal' style="margin-top: -20px;">Data do Evento</label>
+                        <label class='control-label' for='inputNormal' style="margin-top: -40px">Data do Evento</label>
                         <input type="date" name="dataEvento" class="form-control" value="<?php echo $evento['dataEvento'] ?>">
 
                     </div>
                 </div>
-                <div class="col-sm-4" style="margin-top: 10px">
+                <div class="col-sm-4">
                     <div class="form-group">
-                        <label class='control-label' for='inputNormal' style="margin-top: -20px;">Cidade</label>
+                        <label class='control-label' for='inputNormal'>Cidade</label>
                         <input type="text" name="cidadeEvento" class="form-control" value="<?php echo $evento['cidadeEvento'] ?>">
                     </div>
                 </div>
-                <div class="col-sm-4" style="margin-top: 10px">
+                <div class="col-sm-4">
                     <div class="form-group">
-                        <label class='control-label' for='inputNormal' style="margin-top: -20px;">Local</label>
+                        <label class='control-label' for='inputNormal'>Local</label>
                         <input type="text" name="localEvento" class="form-control" value="<?php echo $evento['localEvento'] ?>">
                     </div>
                 </div>
@@ -87,8 +106,8 @@ $categorias = buscaCategorias();
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col-sm-4 ml-4" style="margin-top: 40px">
+            <div class="row mt-4">
+                <div class="col-sm-2 ml-4" style="margin-top: 40px">
                     <div class="select-form-group">
                         <label class='control-label' for='inputNormal' style="margin-top: -45px;">Esconder</label>
                         <label for="esconderEvento">esconder</label>
@@ -97,7 +116,7 @@ $categorias = buscaCategorias();
                     </div>
                 </div>
 
-                <div class="col-sm-6" style="margin-top: 10px">
+                <div class="col-sm-2">
                     <div class="select-form-group">
 
                         <label class="labelForm">Tipo Evento*</label>
@@ -111,25 +130,25 @@ $categorias = buscaCategorias();
 
                     </div>
                 </div>
-            </div>
-
-            <div class="row">
-                <div class="col-sm-12" style="margin-top: 10px">
+                <div class="col-sm-6">
                     <div class="form-group">
-                        <label class='control-label' for='inputNormal' style="margin-top: -20px;">link do Evento</label>
+                        <label class='control-label' for='inputNormal'>link do Evento</label>
                         <input type="text" name="linkEvento" class="form-control" value="<?php echo $evento['linkEvento'] ?>">
                     </div>
                 </div>
             </div>
 
-
-            <div style="text-align:right; margin-top:20px">
+            <div class="text-end mt-4">
                 <button type="submit" class="btn  btn-success"><i class="bi bi-sd-card-fill"></i>&#32;Salvar</button>
             </div>
         </form>
     </div>
 
     </div>
+
+    <!-- LOCAL PARA COLOCAR OS JS -->
+
+    <?php include_once ROOT. "/vendor/footer_js.php";?>
 
     <script src="<?php echo URLROOT ?>/sistema/js/quilljs.js"></script>
     <script>
@@ -193,6 +212,8 @@ $categorias = buscaCategorias();
             }
         });
     </script>
+
+    <!-- LOCAL PARA COLOCAR OS JS -FIM -->
 
 </body>
 

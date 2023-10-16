@@ -10,7 +10,7 @@ include_once('../head.php');
 
         <div class="row">
             <div class="col-sm-8">
-                <h2 class="tituloTabela">Adicionar Seção</h2>
+                <h2 class="ts-tituloPrincipal">Adicionar Seção</h2>
             </div>
             <div class="col-sm-4" style="text-align:right">
                 <a href="../configuracao/?tab=configuracao&stab=secao" role="button" class="btn btn-primary"><i class="bi bi-arrow-left-square"></i></i>&#32;Voltar</a>
