@@ -1,43 +1,61 @@
 <?php
-include_once('../head.php');
+//Lucas 13102023 padrao novo
+include_once('../header.php');
 include_once('../database/secao.php');
 include_once('../database/paginas.php');
 include_once('../database/secaoPagina.php');
 
 $secoes = buscaSecao();
 $paginas = buscaPaginas($_GET["idPagina"]);
-//echo json_encode($secoes);
 ?>
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+
+    <?php include_once ROOT . "/vendor/head_css.php"; ?>
+
+</head>
 
 
+<body>
 
-<body class="bg-transparent">
-
-    <div class="container formContainer">
+    <div class="container-fluid">
 
         <div class="row">
-            <div class="col-sm-8">
-                <h2 class="tituloTabela">Seções das Paginas</h2>
+            <BR> <!-- MENSAGENS/ALERTAS -->
+        </div>
+        <div class="row">
+            <BR> <!-- BOTOES AUXILIARES -->
+        </div>
+        <div class="row"> <!-- LINHA SUPERIOR A TABLE -->
+            <div class="col-3">
+                <!-- TITULO -->
+                <h2 class="ts-tituloPrincipal">Seções das Paginas</h2>
             </div>
-            <div class="col-sm-4" style="text-align:right">
-                <a href="paginas.php" role="button" class="btn btn-primary"><i class="bi bi-arrow-left-square"></i></i>&#32;Voltar</a>
+            <div class="col-7">
+                <!-- FILTROS -->
+            </div>
+
+            <div class="col-2 text-end">
+                <a href="../database/secaoPagina.php?operacao=inserir" role="button" class="btn btn-primary"><i class="bi bi-arrow-left-square"></i></i>&#32;Voltar</a>
             </div>
         </div>
+
 
         <form action="../database/secaoPagina.php?operacao=inserir" method="post">
 
 
-
             <div class="row">
-                <div class="col-sm-3" style="margin-top: -5px">
-                    <div class="select-form-group">
-                        <label class="labelForm">Pagina</label>
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <label class='control-label' for='inputNormal'>Pagina</label>
                         <input type="text" class="form-control" name="tituloPagina" value="<?php echo $paginas['tituloPagina'] ?>" readonly>
-                        <input type="text" class="form-control" name="idPagina" value="<?php echo $paginas['idPagina'] ?>" hidden>
+                        <input type="hidden" class="form-control" name="idPagina" value="<?php echo $paginas['idPagina'] ?>">
                     </div>
                 </div>
 
-                <div class="col-sm-3" style="margin-top: 10px">
+                <div class="col-sm-3">
                     <div class="select-form-group">
 
                         <label class="labelForm">Seção</label>
@@ -52,7 +70,7 @@ $paginas = buscaPaginas($_GET["idPagina"]);
                     </div>
                 </div>
 
-                <div class="col-sm-3" style="margin-top: 10px">
+                <div class="col-sm-3">
                     <div class="select-form-group">
                         <label class="labelForm">Ordem</label>
                         <select class="select form-control" name="ordem">
@@ -83,7 +101,7 @@ $paginas = buscaPaginas($_GET["idPagina"]);
             </div>
 
             <div class="row">
-                <div class="col-sm-12" style="margin-top: 10px">
+                <div class="col-sm-12">
 
                     <div class="form-group">
                         <label>Parametros</label>
@@ -95,13 +113,20 @@ $paginas = buscaPaginas($_GET["idPagina"]);
             </div>
 
 
-            <div style="text-align:right;margin-top:20px">
+            <div class="text-end mt-4">
                 <button type="submit" class="btn  btn-success"><i class="bi bi-sd-card-fill"></i>&#32;Cadastrar</button>
             </div>
         </form>
     </div>
 
     </div>
+
+    <!-- LOCAL PARA COLOCAR OS JS -->
+
+    <?php include_once ROOT . "/vendor/footer_js.php"; ?>
+
+    <!-- LOCAL PARA COLOCAR OS JS -FIM -->
+
 
 </body>
 

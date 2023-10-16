@@ -1,23 +1,39 @@
 <?php
-
+//Lucas 13102023 novo padrao
+include_once(__DIR__ . '/../header.php');
 include_once(__DIR__ . '/../database/secao.php');
-include_once(__DIR__ . '/../head.php');
 $secoes = buscaSecao();
-/* echo json_encode($secoes); */
 
 ?>
+<!doctype html>
+<html lang="pt-BR">
 
-<body class="bg-transparent">
-    <div class="container" style="margin-top:30px"> 
-        
-            <div class="row mt-4">
-                <div class="col-sm-8">
-                    <h2 class="tituloTabela">Todas</h2>
-                </div>
+<head>
+
+    <?php include_once ROOT . "/vendor/head_css.php"; ?>
+
+</head>
+
+<body>
+    <div class="container-fluid">
+
+        <div class="row">
+            <BR> <!-- MENSAGENS/ALERTAS -->
+        </div>
+        <div class="row">
+            <BR> <!-- BOTOES AUXILIARES -->
+        </div>
+        <div class="row align-items-center"> <!-- LINHA SUPERIOR A TABLE -->
+            <div class="col-3 text-start">
+                <!-- TITULO -->
+                <h2 class="ts-tituloPrincipal">Todas</h2>
             </div>
-        <div class="card mt-2 text-center">
-            <table class="table">
-                <thead class="cabecalhoTabela">
+
+        </div>
+
+        <div class="table mt-2 ts-divTabela">
+            <table class="table table-hover table-sm align-middle">
+                <thead class="ts-headertabelafixo">
                     <tr>
                         <th>Tipo Seção</th>
                         <th>Titulo</th>
@@ -34,7 +50,7 @@ $secoes = buscaSecao();
                         <td><?php echo $secao['tipoSecao'] ?></td>
                         <td><?php echo $secao['tituloSecao'] ?></td>
                         <td><?php echo $secao['arquivoFonte'] ?></td>
-                        
+
                         <td>
                             <a class="btn btn-warning btn-sm" href="secao_alterar.php?idSecao=<?php echo $secao['idSecao'] ?>" role="button"><i class="bi bi-pencil-square"></i></a>
                             <a class="btn btn-danger btn-sm" href="secao_excluir.php?idSecao=<?php echo $secao['idSecao'] ?>" role="button"><i class="bi bi-trash3"></i></a>
@@ -46,6 +62,12 @@ $secoes = buscaSecao();
         </div>
     </div>
 
+
+    <!-- LOCAL PARA COLOCAR OS JS -->
+
+    <?php include_once ROOT . "/vendor/footer_js.php"; ?>
+
+    <!-- LOCAL PARA COLOCAR OS JS -FIM -->
 
 </body>
 

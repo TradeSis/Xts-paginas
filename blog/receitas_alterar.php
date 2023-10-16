@@ -1,20 +1,37 @@
 <?php
-include_once('../head.php');
+//Lucas 11102023 padrao novo
+include_once('../header.php');
 include_once('../database/receitas.php');
 $idReceita = $_GET['idReceita'];
 $receita = buscaReceitas($idReceita);
 ?>
+<!doctype html>
+<html lang="pt-BR">
 
+<head>
 
-<body class="bg-transparent">
-    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
-    <div class="container formContainer">
+    <?php include_once ROOT . "/vendor/head_css.php"; ?>
 
+</head>
+
+<body>
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-sm-8">
-                <h2 class="tituloTabela">Editar Receita</h2>
+            <BR> <!-- MENSAGENS/ALERTAS -->
+        </div>
+        <div class="row">
+            <BR> <!-- BOTOES AUXILIARES -->
+        </div>
+        <div class="row"> <!-- LINHA SUPERIOR A TABLE -->
+            <div class="col-3">
+                <!-- TITULO -->
+                <h2 class="ts-tituloPrincipal">Editar Receita</h2>
             </div>
-            <div class="col-sm-4" style="text-align:right">
+            <div class="col-7">
+                <!-- FILTROS -->
+            </div>
+
+            <div class="col-2 text-end">
                 <a href="receitas.php" role="button" class="btn btn-primary"><i class="bi bi-arrow-left-square"></i></i>&#32;Voltar</a>
             </div>
         </div>
@@ -22,11 +39,11 @@ $receita = buscaReceitas($idReceita);
         <form class="mb-4" action="../database/receitas.php?operacao=alterar" method="post" enctype="multipart/form-data">
 
             <div class="row">
-                <div class="col-sm-12" style="margin-top: 10px">
+                <div class="col-sm-12">
                     <div class="form-group">
-                        <label class='control-label' for='inputNormal' style="margin-top: -20px;">Receita*</label>
+                        <label class='control-label' for='inputNormal'>Receita*</label>
                         <input type="text" name="nomeReceita" class="form-control" value="<?php echo $receita['nomeReceita'] ?>">
-                        <input type="text" class="form-control" name="idReceita" value="<?php echo $receita['idReceita'] ?>" style="display: none">
+                        <input type="hidden" class="form-control" name="idReceita" value="<?php echo $receita['idReceita'] ?>">
                     </div>
                 </div>
             </div>
@@ -39,10 +56,10 @@ $receita = buscaReceitas($idReceita);
                 <textarea style="display: none" id="detail" name="conteudoReceita"><?php echo $receita['conteudoReceita'] ?></textarea>
             </div>
 
-            <div class="row">
-                <div class="col-sm-6" style="margin-top: 10px">
+            <div class="row mt-3">
+                <div class="col-sm-6">
                     <div class="form-group">
-                        <label class='control-label' for='inputNormal' style="margin-top: -20px;">Autor</label>
+                        <label class='control-label' for='inputNormal'>Autor</label>
                         <input type="text" name="autorReceita" class="form-control" value="<?php echo $receita['autorReceita'] ?>">
                     </div>
                 </div>
@@ -57,13 +74,17 @@ $receita = buscaReceitas($idReceita);
                 </div>
             </div>
 
-            <div style="text-align:right; margin-top:20px">
+            <div class="text-end mt-4">
                 <button type="submit" class="btn  btn-success"><i class="bi bi-sd-card-fill"></i>&#32;Salvar</button>
             </div>
         </form>
     </div>
 
-    </div>
+
+    <!-- LOCAL PARA COLOCAR OS JS -->
+
+    <?php include_once ROOT . "/vendor/footer_js.php"; ?>
+
     <script src="<?php echo URLROOT ?>/sistema/js/quilljs.js"></script>
 
     <script>
@@ -97,6 +118,8 @@ $receita = buscaReceitas($idReceita);
             }
         });
     </script>
+
+    <!-- LOCAL PARA COLOCAR OS JS -FIM -->
 
 </body>
 
