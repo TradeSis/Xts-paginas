@@ -12,6 +12,7 @@ if ($qtdPosts == "null") {
 }
 $posts = buscaPostsCategoria($categoria, $qtdPosts);
 
+
 ?>
 <style>
     p {
@@ -36,9 +37,9 @@ $posts = buscaPostsCategoria($categoria, $qtdPosts);
         margin-left: 5px;
     }
 </style>
-<section>
+
     <div class="container-fluid">
-        <div class="row titulo" style="margin-top: -50px;">
+        <div class="row titulo" >
             <h2><?php echo $parametro['titulo'] ?></h2>
         </div>
         <hr>
@@ -48,7 +49,7 @@ $posts = buscaPostsCategoria($categoria, $qtdPosts);
                 <div class="col-sm-4">
                     <div class="card-deck " style="margin-top: 30px;">
                         <div class="card shadow">
-                            <img class="card-img-top" src="<?php echo URLROOT ?>/img/<?php echo $post['imgDestaque'] ?>" alt="Card image cap">
+                            <img class="card-img-top" src="<?php echo $post['imgDestaque'] ?>" alt="<?php echo $post['imgDestaque'] ?>"
                             <div class="card-body">
                                 <a href="noticias/<?php echo $post['slug'] ?>"><?php echo $post['titulo'] ?></a>
                             </div>
@@ -63,4 +64,3 @@ $posts = buscaPostsCategoria($categoria, $qtdPosts);
 
     </div>
 
-</section>
