@@ -39,49 +39,37 @@ $temas = buscaTemas();
 
 
         <form action="../database/paginas.php?operacao=inserir" method="post">
-            <div class="row">
+            <div class="row mt-3">
                 <div class="col-sm-3">
-                    <div class="form-group">
-                        <label class='control-label' for='inputNormal'>Slug</label>
-                        <input type="text" name="slug" class="form-control" required autocomplete="off">
-                    </div>
+                    <label class='form-label ts-label'>Slug</label>
+                    <input type="text" name="slug" class="form-control ts-input" required autocomplete="off">
                 </div>
                 <div class="col-sm-3">
-                    <div class="form-group">
-                        <label class='control-label' for='inputNormal'>Titulo</label>
-                        <input type="text" name="tituloPagina" class="form-control" required autocomplete="off">
-                    </div>
+                    <label class='form-label ts-label'>Titulo</label>
+                    <input type="text" name="tituloPagina" class="form-control ts-input" required autocomplete="off">
                 </div>
 
                 <div class="col-sm-3">
-                    <div class="form-group">
-                        <label class='control-label' for='inputNormal'>Arquivo Fonte</label>
-                        <input type="text" name="arquivoFonte" class="form-control" autocomplete="off">
-                    </div>
+                    <label class='form-label ts-label'>Arquivo Fonte</label>
+                    <input type="text" name="arquivoFonte" class="form-control ts-input" autocomplete="off">
                 </div>
 
                 <div class="col-sm-3">
-                    <div class="form-group">
-                        <label class='control-label' for='inputNormal'>Arquivo Single</label>
-                        <input type="text" name="arquivoSingle" class="form-control" autocomplete="off">
-                    </div>
+                    <label class='form-label ts-label'>Arquivo Single</label>
+                    <input type="text" name="arquivoSingle" class="form-control ts-input" autocomplete="off">
                 </div>
 
             </div>
-            <div class="row">
+            <div class="row mt-3">
                 <div class="col-sm-3">
-                    <div class="select-form-group">
-
-                        <label class="labelForm">Tema</label>
-                        <select class="select form-control" name="idTema">
-                            <?php
-                            foreach ($temas as $tema) {
-                            ?>
-                                <option value="<?php echo $tema['idTema'] ?>"><?php echo $tema['nomeTema']  ?></option>
-                            <?php  } ?>
-                        </select>
-
-                    </div>
+                    <label class="form-label ts-label">Tema</label>
+                    <select class="form-select ts-input" name="idTema">
+                        <?php
+                        foreach ($temas as $tema) {
+                        ?>
+                            <option value="<?php echo $tema['idTema'] ?>"><?php echo $tema['nomeTema']  ?></option>
+                        <?php  } ?>
+                    </select>
                 </div>
             </div>
 

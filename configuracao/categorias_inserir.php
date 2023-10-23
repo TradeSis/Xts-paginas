@@ -38,12 +38,10 @@ include_once('../header.php');
 
         <form action="../database/categorias.php?operacao=inserir" method="post" enctype="multipart/form-data">
 
-            <div class="row">
+            <div class="row mt-3">
                 <div class="col-sm-12">
-                    <div class="form-group">
-                        <label class='control-label' for='inputNormal'>Nome da Categoria</label>
-                        <input type="text" name="nomeCategoria" class="form-control" required autocomplete="off">
-                    </div>
+                    <label class='form-label ts-label'>Nome da Categoria</label>
+                    <input type="text" name="nomeCategoria" class="form-control ts-input" required autocomplete="off">
                 </div>
             </div>
 

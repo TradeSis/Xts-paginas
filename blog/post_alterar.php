@@ -11,16 +11,17 @@ $categorias = buscaCategorias();
 ?>
 <!doctype html>
 <html lang="pt-BR">
+
 <head>
-    
-    <?php include_once ROOT. "/vendor/head_css.php";?>
+
+    <?php include_once ROOT . "/vendor/head_css.php"; ?>
 
 </head>
 
 <body>
 
     <div class="container-fluid">
-    <div class="row">
+        <div class="row">
             <BR> <!-- MENSAGENS/ALERTAS -->
         </div>
         <div class="row">
@@ -36,78 +37,63 @@ $categorias = buscaCategorias();
             </div>
 
             <div class="col-2 text-end">
-                <a href="posts.php" role="button" class="btn btn-primary"><i
-                        class="bi bi-arrow-left-square"></i></i>&#32;Voltar</a>
+                <a href="posts.php" role="button" class="btn btn-primary"><i class="bi bi-arrow-left-square"></i></i>&#32;Voltar</a>
             </div>
         </div>
 
 
         <form action="../database/posts.php?operacao=alterar" method="post" enctype="multipart/form-data">
 
-            <div class="row">
-                <div class="col-sm-3" style="margin-top: 50px">
-                    <div class="col-sm-6" style="margin-top: -20px">
-                        <label>Imagem</label>
-                        <label class="picture" for="foto" tabIndex="0">
-                            <img src="<?php echo $post["imgDestaque"] ?>" width="100%" height="100%" alt="">
-                        </label>
-                        <input type="file" name="imgDestaque" id="foto">
-                    </div>
+            <div class="row mt-3">
+                <div class="col-sm-3">
+                    <label class="form-label ts-label">Imagem</label>
+                    <label class="picture" for="foto" tabIndex="0">
+                        <img src="<?php echo $post["imgDestaque"] ?>" width="100%" height="100%" alt="">
+                    </label>
+                    <input type="file" name="imgDestaque" id="foto">
                 </div>
             </div>
 
             <div class="row mt-3">
                 <div class="col-sm-3">
-                    <div class="form-group">
-                        <label class='control-label' for='inputNormal'>Slug</label>
-                        <input type="text" name="slug" class="form-control" value="<?php echo $post['slug'] ?>" disabled>
-                    </div>
+                    <label class='form-label ts-label'>Slug</label>
+                    <input type="text" name="slug" class="form-control ts-input" value="<?php echo $post['slug'] ?>" disabled>
                 </div>
                 <div class="col-sm-9">
-                    <div class="form-group">
-                        <label class='control-label' for='inputNormal'>Titulo</label>
-                        <input type="text" name="titulo" class="form-control" value="<?php echo $post['titulo'] ?>">
-                        <input type="hidden" class="form-control" name="idPost" value="<?php echo $post['idPost'] ?>">
-                    </div>
+                    <label class='form-label ts-label'>Titulo</label>
+                    <input type="text" name="titulo" class="form-control ts-input" value="<?php echo $post['titulo'] ?>">
+                    <input type="hidden" class="form-control ts-input" name="idPost" value="<?php echo $post['idPost'] ?>">
                 </div>
 
             </div>
 
             <div class="row mt-3">
                 <div class="col-sm-3">
-                    <div class="select-form-group">
-
-                        <label class="labelForm">Categorias*</label>
-                        <select class="select form-control" name="idCategoria">
-                            <option value="<?php echo $post['idCategoria'] ?>"><?php echo $post['nomeCategoria']  ?></option>
-                            <?php
-                            foreach ($categorias as $categoria) {
-                            ?>
-                                <option value="<?php echo $categoria['idCategoria'] ?>"><?php echo $categoria['nomeCategoria']  ?></option>
-                            <?php  } ?>
-                        </select>
-
-                    </div>
+                    <label class="form-label ts-label">Categorias*</label>
+                    <select class="form-select ts-input" name="idCategoria">
+                        <option value="<?php echo $post['idCategoria'] ?>"><?php echo $post['nomeCategoria']  ?></option>
+                        <?php
+                        foreach ($categorias as $categoria) {
+                        ?>
+                            <option value="<?php echo $categoria['idCategoria'] ?>"><?php echo $categoria['nomeCategoria']  ?></option>
+                        <?php  } ?>
+                    </select>
                 </div>
 
                 <div class="col-sm-3">
-                    <div class="select-form-group">
-
-                        <label class="labelForm">Colunista/Autor*</label>
-                        <select class="select form-control" name="idAutor">
-                            <option value="<?php echo $post['idAutor'] ?>"><?php echo $post['nomeAutor']  ?></option>
-                            <?php
-                            foreach ($autores as $autor) {
-                            ?>
-                                <option value="<?php echo $autor['idAutor'] ?>"><?php echo $autor['nomeAutor']  ?></option>
-                            <?php  } ?>
-                        </select>
-
-                    </div>
+                    <label class="form-label ts-label">Colunista/Autor*</label>
+                    <select class="form-select ts-input" name="idAutor">
+                        <option value="<?php echo $post['idAutor'] ?>"><?php echo $post['nomeAutor']  ?></option>
+                        <?php
+                        foreach ($autores as $autor) {
+                        ?>
+                            <option value="<?php echo $autor['idAutor'] ?>"><?php echo $autor['nomeAutor']  ?></option>
+                        <?php  } ?>
+                    </select>
                 </div>
-                <div class="col-md-3" style="margin-top: 5px;">
-                    <label class="labelForm">Data</label>
-                    <input type="text" class="data select form-control" name="data" value="<?php echo date('d/m/Y H:i', strtotime($post['data'])) ?>" disabled>
+                <div class="col-md-3">
+                    <label class="form-label ts-label">Data</label>
+                    <input type="text" class="form-control ts-input" name="data" value="<?php echo date('d/m/Y H:i', strtotime($post['data'])) ?>" disabled>
                 </div>
 
             </div>
@@ -127,9 +113,9 @@ $categorias = buscaCategorias();
 
     </div>
 
-<!-- LOCAL PARA COLOCAR OS JS -->
+    <!-- LOCAL PARA COLOCAR OS JS -->
 
-<?php include_once ROOT. "/vendor/footer_js.php";?>
+    <?php include_once ROOT . "/vendor/footer_js.php"; ?>
 
     <script src="<?php echo URLROOT ?>/sistema/js/quilljs.js"></script>
     <script>
@@ -164,7 +150,7 @@ $categorias = buscaCategorias();
         });
     </script>
 
-<!-- LOCAL PARA COLOCAR OS JS -FIM -->
+    <!-- LOCAL PARA COLOCAR OS JS -FIM -->
 
 </body>
 

@@ -40,31 +40,21 @@ $temas = buscaTemas();
                 <h2 class="ts-tituloPrincipal">Paginas</h2>
             </div>
             <div class="col-2 pt-4">
-                <div class="select-form-group pt-1">
-                    <label class="labelForm">Selecionar Tema</label>
-                    <select class="select form-control" name="idTema" id="idTema">
-                        <option onclick="limparSearch()" value="5">Todos</option>
-                        <?php
-                        foreach ($temas as $tema) {
-                        ?>
-                            <option onclick="searchData()" value="<?php echo $tema['idTema'] ?>"><?php echo $tema['nomeTema']  ?></option>
-                        <?php  } ?>
-                    </select>
-                </div>
+                <label class="form-label ts-label">Selecionar Tema</label>
+                <select class="form-select ts-input" name="idTema" id="idTema">
+                    <option onclick="limparSearch()" value="5">Todos</option>
+                    <?php
+                    foreach ($temas as $tema) {
+                    ?>
+                        <option onclick="searchData()" value="<?php echo $tema['idTema'] ?>"><?php echo $tema['nomeTema']  ?></option>
+                    <?php  } ?>
+                </select>
             </div>
-            <div class="col-sm-1" style="margin-top: -20px; margin-left:-20px; text-align:left">
+            <div class="col-sm-1" style="margin-top: 20px; margin-left:-20px; text-align:left">
                 <button type="submit" class="btn btn-sm btn-secondary" onclick="limparSearch()"><i class="bi bi-x-lg"></i></button>
             </div>
             <div class="col-5">
                 <!-- FILTROS -->
-                <div class="input-group">
-                    <input type="text" class="form-control" id="buscaDemanda" placeholder="Buscar por id ou titulo">
-                    <span class="input-group-btn">
-                        <button class="btn btn-primary" id="buscar" type="button">
-                            <span style="font-size: 20px;font-family: 'Material Symbols Outlined'!important;" class="material-symbols-outlined">search</span>
-                        </button>
-                    </span>
-                </div>
             </div>
 
             <div class="col-2 text-end">

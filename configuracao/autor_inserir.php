@@ -16,7 +16,7 @@ include_once('../header.php');
 
     <div class="container-fluid">
 
-    <div class="row">
+        <div class="row">
             <BR> <!-- MENSAGENS/ALERTAS -->
         </div>
         <div class="row">
@@ -32,45 +32,38 @@ include_once('../header.php');
             </div>
 
             <div class="col-2 text-end">
-                <a href="../configuracao/?tab=configuracao&stab=autor" role="button" class="btn btn-primary"><i
-                        class="bi bi-arrow-left-square"></i></i>&#32;Voltar</a>
+                <a href="../configuracao/?tab=configuracao&stab=autor" role="button" class="btn btn-primary"><i class="bi bi-arrow-left-square"></i></i>&#32;Voltar</a>
             </div>
         </div>
 
         <form action="../database/autor.php?operacao=inserir" method="post" enctype="multipart/form-data">
 
-            <div class="row">
+            <div class="row mt-3">
                 <div class="col-sm-12">
-                    <div class="form-group">
-                        <label class='control-label' for='inputNormal'>Nome</label>
-                        <input type="text" name="nomeAutor" class="form-control" required autocomplete="off">
-                    </div>
+                    <label class='form-label ts-label'>Nome</label>
+                    <input type="text" name="nomeAutor" class="form-control ts-input" required autocomplete="off">
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col-sm-6" style="margin-top: 50px">
-                    <div class="col-sm-6" style="margin-top: -20px">
-                        <label>Foto</label>
-                        <label class="picture" for="foto" tabIndex="0">
-                            <span class="picture__image"></span>
-                        </label>
-                        <input type="file" name="fotoAutor" id="foto">
-                    </div>
+            <div class="row mt-3">
+                <div class="col-sm-6">
+                    <label class="form-label ts-label">Foto</label>
+                    <label class="picture" for="foto" tabIndex="0">
+                        <span class="picture__image"></span>
+                    </label>
+                    <input type="file" name="fotoAutor" id="foto">
                 </div>
 
-                <div class="col-sm-6" style="margin-top: 50px">
-                    <div class="col-sm-6" style="margin-top: -20px">
-                        <label>Banner</label>
-                        <label class="picture" for="banner" tabIndex="0">
-                            <span class="picture__image2"></span>
-                        </label>
-                        <input type="file" name="bannerAutor" id="banner">
-                    </div>
+                <div class="col-sm-6">
+                    <label class="form-label ts-label">Banner</label>
+                    <label class="picture" for="banner" tabIndex="0">
+                        <span class="picture__image2"></span>
+                    </label>
+                    <input type="file" name="bannerAutor" id="banner">
                 </div>
             </div>
 
-            <div class="container-fluid p-0">
+            <div class="container-fluid p-0 mt-3">
                 <div class="col">
                     <span class="tituloEditor">Sobre Mim</span>
                 </div>
@@ -85,9 +78,9 @@ include_once('../header.php');
 
     </div>
 
-<!-- LOCAL PARA COLOCAR OS JS -->
+    <!-- LOCAL PARA COLOCAR OS JS -->
 
-<?php include_once ROOT. "/vendor/footer_js.php";?>
+    <?php include_once ROOT . "/vendor/footer_js.php"; ?>
 
     <script src="<?php echo URLROOT ?>/sistema/js/quilljs.js"></script>
     <script>
@@ -152,7 +145,7 @@ include_once('../header.php');
         });
     </script>
 
-<!-- LOCAL PARA COLOCAR OS JS -FIM -->
+    <!-- LOCAL PARA COLOCAR OS JS -FIM -->
 
 </body>
 

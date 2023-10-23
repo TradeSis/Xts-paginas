@@ -40,16 +40,12 @@ include_once('../header.php');
 
             <div class="row">
                 <div class="col-sm-3">
-                    <div class="form-group">
-                        <label class='control-label' for='inputNormal'>Slug*</label>
-                        <input type="text" name="slug" class="form-control" required autocomplete="off">
-                    </div>
+                        <label class='form-label ts-label'>Slug*</label>
+                        <input type="text" name="slug" class="form-control ts-input" required autocomplete="off">
                 </div>
                 <div class="col-sm-9">
-                    <div class="form-group">
-                        <label class='control-label' for='inputNormal'>Receita*</label>
-                        <input type="text" name="nomeReceita" class="form-control" required autocomplete="off">
-                    </div>
+                        <label class='form-label ts-label'>Receita*</label>
+                        <input type="text" name="nomeReceita" class="form-control ts-input" required autocomplete="off">
                 </div>
             </div>
 
@@ -64,19 +60,15 @@ include_once('../header.php');
 
             <div class="row mt-3">
                 <div class="col-sm-6">
-                    <div class="form-group">
-                        <label class='control-label' for='inputNormal'>Autor</label>
-                        <input type="text" name="autorReceita" class="form-control" autocomplete="off">
-                    </div>
+                        <label class='form-label ts-label'>Autor</label>
+                        <input type="text" name="autorReceita" class="form-control ts-input" autocomplete="off">
                 </div>
-                <div class="col-sm-6" style="margin-top: 50px">
-                    <div class="col-sm-6" style="margin-top: -20px">
-                        <label class='control-label' for='inputNormal' style="margin-top: -50px;">Imagem</label>
+                <div class="col-sm-6">
+                        <label class='form-label ts-label'>Imagem</label>
                         <label class="picture" for="foto" tabIndex="0">
                             <span class="picture__image"></span>
                         </label>
                         <input type="file" name="imgReceita" id="foto">
-                    </div>
                 </div>
             </div>
 

@@ -7,7 +7,7 @@ $perfil = json_decode($tema['perfil'], true);
 //echo json_encode($perfil);
 ?>
 
-<div class="container" style="margin-top: 10px">
+<div class="container-fluid">
     
     <div class="container-fluid p-0">
         <div class="col">
@@ -20,77 +20,74 @@ $perfil = json_decode($tema['perfil'], true);
     <h5>Perfil</h5>
     <hr>
     <br>
-    <div class="row form-group mt-4">
-        <div class="col-sm-4" style="margin-top: -20px">
-            <label class='control-label' for='inputNormal' style="margin-top: -20px;">Foto Perfil</label>
+    <div class="row mt-3">
+        <div class="col-sm-4">
+            <label class='form-label ts-label'>Foto Perfil</label>
             <label class="picture" for="imgPerfil" tabIndex="0">
                 <img src="<?php echo URLROOT ?>/img/<?php echo $perfil["imgPerfil"] ?>" height="80%" width="80%" alt="">
             </label>
             <input type="file" name="imgPerfil" id="imgPerfil">
         </div>
-        <div class="col-sm-8" style="margin-top: 10px">
-            <label class='control-label' for='inputNormal' style="margin-top: -5px;">Nome</label>
-            <input type="text" name="nome" class="form-control" value="<?php echo $perfil["nome"] ?>">
+        <div class="col-sm-8">
+            <label class='form-label ts-label'>Nome</label>
+            <input type="text" name="nome" class="form-control ts-input" value="<?php echo $perfil["nome"] ?>">
         </div>
     </div>
-    <div class="row form-group">
-        <div class="col-sm-3" style="margin-top: 10px">
-            <label class='control-label' for='inputNormal' style="margin-top: -5px;">Endereço</label>
-            <input type="text" name="endereco" class="form-control" value="<?php echo $perfil["endereco"] ?>">
+    <div class="row mt-3">
+        <div class="col-sm-3">
+            <label class='form-label ts-label'>Endereço</label>
+            <input type="text" name="endereco" class="form-control ts-input" value="<?php echo $perfil["endereco"] ?>">
         </div>
-        <div class="col-sm-3" style="margin-top: 10px">
-            <label class='control-label' for='inputNormal' style="margin-top: -5px;">Numero</label>
-            <input type="text" name="numero" class="form-control" value="<?php echo $perfil["numero"] ?>">
+        <div class="col-sm-3">
+            <label class='form-label ts-label'>Numero</label>
+            <input type="text" name="numero" class="form-control ts-input" value="<?php echo $perfil["numero"] ?>">
         </div>
 
-        <div class="col-sm-3" style="margin-top: 10px">
-            <label class='control-label' for='inputNormal' style="margin-top: -5px;">Bairro</label>
-            <input type="text" name="bairro" class="form-control" value="<?php echo $perfil["bairro"] ?>">
+        <div class="col-sm-3">
+            <label class='form-label ts-label'>Bairro</label>
+            <input type="text" name="bairro" class="form-control ts-input" value="<?php echo $perfil["bairro"] ?>">
         </div>
-        <div class="col-sm-3" style="margin-top: 10px">
-            <label class='control-label' for='inputNormal' style="margin-top: -5px;">CEP</label>
-            <input type="text" name="cep" class="form-control" value="<?php echo $perfil["cep"] ?>">
-        </div>
-    </div>
-
-    <div class="row form-group">
-        <div class="col-sm-3" style="margin-top: 10px">
-            <label class='control-label' for='inputNormal' style="margin-top: -5px;">Cidade</label>
-            <input type="text" name="cidade" class="form-control" value="<?php echo $perfil["cidade"] ?>">
-        </div>
-        <div class="col-sm-3" style="margin-top: 10px">
-            <label class='control-label' for='inputNormal' style="margin-top: -5px;">Estado</label>
-            <input type="text" name="estado" class="form-control" value="<?php echo $perfil["estado"] ?>">
+        <div class="col-sm-3">
+            <label class='form-label ts-label'>CEP</label>
+            <input type="text" name="cep" class="form-control ts-input" value="<?php echo $perfil["cep"] ?>">
         </div>
     </div>
 
-    <div class="row form-group">
-        <div class="col-sm-6" style="margin-top: 10px">
-            <label class='control-label' for='inputNormal' style="margin-top: -5px;">Email</label>
-            <input type="text" name="email" class="form-control" value="<?php echo $perfil["email"] ?>">
+    <div class="row mt-3">
+        <div class="col-sm-3">
+            <label class='form-label ts-label'>Cidade</label>
+            <input type="text" name="cidade" class="form-control ts-input" value="<?php echo $perfil["cidade"] ?>">
         </div>
-        <div class="col-sm-6" style="margin-top: 10px">
-            <label class='control-label' for='inputNormal' style="margin-top: -5px;">Whatsapp</label>
-            <input type="text" name="whatsapp" class="form-control" value="<?php echo $perfil["whatsapp"] ?>">
-        </div>
-    </div>
-    <div class="row form-group">
-        <div class="col-sm-4" style="margin-top: 10px">
-            <label class='control-label' for='inputNormal' style="margin-top: -5px;">twitter</label>
-            <input type="text" name="twitter" class="form-control" value="<?php echo $perfil["twitter"] ?>">
-        </div>
-        <div class="col-sm-4" style="margin-top: 10px">
-            <label class='control-label' for='inputNormal' style="margin-top: -5px;">facebook</label>
-            <input type="text" name="facebook" class="form-control" value="<?php echo $perfil["facebook"] ?>">
-        </div>
-        <div class="col-sm-4" style="margin-top: 10px">
-            <label class='control-label' for='inputNormal' style="margin-top: -5px;">instagram</label>
-            <input type="text" name="instagram" class="form-control" value="<?php echo $perfil["instagram"] ?>">
+        <div class="col-sm-3">
+            <label class='form-label ts-label'>Estado</label>
+            <input type="text" name="estado" class="form-control ts-input" value="<?php echo $perfil["estado"] ?>">
         </div>
     </div>
-    <hr>
 
-
+    <div class="row mt-3 mb-4">
+        <div class="col-sm-6">
+            <label class='form-label ts-label'>Email</label>
+            <input type="text" name="email" class="form-control ts-input" value="<?php echo $perfil["email"] ?>">
+        </div>
+        <div class="col-sm-6">
+            <label class='form-label ts-label'>Whatsapp</label>
+            <input type="text" name="whatsapp" class="form-control ts-input" value="<?php echo $perfil["whatsapp"] ?>">
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-sm-4">
+            <label class='form-label ts-label'>twitter</label>
+            <input type="text" name="twitter" class="form-control ts-input" value="<?php echo $perfil["twitter"] ?>">
+        </div>
+        <div class="col-sm-4">
+            <label class='form-label ts-label'>facebook</label>
+            <input type="text" name="facebook" class="form-control ts-input" value="<?php echo $perfil["facebook"] ?>">
+        </div>
+        <div class="col-sm-4">
+            <label class='form-label ts-label'>instagram</label>
+            <input type="text" name="instagram" class="form-control ts-input" value="<?php echo $perfil["instagram"] ?>">
+        </div>
+    </div>
 
 </div>
 

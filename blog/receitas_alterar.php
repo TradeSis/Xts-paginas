@@ -38,17 +38,15 @@ $receita = buscaReceitas($idReceita);
 
         <form class="mb-4" action="../database/receitas.php?operacao=alterar" method="post" enctype="multipart/form-data">
 
-            <div class="row">
+            <div class="row mt-3">
                 <div class="col-sm-12">
-                    <div class="form-group">
-                        <label class='control-label' for='inputNormal'>Receita*</label>
-                        <input type="text" name="nomeReceita" class="form-control" value="<?php echo $receita['nomeReceita'] ?>">
-                        <input type="hidden" class="form-control" name="idReceita" value="<?php echo $receita['idReceita'] ?>">
-                    </div>
+                    <label class='form-label ts-label'>Receita*</label>
+                    <input type="text" name="nomeReceita" class="form-control ts-input" value="<?php echo $receita['nomeReceita'] ?>">
+                    <input type="hidden" class="form-control ts-input" name="idReceita" value="<?php echo $receita['idReceita'] ?>">
                 </div>
             </div>
 
-            <div class="container-fluid p-0">
+            <div class="container-fluid p-0 mt-3">
                 <div class="col">
                     <span class="tituloEditor">Descrição</span>
                 </div>
@@ -58,19 +56,15 @@ $receita = buscaReceitas($idReceita);
 
             <div class="row mt-3">
                 <div class="col-sm-6">
-                    <div class="form-group">
-                        <label class='control-label' for='inputNormal'>Autor</label>
-                        <input type="text" name="autorReceita" class="form-control" value="<?php echo $receita['autorReceita'] ?>">
-                    </div>
+                    <label class='form-label ts-label'>Autor</label>
+                    <input type="text" name="autorReceita" class="form-control ts-input" value="<?php echo $receita['autorReceita'] ?>">
                 </div>
-                <div class="col-sm-6" style="margin-top: 50px">
-                    <div class="col-sm-6" style="margin-top: -20px">
-                        <label class='control-label' for='inputNormal' style="margin-top: -50px;">Imagem</label>
-                        <label class="picture" for="foto" tabIndex="0">
-                            <img src="<?php echo $receita["imgReceita"] ?>" width="100%" height="100%" alt="">
-                        </label>
-                        <input type="file" name="imgReceita" id="foto">
-                    </div>
+                <div class="col-sm-6">
+                    <label class='form-label ts-label'>Imagem</label>
+                    <label class="picture" for="foto" tabIndex="0">
+                        <img src="<?php echo $receita["imgReceita"] ?>" width="100%" height="100%" alt="">
+                    </label>
+                    <input type="file" name="imgReceita" id="foto">
                 </div>
             </div>
 
