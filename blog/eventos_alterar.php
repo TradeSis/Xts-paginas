@@ -19,7 +19,7 @@ $categorias = buscaCategorias();
 <body>
 
     <div class="container-fluid">
-    <div class="row">
+        <div class="row">
             <BR> <!-- MENSAGENS/ALERTAS -->
         </div>
         <div class="row">
@@ -35,24 +35,21 @@ $categorias = buscaCategorias();
             </div>
 
             <div class="col-2 text-end">
-                <a href="eventos.php" role="button" class="btn btn-primary"><i
-                        class="bi bi-arrow-left-square"></i></i>&#32;Voltar</a>
+                <a href="eventos.php" role="button" class="btn btn-primary"><i class="bi bi-arrow-left-square"></i></i>&#32;Voltar</a>
             </div>
         </div>
 
         <form class="mb-4" action="../database/eventos.php?operacao=alterar" method="post" enctype="multipart/form-data">
 
-            <div class="row">
+            <div class="row mt-3">
                 <div class="col-sm-12">
-                    <div class="form-group">
-                        <label class='control-label' for='inputNormal'>Nome do Evento*</label>
-                        <input type="text" name="nomeEvento" class="form-control" value="<?php echo $evento['nomeEvento'] ?>">
-                        <input type="hidden" class="form-control" name="idEvento" value="<?php echo $evento['idEvento'] ?>">
-                    </div>
+                    <label class='form-label ts-label'>Nome do Evento*</label>
+                    <input type="text" name="nomeEvento" class="form-control ts-input" value="<?php echo $evento['nomeEvento'] ?>">
+                    <input type="hidden" class="form-control ts-input" name="idEvento" value="<?php echo $evento['idEvento'] ?>">
                 </div>
             </div>
 
-            <div class="container-fluid p-0">
+            <div class="container-fluid p-0 mt-3">
                 <div class="col">
                     <span class="tituloEditor">Descrição do Evento</span>
                 </div>
@@ -62,54 +59,43 @@ $categorias = buscaCategorias();
 
             <div class="row mt-3">
                 <div class="col-sm-4">
-                    <div class="form-group">
-                        <label class='control-label' for='inputNormal' style="margin-top: -40px">Data do Evento</label>
-                        <input type="date" name="dataEvento" class="form-control" value="<?php echo $evento['dataEvento'] ?>">
 
-                    </div>
+                    <label class='form-label ts-label'>Data do Evento</label>
+                    <input type="date" name="dataEvento" class="form-control ts-input" value="<?php echo $evento['dataEvento'] ?>">
                 </div>
                 <div class="col-sm-4">
-                    <div class="form-group">
-                        <label class='control-label' for='inputNormal'>Cidade</label>
-                        <input type="text" name="cidadeEvento" class="form-control" value="<?php echo $evento['cidadeEvento'] ?>">
-                    </div>
+
+                    <label class='form-label ts-label'>Cidade</label>
+                    <input type="text" name="cidadeEvento" class="form-control ts-input" value="<?php echo $evento['cidadeEvento'] ?>">
                 </div>
                 <div class="col-sm-4">
-                    <div class="form-group">
-                        <label class='control-label' for='inputNormal'>Local</label>
-                        <input type="text" name="localEvento" class="form-control" value="<?php echo $evento['localEvento'] ?>">
-                    </div>
+                    <label class='form-label ts-label'>Local</label>
+                    <input type="text" name="localEvento" class="form-control ts-input" value="<?php echo $evento['localEvento'] ?>">
                 </div>
             </div>
 
-            <div class="row">
-                <div class="row">
-                    <div class="col-sm-6" style="margin-top: 50px">
-                        <div class="col-sm-6" style="margin-top: -20px">
-                            <label class='control-label' for='inputNormal' style="margin-top: -50px;">Capa Evento</label>
-                            <label class="picture" for="foto" tabIndex="0">
-                                <img src="<?php echo $evento["capaEvento"] ?>" width="100%" height="100%" alt="">
-                            </label>
-                            <input type="file" name="capaEvento" id="foto">
-                        </div>
-                    </div>
+            <div class="row mt-3">
+                <div class="col-sm-6">
+                    <label class='form-label ts-label'>Capa Evento</label>
+                    <label class="picture" for="foto" tabIndex="0">
+                        <img src="<?php echo $evento["capaEvento"] ?>" width="100%" height="100%" alt="">
+                    </label>
+                    <input type="file" name="capaEvento" id="foto">
+                </div>
 
-                    <div class="col-sm-6" style="margin-top: 50px">
-                        <div class="col-sm-6" style="margin-top: -20px">
-                            <label class='control-label' for='inputNormal' style="margin-top: -50px;">Banner Evento</label>
-                            <label class="picture" for="banner" tabIndex="0">
-                                <img src="<?php echo $evento["bannerEvento"] ?>" width="100%" height="100%" alt="">
-                            </label>
-                            <input type="file" name="bannerEvento" id="banner">
-                        </div>
-                    </div>
+                <div class="col-sm-6">
+                    <label class='form-label ts-label'>Banner Evento</label>
+                    <label class="picture" for="banner" tabIndex="0">
+                        <img src="<?php echo $evento["bannerEvento"] ?>" width="100%" height="100%" alt="">
+                    </label>
+                    <input type="file" name="bannerEvento" id="banner">
                 </div>
             </div>
 
-            <div class="row mt-4">
-                <div class="col-sm-2 ml-4" style="margin-top: 40px">
+            <div class="row mt-3">
+                <div class="col-sm-2 ml-4 mt-4">
                     <div class="select-form-group">
-                        <label class='control-label' for='inputNormal' style="margin-top: -45px;">Esconder</label>
+                        <label class='form-label ts-label'>Esconder</label>
                         <label for="esconderEvento">esconder</label>
                         <input type="range" id="esconderEvento" name="esconderEvento" min="0" max="1" value="<?php echo $evento['esconderEvento'] ?>" style="width: 15%;">
                         <label for="esconderEvento">aparecer</label>
@@ -117,24 +103,18 @@ $categorias = buscaCategorias();
                 </div>
 
                 <div class="col-sm-2">
-                    <div class="select-form-group">
-
-                        <label class="labelForm">Tipo Evento*</label>
-                        <select class="select form-control" name="tipoEvento">
-                            <option value="<?php echo $evento['tipoEvento'] ?>"><?php echo $evento['tipoEvento'] ?></option>
-                            <option value="evento">Evento</option>
-                            <option value="visitacao">Visitação</option>
-                            <option value="cursos">Cursos</option>
-                            <option value="podcast">Podcast</option>
-                        </select>
-
-                    </div>
+                    <label class="form-label ts-label">Tipo Evento*</label>
+                    <select class="form-select ts-input" name="tipoEvento">
+                        <option value="<?php echo $evento['tipoEvento'] ?>"><?php echo $evento['tipoEvento'] ?></option>
+                        <option value="evento">Evento</option>
+                        <option value="visitacao">Visitação</option>
+                        <option value="cursos">Cursos</option>
+                        <option value="podcast">Podcast</option>
+                    </select>
                 </div>
                 <div class="col-sm-6">
-                    <div class="form-group">
-                        <label class='control-label' for='inputNormal'>link do Evento</label>
-                        <input type="text" name="linkEvento" class="form-control" value="<?php echo $evento['linkEvento'] ?>">
-                    </div>
+                    <label class='form-label ts-label'>link do Evento</label>
+                    <input type="text" name="linkEvento" class="form-control ts-input" value="<?php echo $evento['linkEvento'] ?>">
                 </div>
             </div>
 
@@ -148,7 +128,7 @@ $categorias = buscaCategorias();
 
     <!-- LOCAL PARA COLOCAR OS JS -->
 
-    <?php include_once ROOT. "/vendor/footer_js.php";?>
+    <?php include_once ROOT . "/vendor/footer_js.php"; ?>
 
     <script src="<?php echo URLROOT ?>/sistema/js/quilljs.js"></script>
     <script>

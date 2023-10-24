@@ -39,13 +39,11 @@ $tema = buscaTemas($_GET['idTema']);
 
 
         <form action="../database/temas.php?operacao=excluir" method="post">
-            <div class="row">
+            <div class="row mt-3">
                 <div class="col-sm-12">
-                    <div class="form-group">
-                        <label class='control-label' for='inputNormal'>Nome</label>
-                        <input type="text" name="nomeTema" class="form-control" value="<?php echo $tema['nomeTema'] ?>">
-                        <input type="hidden" class="form-control" name="idTema" value="<?php echo $tema['idTema'] ?>">
-                    </div>
+                    <label class='form-label ts-label'>Nome</label>
+                    <input type="text" name="nomeTema" class="form-control ts-input" value="<?php echo $tema['nomeTema'] ?>">
+                    <input type="hidden" class="form-control ts-input" name="idTema" value="<?php echo $tema['idTema'] ?>">
                 </div>
             </div>
 

@@ -45,62 +45,52 @@ $paginas = buscaPaginas($_GET["idPagina"]);
 
         <form action="../database/secaoPagina.php?operacao=inserir" method="post">
 
-
-            <div class="row">
+            <div class="row mt-3">
                 <div class="col-sm-3">
-                    <div class="form-group">
-                        <label class='control-label' for='inputNormal'>Pagina</label>
-                        <input type="text" class="form-control" name="tituloPagina" value="<?php echo $paginas['tituloPagina'] ?>" readonly>
-                        <input type="hidden" class="form-control" name="idPagina" value="<?php echo $paginas['idPagina'] ?>">
-                    </div>
+                    <label class='form-label ts-label'>Pagina</label>
+                    <input type="text" class="form-control ts-input" name="tituloPagina" value="<?php echo $paginas['tituloPagina'] ?>" readonly>
+                    <input type="hidden" class="form-control ts-input" name="idPagina" value="<?php echo $paginas['idPagina'] ?>">
                 </div>
 
                 <div class="col-sm-3">
-                    <div class="select-form-group">
-
-                        <label class="labelForm">Seção</label>
-                        <select class="select form-control" name="idSecao">
-                            <?php
-                            foreach ($secoes as $secao) {
-                            ?>
-                                <option value="<?php echo $secao['idSecao'] ?>"><?php echo $secao['tituloSecao']  ?></option>
-                            <?php  } ?>
-                        </select>
-
-                    </div>
+                    <label class="form-label ts-label">Seção</label>
+                    <select class="form-select ts-input" name="idSecao">
+                        <?php
+                        foreach ($secoes as $secao) {
+                        ?>
+                            <option value="<?php echo $secao['idSecao'] ?>"><?php echo $secao['tituloSecao']  ?></option>
+                        <?php  } ?>
+                    </select>
                 </div>
 
                 <div class="col-sm-3">
-                    <div class="select-form-group">
-                        <label class="labelForm">Ordem</label>
-                        <select class="select form-control" name="ordem">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                            <option value="11">11</option>
-                            <option value="12">12</option>
-                            <option value="13">13</option>
-                            <option value="14">14</option>
-                            <option value="15">15</option>
-                            <option value="16">16</option>
-                            <option value="17">17</option>
-                            <option value="18">18</option>
-                            <option value="19">19</option>
-                            <option value="20">20</option>
-
-                        </select>
-                    </div>
+                    <label class="form-label ts-label">Ordem</label>
+                    <select class="form-select ts-input" name="ordem">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                    </select>
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row mt-3">
                 <div class="col-sm-12">
 
                     <div class="form-group">

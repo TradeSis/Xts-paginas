@@ -38,42 +38,34 @@ $secao = buscaSecao($_GET['idSecao']);
         </div>
 
         <form class="mb-4" action="../database/secao.php?operacao=alterar" method="post">
-            <div class="row">
+            <div class="row mt-3">
                 <div class="col-sm-6">
-                    <div class="form-group">
-                        <label class='control-label' for='inputNormal'>Titulo</label>
-                        <input type="text" name="tituloSecao" class="form-control" value="<?php echo $secao['tituloSecao'] ?>">
-                        <input type="hidden" class="form-control" name="idSecao" value="<?php echo $secao['idSecao'] ?>">
-                    </div>
+                    <label class='form-label ts-label'>Titulo</label>
+                    <input type="text" name="tituloSecao" class="form-control ts-input" value="<?php echo $secao['tituloSecao'] ?>">
+                    <input type="hidden" class="form-control ts-input" name="idSecao" value="<?php echo $secao['idSecao'] ?>">
                 </div>
 
                 <div class="col-sm-3">
-                    <div class="form-group">
-                        <label class='control-label' for='inputNormal'>Arquivo Fonte</label>
-                        <input type="text" name="arquivoFonte" class="form-control" value="<?php echo $secao['arquivoFonte'] ?>">
-                    </div>
+                    <label class='form-label ts-label'>Arquivo Fonte</label>
+                    <input type="text" name="arquivoFonte" class="form-control ts-input" value="<?php echo $secao['arquivoFonte'] ?>">
                 </div>
 
                 <div class="col-sm-3">
-                    <div class="select-form-group">
-
-                        <label class="labelForm">Tipo</label>
-                        <select class="select form-control" name="tipoSecao">
-                            <option value="<?php echo $secao['tipoSecao'] ?>"><?php echo $secao['tipoSecao'] ?></option>
-                            <option value="header">Header</option>
-                            <option value="footer">Footer</option>
-                            <option value="html">Html</option>
-                            <option value="card">Card</option>
-                            <option value="form">Form</option>
-                            <option value="quemSomos">Quem Somos</option>
-                            <option value="principal">Principal</option>
-                            <option value="divisorPagina">Divisor de Pagina</option>
-                            <option value="lista">Lista</option>
-                            <option value="slides">Slides</option>
-                            <option value="blog">Blog</option>
-                        </select>
-
-                    </div>
+                    <label class="form-label ts-label">Tipo</label>
+                    <select class="form-select ts-input" name="tipoSecao">
+                        <option value="<?php echo $secao['tipoSecao'] ?>"><?php echo $secao['tipoSecao'] ?></option>
+                        <option value="header">Header</option>
+                        <option value="footer">Footer</option>
+                        <option value="html">Html</option>
+                        <option value="card">Card</option>
+                        <option value="form">Form</option>
+                        <option value="quemSomos">Quem Somos</option>
+                        <option value="principal">Principal</option>
+                        <option value="divisorPagina">Divisor de Pagina</option>
+                        <option value="lista">Lista</option>
+                        <option value="slides">Slides</option>
+                        <option value="blog">Blog</option>
+                    </select>
                 </div>
             </div>
 

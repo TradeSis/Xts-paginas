@@ -37,35 +37,26 @@ include_once('../header.php');
 
 
         <form action="../database/temas.php?operacao=inserir" method="post">
-            <div class="row">
+            <div class="row mt-3">
                 <div class="col-sm-6">
-                    <div class="form-group">
-                        <label class='control-label' for='inputNormal'>Nome</label>
-                        <input type="text" name="nomeTema" class="form-control">
-                    </div>
+                    <label class='form-label ts-label'>Nome</label>
+                    <input type="text" name="nomeTema" class="form-control ts-input">
                 </div>
 
                 <div class="col-sm-3">
-                    <div class="form-group">
-                        <label class='control-label' for='inputNormal'>Arquivo Css</label>
-                        <input type="text" name="css" class="form-control">
-                    </div>
+                    <label class='form-label ts-label'>Arquivo Css</label>
+                    <input type="text" name="css" class="form-control ts-input">
                 </div>
                 <div class="col-sm-3">
-                    <div class="select-form-group">
-
-                        <label class="labelForm">Tipo</label>
-                        <select class="select form-control" name="ativo">
-                            <option value="1">Ativo</option>
-                            <option value="0">Não Ativo</option>
-                        </select>
-
-                    </div>
+                    <label class="form-label ts-label">Tipo</label>
+                    <select class="form-select ts-input" name="ativo">
+                        <option value="1">Ativo</option>
+                        <option value="0">Não Ativo</option>
+                    </select>
                 </div>
-
             </div>
 
-            <div class="container-fluid p-0">
+            <div class="container-fluid p-0 mt-3">
                 <div class="col">
                     <span class="tituloEditor">Menu</span>
                 </div>

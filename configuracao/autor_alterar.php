@@ -41,39 +41,33 @@ $autor = buscaAutor($idAutor);
 
         <form action="../database/autor.php?operacao=alterar" method="post" enctype="multipart/form-data">
 
-            <div class="row">
+            <div class="row mt-3">
                 <div class="col-sm-12">
-                    <div class="form-group">
-                        <label class="labelForm">Nome</label>
-                        <input type="text" name="nomeAutor" class="form-control" value="<?php echo $autor['nomeAutor'] ?>">
-                        <input type="hidden" class="form-control" name="idAutor" value="<?php echo $autor['idAutor'] ?>">
-                    </div>
+                    <label class="form-label ts-label">Nome</label>
+                    <input type="text" name="nomeAutor" class="form-control ts-input" value="<?php echo $autor['nomeAutor'] ?>">
+                    <input type="hidden" class="form-control ts-input" name="idAutor" value="<?php echo $autor['idAutor'] ?>">
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col-sm-6" style="margin-top: 50px">
-                    <div class="col-sm-6" style="margin-top: -20px">
-                        <label>Foto</label>
-                        <label class="picture" for="foto" tabIndex="0">
-                            <img src="<?php echo $autor["fotoAutor"] ?>" width="100%" height="100%" alt="">
-                        </label>
-                        <input type="file" name="fotoAutor" id="foto">
-                    </div>
+            <div class="row mt-3">
+                <div class="col-sm-6">
+                    <label class="form-label ts-label">Foto</label>
+                    <label class="picture" for="foto" tabIndex="0">
+                        <img src="<?php echo $autor["fotoAutor"] ?>" width="100%" height="100%" alt="">
+                    </label>
+                    <input type="file" name="fotoAutor" id="foto">
                 </div>
 
-                <div class="col-sm-6" style="margin-top: 50px">
-                    <div class="col-sm-6" style="margin-top: -20px">
-                        <label>Banner</label>
-                        <label class="picture" for="banner" tabIndex="0">
-                            <img src="<?php echo $autor["bannerAutor"] ?>" width="100%" height="100%" alt="">
-                        </label>
-                        <input type="file" name="bannerAutor" id="banner" value="<?php echo $autor['bannerAutor'] ?>">
-                    </div>
+                <div class="col-sm-6">
+                    <label class="form-label ts-label">Banner</label>
+                    <label class="picture" for="banner" tabIndex="0">
+                        <img src="<?php echo $autor["bannerAutor"] ?>" width="100%" height="100%" alt="">
+                    </label>
+                    <input type="file" name="bannerAutor" id="banner" value="<?php echo $autor['bannerAutor'] ?>">
                 </div>
             </div>
 
-            <div class="container-fluid p-0">
+            <div class="container-fluid p-0 mt-3">
                 <div class="col">
                     <span class="tituloEditor">Sobre Mim</span>
                 </div>
