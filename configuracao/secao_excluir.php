@@ -41,13 +41,11 @@ $secao = buscaSecao($_GET['idSecao']);
 
 
         <form class="mb-4" action="../database/secao.php?operacao=excluir" method="post">
-            <div class="row">
+            <div class="row mt-3">
                 <div class="col-sm-12">
-                    <div class="form-group">
-                        <label class='control-label' for='inputNormal'>Titulo</label>
-                        <input type="text" name="tituloSecao" class="form-control" value="<?php echo $secao['tituloSecao'] ?>">
-                        <input type="hidden" class="form-control" name="idSecao" value="<?php echo $secao['idSecao'] ?>">
-                    </div>
+                    <label class='form-label ts-label'>Titulo</label>
+                    <input type="text" name="tituloSecao" class="form-control ts-input" value="<?php echo $secao['tituloSecao'] ?>">
+                    <input type="hidden" class="form-control ts-input" name="idSecao" value="<?php echo $secao['idSecao'] ?>">
                 </div>
             </div>
 

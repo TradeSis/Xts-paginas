@@ -40,13 +40,11 @@ $pagina = buscaPaginas($_GET['idPagina']);
         </div>
 
         <form action="../database/paginas.php?operacao=excluir" method="post" enctype="multipart/form-data">
-            <div class="row">
+            <div class="row mt-3">
                 <div class="col-sm-12">
-                    <div class="form-group">
-                        <label class='control-label'>Slug</label>
-                        <input type="text" name="slug" class="form-control" value="<?php echo $pagina['slug'] ?>">
-                        <input type="hidden" class="form-control" name="idPagina" value="<?php echo $pagina['idPagina'] ?>">
-                    </div>
+                    <label class='form-label ts-label'>Slug</label>
+                    <input type="text" name="slug" class="form-control ts-input" value="<?php echo $pagina['slug'] ?>">
+                    <input type="hidden" class="form-control ts-input" name="idPagina" value="<?php echo $pagina['idPagina'] ?>">
                 </div>
             </div>
 

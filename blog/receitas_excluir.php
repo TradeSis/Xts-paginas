@@ -41,13 +41,11 @@ $receita = buscaReceitas($idReceita);
 
         <form action="../database/receitas.php?operacao=excluir" method="post" enctype="multipart/form-data">
 
-            <div class="row">
+            <div class="row mt-3">
                 <div class="col-sm-12">
-                    <div class="form-group">
-                        <input type="text" name="nomeReceita" class="form-control" value="<?php echo $receita['nomeReceita'] ?>" disabled>
-                        <input type="hidden" class="form-control" name="idReceita" value="<?php echo $receita['idReceita'] ?>">
-                        <input type="hidden" class="form-control" name="imgReceita" value="<?php echo $receita['imgReceita'] ?>">
-                    </div>
+                    <input type="text" name="nomeReceita" class="form-control ts-input" value="<?php echo $receita['nomeReceita'] ?>" disabled>
+                    <input type="hidden" class="form-control ts-input" name="idReceita" value="<?php echo $receita['idReceita'] ?>">
+                    <input type="hidden" class="form-control ts-input" name="imgReceita" value="<?php echo $receita['imgReceita'] ?>">
                 </div>
             </div>
 

@@ -41,15 +41,13 @@ $autor = buscaAutor($idAutor);
 
         <form action="../database/autor.php?operacao=excluir" method="post">
 
-            <div class="row">
+            <div class="row mt-3">
                 <div class="col-sm-12">
-                    <div class="form-group">
-                        <label class="labelForm">Nome</label>
-                        <input type="text" name="nomeAutor" class="form-control" value="<?php echo $autor['nomeAutor'] ?>" disabled>
-                        <input type="hidden" class="form-control" name="idAutor" value="<?php echo $autor['idAutor'] ?>">
-                        <input type="hidden" class="form-control" name="fotoAutor" value="<?php echo $autor['fotoAutor'] ?>">
-                        <input type="hidden" class="form-control" name="bannerAutor" value="<?php echo $autor['bannerAutor'] ?>">
-                    </div>
+                    <label class="labelForm">Nome</label>
+                    <input type="text" name="nomeAutor" class="form-control ts-input" value="<?php echo $autor['nomeAutor'] ?>" disabled>
+                    <input type="hidden" class="form-control ts-input" name="idAutor" value="<?php echo $autor['idAutor'] ?>">
+                    <input type="hidden" class="form-control ts-input" name="fotoAutor" value="<?php echo $autor['fotoAutor'] ?>">
+                    <input type="hidden" class="form-control ts-input" name="bannerAutor" value="<?php echo $autor['bannerAutor'] ?>">
                 </div>
             </div>
 
