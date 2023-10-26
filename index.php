@@ -125,7 +125,7 @@ $nivelMenu = $nivelMenuLogin['nivelMenu'];
                 $src = "blog/eventos.php";
             }
             if ($tab == "paginas") {
-                $src = "paginas.php";
+                $src = "configuracao/paginas.php";
             }
             if ($tab == "configuracao") {
                 $src = "configuracao/";

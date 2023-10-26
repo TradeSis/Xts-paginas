@@ -30,11 +30,6 @@ include_once(__DIR__ . '/../header.php');
                                             } ?>" href="?tab=configuracao&stab=temas" role="tab">Tema</a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link ts-tabConfig <?php if ($stab == "paginas") {
-                                              echo " active ";
-                                            } ?>" href="?tab=configuracao&stab=paginas" role="tab">Paginas</a>
-          </li>
-          <li class="nav-item ">
             <a class="nav-link ts-tabConfig <?php if ($stab == "secao") {
                                               echo " active ";
                                             } ?>" href="?tab=configuracao&stab=secao" role="tab">Seções</a>
@@ -58,9 +53,6 @@ include_once(__DIR__ . '/../header.php');
 
         if ($stab == "temas") {
           $ssrc = "temas.php";
-        }
-        if ($stab == "paginas") {
-          $ssrc = "paginas.php";
         }
         if ($stab == "secao") {
           $ssrc = "secao.php";
@@ -111,9 +103,6 @@ include_once(__DIR__ . '/../header.php');
 
         if ($stab == "temas") {
           $ssrc = "temas.php";
-        }
-        if ($stab == "paginas") {
-          $ssrc = "paginas.php";
         }
         if ($stab == "secao") {
           $ssrc = "secao.php";
