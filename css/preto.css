@@ -1,0 +1,10 @@
+/* preto.css */
+
+:root {
+    --color-header-background: #000000; 
+    --color-header-link: #FFFFFF;
+}
+
+/* CABECALHO */
+.navbar    { background-color: var(--color-header-background) !important; }
+.nav-link  { color: var(--color-header-link) !important; }

@@ -1,0 +1,10 @@
+/* azulclaro.css */
+
+:root {
+    --color-header-background: #E2EBEB; 
+    --color-header-link: #FFFFFF;
+}
+
+/* CABECALHO */
+.navbar    { background-color: var(--color-header-background) !important; }
+.nav-link  { color: var(--color-header-link) !important; }

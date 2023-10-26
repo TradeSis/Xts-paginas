@@ -27,12 +27,11 @@ $temas = buscaTemas();
 
 <body>
     <div class="container-fluid">
-
         <div class="row">
-            <BR> <!-- MENSAGENS/ALERTAS -->
+            <!-- MENSAGENS/ALERTAS -->
         </div>
         <div class="row">
-            <BR> <!-- BOTOES AUXILIARES -->
+            <!-- BOTOES AUXILIARES -->
         </div>
         <div class="row align-items-center"> <!-- LINHA SUPERIOR A TABLE -->
             <div class="col-2 text-start">
