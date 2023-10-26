@@ -64,6 +64,13 @@ $nivelMenu = $nivelMenuLogin['nivelMenu'];
                                 href="?tab=eventos" role="tab">Eventos</a>
                             </li>
                         <?php }
+                        if ($nivelMenu >= 2) { ?>
+                            <li class="nav-item ">
+                                <a class="nav-link 
+                                <?php if ($stab == "paginas") { echo " active ";  } ?>"
+                                href="?tab=paginas" role="tab">Paginas</a>
+                            </li>
+                        <?php }
                         if ($nivelMenu >= 4) { ?>
                             <li class="nav-item mr-1 ">
                                 <a class="nav-link 
@@ -114,6 +121,9 @@ $nivelMenu = $nivelMenuLogin['nivelMenu'];
             if ($tab == "eventos") {
                 $src = "blog/eventos.php";
             }
+            if ($tab == "paginas") {
+                $src = "configuracao/paginas.php";
+              }
             if ($tab == "configuracao") {
                 $src = "configuracao/";
                 if (isset($_GET['stab'])) {
