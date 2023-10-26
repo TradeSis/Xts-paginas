@@ -64,10 +64,10 @@ $nivelMenu = $nivelMenuLogin['nivelMenu'];
                                 href="?tab=eventos" role="tab">Eventos</a>
                             </li>
                         <?php }
-                        if ($nivelMenu >= 2) { ?>
-                            <li class="nav-item ">
+                         if ($nivelMenu >= 4) { ?>
+                            <li class="nav-item mr-1 ">
                                 <a class="nav-link 
-                                <?php if ($stab == "paginas") { echo " active ";  } ?>"
+                                <?php if ($tab == "paginas") {echo " active ";} ?>" 
                                 href="?tab=paginas" role="tab">Paginas</a>
                             </li>
                         <?php }
@@ -98,8 +98,11 @@ $nivelMenu = $nivelMenuLogin['nivelMenu'];
 
                         <option value="<?php echo URLROOT ?>/paginas/?tab=eventos" 
                         <?php if ($getTab == "eventos") {echo " selected ";} ?>>Eventos</option>
+                        
+                        <option value="<?php echo URLROOT ?>/paginas/?tab=paginas" 
+                        <?php if ($getTab == "eventos") {echo " selected ";} ?>>Paginas</option>
 
-                        <option value="<?php echo URLROOT ?>/paginas/?tab=configuracao"
+                        <option value="<?php echo URLROOT ?>/paginas/?tab=paginas"
                         <?php if ($getTab == "configuracao") {echo " selected ";} ?>>Configurações</option>
                     </select>
                 </div>
@@ -123,7 +126,7 @@ $nivelMenu = $nivelMenuLogin['nivelMenu'];
             }
             if ($tab == "paginas") {
                 $src = "configuracao/paginas.php";
-              }
+            }
             if ($tab == "configuracao") {
                 $src = "configuracao/";
                 if (isset($_GET['stab'])) {

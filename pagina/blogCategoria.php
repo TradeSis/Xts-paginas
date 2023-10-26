@@ -4,7 +4,7 @@ include_once(ROOT . '/paginas/database/posts.php');
 
 
 $posts = buscaPostsCategoria($categoria, null);
-
+echo "CATEGORIA=".$categoria."-".json_encode($posts)."<HR>";
 ?>
 <style>
     p {
@@ -31,18 +31,15 @@ $posts = buscaPostsCategoria($categoria, null);
 </style>
 
 
-<main id="main">
 
-    <!-- ======= Blog Section ======= -->
-    <section style="margin-top: 30px;">
-        <div class="container-fluid" data-aos="fade-up">
+        <div class="container-fluid">
 
             <div class="row">
 
                 <div class="col-lg-9"> <!-- parte 1 -->
 
 
-                    <div class="row titulo" style="margin-top: -50px;">
+                    <div class="row titulo">
                         <h2><?php echo $titulo ?></h2>
                     </div>
                     <hr>
@@ -52,7 +49,7 @@ $posts = buscaPostsCategoria($categoria, null);
                             <div class="col-sm-4 ">
                                 <div class="card-deck " style="margin-top: 30px;">
                                     <div class="card shadow">
-                                        <img class="card-img-top" src="<?php echo URLROOT ?>/img/<?php echo $post['imgDestaque'] ?>" alt="Card image cap">
+                                        <img class="card-img-top" src="<?php echo $post['imgDestaque'] ?>" alt="Card image cap">
                                         <div class="card-body">
                                             <a href="noticias/<?php echo $post['slug'] ?>"><?php echo $post['titulo'] ?></a>
                                         </div>
@@ -105,7 +102,7 @@ $posts = buscaPostsCategoria($categoria, null);
                     <?php foreach ($autores as $autor) {  ?>
                         <div class="card text-center mt-3 shadow" style="height: 165px ;border-radius: 15px;">
                             <div class="card-body">
-                                <img src="<?php echo URLROOT ?>/img/<?php echo $autor['fotoAutor'] ?>" alt="">
+                                <img src="<?php echo $autor['fotoAutor'] ?>" alt="">
                                 <h5 class="card-title"><?php echo $autor['nomeAutor'] ?></h5>
                             </div>
                         </div>
@@ -116,5 +113,4 @@ $posts = buscaPostsCategoria($categoria, null);
             </div>
 
         </div>
-    </section>
-</main>
+   
