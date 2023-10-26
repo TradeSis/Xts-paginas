@@ -69,5 +69,5 @@ if (isset($_GET['operacao'])) {
 
 
 
-	header('Location: ../configuracao?stab=paginas');
+	header('Location: ../configuracao/paginas.php');	
 }

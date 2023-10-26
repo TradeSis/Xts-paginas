@@ -1,21 +1,4 @@
-<?php
 
-$secoesPaginas = buscaSecaoPagina($paginaDados['idPagina']);
-// Secoes antes da pagina
-$ordem = 0;
-foreach ($secoesPaginas as $secaoPagina) {
-    if ($secaoPagina["coluna"] == "") {
-        include 'paginas/secoes/' . $secaoPagina["tipoSecao"] . "/" . $secaoPagina["arquivoFonte"];
-        $ordem = $secaoPagina["ordem"];
-    }
-    if ($secaoPagina["arquivoFonte"] == "pagina") {
-        break;
-    }
-}
-
-
-?>
-<link href="<?php echo URLROOT ?>/paginas/css/<?php echo $paginaDados["css"]; ?>" rel="stylesheet">
 <style>
     /* MAPA */
     #svg-map path {
@@ -50,12 +33,6 @@ foreach ($secoesPaginas as $secaoPagina) {
         cursor: pointer
     }
 </style>
-
-<body>
-
-    <main id="main">
-
-        <section style="margin-top: -30px;">
             <div class="container-fluid">
 
                 <div class="row">
@@ -451,9 +428,7 @@ foreach ($secoesPaginas as $secaoPagina) {
             </div>
 
             </div>
-        </section>
-    </main>
-
+      
 
     <script>
         var select = document.getElementById('estado')
@@ -467,21 +442,4 @@ foreach ($secoesPaginas as $secaoPagina) {
             window.location = 'mapa';
         }
     </script>
-</body>
 
-<?php
-// Secoes depois da pagina
-foreach ($secoesPaginas as $secaoPagina) {
-    if ($secaoPagina["coluna"] == "") {
-        if ($secaoPagina["ordem"] <= $ordem) {
-            continue;
-        }
-
-        if ($secaoPagina["arquivoFonte"] == "pagina") {
-            continue;
-        }
-
-        include 'paginas/secoes/' . $secaoPagina["tipoSecao"] . "/" . $secaoPagina["arquivoFonte"];
-    }
-}
-?>

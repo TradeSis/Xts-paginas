@@ -27,7 +27,6 @@ $temas = buscaTemas();
 
 <body>
     <div class="container-fluid">
-
         <div class="row">
             <BR> <!-- MENSAGENS/ALERTAS -->
         </div>

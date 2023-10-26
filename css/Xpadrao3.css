@@ -2,7 +2,7 @@
 
 
 
-
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@300&family=Poppins:wght@300&display=swap');
 
 :root {
 
@@ -14,7 +14,7 @@
    /*  Variaveis de cores personalizadas */
    --color-header-primary: #E2EBEB;
    --color-header-secondary: #ffffff;
-   --color-h1-primary: #060944;
+   --color-h1-primary: #050A30;
    --color-h1-secondary: #ffffff;
    --color-h2: #060944;
    --color-h3: #060944;
@@ -29,7 +29,7 @@
    --color-icone: #fff;
    --color-sociaisIcons-primary: #1a1f24;
    --color-sociaisIcons-secundary: #ffffff;
-   --ts-tamanhoLogo: 30%;
+   --ts-tamanhoLogo: 200px;
   
   
   
@@ -103,6 +103,41 @@
     --color-black-rgb: 0, 0, 0;
     
   }
+
+  /* HeaderFaixatopo */
+
+#faixaDeCima{
+    background-color: #fff;
+    height: 42px;
+    justify-content: center;
+  }
+  #faixaDeCima a{
+    color: var(--color-sociaisIcons-primary);
+    text-align: center;
+    cursor: pointer;
+    padding-right: 30px;
+    margin-left: 40px;
+    font-size: 15px;
+    /* font-weight: 600; */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+  @media only screen and (max-width: 600px) {
+    #faixaDeCima {
+      display: none;
+    }
+    .navbar-collapse li{
+      margin-left: -120px;
+    }
+  }
+
+.blog .sidebar .categories select {
+  margin-top: 5px;
+  width: 200px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 2px solid #4a4a4b98;
+}
+ /* FIm - HeaderFaixatopo */
   
   /*--------------------------------------------------------------
   # 2. Override default Bootstrap variables
@@ -197,6 +232,7 @@
   
   /* Background Colors */
   .bg-default { background-color: var(--color-default) !important; }
+  .bg-color-header-primary { background-color: var(--color-header-primary) !important; }
   .bg-primary { background-color: var(--color-primary) !important; }
   .bg-primary-light { background-color: var(--color-primary-light) !important; }
   .bg-primary-dark { background-color: var(--color-primary-dark) !important; }

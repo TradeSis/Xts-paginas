@@ -1,18 +1,3 @@
-<?php
-$secoesPaginas = buscaSecaoPagina($paginaDados['idPagina']);
-
-// Secoes antes da pagina
-$ordem = 0;
-foreach ($secoesPaginas as $secaoPagina) {
-    if ($secaoPagina["coluna"] == "") {
-        include 'paginas/secoes/' . $secaoPagina["tipoSecao"] . "/" . $secaoPagina["arquivoFonte"];
-        $ordem = $secaoPagina["ordem"];
-    }
-    if ($secaoPagina["arquivoFonte"] == "pagina") {
-        break;
-    }
-}
-?>
 
 <style>
     .line {
@@ -64,11 +49,11 @@ foreach ($secoesPaginas as $secaoPagina) {
     <div class="tabContent">
         <?php
         $categoria = null;
-        include 'blog.php'; ?>
+        include 'pagina9x3.php'; ?>
     </div>
     <div class="tabContent">
         <?php
-        $categoria = 3;
+        $categoria = 7;
         $titulo = 'sobre Chocolate';
         include 'blogCategoria.php'; ?>
     </div>
@@ -85,23 +70,6 @@ foreach ($secoesPaginas as $secaoPagina) {
         include 'blogCategoria.php'; ?>
     </div>
 </div>
-
-<?php
-// Secoes depois da pagina
-foreach ($secoesPaginas as $secaoPagina) {
-    if ($secaoPagina["coluna"] == "") {
-        if ($secaoPagina["ordem"] <= $ordem) {
-            continue;
-        }
-
-        if ($secaoPagina["arquivoFonte"] == "pagina") {
-            continue;
-        }
-
-        include 'paginas/secoes/' . $secaoPagina["tipoSecao"] . "/" . $secaoPagina["arquivoFonte"];
-    }
-}
-?>
 
 
 <script>
