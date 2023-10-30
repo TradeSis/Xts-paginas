@@ -14,6 +14,10 @@ $nivelMenu = $nivelMenuLogin['nivelMenu'];
 <head>
 
     <?php include_once ROOT . "/vendor/head_css.php"; ?>
+    <!-- Transição dos elementos de paginas.php -->
+    <link href="<?php echo URLROOT ?>/vendor/aos/aos.css" rel="stylesheet"> 
+    <link href="<?php echo URLROOT ?>/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    
     <title>Paginas</title>
 
 </head>
@@ -149,6 +153,11 @@ $nivelMenu = $nivelMenuLogin['nivelMenu'];
      <?php include_once ROOT. "/vendor/footer_js.php";?>
 
     <script src="<?php echo URLROOT ?>/sistema/js/mobileSelectTabs.js"></script>
+    <!-- Transição dos elementos de paginas.php -->
+    <script src="<?php echo URLROOT ?>/vendor/aos/aos.js"></script>
+    <script src="<?php echo URLROOT ?>/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="<?php echo URLROOT ?>/vendor/glightbox/js/glightbox.min.js"></script>
+
 
     <!-- LOCAL PARA COLOCAR OS JS -FIM -->
 
