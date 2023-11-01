@@ -1,5 +1,7 @@
 <?php
 //echo "-ENTRADA->".json_encode($jsonEntrada)."\n";
+// helio 01/11/2023 - banco *_site, empresa 0
+$conexao = conectaMysql(0);
 
 //LOG
 $LOG_CAMINHO = defineCaminhoLog();
@@ -24,12 +26,6 @@ if (isset($LOG_NIVEL)) {
 
 
 
-$idEmpresa = null;
-if (isset($jsonEntrada["idEmpresa"])) {
-  $idEmpresa = $jsonEntrada["idEmpresa"];
-}
-
-$conexao = conectaMysql($idEmpresa);
 $tema = array();
 
 $sql = "SELECT * FROM temas ";
