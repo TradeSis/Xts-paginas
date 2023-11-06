@@ -12,9 +12,10 @@ include_once(ROOT . '/paginas/database/marcas.php');
 include_once(ROOT . '/paginas/database/receitas.php');
 include_once(ROOT . '/paginas/database/eventos.php');
 $tema = buscatema();
+
 ?>
 <body>
-
+  <link href="<?php echo URLROOT ?>/paginas/css/<?php echo $tema["css"]; ?>" rel="stylesheet">
   <link href="<?php echo URLROOT ?>/paginas/css/main.css" rel="stylesheet"> <!--Estilo da pg principal -->
   <script src="<?php echo URLROOT ?>/paginas/js/main.js"></script>
   <link href="<?php echo URLROOT ?>/paginas/css/paginaError.css" rel="stylesheet">
@@ -37,9 +38,10 @@ $tema = buscatema();
 
   }
 
-  echo "PAGINA=".$pagina;
+echo "PAGINA=".$pagina."<HR>";
   
   $paginaDados = buscaPagina($pagina);
+//echo json_encode($paginaDados) . "<HR>";
 
   if ($paginaDados == null) {
     echo "
@@ -99,7 +101,7 @@ foreach ($secoesPaginas as $secaoPagina) {
 }
 
   ?>
-  <link href="<?php echo URLROOT ?>/paginas/css/<?php echo $paginaDados["css"]; ?>" rel="stylesheet">
+  
 
 
 

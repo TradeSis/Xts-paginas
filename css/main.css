@@ -1,6 +1,10 @@
 /* main.css */
 
 /* CABECALHO */
+.navbar    { background-color: var(--color-header-background) !important; }
+.nav-link  { color: var(--color-header-link) !important; }
+
+/* CABECALHO */
 .mobile-conteudo{
     display: none;
 }
