@@ -18,7 +18,7 @@ function buscaTema()
 
 	$tema = array();
 
-	$conexao = conectaMysql();
+	$conexao = conectaMysql(0);
 
 	$sql = "SELECT * FROM temas WHERE ativo = 1 LIMIT 1";
 
