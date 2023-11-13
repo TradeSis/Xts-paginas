@@ -3,7 +3,7 @@ include_once(ROOT . '/paginas/database/produtos.php');
 
 $produtos = buscaProdutos();
 ?>
-<div class="container">
+<div class="container mt-2">
     <div class="row ts-produtosCards">
         <?php $counter = 0;
         foreach ($produtos as $produto) {

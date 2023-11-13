@@ -1042,9 +1042,47 @@ if (isset($_GET['operacao'])) {
 
 
 
-	//HOMEIMG
-	if ($operacao == "homeIMG") {
-		$img = $_FILES['homeIMG'];
+	//PRINCIPAL
+	if ($operacao == "principal") {
+		$parametros1 = array(
+			'titulo' => $_POST['titulo'],
+			'subTitulo' => $_POST['subTitulo'],
+			'textoBotao' => $_POST['textoBotao']
+		);
+		$parametros = array_map('htmlentities', $parametros1);
+		$apiEntrada = array(
+		
+			'idSecaoPagina' => $_POST['idSecaoPagina'],
+			'idPagina' => $_POST['idPagina'],
+			'idSecao' => $_POST['idSecao'],
+			'ordem' => $_POST['ordem'],
+			'coluna' => $_POST['coluna'],
+			'parametros' => json_encode($parametros),
+		);
+		$secoesPagina = chamaAPI(null, '/paginas/secoesPagina', json_encode($apiEntrada), 'POST');
+	}
+	//ANUNCIO
+	if ($operacao == "anuncio") {
+		$parametros1 = array(
+			'titulo' => $_POST['titulo'],
+			'textoBotao' => $_POST['textoBotao']
+		);
+		$parametros = array_map('htmlentities', $parametros1);
+		$apiEntrada = array(
+		
+			'idSecaoPagina' => $_POST['idSecaoPagina'],
+			'idPagina' => $_POST['idPagina'],
+			'idSecao' => $_POST['idSecao'],
+			'ordem' => $_POST['ordem'],
+			'coluna' => $_POST['coluna'],
+			'parametros' => json_encode($parametros),
+		);
+		$secoesPagina = chamaAPI(null, '/paginas/secoesPagina', json_encode($apiEntrada), 'POST');
+	}
+
+	//PRINCIPALIMG
+	if ($operacao == "principalIMG") {
+		$img = $_FILES['principalIMG'];
 		if ($img !== null) {
 			preg_match("/\.(png|jpg|jpeg){1}$/i", $img["name"], $ext);
 
@@ -1061,7 +1099,74 @@ if (isset($_GET['operacao'])) {
 			'titulo' => $_POST['titulo'],
 			'subTitulo' => $_POST['subTitulo'],
 			'textoBotao' => $_POST['textoBotao'],
-			'homeIMG' => $path,
+			'principalIMG' => $path,
+		);
+		$parametros = array_map('htmlentities', $parametros1);
+		$apiEntrada = array(
+		
+			'idSecaoPagina' => $_POST['idSecaoPagina'],
+			'idPagina' => $_POST['idPagina'],
+			'idSecao' => $_POST['idSecao'],
+			'ordem' => $_POST['ordem'],
+			'coluna' => $_POST['coluna'],
+			'parametros' => json_encode($parametros),
+		);
+		$secoesPagina = chamaAPI(null, '/paginas/secoesPagina', json_encode($apiEntrada), 'POST');
+	}
+
+	//PRINCIPALBACKGROUND
+	if ($operacao == "principalBackground") {
+		$img = $_FILES['principalIMG'];
+		if ($img !== null) {
+			preg_match("/\.(png|jpg|jpeg){1}$/i", $img["name"], $ext);
+
+			if ($ext == true) {
+				$pasta = ROOT . "/img/";
+				$novoNomeImg = $img["name"];
+				$path = 'http://' . $_SERVER["HTTP_HOST"] . '/img/' . $novoNomeImg;
+				move_uploaded_file($img['tmp_name'], $pasta . $novoNomeImg);
+			} else {
+				$path = " ";
+			}
+		}
+		$parametros1 = array(
+			'titulo' => $_POST['titulo'],
+			'subTitulo' => $_POST['subTitulo'],
+			'textoBotao' => $_POST['textoBotao'],
+			'principalIMG' => $path,
+		);
+		$parametros = array_map('htmlentities', $parametros1);
+		$apiEntrada = array(
+		
+			'idSecaoPagina' => $_POST['idSecaoPagina'],
+			'idPagina' => $_POST['idPagina'],
+			'idSecao' => $_POST['idSecao'],
+			'ordem' => $_POST['ordem'],
+			'coluna' => $_POST['coluna'],
+			'parametros' => json_encode($parametros),
+		);
+		$secoesPagina = chamaAPI(null, '/paginas/secoesPagina', json_encode($apiEntrada), 'POST');
+	}
+
+	//VIDEO
+	if ($operacao == "video") {
+		$img = $_FILES['video'];
+		if ($img !== null) {
+			preg_match("/\.(png|jpg|mp4){1}$/i", $img["name"], $ext);
+
+			if ($ext == true) {
+				$pasta = ROOT . "/img/";
+				$novoNomeImg = $img["name"];
+				$path = 'http://' . $_SERVER["HTTP_HOST"] . '/img/' . $novoNomeImg;
+				move_uploaded_file($img['tmp_name'], $pasta . $novoNomeImg);
+			} else {
+				$path = " ";
+			}
+		}
+		$parametros1 = array(
+			'titulo' => $_POST['titulo'],
+			'subTitulo' => $_POST['subTitulo'],
+			'video' => $path,
 		);
 		$parametros = array_map('htmlentities', $parametros1);
 		$apiEntrada = array(
@@ -1147,9 +1252,9 @@ if (isset($_GET['operacao'])) {
 		$secoesPagina = chamaAPI(null, '/paginas/secoesPagina', json_encode($apiEntrada), 'POST');
 	}
 
-	//POSTIMGDIREITA
-	if ($operacao == "postIMGdireita") {
-		$img = $_FILES['postIMG'];
+	//TEXTOIMGDIREITA
+	if ($operacao == "textoIMGdireita") {
+		$img = $_FILES['textoIMG'];
 		if ($img !== null) {
 			preg_match("/\.(png|jpg|jpeg){1}$/i", $img["name"], $ext);
 
@@ -1163,9 +1268,9 @@ if (isset($_GET['operacao'])) {
 			}
 		}
 		$parametros1 = array(
-			'postTitulo' => $_POST['postTitulo'],
-			'postDescricao' => $_POST['postDescricao'],
-			'postIMG' => $path,
+			'textoTitulo' => $_POST['textoTitulo'],
+			'textoDescricao' => $_POST['textoDescricao'],
+			'textoIMG' => $path,
 		);
 		$parametros = array_map('htmlentities', $parametros1);
 		$apiEntrada = array(
@@ -1180,9 +1285,9 @@ if (isset($_GET['operacao'])) {
 		$secoesPagina = chamaAPI(null, '/paginas/secoesPagina', json_encode($apiEntrada), 'POST');
 	}
 
-	//POSTIMGESQUERDA
-	if ($operacao == "postIMGesquerda") {
-		$img = $_FILES['postIMG'];
+	//TEXTOIMGESQUERDA
+	if ($operacao == "textoIMGesquerda") {
+		$img = $_FILES['textoIMG'];
 		if ($img !== null) {
 			preg_match("/\.(png|jpg|jpeg){1}$/i", $img["name"], $ext);
 
@@ -1196,9 +1301,9 @@ if (isset($_GET['operacao'])) {
 			}
 		}
 		$parametros1 = array(
-			'postTitulo' => $_POST['postTitulo'],
-			'postDescricao' => $_POST['postDescricao'],
-			'postIMG' => $path,
+			'textoTitulo' => $_POST['textoTitulo'],
+			'textoDescricao' => $_POST['textoDescricao'],
+			'textoIMG' => $path,
 		);
 		$parametros = array_map('htmlentities', $parametros1);
 		$apiEntrada = array(
@@ -1213,8 +1318,8 @@ if (isset($_GET['operacao'])) {
 		$secoesPagina = chamaAPI(null, '/paginas/secoesPagina', json_encode($apiEntrada), 'POST');
 	}
 
-	//SLIDER
-	if ($operacao == "slider") {
+	//SLIDERPRODUTOS
+	if ($operacao == "sliderProdutos") {
 		$img = $_FILES['logo'];
 		if ($img !== null) {
 			preg_match("/\.(png|jpg|jpeg){1}$/i", $img["name"], $ext);
@@ -1230,6 +1335,58 @@ if (isset($_GET['operacao'])) {
 		}
 		$parametros1 = array(
 			'logo' => $path,
+		);
+		$parametros = array_map('htmlentities', $parametros1);
+		$apiEntrada = array(
+		
+			'idSecaoPagina' => $_POST['idSecaoPagina'],
+			'idPagina' => $_POST['idPagina'],
+			'idSecao' => $_POST['idSecao'],
+			'ordem' => $_POST['ordem'],
+			'coluna' => $_POST['coluna'],
+			'parametros' => json_encode($parametros),
+		);
+		$secoesPagina = chamaAPI(null, '/paginas/secoesPagina', json_encode($apiEntrada), 'POST');
+	}
+
+	//CONTATO
+	if ($operacao == "contato") {
+		$parametros1 = array(
+			'titulo' => $_POST['titulo'],
+			'descricao' => $_POST['descricao'],
+			'textoBotao' => $_POST['textoBotao']
+		);
+		$parametros = array_map('htmlentities', $parametros1);
+		$apiEntrada = array(
+		
+			'idSecaoPagina' => $_POST['idSecaoPagina'],
+			'idPagina' => $_POST['idPagina'],
+			'idSecao' => $_POST['idSecao'],
+			'ordem' => $_POST['ordem'],
+			'coluna' => $_POST['coluna'],
+			'parametros' => json_encode($parametros),
+		);
+		$secoesPagina = chamaAPI(null, '/paginas/secoesPagina', json_encode($apiEntrada), 'POST');
+	}
+	//CONTATOIMG
+	if ($operacao == "contatoIMG") {
+		$img = $_FILES['contatoIMG'];
+		if ($img !== null) {
+			preg_match("/\.(png|jpg|jpeg){1}$/i", $img["name"], $ext);
+
+			if ($ext == true) {
+				$pasta = ROOT . "/img/";
+				$novoNomeImg = $img["name"];
+				$path = 'http://' . $_SERVER["HTTP_HOST"] . '/img/' . $novoNomeImg;
+				move_uploaded_file($img['tmp_name'], $pasta . $novoNomeImg);
+			} else {
+				$path = " ";
+			}
+		}
+		$parametros1 = array(
+			'titulo' => $_POST['titulo'],
+			'textoBotao' => $_POST['textoBotao'],
+			'contatoIMG' => $path,
 		);
 		$parametros = array_map('htmlentities', $parametros1);
 		$apiEntrada = array(

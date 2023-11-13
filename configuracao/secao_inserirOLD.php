@@ -51,11 +51,18 @@ include_once('../header.php');
                 <div class="col-sm-3">
                     <label class="form-label ts-label">Tipo</label>
                     <select class="form-select ts-input" name="tipoSecao">
+                        <option value="header">Header</option>
+                        <option value="footer">Footer</option>
                         <option value="html">Html</option>
+                        <option value="card">Card</option>
+                        <option value="form">Form</option>
+                        <option value="quemSomos">Quem Somos</option>
                         <option value="principal">Principal</option>
+                        <option value="divisorPagina">Divisor de Pagina</option>
+                        <option value="lista">Lista</option>
+                        <option value="slides">Slides</option>
+                        <option value="blog">Blog</option>
                         <option value="secao">Seção</option>
-                        <option value="slider">Slider</option>
-                        <option value="texto">Texto</option>
                     </select>
                 </div>
             </div>

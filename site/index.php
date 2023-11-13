@@ -11,8 +11,12 @@ include_once(ROOT . '/paginas/database/servicos.php');
 include_once(ROOT . '/paginas/database/marcas.php');
 include_once(ROOT . '/paginas/database/receitas.php');
 include_once(ROOT . '/paginas/database/eventos.php');
-$tema = buscatema();
+include_once(ROOT . '/cadastros/database/pessoas.php');
+include_once(ROOT . '/sistema/database/empresa.php');
 
+$empresa = buscaEmpresas(IDEMPRESA_PADRAO);
+$perfil = buscarPessoa($empresa['idPessoa']);
+$tema = buscatema(IDEMPRESA_PADRAO);
 ?>
 <body>
   <link href="<?php echo URLROOT ?>/paginas/css/<?php echo $tema["css"]; ?>" rel="stylesheet">
@@ -38,7 +42,7 @@ $tema = buscatema();
 
   }
 
-echo "PAGINA=".$pagina."<HR>";
+//echo "PAGINA=".$pagina."<HR>";
   
   $paginaDados = buscaPagina($pagina);
 //echo json_encode($paginaDados) . "<HR>";
@@ -57,8 +61,6 @@ echo "PAGINA=".$pagina."<HR>";
     die();
   }
   
-  $temas = buscaTemas($paginaDados['idTema']);
-
   $secoesPaginas = buscaSecaoPagina($paginaDados['idPagina']);
   // Secoes antes da pagina
   $ordem = 0;
@@ -78,9 +80,9 @@ echo "PAGINA=".$pagina."<HR>";
 
     if (isset($paginaDados['arquivoSingle']) && !$slugSingle == null) {
       $paginaSlug = buscaPagina($paginaDados['arquivoSingle']);
-      include 'paginas/pagina/' . $paginaSlug['arquivoFonte'];
+      include 'paginas/site/' . $paginaSlug['arquivoFonte'];
     } else {
-      include 'paginas/pagina/' . $paginaDados['arquivoFonte'];
+      include 'paginas/site/' . $paginaDados['arquivoFonte'];
     }
 
   } 

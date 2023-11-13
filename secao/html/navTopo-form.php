@@ -6,9 +6,9 @@ $parametros = json_decode($secoesPagina['parametros'], true);
 ?>
 
 <div class="col-sm-4">
-    <label class='form-label ts-label'>Logo</label>
-    <label class="picture__image" for="logo" tabIndex="0">
-        <img src="<?php echo $parametros["logo"] ?? null ?>">
+    <label class='form-label ts-label'>Imagem</label>
+    <label class="picture" for="logo">
+        <img src="<?php echo $parametros["logo"] ?>">
     </label>
     <input type="file" name="logo" id="logo">
 </div>
@@ -30,9 +30,9 @@ $parametros = json_decode($secoesPagina['parametros'], true);
             reader.addEventListener("load", function (e) {
                 const readerTarget = e.target;
 
-                const img = document.createElement("logo");
-                img.src = readerTarget.result;
-                img.classList.add("picture__img");
+                const logo = document.createElement("img");
+                logo.src = readerTarget.result;
+                logo.classList.add("picture__img");
 
                 pictureImage.innerHTML = "";
                 pictureImage.appendChild(img);

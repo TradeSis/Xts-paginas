@@ -15,7 +15,9 @@
 }
 
 .ts-botaoTitulo {
-    color: #305b83;
+    color: #fff;
+    background-color: #4E73DF;
+    border-color: #4E73DF;
 }
 
 .ts-header {
@@ -35,11 +37,11 @@
     border: 1px solid #000;
 }
 
-.ts-postTitulo {
+.ts-textoTitulo {
     color: #00488b;
 }
 
-.ts-postDescricao {
+.ts-textoDescricao {
     color: #66aff3;
 }
 

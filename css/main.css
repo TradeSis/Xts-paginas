@@ -1,16 +1,29 @@
 /* main.css */
 
 /* CABECALHO */
-.navbar    { background-color: var(--color-header-background) !important; }
-.nav-link  { color: var(--color-header-link) !important; }
+.navbar {
+    background-color: var(--color-header-background) !important;
+}
+
+.nav-link {
+    color: var(--color-header-link) !important;
+}
 
 /* CABECALHO */
-.mobile-conteudo{
+.mobile-conteudo {
     display: none;
 }
 
 /* novas classes */
+.ts-textoCentro {
+    text-align: center;
+}
+
 .ts-titulo {
+    font-size: 60px;
+}
+
+.ts-textoCentro .ts-titulo {
     font-size: 60px;
     text-align: center;
 }
@@ -21,8 +34,31 @@
     max-width: 40ch;
 }
 
+.ts-textoCentro .ts-subTitulo {
+    word-wrap: break-word;
+    font-size: 30px;
+    max-width: 40ch;
+    text-align: center;
+    margin: 0 auto;
+}
+
+
 .ts-botaoTitulo {
-    font-size: 20px;
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
 .ts-header {
@@ -65,25 +101,38 @@
     text-align: center;
 }
 
-.ts-postTitulo {
+.ts-textoTitulo {
     display: flex;
     align-items: center;
     font-size: 60px;
     text-align: center;
 }
 
-.ts-postDescricao {
+.ts-textoDescricao {
     word-wrap: break-word;
     font-size: 30px;
     max-width: 35ch;
     text-align: center;
 }
 
-.ts-postIcon {
+.ts-textoIcon {
     width: 400px;
     height: 400px;
 }
 
+.ts-video {
+    width: 600px;
+    height: 400px;
+}
+
+.ts-background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+}
 .ts-footer {
     height: 250px;
     max-height: 300px;

@@ -4,15 +4,15 @@ $parametros = json_decode($secoesPagina['parametros'], true);
 
 <div class="row">
     <div class="col-sm-4">
-        <label class='form-label ts-label'>Logo</label>
-        <label class="picture__image" for="logo" tabIndex="0">
-            <img src="<?php echo $parametros["logo"] ?? null ?>">
+        <label class='form-label ts-label'>Imagem</label>
+        <label class="picture" for="logo" >
+            <img src="<?php echo $parametros["logo"] ?>">
         </label>
         <input type="file" name="logo" id="logo">
     </div>
 </div>
 <hr>
-<div class="row mt-2">
+<div class="row">
     <div class="col-sm-6">
         <label class='form-label ts-label'>tituloContato</label>
         <input type="text" name="tituloContato" class="form-control ts-input" value="<?php echo $parametros["tituloContato"] ?? null ?>">
@@ -27,7 +27,7 @@ $parametros = json_decode($secoesPagina['parametros'], true);
     </div>
 </div>
 <hr>
-<div class="row mt-2">
+<div class="row">
     <div class="col-sm-4">
         <label class='form-label ts-label'>tituloEndereco</label>
         <input type="text" name="tituloEndereco" class="form-control ts-input" value="<?php echo $parametros["tituloEndereco"] ?? null ?>">
@@ -49,7 +49,7 @@ $parametros = json_decode($secoesPagina['parametros'], true);
         <input type="text" name="textoCidade" class="form-control ts-input" value="<?php echo $parametros["textoCidade"] ?? null ?>">
     </div>
 </div>
-<div class="row mt-2">
+<div class="row">
     <div class="col-sm-4">
         <label class='form-label ts-label'>textoRedesSociais</label>
         <input type="text" name="textoRedesSociais" class="form-control ts-input" value="<?php echo $parametros["textoRedesSociais"] ?? null ?>">
@@ -59,7 +59,7 @@ $parametros = json_decode($secoesPagina['parametros'], true);
 
 <script>
     //Carregar a imagem na tela
-     const inputFile = document.querySelector("#logo");
+    const inputFile = document.querySelector("#logo");
     const pictureImage = document.querySelector(".picture__image");
     const pictureImageTxt = "Carregar Logo";
     pictureImage.innerHTML = pictureImageTxt;
@@ -74,9 +74,9 @@ $parametros = json_decode($secoesPagina['parametros'], true);
             reader.addEventListener("load", function(e) {
                 const readerTarget = e.target;
 
-                const img = document.createElement("logo");
-                img.src = readerTarget.result;
-                img.classList.add("picture__img");
+                const logo = document.createElement("img");
+                logo.src = readerTarget.result;
+                logo.classList.add("picture__img");
 
                 pictureImage.innerHTML = "";
                 pictureImage.appendChild(img);

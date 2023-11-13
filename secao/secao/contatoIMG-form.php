@@ -5,24 +5,28 @@ $parametros = json_decode($secoesPagina['parametros'], true);
 <div class="row">
     <div class="col-sm-4">
         <label class='form-label ts-label'>Imagem</label>
-        <label class="picture__image" for="postIMG" tabIndex="0">
-            <img src="<?php echo $parametros["postIMG"] ?? null ?>">
+        <label class="picture" for="contatoIMG" >
+            <img src="<?php echo $parametros["contatoIMG"] ?>">
         </label>
-        <input type="file" name="postIMG" id="postIMG">
+        <input type="file" name="contatoIMG" id="contatoIMG">
     </div>
     <div class="col-sm-4">
         <label class='form-label ts-label'>Titulo</label>
-        <input type="text" name="postTitulo" class="form-control ts-input" value="<?php echo $parametros["postTitulo"] ?? null ?>">
+        <input type="text" name="titulo" class="form-control ts-input"
+            value="<?php echo $parametros["titulo"] ?? null ?>">
     </div>
     <div class="col-sm-4">
-        <label class='form-label ts-label'>Descrição</label>
-        <input type="text" name="postDescricao" class="form-control ts-input" value="<?php echo $parametros["postDescricao"] ?? null ?>">
+        <label class='form-label ts-label'>Botão</label>
+        <input type="text" name="textoBotao" class="form-control ts-input"
+            value="<?php echo $parametros["textoBotao"] ?? null ?>">
     </div>
 </div>
+<hr>
+
 
 <script>
     //Carregar a imagem na tela
-     const inputFile = document.querySelector("#postIMG");
+    const inputFile = document.querySelector("#contatoIMG");
     const pictureImage = document.querySelector(".picture__image");
     const pictureImageTxt = "Carregar Logo";
     pictureImage.innerHTML = pictureImageTxt;
@@ -37,9 +41,9 @@ $parametros = json_decode($secoesPagina['parametros'], true);
             reader.addEventListener("load", function(e) {
                 const readerTarget = e.target;
 
-                const img = document.createElement("postIMG");
-                img.src = readerTarget.result;
-                img.classList.add("picture__img");
+                const contatoIMG = document.createElement("img");
+                contatoIMG.src = readerTarget.result;
+                contatoIMG.classList.add("picture__img");
 
                 pictureImage.innerHTML = "";
                 pictureImage.appendChild(img);

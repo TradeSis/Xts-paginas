@@ -1,8 +1,8 @@
 <?php
 $parametro = json_decode($secaoPagina["parametros"], true);
 ?>
-<div class="ts-footer">
-    <div class="row mt-3">
+<div class="ts-footer mt-2">
+    <div class="row mt-2">
         <div class="col">
             <img src="<?php echo $parametro["logo"] ?? 'http://localhost/img/tradesis.png' ?>" role="img">
             <div class="ts-socialParametro">

@@ -57,7 +57,6 @@ echo "PAGINA=".$pagina."<HR>";
     die();
   }
   
-  $temas = buscaTemas($paginaDados['idTema']);
 
   $secoesPaginas = buscaSecaoPagina($paginaDados['idPagina']);
   // Secoes antes da pagina
