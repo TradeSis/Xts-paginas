@@ -14,11 +14,6 @@ $secoes = buscaSecao();
 
 </head>
 
-<style>
-    .nav-item {
-        cursor: pointer;
-    }
-</style>
 
 <body>
     <div class="container-fluid">
@@ -78,6 +73,9 @@ $secoes = buscaSecao();
             </li>
             <li class="nav-item">
                 <a class="nav-link" src="secao_tipoSecao.php?tipoSecao=blog" style="color: #000!important;">Blog</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" src="secao_tipoSecao.php?tipoSecao=secao" style="color: #000!important;">Seção</a>
             </li>
         </ul>
 

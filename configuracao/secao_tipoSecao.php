@@ -52,8 +52,8 @@ $secoes = buscaTipoSecao($_GET['tipoSecao']);
                         <td><?php echo $secao['arquivoFonte'] ?></td>
 
                         <td>
-                            <a class="btn btn-warning btn-sm" href="secao_alterar.php?idSecao=<?php echo $secao['idSecao'] ?>" role="button"><i class="bi bi-pencil-square"></i></a>
-                            <a class="btn btn-danger btn-sm" href="secao_excluir.php?idSecao=<?php echo $secao['idSecao'] ?>" role="button"><i class="bi bi-trash3"></i></a>
+                            <a class="btn btn-warning btn-sm" href="secao_alterar.php?idSecao=<?php echo $secao['idSecao'] ?>&&tipoSecao=<?php echo $_GET['tipoSecao'] ?>" role="button"><i class="bi bi-pencil-square"></i></a>
+                            <a class="btn btn-danger btn-sm" href="secao_excluir.php?idSecao=<?php echo $secao['idSecao'] ?>&&tipoSecao=<?php echo $_GET['tipoSecao'] ?>" role="button"><i class="bi bi-trash3"></i></a>
                         </td>
                     </tr>
                 <?php } ?>

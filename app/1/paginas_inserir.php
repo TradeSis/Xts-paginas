@@ -30,9 +30,8 @@ if (isset($jsonEntrada['slug'])) {
     $tituloPagina = $jsonEntrada['tituloPagina'];
     $arquivoFonte = $jsonEntrada['arquivoFonte'];
     $arquivoSingle = $jsonEntrada['arquivoSingle'];
-    $idTema = $jsonEntrada['idTema'];
 
-    $sql = "INSERT INTO `paginas`(`slug`, `tituloPagina`, `arquivoFonte`, `arquivoSingle`, `idTema`) VALUES ('$slug','$tituloPagina','$arquivoFonte','$arquivoSingle','$idTema')";
+    $sql = "INSERT INTO `paginas`(`slug`, `tituloPagina`, `arquivoFonte`, `arquivoSingle`) VALUES ('$slug','$tituloPagina','$arquivoFonte','$arquivoSingle')";
 
     //LOG
     if (isset($LOG_NIVEL)) {

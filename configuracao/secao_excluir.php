@@ -4,6 +4,7 @@ include_once('../header.php');
 include_once('../database/secao.php');
 
 $secao = buscaSecao($_GET['idSecao']);
+$href = isset($_GET['tipoSecao']) ? 'secao_tipoSecao.php?tipoSecao=' . $_GET['tipoSecao'] : 'secao_todos.php';
 ?>
 <!doctype html>
 <html lang="pt-BR">
@@ -35,7 +36,7 @@ $secao = buscaSecao($_GET['idSecao']);
             </div>
 
             <div class="col-2 text-end">
-                <a href="../configuracao/?tab=configuracao&stab=secao" role="button" class="btn btn-primary"><i class="bi bi-arrow-left-square"></i></i>&#32;Voltar</a>
+                <a href="<?php echo $href ?>" role="button" class="btn btn-primary"><i class="bi bi-arrow-left-square"></i></i>&#32;Voltar</a>
             </div>
         </div>
 

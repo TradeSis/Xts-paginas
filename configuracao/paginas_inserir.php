@@ -1,8 +1,6 @@
 <?php
 //Lucas 13102023 padrao novo
 include_once('../header.php');
-include_once('../database/temas.php');
-$temas = buscaTemas();
 ?>
 <!doctype html>
 <html lang="pt-BR">
@@ -59,18 +57,6 @@ $temas = buscaTemas();
                     <input type="text" name="arquivoSingle" class="form-control ts-input" autocomplete="off">
                 </div>
 
-            </div>
-            <div class="row mt-3">
-                <div class="col-sm-3">
-                    <label class="form-label ts-label">Tema</label>
-                    <select class="form-select ts-input" name="idTema">
-                        <?php
-                        foreach ($temas as $tema) {
-                        ?>
-                            <option value="<?php echo $tema['idTema'] ?>"><?php echo $tema['nomeTema']  ?></option>
-                        <?php  } ?>
-                    </select>
-                </div>
             </div>
 
             <div class="text-end mt-4">

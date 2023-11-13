@@ -56,13 +56,7 @@ include_once('../header.php');
                 </div>
             </div>
 
-            <div class="container-fluid p-0 mt-3">
-                <div class="col">
-                    <span class="tituloEditor">Menu</span>
-                </div>
-                <div class="quill-textarea"></div>
-                <textarea style="display: none" id="detail" name="menu"></textarea>
-            </div>
+            
 
             <div class="text-end mt-4">
                 <button type="submit" class="btn  btn-success"><i class="bi bi-sd-card-fill"></i>&#32;Cadastrar</button>

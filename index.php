@@ -64,6 +64,20 @@ $nivelMenu = $nivelMenuLogin['nivelMenu'];
                         if ($nivelMenu >= 2) { ?>
                             <li class="nav-item mr-1 ">
                                 <a class="nav-link 
+                                <?php if ($tab == "categorias") {echo " active ";} ?>" 
+                                href="?tab=categorias" role="tab">Categoria</a>
+                            </li>
+                        <?php }
+                        if ($nivelMenu >= 2) { ?>
+                            <li class="nav-item mr-1 ">
+                                <a class="nav-link 
+                                <?php if ($tab == "autor") {echo " active ";} ?>" 
+                                href="?tab=autor" role="tab">Autor</a>
+                            </li>
+                        <?php }
+                        if ($nivelMenu >= 2) { ?>
+                            <li class="nav-item mr-1 ">
+                                <a class="nav-link 
                                 <?php if ($tab == "eventos") {echo " active ";} ?>" 
                                 href="?tab=eventos" role="tab">Eventos</a>
                             </li>
@@ -100,6 +114,12 @@ $nivelMenu = $nivelMenuLogin['nivelMenu'];
                         <option value="<?php echo URLROOT ?>/paginas/?tab=receitas" 
                         <?php if ($getTab == "receitas") {echo " selected ";} ?>>Receitas</option>
 
+                        <option value="<?php echo URLROOT ?>/paginas/?tab=categorias" 
+                        <?php if ($getTab == "categorias") {echo " selected ";} ?>>Categoria</option>
+
+                        <option value="<?php echo URLROOT ?>/paginas/?tab=autor" 
+                        <?php if ($getTab == "autor") {echo " selected ";} ?>>Autor</option>
+
                         <option value="<?php echo URLROOT ?>/paginas/?tab=eventos" 
                         <?php if ($getTab == "eventos") {echo " selected ";} ?>>Eventos</option>
                         
@@ -124,6 +144,12 @@ $nivelMenu = $nivelMenuLogin['nivelMenu'];
             }
             if ($tab == "receitas") {
                 $src = "blog/receitas.php";
+            }
+            if ($tab == "categorias") {
+                $src = "configuracao/categorias.php";
+            }
+            if ($tab == "autor") {
+                $src = "configuracao/autor.php";
             }
             if ($tab == "eventos") {
                 $src = "blog/eventos.php";

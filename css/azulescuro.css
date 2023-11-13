@@ -1,6 +1,63 @@
 /* azulescuro.css */
 
 :root {
-    --color-header-background: #0C2D4C; 
+    --color-header-background: #0C2D4C;
     --color-header-link: #FFFFFF;
 }
+
+/* novas classes */
+.ts-titulo {
+    color: #00488b;
+}
+
+.ts-subTitulo {
+    color: #66aff3;
+}
+
+.ts-botaoTitulo {
+    color: #305b83;
+}
+
+.ts-header {
+    background-color: #0C2D4C;
+}
+
+.ts-headerTitulo {
+    color: #ffffff;
+}
+
+.ts-botaoHeader {
+    background-color: #0C2D4C;
+}
+
+.ts-produtosCards .col {
+    background-color: #c5c5c5;
+    border: 1px solid #000;
+}
+
+.ts-postTitulo {
+    color: #00488b;
+}
+
+.ts-postDescricao {
+    color: #66aff3;
+}
+
+.ts-footer {
+    background-color: #0C2D4C;
+    color: #ffffff;
+}
+
+.ts-sliderP {
+    color: #1B4D60;
+}
+
+.ts-slider {
+    background-color: #bdbdbd;
+}
+
+.ts-prev,
+.ts-next {
+    color: #fff;
+}
+

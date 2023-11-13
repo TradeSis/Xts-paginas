@@ -30,7 +30,7 @@ if (isset($jsonEntrada['idPagina'])) {
     $idSecao = $jsonEntrada['idSecao'];
     $ordem = $jsonEntrada['ordem'];
     $parametros = $jsonEntrada['parametros'];
-    $coluna = '0';
+    $coluna = '';
 
     $sql = "INSERT INTO `secoespagina`(`idPagina`,`idSecao`, `ordem`, `parametros`, `coluna`) VALUES ('$idPagina','$idSecao','$ordem','$parametros','$coluna')";
     //LOG

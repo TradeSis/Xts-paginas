@@ -29,13 +29,13 @@ function buscaMarcas($idMarca=null)
 	return $marcas;
 }
 
-function buscaMarcasAtiva($estado=null, $lojasEspecializadas=null)
+function buscaMarcasAtiva($UF=null, $lojasEspecializadas=null)
 {
 	
 	$marcas = array();
 
 	$apiEntrada = array(
-		'estado' => $estado,
+		'UF' => $UF,
 		'lojasEspecializadas' => $lojasEspecializadas,
 	);
 
@@ -92,7 +92,7 @@ if (isset($_GET['operacao'])) {
             'bannerMarca' => $novoNomeBanner,
 			'descricaoMarca' => $_POST['descricaoMarca'],
 			'cidadeMarca' => $_POST['cidadeMarca'],
-			'estado' => $_POST['estado'],
+			'UF' => $_POST['UF'],
 			'urlMarca' => $_POST['urlMarca'],
 			'ativoMarca' => $_POST['ativoMarca'],
 			'catalogo' => $_POST['catalogo'],
@@ -128,7 +128,7 @@ if (isset($_GET['operacao'])) {
 				'imgMarca' => $novoNomeImg,
 				'descricaoMarca' => $_POST['descricaoMarca'],
 				'cidadeMarca' => $_POST['cidadeMarca'],
-				'estado' => $_POST['estado'],
+				'UF' => $_POST['UF'],
 				'urlMarca' => $_POST['urlMarca'],
 				'ativoMarca' => $_POST['ativoMarca'],
 				'catalogo' => $_POST['catalogo'],
@@ -143,7 +143,7 @@ if (isset($_GET['operacao'])) {
 				'nomeMarca' => $_POST['nomeMarca'],
 				'descricaoMarca' => $_POST['descricaoMarca'],
 				'cidadeMarca' => $_POST['cidadeMarca'],
-				'estado' => $_POST['estado'],
+				'UF' => $_POST['UF'],
 				'urlMarca' => $_POST['urlMarca'],
 				'ativoMarca' => $_POST['ativoMarca'],
 				'catalogo' => $_POST['catalogo'],

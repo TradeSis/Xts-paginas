@@ -3,15 +3,22 @@
 include_once('../header.php');
 include_once('../database/paginas.php');
 include_once('../database/secaoPagina.php');
+include_once(ROOT . '/paginas/database/marcas.php');
+include_once(ROOT . '/paginas/database/eventos.php');
 include_once(ROOT . '/paginas/database/temas.php');
+include_once(ROOT . '/paginas/database/servicos.php');
+include_once(ROOT . '/cadastros/database/pessoas.php');
+include_once(ROOT . '/sistema/database/empresa.php');
+
+
 
 $idPagina = $_GET['idPagina'];
 $pagina = buscaPaginas($idPagina);
 $secoesPaginas = buscaSecaoPagina($idPagina);
-
-$paginaDados = buscaPagina($pagina["slug"]);
-$temas = buscaTemas($paginaDados['idTema']);
-echo $paginaDados["css"]; 
+$tema = buscatema();
+$empresa = buscaEmpresas($_SESSION['idEmpresa']);
+$perfil = buscarPessoa($empresa['idPessoa']);
+$eventos = buscaEventos();
 
 ?>
 <!doctype html>
@@ -20,7 +27,7 @@ echo $paginaDados["css"];
 <head>
 
     <?php include_once ROOT . "/vendor/head_css.php"; ?>
-    <link href="<?php echo URLROOT ?>/paginas/css/<?php echo $paginaDados["css"]; ?>" rel="stylesheet">
+    <link href="<?php echo URLROOT ?>/paginas/css/<?php echo $tema["css"]; ?>" rel="stylesheet">
     <link href="<?php echo URLROOT ?>/paginas/css/main.css" rel="stylesheet"> <!--Estilo da pg principal -->
     
 </head>
@@ -130,7 +137,7 @@ echo $paginaDados["css"];
                     <TR >
                         <TD colspan="3"><div class="container">
                             <?php
-                            include '../secoes/' . $secaoPagina["tipoSecao"] . "/" . $secaoPagina["arquivoFonte"];
+                            include '../secao/' . $secaoPagina["tipoSecao"] . "/" . $secaoPagina["arquivoFonte"];
                             ?>
                         </div></TD>
                        

@@ -60,31 +60,7 @@ $temporaria = explode('.', $programaForm);
                     </div>
                 </div>
             </div>
-            <!-- 
-                <div class="row form-group">
-                    <div class="col-sm-6">
-                        <label class='control-label' for='inputNormal' style="margin-top: -50px;">Menu</label>
-                        <textarea name="menu" id="" cols="130" rows="5"><?php echo $tema['menu'] ?></textarea>
-                    </div>
-                </div> -->
-
-            <div class="row mt-3">
-                <div class="col-sm-12">
-
-                    <div class="form-group">
-                        <?php
-                        $programaForm = $tema['programaForm'];
-                        $temporaria = explode('.', $programaForm);
-                        //echo json_encode($temporaria[0]);
-                        //return;
-                        $programaForm = $temporaria[0] . '-form.' . $temporaria[1];
-                        include ROOT . '/paginas/programaForm/' . $programaForm;
-                        ?>
-
-                    </div>
-                </div>
-
-            </div>
+         
 
             <div class="text-end mt-4">
                 <button type="submit" class="btn  btn-success"><i class="bi bi-sd-card-fill"></i>&#32;Salvar</button>

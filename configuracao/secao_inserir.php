@@ -1,18 +1,38 @@
 <?php
-include_once('../head.php');
+//Lucas 13102023 padrao novo
+include_once('../header.php');
 ?>
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+
+    <?php include_once ROOT . "/vendor/head_css.php"; ?>
+
+</head>
 
 
 
-<body class="bg-transparent">
+<body>
 
-    <div class="container p-4" style="margin-top:10px">
+    <div class="container-fluid">
 
         <div class="row">
-            <div class="col-sm-8">
+            <BR> <!-- MENSAGENS/ALERTAS -->
+        </div>
+        <div class="row">
+            <BR> <!-- BOTOES AUXILIARES -->
+        </div>
+        <div class="row"> <!-- LINHA SUPERIOR A TABLE -->
+            <div class="col-3">
+                <!-- TITULO -->
                 <h2 class="ts-tituloPrincipal">Adicionar Seção</h2>
             </div>
-            <div class="col-sm-4" style="text-align:right">
+            <div class="col-7">
+                <!-- FILTROS -->
+            </div>
+
+            <div class="col-2 text-end">
                 <a href="../configuracao/?tab=configuracao&stab=secao" role="button" class="btn btn-primary"><i class="bi bi-arrow-left-square"></i></i>&#32;Voltar</a>
             </div>
         </div>
@@ -42,6 +62,7 @@ include_once('../head.php');
                         <option value="lista">Lista</option>
                         <option value="slides">Slides</option>
                         <option value="blog">Blog</option>
+                        <option value="secao">Seção</option>
                     </select>
                 </div>
             </div>
@@ -53,6 +74,11 @@ include_once('../head.php');
 
     </div>
 
+    <!-- LOCAL PARA COLOCAR OS JS -->
+
+    <?php include_once ROOT . "/vendor/footer_js.php"; ?>
+
+    <!-- LOCAL PARA COLOCAR OS JS -FIM -->
 
 </body>
 

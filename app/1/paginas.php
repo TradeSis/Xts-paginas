@@ -27,18 +27,10 @@ if (isset($LOG_NIVEL)) {
 
 $paginas = array();
 
-$sql = "SELECT paginas.*, temas.* FROM paginas  
-left JOIN temas on temas.idTema = paginas.idTema ";
+$sql = "SELECT paginas.* FROM paginas ";
 if (isset($jsonEntrada["idPagina"])) {
   $sql = $sql . " where paginas.idPagina = " . $jsonEntrada["idPagina"];
-} else {
-  $where = " where ";
-  if (isset($jsonEntrada["idTema"])) {
-    $sql = $sql . $where . " paginas.idTema = " . $jsonEntrada["idTema"];
-    $where = " and ";
-  }
 }
-$sql = $sql . " order by paginas.idTema ";
 
 //LOG
 if (isset($LOG_NIVEL)) {

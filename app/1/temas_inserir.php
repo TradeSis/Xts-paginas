@@ -29,8 +29,6 @@ if (isset($jsonEntrada['nomeTema'])) {
     $nomeTema = $jsonEntrada['nomeTema'];
     $css = $jsonEntrada['css'];
     $ativo = $jsonEntrada['ativo'];
-    $menu = $jsonEntrada['menu'];
-    $perfil = $jsonEntrada['perfil'];
     $programaForm = 'null';
 
     if ($ativo == '1') {
@@ -38,7 +36,7 @@ if (isset($jsonEntrada['nomeTema'])) {
         $atualizar = mysqli_query($conexao, $sql);
     }
 
-    $sql = "INSERT INTO `temas`(`nomeTema`, `css`, `ativo`, `menu`, `perfil`, `programaForm`) VALUES ('$nomeTema','$css','$ativo','$menu','$perfil','$programaForm')";
+    $sql = "INSERT INTO `temas`(`nomeTema`, `css`, `ativo`, `programaForm`) VALUES ('$nomeTema','$css','$ativo','$programaForm')";
 
     //LOG
     if (isset($LOG_NIVEL)) {
