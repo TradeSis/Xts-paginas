@@ -169,10 +169,8 @@
 }
 
 .ts-sliderIcon {
-    min-width: 200px;
     min-height: 200px;
-    min-width: 400px;
-    min-height: 400px;
+    max-height: 300px;
     border-radius: 15px;
 
 }
