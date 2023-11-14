@@ -46,7 +46,7 @@ $temporaria = explode('.', $arquivoFonte);
         </div>
 
 
-        <form action="../database/secaoPagina.php?operacao=<?php echo $temporaria[0] ?>" method="post" enctype="multipart/form-data">
+        <form action="../database/secaoPagina.php?operacao=alterar&&acao=<?php echo $temporaria[0] ?>" method="post" enctype="multipart/form-data">
             <div class="row mt-3">
                 <div class="col-sm-6">
                     <label class='form-label ts-label'>Pagina</label>

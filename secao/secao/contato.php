@@ -5,10 +5,10 @@ $parametro = json_decode($secaoPagina["parametros"], true);
 <div class="container mt-2">
     <div class="row">
         <div class="col-md-7">
-            <p class="ts-textoTitulo">
+            <p class="ts-titulo">
                 <?php echo $parametro["titulo"] ?? 'Default' ?>
             </p>
-            <p class="ts-textoDescricao">
+            <p class="ts-descricao">
                 <?php echo $parametro["descricao"] ?? 'Default' ?>
             </p>
         </div>

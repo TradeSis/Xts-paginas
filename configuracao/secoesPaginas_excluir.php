@@ -44,7 +44,8 @@ $secaoPagina = buscaSecaoPaginas($_GET['idSecaoPagina']);
                 <div class="col-sm-12">
                     <label class='form-label ts-label'>Seção</label>
                     <input type="text" name="tituloSecao" class="form-control ts-input" value="<?php echo $secaoPagina['tituloSecao'] ?>">
-                    <input type="hidden" class="form-control ts-input" name="idSecaoPagina" value="<?php echo $secaoPagina['idSecaoPagina'] ?>">
+                    <input type="text" class="form-control ts-input" name="idSecaoPagina" value="<?php echo $secaoPagina['idSecaoPagina'] ?>">
+                    <input type="text" class="form-control ts-input" name="idPagina" value="<?php echo $secaoPagina['idPagina'] ?>">
                 </div>
             </div>
 

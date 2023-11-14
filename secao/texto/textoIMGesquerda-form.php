@@ -12,11 +12,11 @@ $parametros = json_decode($secoesPagina['parametros'], true);
     </div>
     <div class="col-sm-4">
         <label class='form-label ts-label'>Titulo</label>
-        <input type="text" name="textoTitulo" class="form-control ts-input" value="<?php echo $parametros["textoTitulo"] ?? null ?>">
+        <input type="text" name="titulo" class="form-control ts-input" value="<?php echo $parametros["titulo"] ?? null ?>">
     </div>
     <div class="col-sm-4">
         <label class='form-label ts-label'>Descrição</label>
-        <input type="text" name="textoDescricao" class="form-control ts-input" value="<?php echo $parametros["textoDescricao"] ?? null ?>">
+        <input type="text" name="descricao" class="form-control ts-input" value="<?php echo $parametros["descricao"] ?? null ?>">
     </div>
 </div>
 

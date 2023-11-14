@@ -4,25 +4,28 @@ $parametros = json_decode($secoesPagina['parametros'], true);
 
 <div class="row">
     <div class="col-sm-4">
-        <label class='form-label ts-label'>Imagem</label>
-        <label class="picture" for="textoIMG" >
-            <img src="<?php echo $parametros["textoIMG"] ?>">
+        <label class='form-label ts-label'>Video</label>
+        <label class="picture" for="video" >
+            <img src="<?php echo $parametros["video"] ?>">
         </label>
-        <input type="file" name="textoIMG" id="textoIMG">
+        <input type="file" name="video" id="video">
     </div>
     <div class="col-sm-4">
         <label class='form-label ts-label'>Titulo</label>
-        <input type="text" name="titulo" class="form-control ts-input" value="<?php echo $parametros["titulo"] ?? null ?>">
+        <input type="text" name="titulo" class="form-control ts-input"
+            value="<?php echo $parametros["titulo"] ?? null ?>">
     </div>
     <div class="col-sm-4">
-        <label class='form-label ts-label'>Descrição</label>
-        <input type="text" name="descricao" class="form-control ts-input" value="<?php echo $parametros["descricao"] ?? null ?>">
+        <label class='form-label ts-label'>Botão</label>
+        <input type="text" name="textoBotao" class="form-control ts-input"
+            value="<?php echo $parametros["textoBotao"] ?? null ?>">
     </div>
 </div>
 
+
 <script>
     //Carregar a imagem na tela
-    const inputFile = document.querySelector("#textoIMG");
+    const inputFile = document.querySelector("#video");
     const pictureImage = document.querySelector(".picture__image");
     const pictureImageTxt = "Carregar Logo";
     pictureImage.innerHTML = pictureImageTxt;
@@ -37,9 +40,9 @@ $parametros = json_decode($secoesPagina['parametros'], true);
             reader.addEventListener("load", function(e) {
                 const readerTarget = e.target;
 
-                const textoIMG = document.createElement("img");
-                textoIMG.src = readerTarget.result;
-                textoIMG.classList.add("picture__img");
+                const video = document.createElement("img");
+                video.src = readerTarget.result;
+                video.classList.add("picture__img");
 
                 pictureImage.innerHTML = "";
                 pictureImage.appendChild(img);

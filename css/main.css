@@ -42,6 +42,13 @@
     margin: 0 auto;
 }
 
+.ts-descricao {
+    word-wrap: break-word;
+    font-size: 30px;
+    max-width: 35ch;
+    text-align: center;
+}
+
 
 .ts-botaoTitulo {
     display: inline-block;
@@ -101,19 +108,6 @@
     text-align: center;
 }
 
-.ts-textoTitulo {
-    display: flex;
-    align-items: center;
-    font-size: 60px;
-    text-align: center;
-}
-
-.ts-textoDescricao {
-    word-wrap: break-word;
-    font-size: 30px;
-    max-width: 35ch;
-    text-align: center;
-}
 
 .ts-textoIcon {
     width: 400px;
@@ -125,6 +119,11 @@
     height: 400px;
 }
 
+.ts-videoContato {
+    width: 500px;
+    height: 300px;
+}
+
 .ts-background {
     display: flex;
     justify-content: center;
@@ -133,6 +132,7 @@
     height: 100%;
     min-height: 300px;
 }
+
 .ts-footer {
     height: 250px;
     max-height: 300px;
@@ -213,4 +213,18 @@
 
 .carousel {
     width: 100%;
+}
+
+.ts-contatoFormCol {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.ts-contatoForm {
+    width: 70%;
+}
+
+.ts-contatoForm button {
+    display: block;
+    margin-left: auto;
 }
