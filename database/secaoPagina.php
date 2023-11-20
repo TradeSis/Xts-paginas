@@ -65,7 +65,7 @@ if (isset($_GET['operacao'])) {
 		if (isset($_GET['acao'])) {
 
 			$acao = $_GET['acao'];
-
+			$parametros1 = null;
 			// cardImg3col
 			if ($acao == "cardImg3col") {
 				$img1 = $_FILES['img1'];
@@ -622,7 +622,7 @@ if (isset($_GET['operacao'])) {
 						$path = 'http://' . $_SERVER["HTTP_HOST"] . '/img/' . $novoNomeImg;
 						move_uploaded_file($img['tmp_name'], $pasta . $novoNomeImg);
 					} else {
-						$path = " ";
+						$path = $_POST['img'];
 					}
 				}
 				$parametros1 = array(
@@ -646,7 +646,7 @@ if (isset($_GET['operacao'])) {
 						$path = 'http://' . $_SERVER["HTTP_HOST"] . '/img/' . $novoNomeImg;
 						move_uploaded_file($img['tmp_name'], $pasta . $novoNomeImg);
 					} else {
-						$path = " ";
+						$path = $_POST['img'];
 					}
 				}
 				$bkg = $_FILES['principalBackground'];
@@ -659,7 +659,7 @@ if (isset($_GET['operacao'])) {
 						$path2 = 'http://' . $_SERVER["HTTP_HOST"] . '/img/' . $novoNomeBkg;
 						move_uploaded_file($bkg['tmp_name'], $pasta . $novoNomeBkg);
 					} else {
-						$path2 = " ";
+						$path2 = $_POST['img2'];
 					}
 				}
 				$parametros1 = array(
@@ -684,7 +684,7 @@ if (isset($_GET['operacao'])) {
 						$path = 'http://' . $_SERVER["HTTP_HOST"] . '/img/' . $novoNomeImg;
 						move_uploaded_file($img['tmp_name'], $pasta . $novoNomeImg);
 					} else {
-						$path = " ";
+						$path = $_POST['img'];
 					}
 				}
 				$parametros1 = array(
@@ -708,7 +708,7 @@ if (isset($_GET['operacao'])) {
 						$path = 'http://' . $_SERVER["HTTP_HOST"] . '/img/' . $novoNomeImg;
 						move_uploaded_file($img['tmp_name'], $pasta . $novoNomeImg);
 					} else {
-						$path = " ";
+						$path = $_POST['img'];
 					}
 				}
 				$parametros1 = array(
@@ -731,7 +731,7 @@ if (isset($_GET['operacao'])) {
 						$path = 'http://' . $_SERVER["HTTP_HOST"] . '/img/' . $novoNomeImg;
 						move_uploaded_file($img['tmp_name'], $pasta . $novoNomeImg);
 					} else {
-						$path = " ";
+						$path = $_POST['img'];
 					}
 				}
 				$parametros1 = array(
@@ -749,8 +749,8 @@ if (isset($_GET['operacao'])) {
 			}
 
 
-			//NAVTOPO
-			if ($acao == "navTopo") {
+			//header
+			if ($acao == "header") {
 				$img = $_FILES['logo'];
 				if ($img !== null) {
 					preg_match("/\.(png|jpg|jpeg){1}$/i", $img["name"], $ext);
@@ -761,7 +761,7 @@ if (isset($_GET['operacao'])) {
 						$path = 'http://' . $_SERVER["HTTP_HOST"] . '/img/' . $novoNomeImg;
 						move_uploaded_file($img['tmp_name'], $pasta . $novoNomeImg);
 					} else {
-						$path = " ";
+						$path = $_POST['img'];
 					}
 				}
 				$parametros1 = array(
@@ -782,7 +782,7 @@ if (isset($_GET['operacao'])) {
 						$path = 'http://' . $_SERVER["HTTP_HOST"] . '/img/' . $novoNomeImg;
 						move_uploaded_file($img['tmp_name'], $pasta . $novoNomeImg);
 					} else {
-						$path = " ";
+						$path = $_POST['img'];
 					}
 				}
 				$parametros1 = array(
@@ -805,11 +805,34 @@ if (isset($_GET['operacao'])) {
 						$path = 'http://' . $_SERVER["HTTP_HOST"] . '/img/' . $novoNomeImg;
 						move_uploaded_file($img['tmp_name'], $pasta . $novoNomeImg);
 					} else {
-						$path = " ";
+						$path = $_POST['img'];
 					}
 				}
 				$parametros1 = array(
 					'titulo' => $_POST['titulo'],
+					'descricao' => $_POST['descricao'],
+					'textoIMG' => $path,
+				);
+			}
+
+			//sobre
+			if ($acao == "sobre") {
+				$img = $_FILES['textoIMG'];
+				if ($img !== null) {
+					preg_match("/\.(png|jpg|jpeg){1}$/i", $img["name"], $ext);
+
+					if ($ext == true) {
+						$pasta = ROOT . "/img/";
+						$novoNomeImg = $img["name"];
+						$path = 'http://' . $_SERVER["HTTP_HOST"] . '/img/' . $novoNomeImg;
+						move_uploaded_file($img['tmp_name'], $pasta . $novoNomeImg);
+					} else {
+						$path = $_POST['img'];
+					}
+				}
+				$parametros1 = array(
+					'titulo' => $_POST['titulo'],
+					'subTitulo' => $_POST['subTitulo'],
 					'descricao' => $_POST['descricao'],
 					'textoIMG' => $path,
 				);
@@ -828,7 +851,7 @@ if (isset($_GET['operacao'])) {
 						$path = 'http://' . $_SERVER["HTTP_HOST"] . '/img/' . $novoNomeImg;
 						move_uploaded_file($img['tmp_name'], $pasta . $novoNomeImg);
 					} else {
-						$path = " ";
+						$path = $_POST['img'];
 					}
 				}
 				$parametros1 = array(
@@ -846,6 +869,18 @@ if (isset($_GET['operacao'])) {
 				);
 			}
 
+			//servicos
+			if ($acao == "servicos") {
+				$parametros1 = array(
+					'titulo' => $_POST['titulo'],
+					'descricao' => $_POST['descricao'],
+					'textoBotao' => $_POST['textoBotao'],
+					'tab1' => $_POST['tab1'],
+					'tab2' => $_POST['tab2'],
+					'tab3' => $_POST['tab3']
+				);
+			}
+
 			//CONTATOIMG
 			if ($acao == "contatoIMG") {
 				$img = $_FILES['contatoIMG'];
@@ -858,7 +893,7 @@ if (isset($_GET['operacao'])) {
 						$path = 'http://' . $_SERVER["HTTP_HOST"] . '/img/' . $novoNomeImg;
 						move_uploaded_file($img['tmp_name'], $pasta . $novoNomeImg);
 					} else {
-						$path = " ";
+						$path = $_POST['img'];
 					}
 				}
 				$parametros1 = array(
@@ -881,7 +916,7 @@ if (isset($_GET['operacao'])) {
 						$path = 'http://' . $_SERVER["HTTP_HOST"] . '/img/' . $novoNomeImg;
 						move_uploaded_file($img['tmp_name'], $pasta . $novoNomeImg);
 					} else {
-						$path = " ";
+						$path = $_POST['img'];
 					}
 				}
 				$parametros1 = array(
@@ -904,7 +939,7 @@ if (isset($_GET['operacao'])) {
 						$path = 'http://' . $_SERVER["HTTP_HOST"] . '/img/' . $novoNomeImg;
 						move_uploaded_file($img['tmp_name'], $pasta . $novoNomeImg);
 					} else {
-						$path = " ";
+						$path = $_POST['img'];
 					}
 				}
 				$parametros1 = array(
@@ -913,11 +948,86 @@ if (isset($_GET['operacao'])) {
 					'video' => $path,
 				);
 			}
+
+			//menu
+			if ($acao == "menu") {
+				$img = $_FILES['logo'];
+				if ($img !== null) {
+					preg_match("/\.(png|jpg|jpeg){1}$/i", $img["name"], $ext);
+
+					if ($ext == true) {
+						$pasta = ROOT . "/img/";
+						$novoNomeImg = $img["name"];
+						$path = 'http://' . $_SERVER["HTTP_HOST"] . '/img/' . $novoNomeImg;
+						move_uploaded_file($img['tmp_name'], $pasta . $novoNomeImg);
+					} else {
+						$path = $_POST['img'];
+					}
+				}
+				$parametros1 = array(
+					'menu1' => $_POST['menu1'],
+					'menu2' => $_POST['menu2'],
+					'menu3' => $_POST['menu3'],
+					'menu4' => $_POST['menu4'],
+					'textoBotao' => $_POST['textoBotao'],
+					'menu1Href' => $_POST['menu1Href'],
+					'menu2Href' => $_POST['menu2Href'],
+					'menu3Href' => $_POST['menu3Href'],
+					'menu4Href' => $_POST['menu4Href'],
+					'textoBotaoHref' => $_POST['textoBotaoHref'],
+					'logo' => $path,
+				);
+			}
+
+			//headerTexto
+			if ($acao == "headerTexto") {
+				$parametros1 = array(
+					'titulo' => $_POST['titulo'],
+					'whatsapp' => $_POST['whatsapp'],
+					'email' => $_POST['email'],
+				);
+			}
+
+			//footer
+			if ($acao == "footer") {
+				$parametros1 = array(
+					'facebook' => $_POST['facebook'],
+					'linkedin' => $_POST['linkedin'],
+					'instagram' => $_POST['instagram'],
+					'direitos' => $_POST['direitos'],
+					'nomeEmpresa' => $_POST['nomeEmpresa'],
+					'cnpj' => $_POST['cnpj'],
+				);
+			}
+
+			//FORMCENTRALIZADO
+			if ($acao == "formCentralizado") {
+				$img = $_FILES['backgroundIMG'];
+				if ($img !== null) {
+					preg_match("/\.(png|jpg|jpeg){1}$/i", $img["name"], $ext);
+
+					if ($ext == true) {
+						$pasta = ROOT . "/img/";
+						$novoNomeImg = $img["name"];
+						$path = 'http://' . $_SERVER["HTTP_HOST"] . '/img/' . $novoNomeImg;
+						move_uploaded_file($img['tmp_name'], $pasta . $novoNomeImg);
+					} else {
+						$path = $_POST['img'];
+					}
+				}
+				$parametros1 = array(
+					'titulo' => $_POST['titulo'],
+					'subTitulo' => $_POST['subTitulo'],
+					'textoBotao' => $_POST['textoBotao'],
+					'backgroundIMG' => $path
+				);
+			}
 		}
 
-		$parametros = array_map('htmlentities', $parametros1);
+		if (!empty($parametros1)) {
+			$parametros = array_map('htmlentities', $parametros1);
+		}
 		$apiEntrada = array(
-
 			'idSecaoPagina' => $_POST['idSecaoPagina'],
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],
@@ -926,7 +1036,6 @@ if (isset($_GET['operacao'])) {
 			'parametros' => json_encode($parametros),
 		);
 		$secoesPagina = chamaAPI(null, '/paginas/secoesPagina', json_encode($apiEntrada), 'POST');
-
 		header('Location: ../configuracao/paginas_alterar.php?idPagina=' . $_POST['idPagina']);
 	}
 

@@ -9,6 +9,7 @@ $parametros = json_decode($secoesPagina['parametros'], true);
             <img src="<?php echo $parametros["video"] ?>">
         </label>
         <input type="file" name="video" id="video">
+        <input type="hidden" name="img" value="<?php echo $parametros["video"] ?? null ?>">
     </div>
     <div class="col-sm-4">
         <label class='form-label ts-label'>Titulo</label>

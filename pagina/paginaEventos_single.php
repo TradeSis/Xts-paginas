@@ -1,7 +1,7 @@
 <?php
 $evento = buscaEventosSlug($slugSingle);
 
-$paginaSlug = buscaPagina($paginaDados['arquivoSingle']);
+$paginaSlug = buscaPaginas(null,$paginaDados['arquivoSingle']);
 $secoesPaginas = buscaSecaoPagina($paginaSlug['idPagina']);
 
 // Secoes antes da pagina

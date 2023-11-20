@@ -3,58 +3,22 @@
 :root {
     --color-header-background: #0C2D4C;
     --color-header-link: #FFFFFF;
-}
-
-/* novas classes */
-.ts-titulo {
-    color: #00488b;
-}
-
-.ts-subTitulo {
-    color: #66aff3;
-}
-
-.ts-descricao {
-    color: #66aff3;
-}
-
-.ts-botaoTitulo {
-    color: #fff;
-    background-color: #4E73DF;
-    border-color: #4E73DF;
-}
-
-.ts-header {
-    background-color: #0C2D4C;
-}
-
-.ts-headerTitulo {
-    color: #ffffff;
-}
-
-.ts-botaoHeader {
-    background-color: #0C2D4C;
-}
-
-.ts-produtosCards .col {
-    background-color: #c5c5c5;
-    border: 1px solid #000;
-}
-
-.ts-footer {
-    background-color: #0C2D4C;
-    color: #ffffff;
-}
-
-.ts-sliderP {
-    color: #1B4D60;
-}
-
-.ts-slider {
-    background-color: #bdbdbd;
-}
-
-.ts-prev,
-.ts-next {
-    color: #fff;
+    --color-titulo: #00488b;
+    --color-subTitulo: #000;
+    --color-descricao: #66aff3;
+    --color-botaoTitulo: #fff;
+    --color-botaoTitulo-background: #4E73DF;
+    --color-botaoTitulo-border: #4E73DF;
+    --color-header: #ffffff;
+    --color-header-background: #0C2D4C;
+    --color-headerTitulo: #ffffff;
+    --color-botaoHeader: #0C2D4C;
+    --color-produtosCards-background: #c5c5c5;
+    --color-produtosCards-border: 1px solid #000;
+    --color-footer: #ffffff;
+    --color-footer-background: #0C2D4C;
+    --color-sliderP: #1B4D60;
+    --color-slider-background: #bdbdbd;
+    --color-prev-next: #fff;
+    --color-filiais-background: #81a1ff;
 }

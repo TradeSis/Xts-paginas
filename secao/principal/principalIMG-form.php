@@ -23,6 +23,7 @@ $parametros = json_decode($secoesPagina['parametros'], true);
             <img src="<?php echo $parametros["principalIMG"] ?>">
         </label>
         <input type="file" name="principalIMG" id="principalIMG">
+        <input type="hidden" name="img" value="<?php echo $parametros["principalIMG"] ?? null ?>">
     </div>
 </div>
 

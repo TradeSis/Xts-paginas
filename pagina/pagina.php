@@ -40,7 +40,7 @@ $tema = buscatema();
 
 echo "PAGINA=".$pagina."<HR>";
   
-  $paginaDados = buscaPagina($pagina);
+  $paginaDados = buscaPaginas(null,$pagina);
 //echo json_encode($paginaDados) . "<HR>";
 
   if ($paginaDados == null) {
@@ -76,7 +76,7 @@ echo "PAGINA=".$pagina."<HR>";
   if ($paginaDados['arquivoFonte'] !== 'index.php') {
 
     if (isset($paginaDados['arquivoSingle']) && !$slugSingle == null) {
-      $paginaSlug = buscaPagina($paginaDados['arquivoSingle']);
+      $paginaSlug = buscaPaginas(null,$paginaDados['arquivoSingle']);
       include 'paginas/pagina/' . $paginaSlug['arquivoFonte'];
     } else {
       include 'paginas/pagina/' . $paginaDados['arquivoFonte'];

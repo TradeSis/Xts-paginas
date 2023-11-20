@@ -23,6 +23,7 @@ $parametros = json_decode($secoesPagina['parametros'], true);
             <img src="<?php echo $parametros["principalIMG"] ?>">
         </label>
         <input type="file" name="principalIMG" id="principalIMG">
+        <input type="hidden" name="img" value="<?php echo $parametros["principalIMG"] ?? null ?>">
     </div>
     <div class="col-sm-4">
         <label class='form-label ts-label'>Background</label>
@@ -30,6 +31,7 @@ $parametros = json_decode($secoesPagina['parametros'], true);
             <img src="<?php echo $parametros["principalBackground"] ?>">
         </label>
         <input type="file" name="principalBackground" id="principalBackground">
+        <input type="hidden" name="img2" value="<?php echo $parametros["principalBackground"] ?? null ?>">
     </div>
 </div>
 

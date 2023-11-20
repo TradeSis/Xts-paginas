@@ -11,9 +11,15 @@ $parametros = json_decode($secoesPagina['parametros'], true);
         <input type="file" name="textoIMG" id="textoIMG">
         <input type="hidden" name="img" value="<?php echo $parametros["textoIMG"] ?? null ?>">
     </div>
+</div>
+<div class="row">
     <div class="col-sm-4">
         <label class='form-label ts-label'>Titulo</label>
         <input type="text" name="titulo" class="form-control ts-input" value="<?php echo $parametros["titulo"] ?? null ?>">
+    </div>
+    <div class="col-sm-4">
+        <label class='form-label ts-label'>subTitulo</label>
+        <input type="text" name="subTitulo" class="form-control ts-input" value="<?php echo $parametros["subTitulo"] ?? null ?>">
     </div>
     <div class="col-sm-4">
         <label class='form-label ts-label'>Descrição</label>

@@ -8,10 +8,6 @@ if ($metodo == "GET") {
 
   switch ($funcao) {
 
-    case "paginas_slug":
-      include 'paginas_slug.php';
-      break;
-
     case "paginas":
       include 'paginas.php';
       break;

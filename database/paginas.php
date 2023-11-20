@@ -2,25 +2,13 @@
 include_once __DIR__ . "/../conexao.php";
 
 
-function buscaPagina($slug = null)
-{
-
-	$pagina = array();
-	
-	$apiEntrada = array(
-		'slug' => $slug,
-	);
-	$pagina = chamaAPI(null, '/paginas/paginas_slug', json_encode($apiEntrada), 'GET');
-
-	return $pagina;
-}
-
-function buscaPaginas($idPagina = null)
+function buscaPaginas($idPagina = null, $slug = null)
 {
 	$pagina = array();
 
 	$apiEntrada = array(
-		'idPagina' => $idPagina
+		'idPagina' => $idPagina,
+		'slug' => $slug
 	);
 	$pagina = chamaAPI(null, '/paginas/paginas', json_encode($apiEntrada), 'GET');
 

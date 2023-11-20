@@ -1,7 +1,7 @@
 <?php
 $marca = buscaMarcasSlug($slugSingle);
 $produtos = buscaProdutos(null, $marca['idMarca']);
-$paginaSlug = buscaPagina($paginaDados['arquivoSingle']);
+$paginaSlug = buscaPaginas(null,$paginaDados['arquivoSingle']);
 $secoesPaginas = buscaSecaoPagina($paginaSlug['idPagina']);
 
 // Secoes antes da pagina

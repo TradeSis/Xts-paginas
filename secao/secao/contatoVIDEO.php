@@ -13,7 +13,7 @@ $parametro = json_decode($secaoPagina["parametros"], true);
             </video>
         </div>
         <div class="col-md-5 ts-contatoFormCol">
-            <form class="ts-contatoForm">
+            <form class="ts-contatoForm70">
                 <div>
                     <i class="bi bi-person-fill"></i>
                     <label class="form-label ts-label">Nome</label>

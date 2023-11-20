@@ -28,8 +28,14 @@ if (isset($LOG_NIVEL)) {
 $paginas = array();
 
 $sql = "SELECT paginas.* FROM paginas ";
+$where = " where ";
 if (isset($jsonEntrada["idPagina"])) {
-  $sql = $sql . " where paginas.idPagina = " . $jsonEntrada["idPagina"];
+  $sql = $sql . $where . " paginas.idPagina = " . $jsonEntrada["idPagina"];
+  $where = " and ";
+}
+if (isset($jsonEntrada["slug"])) {
+  $sql = $sql . $where . " paginas.slug = " . "'" . $jsonEntrada["slug"] . "'";
+  $where = " and ";
 }
 
 //LOG
@@ -47,7 +53,7 @@ while ($row = mysqli_fetch_array($buscar, MYSQLI_ASSOC)) {
   $rows = $rows + 1;
 }
 
-if (isset($jsonEntrada["idPagina"]) && $rows == 1) {
+if (isset($jsonEntrada["idPagina"]) && $rows == 1 || isset($jsonEntrada["slug"]) && $rows == 1) {
   $paginas = $paginas[0];
 }
 $jsonSaida = $paginas;

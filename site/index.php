@@ -44,7 +44,7 @@ $tema = buscatema(IDEMPRESA_PADRAO);
 
 //echo "PAGINA=".$pagina."<HR>";
   
-  $paginaDados = buscaPagina($pagina);
+  $paginaDados = buscaPaginas(null,$pagina);
 //echo json_encode($paginaDados) . "<HR>";
 
   if ($paginaDados == null) {
@@ -79,7 +79,7 @@ $tema = buscatema(IDEMPRESA_PADRAO);
   if ($paginaDados['arquivoFonte'] !== 'index.php') {
 
     if (isset($paginaDados['arquivoSingle']) && !$slugSingle == null) {
-      $paginaSlug = buscaPagina($paginaDados['arquivoSingle']);
+      $paginaSlug = buscaPaginas(null,$paginaDados['arquivoSingle']);
       include 'paginas/site/' . $paginaSlug['arquivoFonte'];
     } else {
       include 'paginas/site/' . $paginaDados['arquivoFonte'];
