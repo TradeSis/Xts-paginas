@@ -102,6 +102,10 @@ $eventos = buscaEventos();
         </form>
 
         <div class="table  mt-2 ts-divTabela">
+            <div class="text-end mt-4">
+                <a href="secoesPaginas_inserir.php?idPagina=<?php echo $idPagina ?>" role="button"
+                    class="btn btn-success"><i class="bi bi-plus-square"></i>&nbsp Novo</a>
+            </div>
             <table class="table table-hover table-sm align-middle">
                 <thead class="ts-headertabelafixo">
                     <tr>
@@ -146,11 +150,7 @@ $eventos = buscaEventos();
                 <?php } ?>
 
             </table>
-            <div class="text-end mt-4">
-                <a href="secoesPaginas_inserir.php?idPagina=<?php echo $idPagina ?>" role="button"
-                    class="btn btn-success"><i class="bi bi-plus-square"></i>&nbsp Novo</a>
-
-            </div>
+           
         </div>
 
     </div>

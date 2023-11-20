@@ -160,6 +160,12 @@
     border-radius: 50%;
 }
 
+.ts-clienteIcon {
+    margin-top: 30px;
+    width: 200px;
+    height: 120px;
+}
+
 .ts-produtoDescricao {
     word-wrap: break-word;
     font-size: 15px;
@@ -291,6 +297,7 @@
 .ts-contatoForm70 {
     width: 70%;
 }
+
 .ts-contatoForm40 {
     width: 40%;
 }
