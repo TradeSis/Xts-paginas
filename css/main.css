@@ -359,6 +359,10 @@
 }
 
 .ts-filiais {
+    min-height: 200px;
+    max-height: 250px;
+    display: flex;
+    align-items: center;
     background-color: var(--color-filiais-background) !important;
 }
 
