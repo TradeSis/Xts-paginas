@@ -32,7 +32,7 @@ $sql = "SELECT * FROM secoes ";
 if (isset($jsonEntrada["idSecao"])) {
   $sql = $sql . " where secoes.idSecao = " . $jsonEntrada["idSecao"];
 } else {
-  $sql = $sql . " ORDER BY tipoSecao";
+  $sql = $sql . " ORDER BY idSecao ";
 }
 
 //LOG

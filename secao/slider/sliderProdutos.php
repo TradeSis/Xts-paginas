@@ -3,7 +3,7 @@ include_once(ROOT . '/paginas/database/produtos.php');
 
 $produtos = buscaProdutos();
 ?>
-<div class="ts-slider mt-2">
+<div class="ts-slider">
     <div id="carousel" class="carousel">
         <div class="carousel-item active">
             <img class="ts-sliderIcon" src="http://localhost/img/white.png">

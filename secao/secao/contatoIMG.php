@@ -2,7 +2,7 @@
 $parametro = json_decode($secaoPagina["parametros"], true);
 ?>
 <hr>
-<div class="container mt-2">
+<div class="container">
     <div class="row">
         <div class="col-md-7">
             <p class="ts-titulo">
@@ -28,7 +28,7 @@ $parametro = json_decode($secaoPagina["parametros"], true);
                     <input type="text" name="telefone" class="form-control ts-input" />
                 </div>
                 <div class="mt-2">
-                    <button type="submit" class="btn btn-primary">
+                    <button type="submit" class="ts-botaoTitulo">
                         <?php echo $parametro["textoBotao"] ?? 'Default' ?>
                     </button>
                 </div>

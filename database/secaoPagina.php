@@ -1022,6 +1022,111 @@ if (isset($_GET['operacao'])) {
 					'backgroundIMG' => $path
 				);
 			}
+
+			//produtoCards
+			if ($acao == "produtoCards") {
+				$parametros1 = array(
+					'titulo' => $_POST['titulo'],
+				);
+			}
+
+			//artigos
+			if ($acao == "artigos") {
+				$parametros1 = array(
+					'titulo' => $_POST['titulo'],
+				);
+			}
+
+			//textoDuploIMGesquerda
+			if ($acao == "textoDuploIMGesquerda") {
+				$img = $_FILES['textoIMG'];
+				if ($img !== null) {
+					preg_match("/\.(png|jpg|jpeg){1}$/i", $img["name"], $ext);
+
+					if ($ext == true) {
+						$pasta = ROOT . "/img/";
+						$novoNomeImg = $img["name"];
+						$path = 'http://' . $_SERVER["HTTP_HOST"] . '/img/' . $novoNomeImg;
+						move_uploaded_file($img['tmp_name'], $pasta . $novoNomeImg);
+					} else {
+						$path = $_POST['img'];
+					}
+				}
+				$parametros1 = array(
+					'titulo1' => $_POST['titulo1'],
+					'descricao1' => $_POST['descricao1'],
+					'titulo2' => $_POST['titulo2'],
+					'descricao2' => $_POST['descricao2'],
+					'textoIMG' => $path
+				);
+			}
+
+			//textoDuploIMGdireita
+			if ($acao == "textoDuploIMGdireita") {
+				$img = $_FILES['textoIMG'];
+				if ($img !== null) {
+					preg_match("/\.(png|jpg|jpeg){1}$/i", $img["name"], $ext);
+
+					if ($ext == true) {
+						$pasta = ROOT . "/img/";
+						$novoNomeImg = $img["name"];
+						$path = 'http://' . $_SERVER["HTTP_HOST"] . '/img/' . $novoNomeImg;
+						move_uploaded_file($img['tmp_name'], $pasta . $novoNomeImg);
+					} else {
+						$path = $_POST['img'];
+					}
+				}
+				$parametros1 = array(
+					'titulo1' => $_POST['titulo1'],
+					'descricao1' => $_POST['descricao1'],
+					'titulo2' => $_POST['titulo2'],
+					'descricao2' => $_POST['descricao2'],
+					'textoIMG' => $path
+				);
+			}
+
+			//footerBackground
+			if ($acao == "footerBackground") {
+				$img = $_FILES['logo'];
+				if ($img !== null) {
+					preg_match("/\.(png|jpg|jpeg){1}$/i", $img["name"], $ext);
+
+					if ($ext == true) {
+						$pasta = ROOT . "/img/";
+						$novoNomeImg = $img["name"];
+						$path = 'http://' . $_SERVER["HTTP_HOST"] . '/img/' . $novoNomeImg;
+						move_uploaded_file($img['tmp_name'], $pasta . $novoNomeImg);
+					} else {
+						$path = $_POST['img'];
+					}
+				}
+				$bkg = $_FILES['backgroundIMG'];
+				if ($bkg !== null) {
+					preg_match("/\.(png|jpg|jpeg){1}$/i", $bkg["name"], $ext);
+
+					if ($ext == true) {
+						$pasta = ROOT . "/img/";
+						$novoNomeBkg = $bkg["name"];
+						$path2 = 'http://' . $_SERVER["HTTP_HOST"] . '/img/' . $novoNomeBkg;
+						move_uploaded_file($bkg['tmp_name'], $pasta . $novoNomeBkg);
+					} else {
+						$path2 = $_POST['img2'];
+					}
+				}
+				$parametros1 = array(
+					'tituloContato' => $_POST['tituloContato'],
+					'textoWhatsapp' => $_POST['textoWhatsapp'],
+					'textoEmail' => $_POST['textoEmail'],
+					'tituloEndereco' => $_POST['tituloEndereco'],
+					'textoEndereco' => $_POST['textoEndereco'],
+					'textoBairro' => $_POST['textoBairro'],
+					'textoCep' => $_POST['textoCep'],
+					'textoCidade' => $_POST['textoCidade'],
+					'textoRedesSociais' => $_POST['textoRedesSociais'],
+					'logo' => $path,
+					'backgroundIMG' => $path2
+				);
+			}
 		}
 
 		if (!empty($parametros1)) {

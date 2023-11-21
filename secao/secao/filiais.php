@@ -3,7 +3,7 @@ include_once(ROOT . '/cadastros/database/pessoas.php');
 
 $pessoas = buscarPessoa();
 ?>
-<div class="ts-filiais mt-2">
+<div class="ts-filiais">
     <div class="container ts-filiais ts-textoCentro">
         <div class="row">
             <?php $counter = 0;

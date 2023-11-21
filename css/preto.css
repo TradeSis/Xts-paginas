@@ -1,6 +1,33 @@
 /* preto.css */
 
 :root {
-    --color-header-background: #000000; 
+    --color-header-background: #000000;
     --color-header-link: #FFFFFF;
+
+
+    --color-titulo: #FFFFFF;
+    --color-titulo-border: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;;
+    --color-subTitulo: #FFFFFF;
+    --color-subTitulo-border: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;;
+    --color-textoTitulo: #000000;
+    --color-descricao: gray;
+    --color-descricao-border: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;;
+    --color-botaoTitulo: #000000;
+    --color-botaoTitulo-background: #ddbc00;
+    --color-botaoTitulo-border: #ddbc00;
+    --color-botaoHeader: #FFFFFF;
+    --color-header: #FFFFFF;
+    --color-header-background: #000000;
+    --color-headerTitulo: #FFFFFF;
+    --color-produtosCards-background: #FFFFFF;
+    --color-produtosCards-border: 1px 2px 3px 4px rgba(20, 20, 20, 0.4);
+    --color-footer: #FFFFFF;
+    --color-footer-background: #262626;
+    --color-sliderP: #1B4D60;
+    --color-slider-background: #bdbdbd;
+    --color-prev-next: #FFFFFF;
+    --color-filiais-background: #81a1ff;
+    --color-tituloParametro: #FFFFFF;
+    --color-inputParametro: #FFFFFF;
+    --color-socialParametro: #FFFFFF;
 }

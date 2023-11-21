@@ -2,7 +2,7 @@
 $parametro = json_decode($secaoPagina["parametros"], true);
 ?>
 <hr>
-<div class="container mt-2">
+<div class="container">
     <div class="row">
         <div class="col-md-6">
             <h2 class="ts-sobreTitulo"><?php echo $parametro["titulo"] ?? 'Default' ?></h2>

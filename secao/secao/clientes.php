@@ -3,7 +3,7 @@ include_once(ROOT . '/cadastros/database/clientes.php');
 
 $clientes = buscaClientes();
 ?>
-<div class="container mt-2">
+<div class="container">
     <h2>Nossos Clientes</h2>
     <div class="row">
         <?php foreach ($clientes as $cliente) { ?>

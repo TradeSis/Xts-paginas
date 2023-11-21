@@ -3,22 +3,31 @@
 :root {
     --color-header-background: #0C2D4C;
     --color-header-link: #FFFFFF;
+
+
     --color-titulo: #00488b;
-    --color-subTitulo: #000;
+    --color-titulo-border: 1px solid #00488b;
+    --color-subTitulo: #000000;
+    --color-subTitulo-border: 1px solid #000000;
+    --color-textoTitulo: #00488b;
     --color-descricao: #66aff3;
-    --color-botaoTitulo: #fff;
+    --color-descricao-border: 1px solid #66aff3;
+    --color-botaoTitulo: #FFFFFF;
     --color-botaoTitulo-background: #4E73DF;
     --color-botaoTitulo-border: #4E73DF;
-    --color-header: #ffffff;
-    --color-header-background: #0C2D4C;
-    --color-headerTitulo: #ffffff;
     --color-botaoHeader: #0C2D4C;
+    --color-header: #FFFFFF;
+    --color-header-background: #0C2D4C;
+    --color-headerTitulo: #FFFFFF;
     --color-produtosCards-background: #c5c5c5;
-    --color-produtosCards-border: 1px solid #000;
-    --color-footer: #ffffff;
+    --color-produtosCards-border: 1px solid #000000;
+    --color-footer: #FFFFFF;
     --color-footer-background: #0C2D4C;
     --color-sliderP: #1B4D60;
     --color-slider-background: #bdbdbd;
-    --color-prev-next: #fff;
+    --color-prev-next: #FFFFFF;
     --color-filiais-background: #81a1ff;
+    --color-tituloParametro: #000000;
+    --color-inputParametro: #000000;
+    --color-socialParametro: #000000;
 }

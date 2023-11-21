@@ -2,7 +2,7 @@
 $parametro = json_decode($secaoPagina["parametros"], true);
 ?>
 <hr>
-<div class="container-fluid mt-2">
+<div class="container-fluid">
     <div class="row">
         <div class="col-md-7 ts-textoCentro">
             <p class="ts-titulo">

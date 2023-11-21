@@ -1,8 +1,8 @@
 <?php
 $parametro = json_decode($secaoPagina["parametros"], true);
 ?>
-<div class="container-fluid ts-textoCentro mt-2">
-    <div id="ts-tabs">
+<div class="container-fluid ts-textoCentro">
+    <div class="mt-2" id="ts-tabs">
         <div class="tab whiteborder" id="tab-1">
             <?php echo $parametro["tab1"] ?>
         </div>
@@ -62,7 +62,7 @@ $parametro = json_decode($secaoPagina["parametros"], true);
                                 <input type="text" name="telefone" class="form-control ts-input" />
                             </div>
                             <div class="mt-2">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="ts-botaoTitulo">
                                     <?php echo $parametro["textoBotao"] ?? 'Default' ?>
                                 </button>
                             </div>
@@ -106,7 +106,7 @@ $parametro = json_decode($secaoPagina["parametros"], true);
                                 <input type="text" name="telefone" class="form-control ts-input" />
                             </div>
                             <div class="mt-2">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="ts-botaoTitulo">
                                     <?php echo $parametro["textoBotao"] ?? 'Default' ?>
                                 </button>
                             </div>
@@ -153,7 +153,7 @@ $parametro = json_decode($secaoPagina["parametros"], true);
                                 <input type="text" name="telefone" class="form-control ts-input" />
                             </div>
                             <div class="mt-2">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="ts-botaoTitulo">
                                     <?php echo $parametro["textoBotao"] ?? 'Default' ?>
                                 </button>
                             </div>
