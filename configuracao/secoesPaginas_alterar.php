@@ -11,6 +11,7 @@ $idSecaoPagina = $_GET['idSecaoPagina'];
 $secoesPagina = buscaSecaoPaginas($idSecaoPagina);
 $arquivoFonte = $secoesPagina["arquivoFonte2"];
 $temporaria = explode('.', $arquivoFonte);
+
 ?>
 <!doctype html>
 <html lang="pt-BR">
@@ -108,12 +109,8 @@ $temporaria = explode('.', $arquivoFonte);
                 <div class="col-sm-12">
 
                     <div class="form-group">
-                        <h5>Parametros</h5>
-                        <hr>
-                        <br>
+                      
                         <?php
-                        $arquivoFonte = $secoesPagina["arquivoFonte2"];
-                        $temporaria = explode('.', $arquivoFonte);
                         $arquivoFonte = $temporaria[0] . '-form.' . $temporaria[1];
                         include ROOT . '/paginas/secao/' . $secoesPagina["tipoSecao"] . "/" . $arquivoFonte;
                         ?>

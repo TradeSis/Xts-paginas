@@ -31,10 +31,10 @@ if (isset($jsonEntrada['idSecaoPagina'])) {
     $idSecao = $jsonEntrada['idSecao'];
     $ordem = $jsonEntrada['ordem'];
     $coluna = $jsonEntrada['coluna'];
-    $parametros = $jsonEntrada['parametros'];
-    $listas = $jsonEntrada['listas'];
+    $parametros = json_encode($jsonEntrada); // Todo apiEntrada vira parametros
+    //$listas = $jsonEntrada['listas'];
 
-    $sql = "UPDATE `secoespagina` SET `idPagina`='$idPagina', `idSecao`='$idSecao',`ordem`='$ordem',`coluna`='$coluna',`parametros`='$parametros',`listas`='$listas' WHERE idSecaoPagina = $idSecaoPagina";
+    $sql = "UPDATE `secoespagina` SET `idPagina`='$idPagina', `idSecao`='$idSecao',`ordem`='$ordem',`coluna`='$coluna',`parametros`='$parametros' WHERE idSecaoPagina = $idSecaoPagina";
 
     /* echo $sql; */
     //LOG

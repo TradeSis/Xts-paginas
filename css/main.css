@@ -65,7 +65,7 @@
 
 .ts-titulo {
     font-size: 60px;
-    color: var(--color-titulo) !important;
+    color: var(--color-titulo) !important; 
     text-shadow: var(--color-titulo-border) !important;
 }
 
@@ -372,10 +372,7 @@
     color: var(--color-botaoHeader) !important;
 }
 
-.ts-principalIMG {
-    min-height: 200px;
-    max-height: 250px;
-}
+
 
 .ts-footerIMG {
     min-height: 150px;

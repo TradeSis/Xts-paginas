@@ -90,19 +90,6 @@ $paginas = buscaPaginas($_GET["idPagina"]);
                 </div>
             </div>
 
-            <div class="row mt-3">
-                <div class="col-sm-12">
-
-                    <div class="form-group">
-                        <label>Parametros</label>
-                        <textarea name="parametros" cols="120" rows="10"></textarea>
-
-                    </div>
-                </div>
-
-            </div>
-
-
             <div class="text-end mt-4">
                 <button type="submit" class="btn  btn-success"><i class="bi bi-sd-card-fill"></i>&#32;Cadastrar</button>
             </div>

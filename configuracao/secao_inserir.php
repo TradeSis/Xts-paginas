@@ -51,6 +51,7 @@ include_once('../header.php');
                 <div class="col-sm-3">
                     <label class="form-label ts-label">Tipo</label>
                     <select class="form-select ts-input" name="tipoSecao">
+                        <option value="html">Header</option>    
                         <option value="html">Html</option>
                         <option value="principal">Principal</option>
                         <option value="secao">Seção</option>

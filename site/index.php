@@ -42,7 +42,7 @@ $tema = buscatema(IDEMPRESA_PADRAO);
 
   }
 
-//echo "PAGINA=".$pagina."<HR>";
+  echo "PAGINA=".$pagina."<HR>";
   
   $paginaDados = buscaPaginas(null,$pagina);
 //echo json_encode($paginaDados) . "<HR>";

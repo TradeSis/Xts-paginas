@@ -1,4 +1,5 @@
 <?php
+// Helio 22112023 - Imagens
 // Helio 26042023 - conexao agora pega dados do ../config.php, e vai para versao
 // helio 01022023 criado funcao defineConexao API e MySQl com aprametros locais
 // helio 01022023 altereado para include_once
@@ -15,6 +16,6 @@ include_once(ROOT.'/sistema/database/api.php');
 // helio 26042023
 include_once(ROOT.'/sistema/database/functions.php');
 include_once(ROOT.'/sistema/database/email.php');
-
+include_once(ROOT.'/sistema/database/imagens.php');
 
 ?>
