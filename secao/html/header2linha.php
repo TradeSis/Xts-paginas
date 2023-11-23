@@ -1,6 +1,14 @@
 <?php
-$menus = json_decode($temas['menu'], true);
-$perfil = json_decode($temas['perfil'], true);
+$parametro = json_decode($secaoPagina["parametros"], true);
+$menus = buscaPaginas(null,null);
+$i = 0;
+while($i < count($menus))
+{
+    if ($menus[$i]["slug"] == "home") {$menus[$i]["slug"] = "/";}
+    if ($menus[$i]["menu"] == "0") {unset($menus[$i]);}
+	$i++;
+}
+
 ?>
 
 <style>
@@ -39,12 +47,11 @@ $perfil = json_decode($temas['perfil'], true);
 
 <nav class="navbar navbar-expand-lg">
   <div class="container">
-
-    <a class="navbar-brand" href="../<?php echo URLROOT ?>"><img class="logo"
-        src="<?php echo URLROOT ?>/img/<?php echo $perfil['imgPerfil'] ?>" alt=""></a>
+    <a class="navbar-brand" href="<?php echo URLROOT ?>"><img class="logo"
+        src="<?php echo $perfil["imgPerfil"] ?? '/img/tradesis.png' ?>" alt="" ></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+      <span class="navbar-toggler-icon">XXXS</span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent" style="margin-left: 120px">
@@ -53,8 +60,8 @@ $perfil = json_decode($temas['perfil'], true);
         foreach ($menus as $menu) {
           ?>
           <li class="nav-item mr-4 ">
-            <a href="<?php echo URLROOT . $menu['href'] ?>" class="nav-link">
-              <?php echo $menu['menu'] ?>
+            <a href="<?php echo $menu['slug'] ?>" class="nav-link">
+              <?php echo $menu['tituloPagina'] ?>
             </a>
           </li>
         <?php } ?>
@@ -72,7 +79,7 @@ $perfil = json_decode($temas['perfil'], true);
         <?php 
           foreach($menus as $menu){
         ?>
-          <li><a href="<?php echo $menu['href']?>" class="active"><?php echo $menu['menu']?></a></li>
+          <li><a href="<?php echo $menu['slug'] ?>" class="active"><?php echo $menu['tituloPagina']?></a></li>
         <?php } ?>
    </div>
 

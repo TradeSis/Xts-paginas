@@ -14,7 +14,7 @@ $parametro = json_decode($secaoPagina['parametros'], true);
 $principalIMG = isset($parametro["principalIMG"]) && $parametro["principalIMG"] !== ""    ?  $parametro["principalIMG"]  : null; 
 $principalBackground = isset($parametro["principalBackground"]) && $parametro["principalBackground"] !== ""    ?  $parametro["principalBackground"]  : null; 
 
-$posicaoIMG = "direita";
+$posicaoIMG = "";
 if (isset($parametro["posicaoIMG"])) {
     $posicaoIMG = $parametro["posicaoIMG"];
 }
@@ -22,13 +22,9 @@ if (isset($parametro["posicaoIMG"])) {
 
 ?>
 
-
-</style>
-
-
-    <div class="container-fluid mt-5" <?php if (isset($principalBackground)) { echo "class=\"ts-background\" style=\"background-image: url('" . $principalBackground . "');\" "; }?> > 
-        <div class="row ts-textoCentro">
-            <div class="col<?php if (isset($principalIMG)) { echo '-6'; }  ?> "
+    <div  <?php if (isset($principalBackground)) { echo "class=\"ts-background mt-2 \" style=\"background-image: url('" . $principalBackground . "');\" "; } else { echo "class=\"container-fluid mt-2\" "; } ?> > 
+        <div class="row mb-5 ts-textoCentro">
+            <div class="col<?php if ($posicaoIMG == 'direita') { echo '-6'; }  ?> "
                 <?php if ($posicaoIMG == 'direita') { echo 'order-1'; } else { echo 'order-2';} ?> " >
                 <?php if (isset($parametro["titulo"])) { ?>
                     <h1 class="ts-titulo" <?php if (isset($parametro["corTitulo"])) { echo " style=\"color:" . $parametro["corTitulo"] . "\""; }  ?> >
