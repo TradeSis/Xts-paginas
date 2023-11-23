@@ -111,6 +111,7 @@ $eventos = buscaEventos();
                     <tr>
                       
                         <th>Secão</th>
+                        <th>Titulo</th>
                         <th>Ordem</th>
                         <th>Ação</th>
                        
@@ -124,6 +125,9 @@ $eventos = buscaEventos();
                        
                         <td>
                             <?php echo $secaoPagina['tituloSecao'] ?>
+                        </td>
+                        <td>
+                            <?php echo $secaoPagina['tituloSecaoPagina'] ?>
                         </td>
                         <td>
                             <?php echo $secaoPagina['ordem'] ?>

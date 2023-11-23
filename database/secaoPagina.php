@@ -38,6 +38,7 @@ if (isset($_GET['operacao'])) {
 
 			'idPagina' => $_POST['idPagina'],
 			'idSecao' => $_POST['idSecao'],
+			'tituloSecaoPagina' => $_POST['tituloSecaoPagina'],
 			'ordem' => $_POST['ordem']
 
 		);

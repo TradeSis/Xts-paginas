@@ -29,10 +29,11 @@ if (isset($jsonEntrada['idPagina'])) {
     $idPagina = $jsonEntrada['idPagina'];
     $idSecao = $jsonEntrada['idSecao'];
     $ordem = $jsonEntrada['ordem'];
-    $parametros = $jsonEntrada['parametros'];
+  
+    $tituloSecaoPagina = $jsonEntrada['tituloSecaoPagina'];
     $coluna = '';
 
-    $sql = "INSERT INTO `secoespagina`(`idPagina`,`idSecao`, `ordem`, `parametros`, `coluna`) VALUES ('$idPagina','$idSecao','$ordem','$parametros','$coluna')";
+    $sql = "INSERT INTO `secoespagina`(`idPagina`,`idSecao`, `ordem`, `tituloSecaoPagina`, `coluna`) VALUES ('$idPagina','$idSecao','$ordem','$tituloSecaoPagina','$coluna')";
     //LOG
     if (isset($LOG_NIVEL)) {
         if ($LOG_NIVEL >= 3) {

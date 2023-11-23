@@ -1,6 +1,5 @@
 <?php
 $parametro = json_decode($secaoPagina['parametros'], true);
-echo json_encode($parametro);
 
 /*
 {   "titulo":"Tradesis",
@@ -19,12 +18,7 @@ $posicaoIMG = "direita";
 if (isset($parametro["posicaoIMG"])) {
     $posicaoIMG = $parametro["posicaoIMG"];
 }
-if (isset($principalIMG)) {
-    echo "OK IMAGEM" . "<HR>";
-}
-if (isset($principalBackground)) {
-    echo "OK BACK" . "<HR>";
-}
+
 
 ?>
 
@@ -32,7 +26,7 @@ if (isset($principalBackground)) {
 </style>
 
 
-    <div class="container mt-5" <?php if (isset($principalBackground)) { echo "class=\"ts-background\" style=\"background-image: url('" . $principalBackground . "');\" "; }?> > 
+    <div class="container-fluid mt-5" <?php if (isset($principalBackground)) { echo "class=\"ts-background\" style=\"background-image: url('" . $principalBackground . "');\" "; }?> > 
         <div class="row ts-textoCentro">
             <div class="col<?php if (isset($principalIMG)) { echo '-6'; }  ?> "
                 <?php if ($posicaoIMG == 'direita') { echo 'order-1'; } else { echo 'order-2';} ?> " >

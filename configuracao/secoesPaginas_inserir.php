@@ -49,6 +49,7 @@ $paginas = buscaPaginas($_GET["idPagina"]);
                 <div class="col-sm-3">
                     <label class='form-label ts-label'>Pagina</label>
                     <input type="text" class="form-control ts-input" name="tituloPagina" value="<?php echo $paginas['tituloPagina'] ?>" readonly>
+                    <input type="text" class="form-control ts-input" name="tituloSecaoPagina" value="<?php echo $paginas['tituloSecaoPagina'] ?>" >
                     <input type="hidden" class="form-control ts-input" name="idPagina" value="<?php echo $paginas['idPagina'] ?>">
                 </div>
 

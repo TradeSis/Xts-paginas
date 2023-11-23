@@ -52,6 +52,7 @@ $temporaria = explode('.', $arquivoFonte);
                 <div class="col-sm-6">
                     <label class='form-label ts-label'>Pagina</label>
                     <input type="text" name="slug" class="form-control ts-input" value="<?php echo $secoesPagina['tituloPagina'] ?>" disabled>
+                    <input type="text" name="tituloSecaoPagina" class="form-control ts-input" value="<?php echo $secoesPagina['tituloSecaoPagina'] ?>" >
                     <input type="hidden" class="form-control ts-input" name="idPagina" value="<?php echo $secoesPagina['idPagina'] ?>">
                 </div>
 
