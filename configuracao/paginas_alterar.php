@@ -145,7 +145,7 @@ $eventos = buscaEventos();
                     <TR >
                         <TD colspan="3"><div class="container">
                             <?php
-                            include '../secao/' . $secaoPagina["tipoSecao"] . "/" . $secaoPagina["arquivoFonte"];
+                            include '../site/' . $secaoPagina["tipoSecao"] . "/" . $secaoPagina["arquivoFonte"];
                             ?>
                         </div></TD>
                        

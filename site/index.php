@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt">
 <?php
 include_once ROOT . "/vendor/vendor.php";
 include_once(ROOT . '/paginas/database/temas.php');
@@ -42,7 +42,7 @@ $tema = buscatema(IDEMPRESA_PADRAO);
 
   }
 
-  echo "PAGINA=".$pagina."<HR>";
+//echo "PAGINA=".$pagina."<HR>";
   
   $paginaDados = buscaPaginas(null,$pagina);
 //echo json_encode($paginaDados) . "<HR>";
@@ -66,7 +66,7 @@ $tema = buscatema(IDEMPRESA_PADRAO);
   $ordem = 0;
   foreach ($secoesPaginas as $secaoPagina) {
     if ($secaoPagina["coluna"] == "") {
-      include 'paginas/secao/' . $secaoPagina["tipoSecao"] . "/" . $secaoPagina["arquivoFonte"];
+      include 'paginas/site/' . $secaoPagina["tipoSecao"] . "/" . $secaoPagina["arquivoFonte"];
       $ordem = $secaoPagina["ordem"];
     }
     if ($secaoPagina["arquivoFonte"] == "pagina") {
@@ -98,7 +98,7 @@ foreach ($secoesPaginas as $secaoPagina) {
       continue;
     }
 
-    include 'paginas/secao/' . $secaoPagina["tipoSecao"] . "/" . $secaoPagina["arquivoFonte"];
+    include 'paginas/site/' . $secaoPagina["tipoSecao"] . "/" . $secaoPagina["arquivoFonte"];
   }
 }
 

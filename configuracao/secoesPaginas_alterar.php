@@ -113,7 +113,7 @@ $temporaria = explode('.', $arquivoFonte);
                       
                         <?php
                         $arquivoFonte = $temporaria[0] . '-form.' . $temporaria[1];
-                        include ROOT . '/paginas/secao/' . $secoesPagina["tipoSecao"] . "/" . $arquivoFonte;
+                        include ROOT . '/paginas/site/' . $secoesPagina["tipoSecao"] . "/" . $arquivoFonte;
                         ?>
 
                     </div>
